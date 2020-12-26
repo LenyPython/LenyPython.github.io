@@ -1,10 +1,13 @@
 body {
-	background:#111;
+	background:#050505;
 }
 
 #menu {
 	background:#130000;
-	height:200;
+	height:200px;
 	width:flex;
+	justify: center;
 }
+
+
 
