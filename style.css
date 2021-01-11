@@ -4,56 +4,51 @@ body {
 }
 
 h1, h2, h3, h4 {
-	color: white;
+	color: #O08AO0;
 }
 
 p {
-	color: white;
+	color: #O08AO0;
 	font-size: 16px;
 }
 
-#menu {
-	background:#130000;
-	height:200px;
-	width:flex;
-	text-align: center;
-	vertical-align: bottom;
-	border-radius: 25px;
-}
 
-ul.menu {
-	list-style-type: none;
-	margin: 0;
+ul {
+	list-style: none;
+	margin: 0px;
 	padding: 5px;
 }
 
-.button {
-	padding: 12px 28px;
-	font-size: 20px;
+ul li {
+	float: left;
+	margin-right: 5px;
+	width: 200px;
+	height: 40px;
+	background-color: #133313;
+	opacity: 0.9;
+	line-height: 40px;
 	text-align: center;
+	font-size: 22px;
 }
 
-a {
-	color:white;
-	background-color:black;
-	margin: 5px 10px;
-	font-size: 16px;
-	font-family: Monospace;
-	text-decoration: none;
-	box-shadow: 1px 5px 4px grey;
+ul li a {
+	text-decoration:none;
+	color: #579457;
+	display: block;
 }
 
-a:visited {
-	color:gray;
-	box-shadow: 1px 5px 4px grey;
+ul li a:hover {
+	background-color:#2D4D2D;
+	box-shadow:5px 5px 5px #008A00;
+	text-shadow:2px 2px 2px #008A00;
 }
 
-a:hover {
-	color:lightgreen;
-	box-shadow: 1px 5px 4px lightgreen;
+ul li ul li {
+	display: none;
 }
 
-a:active {
-	color:lightgreen;
+ul li:hover ul li {
+	display: block;
 }
+
 
