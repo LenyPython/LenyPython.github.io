@@ -7,15 +7,29 @@ h1, h2, h3, h4 {
 	color: #008A00;
 }
 
+div#main {
+	width: 80%;
+	margin: auto;
+	margin-top: 100px;
+	padding: 15px;
+	text-align: left;
+	border: 1px solid #579457;
+}
+div#menu {
+	width: 90%;
+	margin: auto;
+	margin-top: 25px;
+	align-items: center;
+}
+
 p {
 	color: #008A00;
 	font-size: 16px;
 }
 
-
 ul {
 	list-style: none;
-	margin: 0px;
+	margin: auto;
 	padding: 5px;
 }
 
@@ -39,12 +53,12 @@ ul li a {
 
 ul li a:hover {
 	background-color:#2D4D2D;
-	box-shadow:5px 5px 5px #008A00;
 	text-shadow:2px 2px 2px #008A00;
 }
 
 ul li ul li {
 	display: none;
+	background-color:#2D4D2D;
 }
 
 ul li:hover ul li {
