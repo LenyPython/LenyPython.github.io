@@ -1,10 +1,17 @@
+:root {
+	--paleg: #579457;
+	--lightg: #2D4D2D;
+	--shinyg: #008A00;
+	--darkg: #133313;	
+}
+
 body {
 	background:black;
 	font-family: cursive;
 }
 
 h1, h2, h3, h4 {
-	color: #008A00;
+	color: var(--shinyg);
 }
 
 div#main {
@@ -13,7 +20,7 @@ div#main {
 	margin-top: 100px;
 	padding: 15px;
 	text-align: left;
-	border: 1px solid #579457;
+	border: 1px solid var(--paleg);
 }
 div#menu {
 	width: 90%;
@@ -23,7 +30,7 @@ div#menu {
 }
 
 p {
-	color: #008A00;
+	color: var(--shinyg);
 	font-size: 16px;
 }
 
@@ -38,7 +45,7 @@ ul li {
 	margin-right: 5px;
 	width: 200px;
 	height: 40px;
-	background-color: #133313;
+	background-color: var(--darkg);
 	opacity: 0.9;
 	line-height: 40px;
 	text-align: center;
@@ -47,18 +54,18 @@ ul li {
 
 ul li a {
 	text-decoration:none;
-	color: #579457;
+	color: var(--paleg);
 	display: block;
 }
 
 ul li a:hover {
-	background-color:#2D4D2D;
-	text-shadow:2px 2px 2px #008A00;
+	background-color: var(--lightg);
+	text-shadow:2px 2px 2px var(--shinyg);
 }
 
 ul li ul li {
 	display: none;
-	background-color:#2D4D2D;
+	background-color: var(--lightg);
 }
 
 ul li:hover ul li {
