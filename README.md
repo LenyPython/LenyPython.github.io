@@ -1,2 +1,2 @@
-### My redo of portfolio page using React
+# My redo of profile page using React
 
