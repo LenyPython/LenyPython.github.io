@@ -1,38 +1,27 @@
-.App {
-  text-align: center;
+:root {
+  --main-background: hsl(120, 70%, 1%);
+  --main-nav-background: hsl(0, 0%, 0%);
+  --main-font-color: hsl(120, 100%, 50%);
+  --main-svg-color: hsl(120, 100%, 50%);
+  --main-link-color: hsl(120, 100%, 50%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Cinzel", cursive;
+  margin: 0;
+  padding: 0;
+  background: var(--main-background);
+  color: var(--main-font-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  margin: 0 0.5em;
+  color: var(--main-link-color);
+  font-size: 1.1em;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*# sourceMappingURL=App.css.map */
