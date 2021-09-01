@@ -17,8 +17,16 @@ const Navbar = () => {
           <a href="#technologies">Technologies</a>
           <a href="#timeline">Timeline</a>
           <a href="#about-me">About Me</a>
-          <GitIcon />
-          <LinkedInIcon />
+
+          <a href="https://github.com/LenyPython" target="_blank">
+            <GitIcon />
+          </a>
+          <a href="https://www.linkedin.com/in/piotr-lenartowicz-123488205/"
+            target="_blank">
+            <LinkedInIcon />
+          </a>
+
+
         </div>
       </div>
     </nav>
