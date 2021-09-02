@@ -6,7 +6,7 @@ import {ReactComponent as LinkedInIcon} from './img/linkedin.svg'
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav role='header'>
       <div id='navigation'>
         <div className="nav-left-side">
           <JsIcon className='logo' />

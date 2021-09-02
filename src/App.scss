@@ -11,6 +11,8 @@ body {
 	padding: 0;
 	background: var(--main-background);
 	color: var(--main-font-color);
+	display: flex;
+	justify-content: center;
 }
 
 a {
@@ -21,4 +23,22 @@ a {
 	&:hover {
 		text-decoration: underline;
 	}
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#root {
+	width: 100%;
+	min-height: 100vh;
+}
+
+.App {
+	margin-top: 125px;
+	width: 100%;
+	min-height: 100vh;
+	max-width: 1440px;
+	border: 1px dotted red;
 }

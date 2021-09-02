@@ -1,0 +1,16 @@
+#hero {
+  border: 1px solid white;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#hero h1 {
+  font-size: 3.5rem;
+}
+#hero .intro {
+  height: 90%;
+}
+
+/*# sourceMappingURL=hero.css.map */

@@ -8,18 +8,14 @@ import Footer from './components/Footer/Footer'
 
 function App() {
   return (
-    <>
+    <div role='main' className="App flex-col">
       <Navbar />
-      <div className="App">
-        <main>
-          <Hero />
-          <Projects />
-          <Technologies />
-          <Timeline />
-        </main>
-      </div>
+      <Hero />
+      <Projects />
+      <Technologies />
+      <Timeline />
       <Footer />
-    </>
+    </div>
   );
 }
 
