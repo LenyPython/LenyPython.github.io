@@ -9,7 +9,7 @@ const Hero = () => {
         <p>Something about me some toher stuff</p>
         <button>Check my work</button>
       </div>
-      <div className="img-wrapper">
+      <div className="img-wrapper flex-col">
         img wrapper
       </div>
     </div>

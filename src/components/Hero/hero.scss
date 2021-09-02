@@ -2,13 +2,34 @@
 	border: 1px solid white;
 	width: 100%;
 	min-height: 500px;
+	height: 70vh;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
+	div{
+		margin: 3em;
+	}
 	h1 {
-		font-size: 3.5rem;
+		font-size: 3rem;
+		margin: 0;
 	}
-	.intro { 
-		height: 90%;
+	p{
+		margin-bottom: 3em;
 	}
+	button {
+		font-size: 1.6rem;
+		font-weight: 700;
+		padding: .3em .6em;
+		margin-left: 1.5em;
+		background: var(--main-font-color);
+		border: none;
+		border-radius: 1.5em;
+	}
+}
+
+.img-wrapper {
+	background: white;
+	opacity: .1;
+	height: 90%;
+	flex: 1 1 auto;
 }
