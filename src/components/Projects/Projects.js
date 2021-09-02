@@ -1,12 +1,16 @@
-
 import React from 'react'
+import './projects.css'
+
 
 const Projects = () => {
   return (
-    <section id="projects">
+    <div id="projects">
+      Projec section
 
-    </section>
+    </div>
   )
 }
 
 export default Projects;
+
+
