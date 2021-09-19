@@ -46,6 +46,8 @@ a:hover {
 }
 .App > div {
   border: 1px dotted white;
+  min-height: 300px;
+  width: 100%;
   margin: 3em 0;
 }
 
