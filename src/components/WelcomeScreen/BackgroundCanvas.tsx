@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import FallingGraphics from './FallingGraphics'
 import { useEffect, useRef, MutableRefObject } from 'react'
+import {useAppSelector} from '../../app/hooks'
+import {getGlobalStyle} from '../../slices/GlobalStyleSlice'
 
 const Canvas = styled.canvas`
   position: fixed;
@@ -14,6 +16,7 @@ interface Props {
 
 
 const BackgroundCanvas: React.FC<Props> = ({ matrixRef }) => {
+  const { mainGraphicsColor } = useAppSelector(getGlobalStyle)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
 
@@ -24,7 +27,7 @@ useEffect(() => {
       let ctx = canvasCtxRef.current
       let canvas = canvasRef.current
       if(!ctx || !canvas) return
-      ctx.fillStyle = graphics.background
+      ctx.fillStyle = mainGraphicsColor
       ctx.fillRect(0, 0, canvas.width, canvas.height)
       for(let element of graphics.columns){
         let sign = element.generateChar()
@@ -58,7 +61,7 @@ useEffect(() => {
       window.removeEventListener('resize', resizeCanvas)
       clearInterval(interval)
     }
-  }, [])
+  }, [matrixRef, mainGraphicsColor])
   return <Canvas ref={canvasRef} />
 }
 

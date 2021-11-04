@@ -4,8 +4,9 @@ import type { RootState } from '../app/store'
 
 
 const initialState: GlobalStyleInterface = {
-	mainBackgroundColor: 'hsl(120, 70%, 1%)',
-  mainContainersColor: 'hsl(0, 0%, 0%)',
+	mainBackgroundColor: 'hsl(120, 100%, 1%)',
+	mainGraphicsColor: 'hsla(120, 100%, 1%,.2)',
+  mainContainersColor: 'hsla(120, 100%, 1%,.9)',
 	mainFontColor: 'hsl(120, 100%, 50%)'
 }
 
@@ -13,18 +14,17 @@ const GlobalStyle = createSlice({
   name: 'GlobalStyle',
   initialState,
   reducers:{
-    setMainBackgroundColor: ( state, action: PayloadAction<string> ) =>{
-      state.mainBackgroundColor = action.payload
-    },
-    setMainFontColor: ( state, action: PayloadAction<number> ) =>{
-      state.mainFontColor = `hsl(${action.payload},100%,50%)`
+    setMainColor: ( state, action: PayloadAction<number> ) =>{
+      state.mainBackgroundColor = `hsl(${action.payload}, 100%, 1%)`
+      state.mainGraphicsColor = `hsla(${action.payload}, 100%, 1%,.2)`
+      state.mainFontColor = `hsl(${action.payload}, 100%, 50%)`
+      state.mainContainersColor = `hsla(${action.payload}, 100%, 1%,.9)`
     }
   }
 })
 
 export const { 
-  setMainFontColor,
-  setMainBackgroundColor
+  setMainColor,
 } = GlobalStyle.actions
 
 export const getGlobalStyle = (state: RootState) => state.GlobalStyle

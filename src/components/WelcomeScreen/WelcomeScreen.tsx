@@ -2,9 +2,11 @@ import BackgroundCanvas from './BackgroundCanvas'
 import styled from 'styled-components'
 import FallingGraphics from './FallingGraphics'
 import avatar from '../../imgs/author.jpg'
+import NeoButton from '../../styled/NeonButton'
 import { useRef } from 'react'
+import { PORTFOLIO } from '../../constatns'
 import {useDispatch} from 'react-redux'
-import {setMainFontColor} from '../../slices/GlobalStyleSlice'
+import {setMainColor} from '../../slices/GlobalStyleSlice'
 
 
 const Container = styled.div`
@@ -15,12 +17,11 @@ const Container = styled.div`
   max-width: 900px;
   height: 50%;
   max-height: 500px;
-  margin: auto;
+  margin: 200px auto;
   div{
     padding: 2em;
     border-radius: 10px;
     background: var(--main-containers-color);
-    opacity: .95;
     h1{
       margin: 1em 0;
     }
@@ -42,7 +43,7 @@ const WelcomeScreen = () => {
   const handleClick = () => {
     const color = Math.floor(Math.random()* 360)
     matrixRef.current.setColor(color)
-    dispatch(setMainFontColor(color))
+    dispatch(setMainColor(color))
 
   }
 
@@ -52,7 +53,11 @@ const WelcomeScreen = () => {
     <div>
       <h1>SelfTaught</h1>
       <h4>About</h4>
-      <button onClick={handleClick}> Check It Out</button>
+      <button onClick={handleClick}>Color Change</button>
+      <NeoButton 
+      to={PORTFOLIO}
+      >Portfolio
+      </NeoButton>
     </div>
       <img src={avatar}
       alt="author" />

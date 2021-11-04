@@ -6,9 +6,10 @@ const GlobalStyle = createGlobalStyle<GlobalStyleInterface>`
 	--main-background-color: ${ props => props.mainBackgroundColor };
 	--main-containers-color: ${ props => props.mainContainersColor };
 	--main-font-color: ${ props => props.mainFontColor };
+	--main-font-family: 'Cinzel';
 }
 body {
-	font-family: 'Cinzel', cursive;
+	font-family: var(--main-fontfamily), cursive;
 	background: var(--main-background-color);
 	color: var(--main-font-color);
 }
@@ -16,7 +17,7 @@ body {
   box-sizing: border-box;
 	padding:0;
 	margin: 0;
-	transition: color .4s;
+	transition: color .1s;
 }
 #root {
 	position: relative;
