@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
+import GlobalStyleReducer from '../slices/GlobalStyleSlice'
 
 export const store = configureStore({
   reducer: {
+    GlobalStyle: GlobalStyleReducer
   },
 });
 
