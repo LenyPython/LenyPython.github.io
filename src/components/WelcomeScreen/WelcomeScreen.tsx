@@ -1,77 +1,62 @@
+import BackgroundCanvas from './BackgroundCanvas'
 import styled from 'styled-components'
 import FallingGraphics from './FallingGraphics'
-import { useEffect, useRef } from 'react'
+import avatar from '../../imgs/author.jpg'
+import { useRef } from 'react'
+import {useDispatch} from 'react-redux'
+import {setMainFontColor} from '../../slices/GlobalStyleSlice'
 
-const Canvas = styled.canvas`
-  position: fixed;
-  inset: 0 0;
-  background: var(--main-background-color);
-  z-index: -999;
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3em;
+  width: 80%;
+  max-width: 900px;
+  height: 50%;
+  max-height: 500px;
+  margin: auto;
+  div{
+    padding: 2em;
+    border-radius: 10px;
+    background: var(--main-containers-color);
+    opacity: .95;
+    h1{
+      margin: 1em 0;
+    }
+    h4{
+      margin-bottom: 9em;
+    }
+  }
+  img {
+    width: 100%;
+    clip-path: polygon(43% 4%, 88% 0, 99% 63%, 66% 84%, 18% 78%, 0 39%);
+  }
 `
 
 const WelcomeScreen = () => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null)
-  const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
   const matrixRef = useRef<FallingGraphics>(new FallingGraphics())
+  const dispatch = useDispatch()
 
 
-useEffect(() => {
-  let graphics = matrixRef.current
-  let canvas = canvasRef.current
-  const animate = () => {
-      let ctx = canvasCtxRef.current
-      let canvas = canvasRef.current
-      if(!ctx || !canvas) return
-      ctx.fillStyle = graphics.background
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
-      for(let element of graphics.columns){
-        let sign = element.generateSign()
-        ctx.fillStyle = graphics.signColor
-        ctx.font = element.size + 'px Arial'
-        ctx.fillText(sign, element.x, element.y)
-        element.y += element.size
-        if(element.y > window.innerHeight){
-          element.y = 0
-          element.x = element.generateRandomX()
-          element.generateSize(graphics.maxSize)
-        }
-      }
-  }
-  const resizeCanvas = () => {
-    let canvas = canvasRef.current
-    if(canvas){
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-      graphics.changeOnResize()
-    }
-  }
-    if(canvas){
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-      window.addEventListener('resize',resizeCanvas)
-      canvasCtxRef.current = canvas.getContext('2d')
-    }
-    const interval = setInterval(animate, 35)
-    return  () => {
-      window.removeEventListener('resize', resizeCanvas)
-      clearInterval(interval)
-    }
-  }, [])
   const handleClick = () => {
-    matrixRef.current.setColor(Math.floor(Math.random()* 360))
+    const color = Math.floor(Math.random()* 360)
+    matrixRef.current.setColor(color)
+    dispatch(setMainFontColor(color))
+
   }
+
   return <>
-    <Canvas ref={canvasRef} />
+    <BackgroundCanvas matrixRef={matrixRef} />
+    <Container>
     <div>
-    <div>
-      <h2>SelfTaught</h2>
+      <h1>SelfTaught</h1>
       <h4>About</h4>
+      <button onClick={handleClick}> Check It Out</button>
     </div>
-      <img src=""
-        width='300px'
+      <img src={avatar}
       alt="author" />
-    <button onClick={handleClick}> Check It Out</button>
-    </div>
+    </Container>
   </>
 }
 
