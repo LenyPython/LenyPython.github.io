@@ -10,7 +10,7 @@ const Canvas = styled.canvas`
   background: var(--main-background-color);
   z-index: -999;
 `
-interface Props {
+export interface Props {
   matrixRef: MutableRefObject<FallingGraphics>
 }
 

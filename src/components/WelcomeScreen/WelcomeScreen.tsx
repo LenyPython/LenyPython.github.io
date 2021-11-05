@@ -2,11 +2,9 @@ import BackgroundCanvas from './BackgroundCanvas'
 import styled from 'styled-components'
 import FallingGraphics from './FallingGraphics'
 import avatar from '../../imgs/author.jpg'
-import NeoButton from '../../styled/NeonButton'
+import ThemeChanger from './ThemeChanger'
+import NavButtons from './NavButtons'
 import { useRef } from 'react'
-import { PORTFOLIO } from '../../constatns'
-import {useDispatch} from 'react-redux'
-import {setMainColor} from '../../slices/GlobalStyleSlice'
 
 
 const Container = styled.div`
@@ -60,26 +58,15 @@ const Container = styled.div`
 
 const WelcomeScreen = () => {
   const matrixRef = useRef<FallingGraphics>(new FallingGraphics())
-  const dispatch = useDispatch()
-
-
-  const handleClick = () => {
-    const color = Math.floor(Math.random()* 360)
-    matrixRef.current.setColor(color)
-    dispatch(setMainColor(color))
-  }
 
   return <>
     <BackgroundCanvas matrixRef={matrixRef} />
+    <ThemeChanger matrixRef={matrixRef} />
     <Container>
     <div>
       <h1>SelfTaught</h1>
       <h4>About</h4>
-      <button onClick={handleClick}>Color Change</button>
-      <NeoButton 
-      to={PORTFOLIO}
-      >Portfolio
-      </NeoButton>
+    <NavButtons />
     </div>
       <img src={avatar}
         className='avatar'
