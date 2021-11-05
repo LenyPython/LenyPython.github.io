@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle<GlobalStyleInterface>`
 	--main-containers-color: ${ props => props.mainContainersColor };
 	--main-font-color: ${ props => props.mainFontColor };
 	--main-font-family: 'Cinzel';
+	--secondary-font-family: "Special Elite",cursive;
 }
 body {
 	font-family: var(--main-fontfamily), cursive;

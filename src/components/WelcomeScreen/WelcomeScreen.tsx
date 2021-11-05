@@ -10,19 +10,42 @@ import {setMainColor} from '../../slices/GlobalStyleSlice'
 
 
 const Container = styled.div`
+  --transZ: 50px;
   display: grid;
   grid-template-columns: 1fr 300px;
   gap: 3em;
   width: 80%;
-  max-width: 900px;
-  height: 50%;
-  max-height: 500px;
-  margin: 200px auto;
+  max-width: 1000px;
+  height: 70%;
+  max-height: 700px;
+  margin: auto;
+  padding: 5em;
+  border-radius: 10px;
+  background: var(--main-containers-color);
+  &, & > *{
+  transition: all ease .6s;
+  transform-style: preserve-3d;
+  }
+  &:hover {
+    transform: perspective(var(--pers, 1100px)) 
+    rotateX(var(--rotX, 15deg))
+    rotateY(var(--rotY, 15deg))
+    translateY(var(--transY, -40px))
+    translateZ(var(--transZ, 50px));
+    * {
+      transform: translateZ(calc(var(--transZ) + 20px));
+    }
+  }
+  &:hover {
+    box-shadow: 0 0 5px var(--main-containers-color),
+        0 0 10px var(--main-containers-color),
+        0 0 15px var(--main-containers-color),
+        0 0 60px -10px var(--main-font-color);
+  }
   div{
-    padding: 2em;
-    border-radius: 10px;
-    background: var(--main-containers-color);
     h1{
+      font-family: var(--secondary-font-family);
+      font-size: 3rem;
       margin: 1em 0;
     }
     h4{
@@ -44,7 +67,6 @@ const WelcomeScreen = () => {
     const color = Math.floor(Math.random()* 360)
     matrixRef.current.setColor(color)
     dispatch(setMainColor(color))
-
   }
 
   return <>
@@ -60,6 +82,7 @@ const WelcomeScreen = () => {
       </NeoButton>
     </div>
       <img src={avatar}
+        className='avatar'
       alt="author" />
     </Container>
   </>
