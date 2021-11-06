@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import NeoButton from '../../styled/NeonButton'
 import CheckButton from '../../styled/CheckButton'
+import { ReactComponent as GetEmail } from '../../imgs/get_email.svg'
 import { PORTFOLIO } from '../../constatns'
 
 const Container = styled.div`
@@ -14,8 +15,10 @@ const NavButtons = () => {
       to={PORTFOLIO}
       >Portfolio
       </NeoButton>
-    <CheckButton>
-      get email
+    <CheckButton
+    confirm='email copied!'
+    >
+      <GetEmail />
     </CheckButton>
 
     </Container>
