@@ -6,7 +6,7 @@ import type { RootState } from '../app/store'
 const initialState: GlobalStyleInterface = {
 	mainBackgroundColor: 'hsl(120, 100%, 1%)',
 	mainGraphicsColor: 'hsla(120, 100%, 1%,.2)',
-  mainContainersColor: 'hsla(120, 100%, 1%,.9)',
+  mainContainersColor: 'hsla(120, 100%, 2%,.9)',
 	mainFontColor: 'hsl(120, 100%, 50%)'
 }
 
@@ -18,7 +18,7 @@ const GlobalStyle = createSlice({
       state.mainBackgroundColor = `hsl(${action.payload}, 100%, 1%)`
       state.mainGraphicsColor = `hsla(${action.payload}, 100%, 1%,.2)`
       state.mainFontColor = `hsl(${action.payload}, 100%, 50%)`
-      state.mainContainersColor = `hsla(${action.payload}, 100%, 1%,.9)`
+      state.mainContainersColor = `hsla(${action.payload}, 100%, 2%,.9)`
     }
   }
 })

@@ -4,7 +4,8 @@ import FallingGraphics from './FallingGraphics'
 import avatar from '../../imgs/author.jpg'
 import ThemeChanger from './ThemeChanger'
 import NavButtons from './NavButtons'
-import { useRef } from 'react'
+import { ReactComponent as CloseBtn } from '../../imgs/close.svg'
+import { useRef, useState } from 'react'
 
 
 const Container = styled.div`
@@ -19,16 +20,29 @@ const Container = styled.div`
   padding: 5em;
   border-radius: 10px;
   background: var(--main-containers-color);
-  animation: rotate-3d 15s infinite linear;
+  --duration-delay: 2s;
+  animation: scale-out var(--duration-delay) linear,
+             rotate-3d 8s infinite linear var(--duration-delay);
+  @keyframes scale-out {
+   100% {
+    transform: perspective(var(--pers, 1100px)) 
+              scale(30%)
+              rotateY(-180deg)
+              rotateX(1920deg);
+       }
+   }
+
   @keyframes rotate-3d {
     0%{
     transform: perspective(var(--pers, 1100px)) 
-              rotateY(-80deg)
+              scale(30%)
+              rotateY(-180deg)
               rotateX(60deg);
        }
     100%{
       transform: perspective(var(--pers, 1100px)) 
-              rotateY(280deg)
+              scale(30%)
+              rotateY(180deg)
               rotateX(60deg);
     }
   }
@@ -36,34 +50,30 @@ const Container = styled.div`
     transform: translateZ(30px);
   }
   &, & > *{
-  transition: all ease 1s;
   transform-style: preserve-3d;
   }
   &:hover {
-    animation: reset 1s linear;
     box-shadow: 0 0 5px var(--main-containers-color),
         0 0 10px var(--main-containers-color),
         0 0 15px var(--main-containers-color),
         0 0 60px -10px var(--main-font-color);
-    transform:rotateX(var(--rotX, 0deg))
-              rotateY(var(--rotY, 0deg))
-    translateZ(var(--transZ, 0px));
-    * {
-      transform: unset;
-    }
+  }
+  &.active {
+    animation: reset var(--duration-delay) linear;
     @keyframes reset {
+      0% {
+        transform: scale(30%);
+      }
       100% {
-    transform:rotateX(var(--rotX, 0deg))
-              rotateY(var(--rotY, 0deg))
-    translateZ(var(--transZ, 0px));
-
+    transform: scale(100%)
+            rotateY(360deg)
+            rotateX(720deg);
       }
     }
   }
   div{
     h1 ,h4 {
       padding .3em;
-      background: var(--main-background-color);
     }
     h1{
       font-family: var(--secondary-font-family);
@@ -82,11 +92,17 @@ const Container = styled.div`
 
 const WelcomeScreen = () => {
   const matrixRef = useRef<FallingGraphics>(new FallingGraphics())
+  const [isActive, setIsActive] = useState<boolean>(false)
+  const handleOpen = () => !isActive&&setIsActive(true)
+  const handleClose = () => setIsActive(false)
 
   return <>
     <BackgroundCanvas matrixRef={matrixRef} />
     <ThemeChanger matrixRef={matrixRef} />
-    <Container>
+    <Container
+      className={isActive?'active':''}
+      onClick={handleOpen}
+    >
     <div>
       <h1>SelfTaught</h1>
       <h4>About</h4>
@@ -95,6 +111,19 @@ const WelcomeScreen = () => {
       <img src={avatar}
         className='avatar'
       alt="author" />
+      <CloseBtn 
+        onClick={handleClose}
+        style={{
+        position: 'absolute',
+        top: '25px',
+        right: '25px',
+        width: '24px',
+        height: '24px',
+        color:'var(--main-font-color)',
+        cursor: 'pointer',
+        zIndex: 10
+        }}
+      />
     </Container>
   </>
 }

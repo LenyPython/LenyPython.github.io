@@ -6,7 +6,7 @@ import { PORTFOLIO } from '../../constatns'
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 `
 
 const NavButtons = () => {
