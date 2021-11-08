@@ -17,8 +17,17 @@ const Button = styled.button`
   padding: 1em 2em;
   border: none;
   border-radius: 40%;
-  animation: blink 2s alternate ease infinite;
-  animation: blink 2s alternate ease infinite;
+  --delay: 2s;
+  animation: appear var(--delay) ease-in,
+            blink 2s alternate ease infinite;
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+            }
   @keyframes blink{
     0%{
     box-shadow: 0 0 10px var(--main-font-color),
