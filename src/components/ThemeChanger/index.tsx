@@ -1,8 +1,9 @@
 import styled from 'styled-components'
-import { MutableRefObject } from 'react'
+import FallingGraphics from '../WelcomeScreen/FallingGraphics'
+import Controls from './Controls'
+import { MutableRefObject, useState } from 'react'
 import {useDispatch} from 'react-redux'
 import {setHue} from '../../slices/GlobalStyleSlice'
-import FallingGraphics from '../WelcomeScreen/FallingGraphics'
 
 const ThemeChanger = styled.div`
   position: absolute;
@@ -18,6 +19,7 @@ const ThemeChanger = styled.div`
   padding: 1em 2em;
   border: none;
   border-radius: 40%;
+  transition: all .7s;
   --delay: 2s;
   animation: appear var(--delay) ease-in,
             blink 2s alternate ease infinite;
@@ -42,23 +44,27 @@ const ThemeChanger = styled.div`
       0 0 35px var(--main-font-color),
       0 0 75px var(--main-font-color);
     }
-  };
-`
-interface Props {
-  matrixRef: MutableRefObject<FallingGraphics>
-}
-
-const ChangeTheme: React.FC<Props> = ({ matrixRef }) => {
-  const dispatch = useDispatch()
-
-
-  const handleClick = () => {
-    const color = Math.floor(Math.random()* 360)
-    matrixRef.current.setColor(color)
-    dispatch(setHue(color))
   }
+  &.open {
+    min-width: 250px;
+    min-height 350px;
+    background: var(--main-containers-color);
+    border-radius: 10px;
+    z-index: 9999;
+  }
+`
 
-  return <ThemeChanger onClick={handleClick} >theme</ThemeChanger>
+const ChangeTheme = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleClick = () => !isOpen&&setIsOpen(true)
+
+  return <ThemeChanger
+    className={isOpen?'open':''}
+    onClick={handleClick}
+    >
+    {isOpen&&<Controls setIsOpen={setIsOpen}/>}
+    </ThemeChanger>
 }
 
 export default ChangeTheme
