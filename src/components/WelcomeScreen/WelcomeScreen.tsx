@@ -6,6 +6,9 @@ import ThemeChanger from '../ThemeChanger'
 import NavButtons from './NavButtons'
 import { ReactComponent as CloseBtn } from '../../imgs/close.svg'
 import { useRef, useState } from 'react'
+import {getHomeCardClass, setHomeCardClass} from '../../slices/ComponentSlice'
+import {useDispatch} from 'react-redux'
+import {useAppSelector} from '../../app/hooks'
 
 
 const Container = styled.div`
@@ -75,6 +78,24 @@ const Container = styled.div`
       }
     }
   }
+  &.page-animation {
+    animation: page-transition 2s cubic-bezier(.55,.06,.68,.19)  forwards;
+    * {
+      transform: unset;
+    }
+    @keyframes page-transition {
+      10% {
+    transform: perspective(var(--pers, 1100px)) 
+              rotateY(-80deg)
+              scale(100%);
+      }
+      100% {
+    transform: perspective(var(--pers, 1100px))
+              rotateY(-80deg)
+              scale(1%);
+      }
+    }
+  }
   div{
     h1 ,h4 {
       padding .3em;
@@ -96,15 +117,16 @@ const Container = styled.div`
 
 const WelcomeScreen = () => {
   const matrixRef = useRef<FallingGraphics>(new FallingGraphics())
-  const [isActive, setIsActive] = useState<boolean>(false)
-  const handleOpen = () => !isActive&&setIsActive(true)
-  const handleClose = () => setIsActive(false)
+  const dispatch = useDispatch()
+  const cardClass = useAppSelector(getHomeCardClass)
+  const handleOpen = () => !cardClass&&dispatch(setHomeCardClass('active'))
+  const handleClose = () => dispatch(setHomeCardClass(''))
 
   return <>
     <BackgroundCanvas matrixRef={matrixRef} />
     <ThemeChanger matrixRef={matrixRef} />
     <Container
-      className={isActive?'active':''}
+      className={cardClass}
       onClick={handleOpen}
     >
     <div>
