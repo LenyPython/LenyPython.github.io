@@ -1,17 +1,18 @@
 import styled from 'styled-components'
-import { Link  }from 'react-router-dom'
+import { useNavigate  }from 'react-router-dom'
 
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.button`
 	--width: 10em;
 	--height: 2.2em;
 	--border-stroke: -.2em;
 	display: block;
 	position: relative;
+	border: none;
 	width: var(--width);
 	height: var(--height);
-	background: var(--main-background-color);
-	color: var(--main-font-color);
+	background: var(--main-font-color);
+	color: var(--main-background-color);
 	text-transform: uppercase;
 	text-align: center;
 	text-decoration: none;
@@ -20,11 +21,14 @@ const StyledLink = styled(Link)`
 	font-weight: bold;
 	font-family:  var(--main-font-family);
 	letter-spacing: 4px;
+	box-shadow: 0 0 10px var(--main-font-color),
+	0 0 40px var(--main-font-color),
+	0 0 80px var(--main-font-color);
 	&:hover{
-		box-shadow: 0 0 10px var(--main-font-color),
-		0 0 40px var(--main-font-color),
-		0 0 80px var(--main-font-color);
-		transition: .6s .5s;
+		box-shadow: 0 0 10px var(--main-background-color),
+		0 0 40px var(--main-background-color),
+		0 0 80px var(--main-background-color);
+		transition: .6s;
 	}
 	&:before,
 	&:after,
@@ -65,15 +69,24 @@ const StyledLink = styled(Link)`
 
 `
 interface Props {
-	to: string
 	children: string
+	to?: string
 }
 const Button: React.FC<Props> = ({to, children }) => {
+	const navigate = useNavigate()
+	const handleClick = () => {
+			if(to) {
+					navigate(to)
+			}
+	}
+		
 	return(
-		<StyledLink to={to}>
+		<StyledLink 
+			onClick={handleClick}
+		>
 			<span>
-		{children}
 			</span>
+		{children}
 		</StyledLink>
 	)
 }
