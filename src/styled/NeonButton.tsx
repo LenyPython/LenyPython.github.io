@@ -70,14 +70,14 @@ const StyledLink = styled.button`
 `
 interface Props {
 	children: string
+	onClick?: ()=>void
 	to?: string
 }
-const Button: React.FC<Props> = ({to, children }) => {
+const Button: React.FC<Props> = ({onClick, to, children }) => {
 	const navigate = useNavigate()
 	const handleClick = () => {
-			if(to) {
-					navigate(to)
-			}
+			if(onClick){ onClick() }
+			if(to) { navigate(to)	}
 	}
 		
 	return(

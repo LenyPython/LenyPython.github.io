@@ -3,6 +3,9 @@ import NeoButton from '../../styled/NeonButton'
 import CheckButton from '../../styled/CheckButton'
 import { ReactComponent as GetEmail } from '../../imgs/get_email.svg'
 import { PORTFOLIO } from '../../constatns'
+import {useAppDispatch} from '../../app/hooks'
+import {setHomeCardClass} from '../../slices/ComponentSlice'
+import {useNavigate} from 'react-router-dom'
 
 const Container = styled.div`
   display: flex;
@@ -10,9 +13,18 @@ const Container = styled.div`
 `
 
 const NavButtons = () => {
+  const navigate = useNavigate()
+  const dispatch = useAppDispatch()
+  const handleAnimationChange = () => {
+    dispatch(setHomeCardClass('page-animation'))
+    setTimeout(()=>{
+      dispatch(setHomeCardClass(''))
+      navigate(PORTFOLIO)
+    }, 5000)
+  }
   return <Container>
       <NeoButton 
-      to={PORTFOLIO}
+      onClick={handleAnimationChange}
       >Portfolio
       </NeoButton>
     <CheckButton
