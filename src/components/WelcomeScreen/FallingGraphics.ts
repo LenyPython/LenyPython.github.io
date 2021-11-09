@@ -1,8 +1,9 @@
+import {GlobalStyleInterface} from "../../types/Interfaces"
+
 class FallingSign{
 	x: number
 	y: number 
 	size: number
-	brightness: number
 	color: string
 	graphics: FallingGraphics
 
@@ -11,8 +12,7 @@ class FallingSign{
 		this.x = this.generateRandomX()
 		this.y = -Math.floor(Math.random() * window.innerHeight)
 		this.size = Math.floor(Math.random()*this.graphics.maxSize)
-		this.brightness = 50
-		this.color = `hsl(${this.graphics.hue}, 100%, ${this.brightness}%)`
+		this.color = `hsl(${this.graphics.attributes.hue}, ${this.graphics.attributes.saturation}%, ${this.graphics.attributes.light}%)`
 	}
 
 	generateRandomX() {
@@ -26,10 +26,10 @@ class FallingSign{
 
 	generateSignValues(){
 		this.size = Math.floor(Math.random()*this.graphics.maxSize + 10)
-		this.brightness = this.size > 12 ?
+		let light = this.size > 12 ?
 			this.graphics.maxSize + this.size + 13:
 			this.graphics.maxSize + this.size - 10
-		this.color = `hsl(${this.graphics.hue}, 100%, ${this.brightness}%)`
+		this.color = `hsl(${this.graphics.attributes.hue}, ${this.graphics.attributes.saturation}%, ${light}%)`
 	}
 }
 
@@ -38,17 +38,20 @@ class FallingGraphics{
 		columnsNo: number
 		accumulation: number
 		maxSize: number
-		hue: number
-	constructor(hue: number){
-		this.hue = hue
+		fill: string
+		attributes: GlobalStyleInterface
+	constructor(attr: GlobalStyleInterface){
+		this.attributes = attr
+		this.fill = `hsla(${attr.hue},${attr.saturation}%,${attr.backgroundLight}%,${attr.graphicsOpacity})`
 		this.columns = []
 		this.maxSize = 24
 		this.columnsNo = 10
 		this.accumulation = 0.5
 		this.populateCols()
 	}
-	setColor(hue: number){
-		this.hue = hue
+	setColor(attr: GlobalStyleInterface){
+		this.attributes = attr
+		this.fill = `hsla(${attr.hue},${attr.saturation}%,${attr.backgroundLight}%,${attr.graphicsOpacity})`
 	}
 	changeOnResize() {
 		this.columnsNo = window.innerWidth / 60
