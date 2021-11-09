@@ -27,8 +27,8 @@ class FallingSign{
 	generateSignValues(){
 		this.size = Math.floor(Math.random()*this.graphics.maxSize + 10)
 		let light = this.size > 12 ?
-			this.graphics.maxSize + this.size + 13:
-			this.graphics.maxSize + this.size - 10
+			this.graphics.attributes.light - this.size:
+			this.graphics.attributes.light - this.size*2
 		this.color = `hsl(${this.graphics.attributes.hue}, ${this.graphics.attributes.saturation}%, ${light}%)`
 	}
 }
@@ -42,7 +42,7 @@ class FallingGraphics{
 		attributes: GlobalStyleInterface
 	constructor(attr: GlobalStyleInterface){
 		this.attributes = attr
-		this.fill = `hsla(${attr.hue},${attr.saturation}%,${attr.backgroundLight}%,${attr.graphicsOpacity})`
+		this.fill = `hsla(${attr.hue},${attr.saturation}%,${attr.graphicsLight}%,${attr.graphicsOpacity})`
 		this.columns = []
 		this.maxSize = 24
 		this.columnsNo = 10
@@ -51,7 +51,7 @@ class FallingGraphics{
 	}
 	setColor(attr: GlobalStyleInterface){
 		this.attributes = attr
-		this.fill = `hsla(${attr.hue},${attr.saturation}%,${attr.backgroundLight}%,${attr.graphicsOpacity})`
+		this.fill = `hsla(${attr.hue},${attr.saturation}%,${attr.graphicsLight}%,${attr.graphicsOpacity})`
 	}
 	changeOnResize() {
 		this.columnsNo = window.innerWidth / 60

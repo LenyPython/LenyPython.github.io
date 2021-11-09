@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {Dispatch, SetStateAction} from 'react'
 import {useAppDispatch, useAppSelector} from '../../app/hooks'
-import {getGlobalStyle, setHue} from '../../slices/GlobalStyleSlice'
+import {getGlobalStyle, setDarkTheme, setHue, setLightTheme} from '../../slices/GlobalStyleSlice'
 
 const Container = styled.div`
   display: flex;
@@ -20,6 +20,8 @@ const Controls: React.FC<Props> = ({ setIsOpen }) => {
   }
   return(
     <Container>
+      <button onClick={()=>dispatch(setLightTheme())}>light</button>
+      <button onClick={()=>dispatch(setDarkTheme())}>dark</button>
       <input 
       type="range"
       min={0}

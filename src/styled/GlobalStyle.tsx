@@ -3,14 +3,14 @@ import { GlobalStyleInterface } from '../types/Interfaces'
 
 const GlobalStyle = createGlobalStyle<GlobalStyleInterface>`
 :root {
-	--main-background-color: ${ ({hue, saturation, backgroundLight}) => {
-		return `hsl(${hue},${saturation}%,${backgroundLight}%)`
+	--main-background-color: ${ ({hue, saturation, graphicsLight}) => {
+		return `hsl(${hue},${saturation}%,${graphicsLight}%)`
 	} };
 	--main-containers-color: ${ ({hue, saturation, containerOpacity, containerLight}) => {
 		return `hsla(${hue},${saturation}%,${containerLight}%,${containerOpacity})`
 	} };
 	--main-font-color: ${ ({hue, saturation, light}) => {
-		return `hsl(${hue},${saturation}%,${light}%)`
+		return `hsl(${hue},${saturation}%,${light - 24}%)`
 	} };
 	--main-font-family: 'Cinzel';
 	--secondary-font-family: "Special Elite",cursive;

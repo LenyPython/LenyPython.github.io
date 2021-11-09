@@ -1,15 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { BrightnessInterface, GlobalStyleInterface } from '../types/Interfaces'
+import { GlobalStyleInterface } from '../types/Interfaces'
 import type { RootState } from '../app/store'
 
 
 const initialState: GlobalStyleInterface = {
   hue: 120,
   saturation: 100,
-  light: 65,
+  light: 60,
   containerOpacity: 0.9,
   graphicsOpacity: 0.2,
-  backgroundLight: 1,
   graphicsLight: 1,
   containerLight: 2,
 }
@@ -21,19 +20,23 @@ const GlobalStyle = createSlice({
     setHue: (state, action: PayloadAction<number> ) =>{
       state.hue = action.payload
     },
-    setBrightness: (state, action: PayloadAction<BrightnessInterface>) => {
-      const { light, backgroundLight, graphicsLight, containerLight } = action.payload
-      state.light = light
-      state.backgroundLight = backgroundLight
-      state.graphicsLight = graphicsLight
-      state.containerLight = containerLight
-    }
+    setDarkTheme: state => {
+      state.light = 65
+      state.graphicsLight = 1
+      state.containerLight = 2
+    },
+    setLightTheme: state => {
+      state.light = 40
+      state.graphicsLight = 85
+      state.containerLight = 70
+    },
   }
 })
 
 export const { 
   setHue,
-  setBrightness
+  setLightTheme,
+  setDarkTheme
 } = GlobalStyle.actions
 
 export const getGlobalStyle = (state: RootState) => state.GlobalStyle
