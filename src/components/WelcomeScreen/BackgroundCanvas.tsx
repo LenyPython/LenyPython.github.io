@@ -14,18 +14,19 @@ const Canvas = styled.canvas`
 
 const BackgroundCanvas = () => {
   const colorStyle = useAppSelector(getGlobalStyle)
-  const matrixRef = useRef<FallingGraphics>(new FallingGraphics(colorStyle.hue))
+  const matrixRef = useRef<FallingGraphics>(new FallingGraphics(colorStyle))
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
 
 useEffect(() => {
   let graphics = matrixRef.current
+  graphics.setColor(colorStyle)
   let canvas = canvasRef.current
   const animate = () => {
       let ctx = canvasCtxRef.current
       let canvas = canvasRef.current
       if(!ctx || !canvas) return
-      ctx.fillStyle = `hsla(${colorStyle.hue},${colorStyle.saturation}%,${colorStyle.backgroundLight}%,${colorStyle.graphicsOpacity})`
+      ctx.fillStyle = graphics.fill
       ctx.fillRect(0, 0, canvas.width, canvas.height)
       for(let element of graphics.columns){
         let sign = element.generateChar()
@@ -61,7 +62,7 @@ useEffect(() => {
     }
   }, [matrixRef, colorStyle])
   return <>
-    <ThemeChanger matrixRef={matrixRef} />
+    <ThemeChanger />
     <Canvas ref={canvasRef} />
   </>
 }
