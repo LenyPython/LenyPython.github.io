@@ -1,8 +1,14 @@
 import GlobalStyle from './styled/GlobalStyle'
 import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen'
+import Portfolio from './components/Portfolio'
 import {useAppSelector} from './app/hooks';
 import {getGlobalStyle} from './slices/GlobalStyleSlice';
-import { BrowserRouter } from 'react-router-dom'
+import { PORTFOLIO } from './constatns'
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom'
 
 
 
@@ -10,7 +16,11 @@ function App() {
   const styleState = useAppSelector(getGlobalStyle)
   return <BrowserRouter>
     <GlobalStyle {...styleState} />
-    <WelcomeScreen />
+    <Routes>
+      <Route index element={<WelcomeScreen />} />
+      <Route path={PORTFOLIO} element={<Portfolio />} />
+    
+      </Routes>
     </BrowserRouter>
 }
 

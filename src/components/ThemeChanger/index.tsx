@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Props } from './BackgroundCanvas'
+import { Props } from '../WelcomeScreen/BackgroundCanvas'
 import {useDispatch} from 'react-redux'
 import {setMainColor} from '../../slices/GlobalStyleSlice'
 
