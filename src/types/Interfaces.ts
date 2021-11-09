@@ -5,3 +5,7 @@ export interface GlobalStyleInterface {
 	mainContainersColor: string
 	mainFontColor: string
 }
+
+export interface ComponentsClassesInterface {
+	HomeCardClass: string
+}
