@@ -1,9 +1,13 @@
 
 export interface GlobalStyleInterface {
-	mainBackgroundColor: string
-	mainGraphicsColor: string
-	mainContainersColor: string
-	mainFontColor: string
+	hue: number
+	saturation: number
+	light: number
+	backgroundLight: number
+  containerOpacity: number
+  containerLight: number
+  graphicsOpacity: number
+  graphicsLight: number
 }
 
 export interface ComponentsClassesInterface {

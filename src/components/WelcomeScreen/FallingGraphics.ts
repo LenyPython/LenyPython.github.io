@@ -12,7 +12,7 @@ class FallingSign{
 		this.y = -Math.floor(Math.random() * window.innerHeight)
 		this.size = Math.floor(Math.random()*this.graphics.maxSize)
 		this.brightness = 50
-		this.color = `hsl(${this.graphics.signColor}, 100%, ${this.brightness}%)`
+		this.color = `hsl(${this.graphics.hue}, 100%, ${this.brightness}%)`
 	}
 
 	generateRandomX() {
@@ -29,7 +29,7 @@ class FallingSign{
 		this.brightness = this.size > 12 ?
 			this.graphics.maxSize + this.size + 13:
 			this.graphics.maxSize + this.size - 10
-		this.color = `hsl(${this.graphics.signColor}, 100%, ${this.brightness}%)`
+		this.color = `hsl(${this.graphics.hue}, 100%, ${this.brightness}%)`
 	}
 }
 
@@ -38,17 +38,17 @@ class FallingGraphics{
 		columnsNo: number
 		accumulation: number
 		maxSize: number
-		signColor: number
-	constructor(){
-		this.signColor = 120
+		hue: number
+	constructor(hue: number){
+		this.hue = hue
 		this.columns = []
 		this.maxSize = 24
 		this.columnsNo = 10
 		this.accumulation = 0.5
 		this.populateCols()
 	}
-	setColor(color: number){
-		this.signColor = color
+	setColor(hue: number){
+		this.hue = hue
 	}
 	changeOnResize() {
 		this.columnsNo = window.innerWidth / 60

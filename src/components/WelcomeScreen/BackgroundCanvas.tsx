@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import FallingGraphics from './FallingGraphics'
-import { useEffect, useRef, MutableRefObject } from 'react'
+import { useEffect, useRef } from 'react'
+import ThemeChanger from '../ThemeChanger'
 import {useAppSelector} from '../../app/hooks'
 import {getGlobalStyle} from '../../slices/GlobalStyleSlice'
 
@@ -10,13 +11,10 @@ const Canvas = styled.canvas`
   background: var(--main-background-color);
   z-index: -999;
 `
-export interface Props {
-  matrixRef: MutableRefObject<FallingGraphics>
-}
 
-
-const BackgroundCanvas: React.FC<Props> = ({ matrixRef }) => {
-  const { mainGraphicsColor } = useAppSelector(getGlobalStyle)
+const BackgroundCanvas = () => {
+  const colorStyle = useAppSelector(getGlobalStyle)
+  const matrixRef = useRef<FallingGraphics>(new FallingGraphics(colorStyle.hue))
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
 
@@ -27,7 +25,7 @@ useEffect(() => {
       let ctx = canvasCtxRef.current
       let canvas = canvasRef.current
       if(!ctx || !canvas) return
-      ctx.fillStyle = mainGraphicsColor
+      ctx.fillStyle = `hsla(${colorStyle.hue},${colorStyle.saturation}%,${colorStyle.backgroundLight}%,${colorStyle.graphicsOpacity})`
       ctx.fillRect(0, 0, canvas.width, canvas.height)
       for(let element of graphics.columns){
         let sign = element.generateChar()
@@ -61,8 +59,11 @@ useEffect(() => {
       window.removeEventListener('resize', resizeCanvas)
       clearInterval(interval)
     }
-  }, [matrixRef, mainGraphicsColor])
-  return <Canvas ref={canvasRef} />
+  }, [matrixRef, colorStyle])
+  return <>
+    <ThemeChanger matrixRef={matrixRef} />
+    <Canvas ref={canvasRef} />
+  </>
 }
 
 export default BackgroundCanvas

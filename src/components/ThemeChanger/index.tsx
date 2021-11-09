@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import { Props } from '../WelcomeScreen/BackgroundCanvas'
+import { MutableRefObject } from 'react'
 import {useDispatch} from 'react-redux'
-import {setMainColor} from '../../slices/GlobalStyleSlice'
+import {setHue} from '../../slices/GlobalStyleSlice'
+import FallingGraphics from '../WelcomeScreen/FallingGraphics'
 
-const Button = styled.button`
+const ThemeChanger = styled.div`
   position: absolute;
   top: 5%;
   left: 50%;
@@ -43,6 +44,9 @@ const Button = styled.button`
     }
   };
 `
+interface Props {
+  matrixRef: MutableRefObject<FallingGraphics>
+}
 
 const ChangeTheme: React.FC<Props> = ({ matrixRef }) => {
   const dispatch = useDispatch()
@@ -51,10 +55,10 @@ const ChangeTheme: React.FC<Props> = ({ matrixRef }) => {
   const handleClick = () => {
     const color = Math.floor(Math.random()* 360)
     matrixRef.current.setColor(color)
-    dispatch(setMainColor(color))
+    dispatch(setHue(color))
   }
 
-  return <Button onClick={handleClick} >theme</Button>
+  return <ThemeChanger onClick={handleClick} >theme</ThemeChanger>
 }
 
 export default ChangeTheme

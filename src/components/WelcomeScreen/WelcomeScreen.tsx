@@ -92,7 +92,7 @@ const Container = styled.div`
       100% {
     transform: perspective(var(--pers, 1100px))
               rotateY(-80deg)
-              scale(1%);
+              scale(0%);
       }
     }
   }
@@ -116,15 +116,13 @@ const Container = styled.div`
 `
 
 const WelcomeScreen = () => {
-  const matrixRef = useRef<FallingGraphics>(new FallingGraphics())
   const dispatch = useDispatch()
   const cardClass = useAppSelector(getHomeCardClass)
   const handleOpen = () => !cardClass&&dispatch(setHomeCardClass('active'))
   const handleClose = () => dispatch(setHomeCardClass(''))
 
   return <>
-    <BackgroundCanvas matrixRef={matrixRef} />
-    <ThemeChanger matrixRef={matrixRef} />
+    <BackgroundCanvas />
     <Container
       className={cardClass}
       onClick={handleOpen}
