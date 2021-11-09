@@ -1,13 +1,17 @@
 
-export interface GlobalStyleInterface {
+export interface GlobalStyleInterface extends BrightnessInterface {
 	hue: number
 	saturation: number
+  graphicsOpacity: number
+  containerOpacity: number
+}
+
+export interface BrightnessInterface {
 	light: number
 	backgroundLight: number
-  containerOpacity: number
   containerLight: number
-  graphicsOpacity: number
   graphicsLight: number
+
 }
 
 export interface ComponentsClassesInterface {
