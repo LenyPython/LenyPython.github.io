@@ -5,8 +5,7 @@ import { useNavigate  }from 'react-router-dom'
 const StyledLink = styled.button`
 	--width: 10em;
 	--height: 2.2em;
-	--border-stroke: -.2em;
-	display: block;
+	display: inline-block;
 	position: relative;
 	border: none;
 	width: var(--width);
