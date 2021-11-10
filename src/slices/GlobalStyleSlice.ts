@@ -27,8 +27,8 @@ const GlobalStyle = createSlice({
     },
     setLightTheme: state => {
       state.light = 40
-      state.graphicsLight = 85
-      state.containerLight = 70
+      state.graphicsLight = 80
+      state.containerLight = 60
     },
   }
 })
