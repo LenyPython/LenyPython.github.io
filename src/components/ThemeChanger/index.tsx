@@ -1,14 +1,13 @@
 import styled from 'styled-components'
-import FallingGraphics from '../WelcomeScreen/FallingGraphics'
 import Controls from './Controls'
-import { MutableRefObject, useState } from 'react'
-import {useDispatch} from 'react-redux'
-import {setHue} from '../../slices/GlobalStyleSlice'
+import { useState } from 'react'
 
 const ThemeChanger = styled.div`
   position: absolute;
   top: 5%;
   left: 50%;
+  min-width: 55px;
+  min-height:  35px;
   transform: translateX(-50%);
   background: var(--main-font-color);
   color: var(--main-background-color);
@@ -16,13 +15,12 @@ const ThemeChanger = styled.div`
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3px;
-  padding: 1em 2em;
   border: none;
-  border-radius: 40%;
-  transition: all .7s;
+  border-radius: 50%;
+  transition: all .3s;
   --delay: 2s;
   animation: appear var(--delay) ease-in,
-            blink 2s alternate ease infinite;
+            blink 1s alternate ease infinite;
   @keyframes appear {
     0% {
       opacity: 0;
@@ -46,6 +44,8 @@ const ThemeChanger = styled.div`
     }
   }
   &.open {
+    top: 3%;
+    padding: 3em;
     min-width: 250px;
     min-height 350px;
     background: var(--main-containers-color);
@@ -57,13 +57,15 @@ const ThemeChanger = styled.div`
 const ChangeTheme = () => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleClick = () => !isOpen&&setIsOpen(true)
+  const handleEnter = () => !isOpen&&setIsOpen(true)
+  const handleLeave = () => setIsOpen(false)
 
   return <ThemeChanger
     className={isOpen?'open':''}
-    onClick={handleClick}
+    onMouseEnter={handleEnter}
+    onMouseLeave={handleLeave}
     >
-    {isOpen&&<Controls setIsOpen={setIsOpen}/>}
+    {isOpen&&<Controls />}
     </ThemeChanger>
 }
 
