@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle<GlobalStyleInterface>`
 		return `hsla(${hue},${saturation}%,${containerLight}%,${containerOpacity})`
 	} };
 	--main-font-color: ${ ({hue, saturation, light}) => {
-		return `hsl(${hue},${saturation}%,${light - 24}%)`
+		return `hsl(${hue},${saturation}%,${light}%)`
 	} };
 	--main-font-family: 'Cinzel';
 	--secondary-font-family: "Special Elite",cursive;

@@ -21,14 +21,14 @@ const GlobalStyle = createSlice({
       state.hue = action.payload
     },
     setDarkTheme: state => {
-      state.light = 65
+      state.light = 41
       state.graphicsLight = 1
       state.containerLight = 2
     },
     setLightTheme: state => {
-      state.light = 40
-      state.graphicsLight = 80
-      state.containerLight = 60
+      state.light = 15
+      state.graphicsLight = 70
+      state.containerLight = 85
     },
   }
 })
