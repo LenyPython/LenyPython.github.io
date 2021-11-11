@@ -7,6 +7,7 @@ import {getGlobalStyle, setDarkTheme, setHue, setLightTheme} from '../../slices/
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content:center;
   & > * {
     margin-bottom: 1em;
   }

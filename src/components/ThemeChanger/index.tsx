@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 import Controls from './Controls'
 import { useState } from 'react'
+import ThemeButton from '../../styled/ThemeButton'
 
 const ThemeChanger = styled.div`
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   top: 5%;
   left: 50%;
   min-width: 55px;
@@ -13,9 +17,6 @@ const ThemeChanger = styled.div`
   color: var(--main-background-color);
   font-size: .6rem;
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  border: none;
   border-radius: 50%;
   transition: all .3s;
   --delay: 2s;
@@ -31,15 +32,19 @@ const ThemeChanger = styled.div`
             }
   @keyframes blink{
     0%{
-    box-shadow: 0 0 10px var(--main-font-color),
+    box-shadow: 0 0 5px var(--main-font-color),
       0 0 10px var(--main-font-color),
+      0 0 15px var(--main-font-color),
       0 0 20px var(--main-font-color),
+      0 0 30px var(--main-font-color),
       0 0 40px var(--main-font-color);
     }
     100% {
     box-shadow: 0 0 10px var(--main-font-color),
+      0 0 15px var(--main-font-color),
       0 0 20px var(--main-font-color),
       0 0 35px var(--main-font-color),
+      0 0 45px var(--main-font-color),
       0 0 75px var(--main-font-color);
     }
   }
@@ -57,15 +62,23 @@ const ThemeChanger = styled.div`
 const ChangeTheme = () => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleEnter = () => !isOpen&&setIsOpen(true)
-  const handleLeave = () => setIsOpen(false)
+  const handleOpen = () => !isOpen&&setIsOpen(true)
+  const handleClose = () => setIsOpen(false)
 
   return <ThemeChanger
     className={isOpen?'open':''}
-    onMouseEnter={handleEnter}
-    onMouseLeave={handleLeave}
+    onClick={handleOpen}
     >
     {isOpen&&<Controls />}
+    <ThemeButton 
+    onClick={handleClose}
+      style={{
+        color: 'var(--main-font-color)',
+        margin: '0 auto'
+      }}
+    >
+    close
+    </ThemeButton>
     </ThemeChanger>
 }
 
