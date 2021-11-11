@@ -10,8 +10,8 @@ const StyledLink = styled.button`
 	border: none;
 	width: var(--width);
 	height: var(--height);
-	background: var(--main-font-color);
-	color: var(--main-background-color);
+	background: var(--main-background-color);
+	color: var(--main-font-color);
 	text-transform: uppercase;
 	text-align: center;
 	text-decoration: none;
@@ -20,13 +20,15 @@ const StyledLink = styled.button`
 	font-weight: bold;
 	font-family:  var(--main-font-family);
 	letter-spacing: 4px;
-	box-shadow: 0 0 10px var(--main-font-color),
-	0 0 40px var(--main-font-color),
-	0 0 80px var(--main-font-color);
+	box-shadow: 0 0 10px var(--main-background-color),
+	0 0 40px var(--main-background-color),
+	0 0 80px var(--main-background-color);
 	&:hover{
-		box-shadow: 0 0 10px var(--main-background-color),
-		0 0 40px var(--main-background-color),
-		0 0 80px var(--main-background-color);
+		box-shadow: 0 0 10px var(--main-font-color),
+		0 0 30px var(--main-font-color),
+		0 0 40px var(--main-font-color),
+		0 0 70px var(--main-font-color),
+		0 0 90px var(--main-font-color);
 		transition: .6s;
 	}
 	&:before,
