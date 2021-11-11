@@ -5,7 +5,7 @@ const StyledInput = styled.input`
   margin: 2em auto;
   -webkit-appearance: none;
   width: 100%;
-  height: 3px;
+  height: 7px;
   border-radius: 5px;  
   background: linear-gradient(to left, hsl(360,100%,50%),
                                     hsl(300,100%,50%),

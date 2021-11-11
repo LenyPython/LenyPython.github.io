@@ -1,8 +1,10 @@
+import {CSSProperties} from 'react'
 import styled from 'styled-components'
 
 const Button = styled.button`
 	display: inline-block;
 	position: relative;
+	background: transparent;
 	border: none;
 	width: 100px;
 	height: 2.2em;
@@ -12,14 +14,12 @@ const Button = styled.button`
 	line-Height: 2.2em;
 	font-size: 1.25rem;
 	font-weight: bold;
-	font-family:  var(--main-font-family);
+	font-family: var(--main-font-family);
 	letter-spacing: 4px;
 `
 interface Props {
 	children: string
-	style?: { color: string,
-		backgroundColor: string
-	}
+	style?: CSSProperties
 	onClick?: () => void
 }
 
