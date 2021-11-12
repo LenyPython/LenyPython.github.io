@@ -19,6 +19,8 @@ function App() {
     <Routes>
       <Route index element={<WelcomeScreen />} />
       <Route path={PORTFOLIO} element={<Portfolio />} />
+
+      <Route path={'/*'} element={<h1>404 error</h1>} />
     
       </Routes>
     </BrowserRouter>
