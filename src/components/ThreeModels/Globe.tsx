@@ -1,23 +1,23 @@
+import {useTexture} from "@react-three/drei"
 import * as THREE from 'three'
-import { useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
-
+import map from '../../textures/transparent.png'
+import alphaMap from '../../textures/inv.jpg'
 
 const Globe = (props: JSX.IntrinsicElements['mesh']) => {
-  const ref = useRef<THREE.Mesh>(null!)
-  useFrame((state, delta) => {
-    ref.current.rotation.x += 0.01
+  const textures = useTexture({
+    map,
+    alphaMap
   })
   return (
-    <>
     <mesh
       {...props}
-      ref={ref}
     >
-      <sphereGeometry args={[1, 32, 32]} />
-      <meshPhysicalMaterial  />
+      <sphereGeometry args={[2, 32, 32]} />
+      <meshStandardMaterial 
+    side={THREE.DoubleSide}
+        transparent
+      {...textures} />
     </mesh>
-    </>
   )
 }
 
