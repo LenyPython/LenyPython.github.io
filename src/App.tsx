@@ -11,7 +11,6 @@ import {
 } from 'react-router-dom'
 
 
-
 function App() {
   const styleState = useAppSelector(getGlobalStyle)
   return <BrowserRouter>
