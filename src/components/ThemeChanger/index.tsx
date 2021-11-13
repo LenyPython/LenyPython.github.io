@@ -18,6 +18,7 @@ const ThemeChanger = styled.div`
   font-size: .6rem;
   font-weight: bold;
   border-radius: 50%;
+  z-index: 9999;
   transition: all .3s;
   --delay: 2s;
   animation: appear var(--delay) ease-in,
@@ -55,7 +56,6 @@ const ThemeChanger = styled.div`
     min-height 350px;
     background: var(--main-containers-color);
     border-radius: 10px;
-    z-index: 9999;
   }
 `
 
