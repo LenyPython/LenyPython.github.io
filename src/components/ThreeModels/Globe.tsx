@@ -14,9 +14,10 @@ const Globe = (props: JSX.IntrinsicElements['mesh']) => {
     >
       <sphereGeometry args={[2, 32, 32]} />
       <meshStandardMaterial 
-    side={THREE.DoubleSide}
+        side={THREE.DoubleSide}
         transparent
-      {...textures} />
+        {...textures}
+      />
     </mesh>
   )
 }
