@@ -19,6 +19,7 @@ const ThemeChanger = styled.div`
   font-weight: bold;
   border-radius: 50%;
   z-index: 9999;
+  cursor: pointer;
   transition: all .3s;
   --delay: 2s;
   animation: appear var(--delay) ease-in,
@@ -41,12 +42,11 @@ const ThemeChanger = styled.div`
       0 0 40px var(--main-font-color);
     }
     100% {
-    box-shadow: 0 0 10px var(--main-font-color),
-      0 0 15px var(--main-font-color),
-      0 0 20px var(--main-font-color),
-      0 0 35px var(--main-font-color),
+    box-shadow: 0 0 20px var(--main-font-color),
+      0 0 25px var(--main-font-color),
+      0 0 30px var(--main-font-color),
       0 0 45px var(--main-font-color),
-      0 0 75px var(--main-font-color);
+      0 0 65px var(--main-font-color);
     }
   }
   &.open {
@@ -69,7 +69,7 @@ const ChangeTheme = () => {
     className={isOpen?'open':''}
     onClick={handleOpen}
     >
-    {isOpen&&<Controls />}
+    {isOpen&&<><Controls />
     <ThemeButton 
     onClick={handleClose}
       style={{
@@ -79,6 +79,7 @@ const ChangeTheme = () => {
     >
     close
     </ThemeButton>
+    </>}
     </ThemeChanger>
 }
 
