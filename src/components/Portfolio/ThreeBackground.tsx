@@ -1,9 +1,11 @@
+import Spot from '../ThreeModels/Spot'
 import { Globe } from '../ThreeModels'
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import {useAppSelector} from '../../app/hooks'
 import {getGlobalStyle} from '../../slices/GlobalStyleSlice'
+import {Color} from 'three'
 
 
 const ThreeBackground = () => {
@@ -13,15 +15,17 @@ const ThreeBackground = () => {
 
   return <Canvas>
     <Suspense fallback={null}>
-    <OrbitControls enablePan={false} autoRotate={true} />
-    <ambientLight color={color} intensity={.4}/>
-    <pointLight position={[10,7,0]} color={'red'}
-    intensity={.4}/>
-    <pointLight position={[-10,7,0]} color={'blue'}
-    intensity={.2}/>
-    <pointLight position={[0,-7,0]} color={'yellow'}
-    intensity={.2}/>
+    <OrbitControls enablePan={false} />
+    <pointLight color={color} />
     <Globe />
+    <Spot />
+      <mesh >
+          <sphereGeometry args={[.4, 16, 16]} />
+          <meshStandardMaterial 
+            emissive={new Color(color)}
+            metalness={0.1}
+          />
+        </mesh>
       </Suspense>
   </Canvas>
 
