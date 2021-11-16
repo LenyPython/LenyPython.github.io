@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import ThemeChanger from '../ThemeChanger'
 import TopBar from '../TopBar'
 import ThreeBackground from './ThreeBackground'
+import BottomMenu from '../BottomMenu'
 
 
 const CanvasContainer = styled.div`
@@ -13,6 +14,7 @@ const Portfolio = () => {
   return <>
     <TopBar />
     <ThemeChanger />
+    <BottomMenu />
     <CanvasContainer>
     <ThreeBackground />
     </CanvasContainer>
