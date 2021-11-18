@@ -8,9 +8,7 @@ const Bar = styled.div`
   height: 3%;
   background: var(--main-containers-color);
   z-index: 1;
-  box-shadow: 0 0 5px var(--main-font-color),
-              0 0 15px var(--main-font-color),
-              0 0 20px var(--main-font-color);
+  box-shadow: var(--main-shadow);
   &::after {
     position: absolute;
     content: '';
