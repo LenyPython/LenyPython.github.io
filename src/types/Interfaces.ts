@@ -12,3 +12,10 @@ export interface GlobalStyleInterface {
 export interface ComponentsClassesInterface {
 	HomeCardClass: string
 }
+
+export interface ProjectDataInterface {
+  title: string
+  tech: string[]
+  images: string[]
+  description: string
+}
