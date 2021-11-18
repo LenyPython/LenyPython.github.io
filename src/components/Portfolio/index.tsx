@@ -2,7 +2,9 @@ import styled from 'styled-components'
 import ThemeChanger from '../ThemeChanger'
 import TopBar from '../TopBar'
 import ThreeBackground from './ThreeBackground'
-import BottomMenu from '../BottomMenu'
+import ProjectCard from '../ProjectCard'
+import projData from '../../data/ProjectsData'
+import SlideDownContainer from '../SlideDownContainer'
 
 
 const CanvasContainer = styled.div`
@@ -10,14 +12,18 @@ const CanvasContainer = styled.div`
   height: 100vh;
 `
 const Portfolio = () => {
+  const cards = projData.map( project => {
+    return <ProjectCard key={project.title+project.tech.join('')} {...project}/>
+  } )
 
   return <>
     <TopBar />
     <ThemeChanger />
-    <BottomMenu />
     <CanvasContainer>
     <ThreeBackground />
     </CanvasContainer>
+    <SlideDownContainer label='projects' pos={-100} children={cards}/>
+    <SlideDownContainer label='techs' pos={50} children='yolo'/>
   </>
 }
 
