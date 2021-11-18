@@ -17,6 +17,7 @@ const ThreeBackground = () => {
     <Suspense fallback={null}>
     <OrbitControls enablePan={false} />
     <pointLight color={color} />
+    <ambientLight color='white' />
     <Globe />
     <Spot />
       <mesh >

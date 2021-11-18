@@ -11,7 +11,7 @@ const Container= styled.div`
   background: var(--main-containers-color);
   border: 2 solid var(--main-font-color);
   border-radius: 20px 20px 0 0;
-  z-index: 1;
+  z-index: 10;
   box-shadow: 0 0 5px var(--main-font-color),
               0 0 15px var(--main-font-color);
 
