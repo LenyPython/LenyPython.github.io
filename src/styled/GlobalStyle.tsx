@@ -14,9 +14,13 @@ const GlobalStyle = createGlobalStyle<GlobalStyleInterface>`
 	} };
 	--main-font-family: 'Cinzel';
 	--secondary-font-family: "Special Elite",cursive;
+	--main-shadow: 0 0 5px var(--main-font-color),
+             0 0 15px var(--main-font-color),
+             0 0 25px var(--main-font-color);
+
 }
 body {
-	font-family: var(--main-fontfamily), cursive;
+	font-family: var(--main-font-family), cursive;
 	background: var(--main-background-color);
 	color: var(--main-font-color);
 }
