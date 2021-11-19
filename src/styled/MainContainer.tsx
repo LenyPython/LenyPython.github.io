@@ -13,7 +13,6 @@ const MainContainer = styled.div`
   border-radius: 15px;
   transition: all .4s;
   transform: translateX(-50%);
-  z-index: 100;
   box-shadow: var(--main-shadow);
   &.invisible {
     transform: translate(-50%, -125%);

@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
-
-
 const NavBtn = styled.button`
     cursor: pointer;
+    height: var(--nav-height);
     background: var(--main-containers-color);
     color: var(--main-font-color);
     font-size: 1.2rem;
