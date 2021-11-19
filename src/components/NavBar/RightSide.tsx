@@ -1,26 +1,27 @@
 import styled from 'styled-components'
+import {ReactComponent as GitHub} from '../../svg/github.svg'
+import {ReactComponent as LinkedIn} from '../../svg/linedin.svg'
 
-const Container= styled.div`
-  position: fixed;
-  bottom: 0;
-  left 65%;
-  min-width: 300px;
-  width: 70%;
-  max-width: 20%;
-  height: 275px;
-  background: var(--main-containers-color);
-  border: 2 solid var(--main-font-color);
-  z-index:10;
-  border-radius: 20px 20px 0 0;
-  box-shadow: 0 0 5px var(--main-font-color),
-              0 0 15px var(--main-font-color);
+const Container = styled.div`
+    
+    svg {
+      margin: 0 .4em;
+      height: var(--nav-height);
+      width: var(--nav-height);
+    }
 
 `
 
+
 const RightSide = () => {
   return <Container>
-
-  </Container> 
+    <a href="https://www.linkedin.com/in/piotr-lenartowicz-123488205/" target="_blank">
+    <LinkedIn />
+    </a>
+    <a href="https://github.com/LenyPython" target="_blank">
+    <GitHub />
+    </a>
+    </Container>
 }
 
 export default RightSide
