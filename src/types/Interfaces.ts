@@ -11,6 +11,9 @@ export interface GlobalStyleInterface {
 
 export interface ComponentsClassesInterface {
 	HomeCardClass: string
+  ProjectsTab: string
+  TechTab: string
+  AlgoTab: string
 }
 
 export interface ProjectDataInterface {
