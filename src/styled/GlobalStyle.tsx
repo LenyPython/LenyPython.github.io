@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle<GlobalStyleInterface>`
 	--main-shadow: 0 0 5px var(--main-font-color),
              0 0 15px var(--main-font-color),
              0 0 25px var(--main-font-color);
+	--nav-height: 2em;
 
 }
 body {
@@ -37,6 +38,18 @@ body {
 	align-items: center;
 	min-width: 100vw;
 	min-height: 100vh;
+}
+a {
+	color: var(--main-font-color);
+	&:visited{
+		color: var(--main-font-color);
+	}
+	&:active {
+		color: var(--main-font-color);
+	}
+	&:hover {
+		opacity: .7;
+	}
 }
 `
 export default GlobalStyle

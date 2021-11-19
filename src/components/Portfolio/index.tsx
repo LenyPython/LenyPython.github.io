@@ -3,6 +3,7 @@ import ThemeChanger from '../ThemeChanger'
 import TopBar from '../TopBar'
 import ThreeBackground from './ThreeBackground'
 import NavBar from '../NavBar'
+import MainPageContent from '../MainPageContent'
 
 
 const CanvasContainer = styled.div`
@@ -18,6 +19,7 @@ const Portfolio = () => {
     <ThreeBackground />
     </CanvasContainer>
     <NavBar />
+    <MainPageContent />
   </>
 }
 
