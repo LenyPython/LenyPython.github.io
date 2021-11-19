@@ -2,7 +2,7 @@ import BackgroundCanvas from './BackgroundCanvas'
 import styled from 'styled-components'
 import avatar from '../../imgs/author.jpg'
 import NavButtons from './NavButtons'
-import { ReactComponent as CloseBtn } from '../../imgs/close.svg'
+import { ReactComponent as CloseBtn } from '../../svg/close.svg'
 import {getHomeCardClass, setHomeCardClass} from '../../slices/ComponentSlice'
 import {useDispatch} from 'react-redux'
 import {useAppSelector} from '../../app/hooks'
@@ -117,6 +117,16 @@ const WelcomeScreen = () => {
   const cardClass = useAppSelector(getHomeCardClass)
   const handleOpen = () => !cardClass&&dispatch(setHomeCardClass('active'))
   const handleClose = () => dispatch(setHomeCardClass(''))
+  const sx = {
+        position: 'absolute' as 'absolute',
+        top: '25px',
+        right: '25px',
+        width: '24px',
+        height: '24px',
+        color:'var(--main-font-color)',
+        cursor: 'pointer',
+        zIndex: 10
+        }
 
   return <>
     <BackgroundCanvas />
@@ -134,16 +144,7 @@ const WelcomeScreen = () => {
       alt="author" />
       <CloseBtn 
         onClick={handleClose}
-        style={{
-        position: 'absolute',
-        top: '25px',
-        right: '25px',
-        width: '24px',
-        height: '24px',
-        color:'var(--main-font-color)',
-        cursor: 'pointer',
-        zIndex: 10
-        }}
+        style={sx}
       />
     </Container>
   </>

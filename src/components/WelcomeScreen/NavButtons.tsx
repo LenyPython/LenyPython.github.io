@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import NeoButton from '../../styled/NeonButton'
 import CheckButton from '../../styled/CheckButton'
-import { ReactComponent as GetEmail } from '../../imgs/get_email.svg'
+import { ReactComponent as GetEmail } from '../../svg/get_email.svg'
 import { PORTFOLIO } from '../../constatns'
 import {useAppDispatch} from '../../app/hooks'
 import {setHomeCardClass} from '../../slices/ComponentSlice'
