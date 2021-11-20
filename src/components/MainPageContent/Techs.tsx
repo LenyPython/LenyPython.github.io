@@ -8,14 +8,18 @@ import { ReactComponent as Firebase } from '../../svg/firebase.svg'
 import { ReactComponent as Python } from '../../svg/python.svg'
 import { ReactComponent as Pandas } from '../../svg/pandas.svg'
 import { ReactComponent as Kivy } from '../../svg/kivy.svg'
+import { ReactComponent as Css } from '../../svg/css.svg'
+import { ReactComponent as Html } from '../../svg/html.svg'
 
 const Techs = () => {
   return <>
         <h2>Currently focusing:</h2>
+        <Html />
+        <Css /> 
         <Ts />
         <ReactIco />
         <Redux />
-        <ReduxSaga />
+        <ReduxSaga /> <br />
         <Js />
         <D3 />
 
@@ -25,6 +29,8 @@ const Techs = () => {
         <Kivy />
         <br />
         <Firebase />
+        <br />
+        Three js
 
   </>
 }
