@@ -6,8 +6,8 @@ import type { RootState } from '../app/store'
 const initialState: ComponentsClassesInterface = {
   HomeCardClass: '',
   ProjectsTab: '',
-  TechTab: '',
-  AlgoTab: '',
+  TechTab: 'invisible',
+  AlgoTab: 'invisible',
 }
 
 const Components = createSlice({
