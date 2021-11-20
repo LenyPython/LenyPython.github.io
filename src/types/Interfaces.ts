@@ -21,4 +21,23 @@ export interface ProjectDataInterface {
   tech: string[]
   images: string[]
   description: string
+  code: string
+  live: string
 }
+
+interface RanksInterface{
+  name: string
+  score: number
+  lang?: string
+}
+
+export interface CWProfileInterface {
+  username: string | null
+  name: string | null
+  position: number | null
+  totalCompleted: number | null
+  overall: RanksInterface | null
+  languages: Record<string,RanksInterface> | null
+}
+
+
