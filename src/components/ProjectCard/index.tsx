@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import ImgDisplay from '../ImgDisplay'
+import {ReactComponent as GitHub} from '../../svg/github.svg'
 import { ProjectDataInterface } from '../../types/Interfaces'
 
 const Card = styled.div`
@@ -17,10 +18,19 @@ const Card = styled.div`
   }
 `
 
-const ProjectCard: React.FC<ProjectDataInterface> = ({ description, title, tech, images }) => {
+const ProjectCard: React.FC<ProjectDataInterface> = ({
+  description, title, tech, images, code, live }) => {
   return (
     <Card>
       <ImgDisplay imgs={images} />
+      <div>
+        CODE: 
+        <a href={code} target="_blank" rel="noreferrer">
+          <GitHub width='30px' height='30px' />
+        </a>
+        <br />
+        <a href={live} target="_blank" rel="noreferrer">LIVE</a>
+      </div>
       <div>
       <h2>{title}</h2>
       <h3>{tech.join(', ')}</h3>

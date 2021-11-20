@@ -15,10 +15,10 @@ const Container = styled.div`
 
 const RightSide = () => {
   return <Container>
-    <a href="https://www.linkedin.com/in/piotr-lenartowicz-123488205/" target="_blank">
+    <a href="https://www.linkedin.com/in/piotr-lenartowicz-123488205/" target="_blank" rel="noreferrer">
     <LinkedIn />
     </a>
-    <a href="https://github.com/LenyPython" target="_blank">
+    <a href="https://github.com/LenyPython" target="_blank" rel="noreferrer">
     <GitHub />
     </a>
     </Container>
