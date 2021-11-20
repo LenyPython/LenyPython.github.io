@@ -3,8 +3,8 @@ import styled from 'styled-components'
 const NavBtn = styled.button`
     cursor: pointer;
     height: var(--nav-height);
-    background: var(--main-containers-color);
-    color: var(--main-font-color);
+    background: var(--main-font-color);
+    color: var(--main-background-color);
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -12,13 +12,13 @@ const NavBtn = styled.button`
     border: none;
     border-radius: .3em;
     padding: .3em .6em;
-    box-shadow: var(--main-shadow);
     margin-right: 1em;
-    &:hover {
-      transition: all .5s;
-      background: var(--main-font-color);
-      color: var(--main-background-color);
-      box-shadow: none;
+    transform: translateY(100%);
+    transition: all .5s .3s;
+    &.invisible {
+      background: var(--main-containers-color);
+      color: var(--main-font-color);
+      transform: unset;
     }
 `
 

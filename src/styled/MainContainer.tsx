@@ -7,7 +7,8 @@ const MainContainer = styled.div`
   left: 50%;
   bottom: 1%;
   height: 84%;
-  width: 50%;
+  width: 80%;
+  max-width: 1200px;
   padding: 1em;
   background: var(--main-containers-color);
   border-radius: 15px;
