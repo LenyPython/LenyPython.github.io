@@ -31,17 +31,17 @@ const MainPageContent = () => {
   const { ProjectsTab, TechTab, AlgoTab } = useAppSelector(getPageContent)
   const sx = {
         position: 'absolute' as 'absolute',
-        top: '0',
-        right: '-50px',
+        top: '25px',
+        right: '25px',
         width: '24px',
         height: '24px',
         color:'var(--main-font-color)',
         cursor: 'pointer',
         zIndex: 1
         }
-  const cards = projData.map( project => {
-    return <ProjectCard key={project.title+project.tech.join('')} {...project}/>
-  } )
+
+
+  const cards = projData.map( project => <ProjectCard key={project.title+project.tech.join('')} {...project}/>)
   return <>
     <MainContainer className={ProjectsTab}>
       <h1>Projects:</h1>
@@ -55,14 +55,14 @@ const MainPageContent = () => {
       <Container>
         <Techs />
       </Container>
-      <CloseBtn onClick={()=>dispatch(setTechTab('invisible'))} style={{...sx, top:'25px'}} />
+      <CloseBtn onClick={()=>dispatch(setTechTab('invisible'))} style={sx} />
   </MainContainer>
     <MainContainer className={AlgoTab}>
       <h1>Algorithms and data structures:</h1>
       <Container>
         <Algo />
       </Container>
-      <CloseBtn onClick={()=>dispatch(setAlgoTab('invisible'))} style={{...sx, top:'50px'}} />
+      <CloseBtn onClick={()=>dispatch(setAlgoTab('invisible'))} style={sx} />
   </MainContainer>
   </>
 }

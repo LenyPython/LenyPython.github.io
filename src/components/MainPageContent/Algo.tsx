@@ -22,6 +22,11 @@ const Container = styled.div`
   & > div, ul {
     margin-right: 2.5em;
   }
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const Algo = () => {
   const dispatch = useAppDispatch()
@@ -45,8 +50,8 @@ const Algo = () => {
   return <>
     <Container>
     <div>
-    <h2>Code Wars Profile:</h2>
-      <a href="https://www.codewars.com/users/LenyPython/" target="_blank" rel="noreferrence">
+    <h2>CodeWars Profile:</h2>
+      <a href="https://www.codewars.com/users/LenyPython/" target="_blank" rel="noreferrer">
       <CW />
       visit profile
       </a>
@@ -70,7 +75,7 @@ const Algo = () => {
   <Container>
     <div>
     <h2>LeetCode Profile:</h2>
-      <a href="https://leetcode.com/LenyPython/" target="_blank" rel="noreferrence">
+      <a href="https://leetcode.com/LenyPython/" target="_blank" rel="noreferrer">
       <LC />
         visit profile
       </a>
@@ -82,11 +87,18 @@ const Algo = () => {
       51 medium <br />
       2 Hard <br/>
     </div>
+    <div className="flex-col">
+    <img src="https://assets.leetcode.com/static_assets/others/algorithm_I.png" 
+      width="75px" height="75px"
+        alt="Algorithm I" /><br />
+      <b>Algorithm I</b><br />
+      <span>2021-10-24</span>
+    </div>
   </Container>
   <Container>
     <div>
     <h2>Frontend Mentor Profile:</h2>
-      <a href="https://www.frontendmentor.io/profile/LenyPython" target="_blank" rel="noreferrence">
+      <a href="https://www.frontendmentor.io/profile/LenyPython" target="_blank" rel="noreferrer">
       <FEM />
         visit profile
       </a>

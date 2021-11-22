@@ -15,6 +15,7 @@ const MainContainer = styled.div`
   transition: all .4s;
   transform: translateX(-50%);
   box-shadow: var(--main-shadow);
+  overflow: hidden;
   &.invisible {
     transform: translate(-50%, -125%);
   }
