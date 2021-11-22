@@ -6,12 +6,20 @@ import { ProjectDataInterface } from '../../types/Interfaces'
 const Card = styled.div`
   display: flex;
   background: var(--main-background-color);
-  max-height: 350px;
-  padding: 1em;
+  justify-content: flex-start;
+  height: 300px;
+  padding: 2em;
+  margin-bottom: .5em;
   border-radius: 15px;
   border: 2px solid var(--main-font-color);
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: block;
+    height: 100px;
+    width: 5px;
+  }
   & > div{
-    margin: auto .5em;
+    margin: .5em;
     text-align: justify;
     display: flex;
     flex-direction: column;
@@ -29,6 +37,7 @@ const ProjectCard: React.FC<ProjectDataInterface> = ({
           <GitHub width='30px' height='30px' />
         </a>
         <br />
+        LIVE WEBSITE:
         <a href={live} target="_blank" rel="noreferrer">LIVE</a>
       </div>
       <div>
