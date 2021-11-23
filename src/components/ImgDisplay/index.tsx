@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Screener from './Screener'
 import {useState} from 'react'
 
 const Container = styled.div`
@@ -12,6 +13,7 @@ const Container = styled.div`
     max-width: 249px;
     max-height: 300px;
     transition: .4s all;
+    cursor: pointer;
   }
   button {
     margin: 0 .5em .5em;
@@ -32,14 +34,19 @@ interface Props {
 
 const ImgDisplay: React.FC<Props> = ({ imgs:{ path, no } }) => {
   const [i, setI] = useState(1)
+  const [isOpen, setIsOpen] = useState(false)
+
+
   const prevImg = () => i - 1 < 1? setI(no): setI(i - 1)
   const nextImg = () => no < i + 1? setI(1): setI(i + 1)
+
   return <Container>
     <div>
     <button onClick={prevImg}>{'<<<<'}</button>
     <button onClick={nextImg}>{'>>>>'}</button>
     </div>
-    <img src={path + i + '.png'} alt='projImg' />
+    <img src={path + i + '.png'} onClick={()=>setIsOpen(true)}alt='projImg' />
+    <Screener path={path} no={no} open={isOpen} setIsOpen={setIsOpen}/>
     </Container>
 }
 

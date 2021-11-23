@@ -82,10 +82,10 @@ const Algo = () => {
     </div>
     <div>
       Progress: <br />
-      143 problems <br />
+      145 problems <br />
       90 easy<br />
-      51 medium <br />
-      2 Hard <br/>
+      52 medium <br />
+      3 Hard <br/>
     </div>
     <div className="flex-col">
     <img src="https://assets.leetcode.com/static_assets/others/algorithm_I.png" 
