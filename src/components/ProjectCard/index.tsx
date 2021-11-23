@@ -7,12 +7,10 @@ const Card = styled.div`
   display: flex;
   background: var(--main-background-color);
   justify-content: flex-start;
-  height: 300px;
   padding: 2em;
   margin-bottom: .5em;
   border-radius: 15px;
   border: 2px solid var(--main-font-color);
-  overflow-y: auto;
   &::-webkit-scrollbar {
     display: block;
     height: 100px;

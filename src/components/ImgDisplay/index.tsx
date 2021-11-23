@@ -6,12 +6,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  height: 250px;
+  width: 200px;
   padding; .3em;
-  width: 250px;
   img {
-    max-width: 249px;
-    max-height: 300px;
+    width: 200px;
+    overflow: hidden;
     transition: .4s all;
     cursor: pointer;
   }

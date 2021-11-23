@@ -5,6 +5,20 @@ import { ReactComponent as CloseBtn } from '../../svg/close.svg'
 
 const Screen = styled.div`
   display: none;
+  img {
+    margin: .4em;
+  }
+  & > img {
+    width: unset;
+    height: unset;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  & > div > img {
+    max-width: 100px;
+    max-height: 75px;
+    cursor: pointer;
+  }
   &.open {
     display: flex;
     position: fixed;
@@ -18,6 +32,7 @@ const Screen = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 2em;
+    overflow-y: auto;
   }
 
 `
@@ -48,10 +63,10 @@ const Screener: React.FC<Props> = ({ path, no, open, setIsOpen }) => {
         }
 
   return  <Screen className={open?'open':''}>
-    <img src={path + i + '.png'} alt='projImg' />
     <div>
       {imgs}
     </div>
+    <img src={path + i + '.png'} alt='projImg' />
     <CloseBtn onClick={()=>setIsOpen(false)} style={sx} />
     </Screen>
 }

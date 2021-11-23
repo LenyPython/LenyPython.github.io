@@ -15,8 +15,8 @@ import {
 
 const Container = styled.div`
   width: 95%;
-  height: 95%;
-  margin: 20px auto 1em;
+  height: 90%;
+  margin: 20px auto;
   overflow-y: auto;
   svg {
     width: 50px;
