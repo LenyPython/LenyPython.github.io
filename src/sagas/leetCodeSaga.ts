@@ -1,5 +1,6 @@
 import { takeLeading, call, put, Effect } from 'redux-saga/effects'
 import {CWProfileInterface} from '../types/Interfaces'
+import axios from 'axios'
 
 enum LCactions {
 	GET_DATA = 'GET_DATA',
