@@ -51,5 +51,8 @@ a {
 		opacity: .7;
 	}
 }
+button, svg {
+	cursor: pointer;
+}
 `
 export default GlobalStyle

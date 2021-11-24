@@ -48,7 +48,7 @@ const Screener: React.FC<Props> = ({ path, no, open, setIsOpen }) => {
 
   const imgs: JSX.Element[] = []
   for(let i = 1; i <= no; i++){
-    imgs.push(<img src={path + i + '.png'} onClick={()=>setI(i)}alt='projImg' />)
+    imgs.push(<img key={i + path}src={path + i + '.png'} onClick={()=>setI(i)}alt='projImg' />)
   } 
 
   const sx = {

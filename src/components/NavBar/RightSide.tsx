@@ -4,7 +4,7 @@ import {ReactComponent as LinkedIn} from '../../svg/linedin.svg'
 import ContactForm from '../ContactForm'
 
 const Container = styled.div`
-    position:relative;
+    position: relative;
     svg {
       margin: 0 .4em;
       height: var(--nav-height);
