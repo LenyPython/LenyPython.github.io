@@ -1,24 +1,25 @@
-import {CSSProperties} from 'react'
 import styled from 'styled-components'
+import {CSSProperties} from 'react'
 
 const Button = styled.button`
 	display: inline-block;
 	position: relative;
 	background: transparent;
 	border: none;
-	width: 100px;
+	min-width: 100px;
 	height: 2.2em;
 	text-transform: uppercase;
 	text-align: center;
 	text-decoration: none;
-	line-Height: 2.2em;
 	font-size: 1.25rem;
 	font-weight: bold;
 	font-family: var(--main-font-family);
 	letter-spacing: 4px;
+	svg {
+		max-height: 1em;
+	}
 `
 interface Props {
-	children: string
 	style?: CSSProperties
 	onClick?: () => void
 }
