@@ -23,10 +23,10 @@ const Globe = (props: JSX.IntrinsicElements['mesh']) => {
     <mesh ref={ref}
       {...props}
     >
-      <sphereGeometry args={[2, 32, 32]} />
+      <sphereGeometry args={[2, 64, 64]} />
       <meshStandardMaterial 
         side={THREE.DoubleSide}
-        transparent
+        wireframe
         {...textures}
       />
     </mesh>
