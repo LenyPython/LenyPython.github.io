@@ -14,53 +14,23 @@ const Canvas = styled.canvas`
 
 const BackgroundCanvas = () => {
   const colorStyle = useAppSelector(getGlobalStyle)
-  const matrixRef = useRef<FallingGraphics>(new FallingGraphics(colorStyle))
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
-  const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
+  const graphicsRef = useRef<FallingGraphics>(new FallingGraphics(colorStyle))
 
 useEffect(() => {
-  let graphics = matrixRef.current
+  let graphics = graphicsRef.current
+  if(!canvasRef.current) return
+  graphics.setCanvas(canvasRef.current)
   graphics.setColor(colorStyle)
-  let canvas = canvasRef.current
-  const animate = () => {
-      let ctx = canvasCtxRef.current
-      let canvas = canvasRef.current
-      if(!ctx || !canvas) return
-      ctx.fillStyle = graphics.fill
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
-      for(let element of graphics.columns){
-        let sign = element.generateChar()
-        ctx.fillStyle = element.color
-        ctx.font = element.size + 'px Arial'
-        ctx.fillText(sign, element.x, element.y)
-        element.y += element.size
-        if(element.y > window.innerHeight){
-          element.y = 0
-          element.x = element.generateRandomX()
-          element.generateSignValues()
-        }
-      }
-  }
-  const resizeCanvas = () => {
-    let canvas = canvasRef.current
-    if(canvas){
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-      graphics.changeOnResize()
-    }
-  }
-    if(canvas){
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-      window.addEventListener('resize',resizeCanvas)
-      canvasCtxRef.current = canvas.getContext('2d')
-    }
-    const interval = setInterval(animate, 70)
+  graphics.animate()
     return  () => {
-      window.removeEventListener('resize', resizeCanvas)
-      clearInterval(interval)
+      window.removeEventListener('resize', graphics.resizeCanvas)
     }
-  }, [matrixRef, colorStyle])
+  }, [])
+  useEffect(()=>{
+  let graphics = graphicsRef.current
+  graphics.setColor(colorStyle)
+  },[colorStyle])
   return <>
     <ThemeChanger />
     <Canvas ref={canvasRef} />

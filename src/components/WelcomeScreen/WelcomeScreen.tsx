@@ -21,7 +21,7 @@ const Container = styled.div`
   border-radius: 10px;
   cursor:pointer;
   background: var(--main-containers-color);
-  --duration-delay: 2.5s;
+  --duration-delay: 1.5s;
   animation: scale-out var(--duration-delay) linear,
              rotate-3d 8s infinite linear var(--duration-delay);
   @keyframes scale-out {
