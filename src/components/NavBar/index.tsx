@@ -11,6 +11,7 @@ const Container= styled.div`
   transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
+  z-index: 100;
 `
 
 const NavBar = () => {

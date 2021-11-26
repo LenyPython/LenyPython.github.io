@@ -4,6 +4,7 @@ import { ReactComponent as CloseBtn } from '../../svg/close.svg'
 
 
 const Screen = styled.div`
+  position: relative;
   display: none;
   img {
     margin: .4em;
@@ -11,8 +12,9 @@ const Screen = styled.div`
   & > img {
     width: unset;
     height: unset;
-    max-width: 90%;
-    max-height: 90%;
+    width: 90%;
+    height: 90%;
+    object-fit: scale-down;
   }
   & > div > img {
     max-width: 100px;
