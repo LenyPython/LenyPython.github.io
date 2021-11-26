@@ -9,6 +9,7 @@ const TS = 'typescript'
 const JS = 'javascript'
 const CSS = 'css'
 const STYLED = 'styled-components'
+const API = 'API'
 const RWD = 'resposive'
 
 
@@ -34,7 +35,7 @@ const projData: ProjectDataInterface[] = [
 			path: 'img/calculator/',
 			no:  3
 		},
-		tech: [CSS, STYLED, JS, REACT, RWD],
+		tech: [CSS, JS, REACT, RWD],
 		code: 'https://github.com/LenyPython/Calculator-project',
 		live: 'https://lenypython.github.io/Calculator-project/',
 		description: `
@@ -49,7 +50,7 @@ const projData: ProjectDataInterface[] = [
 			path: 'img/shorten/',
 			no:  4
 		},
-		tech: [CSS, STYLED, JS, REACT, RWD],
+		tech: [CSS, JS, REACT, API,  RWD],
 		code: 'https://github.com/LenyPython/URL-shortening-API-landing-page',
 		live: 'https://lenypython.github.io/URL-shortening-API-landing-page/',
 		description: `
