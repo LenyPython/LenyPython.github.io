@@ -1,6 +1,5 @@
-import { takeLeading, call, put, Effect } from 'redux-saga/effects'
+import { takeLeading, call, Effect } from 'redux-saga/effects'
 import {CWProfileInterface} from '../types/Interfaces'
-import axios from 'axios'
 
 enum LCactions {
 	GET_DATA = 'GET_DATA',
@@ -17,6 +16,7 @@ export default function* leetCodeSaga() {
 function* getDataWorker():Generator<Effect,void,CWProfileInterface>{
 	try{
 	let data = yield call(scrapeCompleted)
+	
 	//yield put(saveLCData(data))
 	}
 	catch(e){
@@ -25,5 +25,5 @@ function* getDataWorker():Generator<Effect,void,CWProfileInterface>{
 }
 
 const scrapeCompleted = async () => {
-	const URL = 'https://leetcode.com/LenyPython/'
+	//const URL = 'https://leetcode.com/LenyPython/'
 }
