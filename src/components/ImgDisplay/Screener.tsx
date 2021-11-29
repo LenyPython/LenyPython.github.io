@@ -7,6 +7,7 @@ const Screen = styled.div`
   position: relative;
   display: none;
   img {
+    width: unset;
     margin: .4em;
   }
   & > img {

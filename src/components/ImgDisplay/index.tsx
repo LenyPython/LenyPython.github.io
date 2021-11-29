@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 250px;
   width: 200px;
   padding; .3em;
-  img {
+  & > img {
     width: 200px;
     overflow: hidden;
     transition: .4s all;

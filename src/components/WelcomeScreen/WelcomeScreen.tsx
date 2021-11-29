@@ -135,8 +135,12 @@ const WelcomeScreen = () => {
       onClick={handleOpen}
     >
     <div>
-      <h1>SelfTaught</h1>
-      <h4>About</h4>
+      <h1>SelfTaught SWD</h1>
+      <h4>Frontend developer interested in developing his skills, especiallly
+        in data visualization and analysis. <br />
+        Secondary 2D, 3D animation. <br />
+        Interested going fullstack in future.
+      </h4>
     <NavButtons />
     </div>
       <img src={avatar}
