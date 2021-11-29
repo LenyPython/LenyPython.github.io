@@ -7,7 +7,7 @@ const MainContainer = styled.div`
   left: 50%;
   bottom: 1%;
   height: 84%;
-  width: 80%;
+  width: 95%;
   max-width: 1200px;
   padding: 1em;
   background: var(--main-containers-color);
@@ -18,6 +18,14 @@ const MainContainer = styled.div`
   overflow: hidden;
   &.invisible {
     transform: translate(-50%, -125%);
+  }
+  @media(max-width:600px){
+    top:10%;
+    bottom: var(--nav-height);
+    h1 {
+      font-size: 24px;
+      margin-right: 50px;
+    }
   }
 `
 
