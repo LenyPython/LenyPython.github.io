@@ -22,26 +22,43 @@ const Card = styled.div`
     display: flex;
     flex-direction: column;
   }
+  @media(max-width: 900px){
+    flex-direction: column;
+    align-items: center;
+    & > div.code{
+      margin: .5em;
+      text-align: justify;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
 `
 
 const ProjectCard: React.FC<ProjectDataInterface> = ({
   description, title, tech, images, code, live }) => {
+  const techs = Array.from(tech)
   return (
     <Card>
-      <ImgDisplay imgs={images} />
       <div>
+      <h2>{title}</h2>
+      <h3>{techs.join(', ')}</h3>
+      <p>{description}</p>
+      </div>
+      <ImgDisplay imgs={images} />
+      <div className='code'>
         CODE: 
         <a href={code} target="_blank" rel="noreferrer">
           <GitHub width='30px' height='30px' />
         </a>
-        <br />
-        LIVE WEBSITE:
-        <a href={live} target="_blank" rel="noreferrer">LIVE</a>
-      </div>
-      <div>
-      <h2>{title}</h2>
-      <h3>{tech.join(', ')}</h3>
-      <p>{description}</p>
+        {live?
+          <>
+            LIVE WEBSITE:
+            <a href={live} target="_blank" rel="noreferrer">LIVE</a>
+          </>
+        :
+          'No live app'
+
+        }
       </div>
     </Card>
   )

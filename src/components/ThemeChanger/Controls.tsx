@@ -8,6 +8,11 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content:center;
+  & > div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
   & > * {
     margin-bottom: 1em;
   }

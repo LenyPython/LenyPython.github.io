@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { NavBtn } from '../../styled'
 import {useAppDispatch, useAppSelector} from '../../app/hooks'
 import {setAlgoTab, setProjectsTab, setTechTab} from '../../slices/ComponentSlice'
@@ -6,6 +7,16 @@ import { getPageContent } from '../../slices/ComponentSlice'
 const PROJ = 'PROJECTS'
 const TECH = 'TECHS'
 const ALGO = 'ALGO & DS'
+
+const Container = styled.div`
+  display: flex;
+  @media(max-width:600px){
+    width: 90%;
+    flex-direction: column;
+    margin-bottom: 3em;
+  }
+
+`
 
 const LeftSide = () => {
   const dispatch = useAppDispatch()
@@ -21,11 +32,11 @@ const LeftSide = () => {
     if(value === ALGO) dispatch(setAlgoTab(''))        
   }
 
-  return <div>
+  return <Container>
     <NavBtn onClick={toggle} className={ProjectsTab} >{PROJ}</NavBtn>
     <NavBtn onClick={toggle} className={TechTab} >{TECH}</NavBtn>
     <NavBtn onClick={toggle} className={AlgoTab} >{ALGO}</NavBtn>
-    </div>
+    </Container>
 }
 
 export default LeftSide

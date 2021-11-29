@@ -5,20 +5,31 @@ import { ReactComponent as CloseBtn } from '../../svg/close.svg'
 import {useState} from 'react'
 
 const Container = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 75px;
-  width: 600px;
+  left: 50%;
+  width: 95%;
+  max-width: 600px;
   background: var(--main-containers-color);
   border-radius: 15px;
   box-shadow: var(--main-shadow);
-  transform: translateY(15%);
+  transform: translate(-50%, 15%);
   transition: all .3s;
   padding: 50px 2em;
+  & > svg {
+    width: 24px;
+    height: 24px;
+    color: var(--main-font-color);
+    cursor: pointer;
+    z-index: 1;
+  }
   &.closed {
-    height: 0;
-    padding: 0;
-    overflow: hidden;
+    transform: translate(-50%, -150%);
+  }
+  @media(max-width: 600px) {
+    top: unset;
+    bottom: 0;
+    transform: translateX(-50%);
   }
 `
 const Form = styled.form`
@@ -30,6 +41,10 @@ const Form = styled.form`
     background: var(--main-background-color);
     color: var(--main-font-color);
     padding: .4em .3em;
+    &::placeholder {
+      color: var(--main-font-color);
+      opacity: .8;
+    }
     &:active, &:focus {
       outline: none;
       border-bottom: 2px solid var(--main-font-color);
@@ -50,11 +65,9 @@ const ContactForm = () => {
   const [isCopied, setIsCopied] = useState(false)
 
   const sx = {
-        width: '24px',
-        height: '24px',
-        color:'var(--main-font-color)',
-        cursor: 'pointer',
-        zIndex: 1
+        position: 'absolute' as 'absolute',
+        top: '25px',
+        right: '25px',
         }
 
   const updateName = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -77,16 +90,13 @@ const ContactForm = () => {
     
 
   return <>
-    {isOpen?
-    <CloseBtn onClick={()=>setIsOpen(false)} style={sx} />
-    :
     <Email onClick={()=>setIsOpen(true)}/>
-    }
     <Container className={isOpen?'':'closed'}>
-    <h2>Email: <Email onClick={copyEmail} style={sx} /> {isCopied&&' COPIED!'}</h2>
+    <h2>Email: <Email onClick={copyEmail} /> {isCopied&&' COPIED!'}</h2>
     <h2>or</h2>
     <h2>contact me:</h2>
     I'll answer as soon as I can.
+    <CloseBtn onClick={()=>setIsOpen(false)} style={sx} />
     <Form  action="https://formsubmit.co/lenartowicz.elekonpro@gmail.com" method="POST">
     <input type="hidden" name="_next" value="https://lenypython.github.io/" />
     <input type="hidden" name="_subject" value="Kontakt z portfolio" />

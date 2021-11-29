@@ -20,6 +20,9 @@ const Container = styled.div`
     list-style: none;
   }
   & > div, ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     margin-right: 2.5em;
   }
   .flex-col {
@@ -27,6 +30,16 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
   }
+  @media(max-width: 600px){
+    flex-direction: column;
+    align-items:center;
+    & > div, ul {
+      text-align:center;
+      margin: .5em;
+      align-items:center;
+  }
+  }
+
 `
 const Algo = () => {
   const dispatch = useAppDispatch()
@@ -53,16 +66,18 @@ const Algo = () => {
     <h2>CodeWars Profile:</h2>
       <a href="https://www.codewars.com/users/LenyPython/" target="_blank" rel="noreferrer">
       <CW />
+      </a>
+      <a href="https://www.codewars.com/users/LenyPython/" target="_blank" rel="noreferrer">
       visit profile
       </a>
     </div>
     <ul>
-      <li>Username: {profile.username}</li>
-      <li>Completed katas: {profile.totalCompleted}</li>
-      <li>Ranking position: {profile.position}</li>
+      <li>Username: <br />{profile.username}</li>
+      <li>Completed katas:<br /> {profile.totalCompleted}</li>
+      <li>Ranking position:<br /> {profile.position}</li>
       <li>
-      Overall skills: {profile.overall?.name??'Piotr'},
-      score {profile.overall?.score??'0'}
+        Overall skills:<br /> {profile.overall?.name??'Piotr'},
+        score<br /> {profile.overall?.score??'0'}
       </li>
     </ul>
     <div>
@@ -77,14 +92,16 @@ const Algo = () => {
     <h2>LeetCode Profile:</h2>
       <a href="https://leetcode.com/LenyPython/" target="_blank" rel="noreferrer">
       <LC />
+      </a>
+      <a href="https://leetcode.com/LenyPython/" target="_blank" rel="noreferrer">
         visit profile
       </a>
     </div>
     <div>
       Progress: <br />
-      145 problems <br />
-      90 easy<br />
-      52 medium <br />
+      150 problems <br />
+      91 easy<br />
+      56 medium <br />
       3 Hard <br/>
     </div>
     <div className="flex-col">
@@ -100,6 +117,8 @@ const Algo = () => {
     <h2>Frontend Mentor Profile:</h2>
       <a href="https://www.frontendmentor.io/profile/LenyPython" target="_blank" rel="noreferrer">
       <FEM />
+      </a>
+      <a href="https://www.frontendmentor.io/profile/LenyPython" target="_blank" rel="noreferrer">
         visit profile
       </a>
     </div>

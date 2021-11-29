@@ -16,7 +16,7 @@ const Container = styled.div`
     cursor: pointer;
   }
   button {
-    margin: 0 .5em .5em;
+    margin: 0 .5em 1.5em;
     background: var(--main-background-color);
     color: var(--main-font-color);
     font-size: 1.4rem;
@@ -40,12 +40,16 @@ const ImgDisplay: React.FC<Props> = ({ imgs:{ path, no } }) => {
   const prevImg = () => i - 1 < 1? setI(no): setI(i - 1)
   const nextImg = () => no < i + 1? setI(1): setI(i + 1)
 
+  const handleClick = () => {
+    if(window.innerWidth > 600)setIsOpen(true)
+  }
+
   return <Container>
     <div>
     <button onClick={prevImg}>{'<<<<'}</button>
     <button onClick={nextImg}>{'>>>>'}</button>
     </div>
-    <img src={path + i + '.png'} onClick={()=>setIsOpen(true)}alt='projImg' />
+    <img src={path + i + '.png'} onClick={handleClick}alt='projImg' />
     <Screener path={path} no={no} open={isOpen} setIsOpen={setIsOpen}/>
     </Container>
 }

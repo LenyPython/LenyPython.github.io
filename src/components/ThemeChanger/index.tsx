@@ -52,10 +52,14 @@ const ThemeChanger = styled.div`
   &.open {
     top: 3%;
     padding: 3em;
-    min-width: 250px;
+    width: 80%;
+    max-width: 260px;
     min-height 350px;
     background: var(--main-containers-color);
     border-radius: 10px;
+  }
+  @media(max-width: 1100px){
+    top: 1%;
   }
 `
 

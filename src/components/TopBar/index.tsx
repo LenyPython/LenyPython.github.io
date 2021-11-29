@@ -22,6 +22,11 @@ const Bar = styled.div`
     background: var(--main-containers-color);
     box-shadow: inset 0 0 5px var(--main-font-color);
   }
+  @media(max-width: 1100px){
+    &::after {
+      transform: translate(-50%, -50%);
+    }
+  }
 `
 
 const TopBar = () => {

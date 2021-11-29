@@ -41,7 +41,7 @@ const MainPageContent = () => {
         }
 
 
-  const cards = projData.map( project => <ProjectCard key={project.title+project.tech.join('')} {...project}/>)
+  const cards = projData.map( project => <ProjectCard key={project.title} {...project}/>)
   return <>
     <MainContainer className={ProjectsTab}>
       <h1>Projects:</h1>
