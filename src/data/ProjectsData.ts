@@ -11,6 +11,9 @@ const CSS = 'css'
 const STYLED = 'styled-components'
 const API = 'API'
 const RWD = 'resposive'
+const PYTHON = 'python3'
+const PYGAME = 'pygame'
+const NUMPY = 'numpy'
 
 
 const projData: ProjectDataInterface[] = [
@@ -20,7 +23,9 @@ const projData: ProjectDataInterface[] = [
 			path: 'img/library/',
 			no:  6
 		},
-		tech: [CSS, STYLED, TS, REACT, REDUX, ROUTER, FIREBASE, SAGA],
+		tech: new Set(
+		[CSS, STYLED, TS, REACT, REDUX, ROUTER, FIREBASE, SAGA]
+		),
 		code: 'https://github.com/LenyPython/someRandomLibrary',
 		live: 'https://lenypython.github.io/someRandomLibrary/',
 		description: `
@@ -30,12 +35,48 @@ const projData: ProjectDataInterface[] = [
 		`
 	},
 	{
+		title: 'URL shortening API landing page',
+		images: {
+			path: 'img/shorten/',
+			no:  5
+		},
+		tech: new Set(
+		[CSS, JS, REACT, API, RWD]
+		),
+		code: 'https://github.com/LenyPython/URL-shortening-API-landing-page',
+		live: 'https://lenypython.github.io/URL-shortening-API-landing-page/',
+		description: `
+		Simple RWD landing page for URL shortening API. Learned a bit custom SVG creation and animation.
+				Responsive web design, CSS Flex.
+		`
+	},
+	{
+		title: 'Sudoku game',
+		images: {
+			path: 'img/sudoku/',
+			no:  4
+		},
+		tech: new Set(
+		[PYTHON, PYGAME, NUMPY]
+		),
+		code: 'https://github.com/LenyPython/Sudoku-pygame',
+		live: '',
+		description: `
+		Sudoku game build in pythonn3 and pygame. Implements backtracking algorithm to
+		create a board and solve solve it. You can visualize creation and solution.
+		I learned recursive backtracking, Object Oriented Programing. Created reusable 'custom components'
+		like buttons and board classes.
+		`
+	},
+	{
 		title: 'Calculator',
 		images: {
 			path: 'img/calculator/',
 			no:  3
 		},
-		tech: [CSS, JS, REACT, RWD],
+		tech: new Set(
+			[CSS, JS, REACT, RWD]
+		),
 		code: 'https://github.com/LenyPython/Calculator-project',
 		live: 'https://lenypython.github.io/Calculator-project/',
 		description: `
@@ -44,20 +85,6 @@ const projData: ProjectDataInterface[] = [
 		Responsive web design.
 		`
 	},
-	{
-		title: 'URL shortening API landing page',
-		images: {
-			path: 'img/shorten/',
-			no:  4
-		},
-		tech: [CSS, JS, REACT, API,  RWD],
-		code: 'https://github.com/LenyPython/URL-shortening-API-landing-page',
-		live: 'https://lenypython.github.io/URL-shortening-API-landing-page/',
-		description: `
-		Simple RWD landing page for URL shortening API. Learned a bit custom SVG creation and animation.
-				Responsive web design, CSS Flex.
-		`
-	}
 ]
 
 export default projData

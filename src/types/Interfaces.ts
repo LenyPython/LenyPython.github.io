@@ -18,7 +18,7 @@ export interface ComponentsClassesInterface {
 
 export interface ProjectDataInterface {
   title: string
-  tech: string[]
+  tech: Set<string>
   images: { path: string
   no: number}
   description: string
