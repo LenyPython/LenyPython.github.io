@@ -7,7 +7,7 @@
     "email": "lenartowicz.elekonpro@gmail.com"
   },
   "private": false,
-  "licence": "MIT",
+  "license": "MIT",
   "dependencies": {
     "@react-three/drei": "^7.20.5",
     "@react-three/fiber": "^7.0.19",
@@ -31,8 +31,6 @@
     "react-dom": "^17.0.2",
     "react-is": "^16.8.0",
     "react-redux": "^7.2.0",
-    "react-router": "^6.0.1",
-    "react-router-dom": "6",
     "react-scripts": "4.0.3",
     "redux-saga": "^1.1.3",
     "set-value": "^4.0.1",
