@@ -9,12 +9,10 @@ import {useAppSelector} from '../../app/hooks'
 
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 3em;
+  display: flex;
   width: 80%;
   max-width: 1000px;
-  height: 70%;
+  height: 80%;
   max-height: 700px;
   margin: auto;
   padding: 5em;
@@ -94,21 +92,29 @@ const Container = styled.div`
     }
   }
   div{
-    h1 ,h4 {
-      padding .3em;
-    }
     h1{
       font-family: var(--secondary-font-family);
       font-size: 3rem;
-      margin: 1em 0;
+      margin: 0 0 1em;
     }
     h4{
       margin-bottom: 9em;
     }
   }
   img {
-    width: 100%;
-    clip-path: polygon(43% 4%, 88% 0, 99% 63%, 66% 84%, 18% 78%, 0 39%);
+    width: 30%;
+    max-width: 300px;
+    margin: auto 2em;
+  }
+  @media(max-width:801px){
+    padding: 1em;
+    img{
+      transform: translateX(50%);
+    }
+    div {
+      h1 { font-size: 2rem; }
+      h4 { font-size: .8rem; }
+    }
   }
 `
 
@@ -137,9 +143,8 @@ const WelcomeScreen = () => {
     <div>
       <h1>SelfTaught SWD</h1>
       <h4>Frontend developer interested in developing his skills, especiallly
-        in data visualization and analysis. <br />
-        Interested going fullstack.<br />
-        Secondary 2D, 3D animation. 
+        in data visualization and analysis, <br />
+        Planing going fullstack.<br />
       </h4>
     <NavButtons />
     </div>

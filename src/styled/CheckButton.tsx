@@ -22,6 +22,15 @@ const Button = styled.button`
 			0 0 10px var(--main-font-color),
 			0 0 20px var(--main-font-color);
 	}
+	& > div {
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: translateX(150%);
+		background: var(--main-background-color);
+		padding: .6em;
+		font-size: .6rem;
+	}
 
 
 `
@@ -39,11 +48,16 @@ const CheckButton: React.FC<Props> = ({ children, confirm }) => {
 	}
 
 
-	return <Button 
+	return <>
+		<Button 
 		className={isActive?'active':''}
 		onClick={handleClick}>
 		{children}
+		{
+			isActive&&<div>{confirm}</div>
+		}
 	</Button>
+	</>
 }
 
 export default CheckButton

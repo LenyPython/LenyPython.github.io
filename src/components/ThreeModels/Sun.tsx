@@ -1,22 +1,26 @@
+import * as THREE from 'three'
 import { useRef } from 'react'
 import { useTexture } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import rays from '../../textures/2k_sun.jpg'
+import venus from '../../textures/2k_venus_surface.jpg'
 
 const Sun = () => {
-  const ref = useRef<THREE.Mesh>(null!)
-  const sunMap = useTexture(rays)
+  const sun = useRef<THREE.Mesh>(null!)
+  const venusMap = useTexture(venus)
+
   useFrame(() => {
-    let rot = ref.current.rotation
+    let rot = sun.current.rotation
     rot.y -= 0.01
   })
   return (
-      <mesh ref={ref}>
+      <mesh ref={sun}>
           <sphereGeometry args={[.4, 16, 16]} />
           <meshStandardMaterial 
-            map={sunMap}
+            emissiveMap={venusMap}
+            emissive={ new THREE.Color('white')}
           />
         </mesh>
+
   )
 
 }
