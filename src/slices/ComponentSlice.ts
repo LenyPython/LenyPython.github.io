@@ -4,6 +4,7 @@ import type { RootState } from '../app/store'
 
 
 const initialState: ComponentsClassesInterface = {
+  WelcomeScreen: true,
   HomeCardClass: '',
   ProjectsTab: '',
   TechTab: 'invisible',
@@ -26,6 +27,9 @@ const Components = createSlice({
     setHomeCardClass: (state, action: PayloadAction<string>) => {
       state.HomeCardClass = action.payload
     },
+    setPortfolio: state => {
+      state.WelcomeScreen = false
+    },
   }
 })
 
@@ -33,10 +37,12 @@ export const {
   setHomeCardClass,
   setProjectsTab,
   setTechTab,
-  setAlgoTab
+  setAlgoTab,
+  setPortfolio,
 } = Components.actions
 
 export const getHomeCardClass = (state: RootState) => state.Components.HomeCardClass
+export const getWelcome = (state: RootState) => state.Components.WelcomeScreen
 export const getPageContent = (state: RootState) => {
   return {
     ProjectsTab: state.Components.ProjectsTab,

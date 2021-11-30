@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { useNavigate  }from 'react-router-dom'
 
 
 const StyledLink = styled.button`
@@ -70,15 +69,11 @@ const StyledLink = styled.button`
 
 `
 interface Props {
-	children: string
 	onClick?: ()=>void
-	to?: string
 }
-const Button: React.FC<Props> = ({onClick, to, children }) => {
-	const navigate = useNavigate()
+const Button: React.FC<Props> = ({onClick, children }) => {
 	const handleClick = () => {
 			if(onClick){ onClick() }
-			if(to) { navigate(to)	}
 	}
 		
 	return(

@@ -138,8 +138,8 @@ const WelcomeScreen = () => {
       <h1>SelfTaught SWD</h1>
       <h4>Frontend developer interested in developing his skills, especiallly
         in data visualization and analysis. <br />
-        Secondary 2D, 3D animation. <br />
-        Interested going fullstack in future.
+        Interested going fullstack.<br />
+        Secondary 2D, 3D animation. 
       </h4>
     <NavButtons />
     </div>

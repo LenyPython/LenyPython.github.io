@@ -3,26 +3,22 @@ import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen'
 import Portfolio from './components/Portfolio'
 import {useAppSelector} from './app/hooks';
 import {getGlobalStyle} from './slices/GlobalStyleSlice';
-import { PORTFOLIO } from './constatns'
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from 'react-router-dom'
+import {getWelcome} from './slices/ComponentSlice';
 
 
 function App() {
   const styleState = useAppSelector(getGlobalStyle)
-  return <BrowserRouter>
+  const welcome = useAppSelector(getWelcome)
+  return <>
     <GlobalStyle {...styleState} />
-    <Routes>
-      <Route index element={<WelcomeScreen />} />
-      <Route path={PORTFOLIO} element={<Portfolio />} />
+    {
+    welcome?
+     <WelcomeScreen />
+     :
+     <Portfolio />
+    }
+  </>
 
-      <Route path={'/*'} element={<h1>404 error</h1>} />
-    
-      </Routes>
-    </BrowserRouter>
 }
 
 export default App;
