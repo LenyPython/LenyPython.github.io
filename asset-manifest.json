@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/static/js/main.b798ad08.chunk.js",
-    "main.js.map": "/static/js/main.b798ad08.chunk.js.map",
+    "main.js": "/static/js/main.e6eaa738.chunk.js",
+    "main.js.map": "/static/js/main.e6eaa738.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f027f2bf.js",
     "runtime-main.js.map": "/static/js/runtime-main.f027f2bf.js.map",
     "static/js/2.2b63ade0.chunk.js": "/static/js/2.2b63ade0.chunk.js",
@@ -9,7 +9,8 @@
     "index.html": "/index.html",
     "static/js/2.2b63ade0.chunk.js.LICENSE.txt": "/static/js/2.2b63ade0.chunk.js.LICENSE.txt",
     "static/media/2k_venus_surface.4b03f2d6.jpg": "/static/media/2k_venus_surface.4b03f2d6.jpg",
-    "static/media/author.ae3acb78.jpg": "/static/media/author.ae3acb78.jpg",
+    "static/media/author-mini.733c3668.png": "/static/media/author-mini.733c3668.png",
+    "static/media/author.df4a1e14.png": "/static/media/author.df4a1e14.png",
     "static/media/close.dd2ec9dc.svg": "/static/media/close.dd2ec9dc.svg",
     "static/media/codewars.2be3171c.svg": "/static/media/codewars.2be3171c.svg",
     "static/media/css.a9eac6b1.svg": "/static/media/css.a9eac6b1.svg",
@@ -37,6 +38,6 @@
   "entrypoints": [
     "static/js/runtime-main.f027f2bf.js",
     "static/js/2.2b63ade0.chunk.js",
-    "static/js/main.b798ad08.chunk.js"
+    "static/js/main.e6eaa738.chunk.js"
   ]
 }
