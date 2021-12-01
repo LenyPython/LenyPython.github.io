@@ -7,7 +7,13 @@ import {setHomeCardClass, setPortfolio} from '../../slices/ComponentSlice'
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  @media(max-width:600px){
+    flex-direction: column-reverse;
+    & > button{
+      margin: .6em auto;
+    }
+  }
 `
 
 const NavButtons = () => {

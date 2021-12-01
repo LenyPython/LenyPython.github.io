@@ -1,7 +1,7 @@
 import BackgroundCanvas from './BackgroundCanvas'
 import styled from 'styled-components'
-import avatar from '../../imgs/author.jpg'
 import NavButtons from './NavButtons'
+import Avatar from './Avatar'
 import { ReactComponent as CloseBtn } from '../../svg/close.svg'
 import {getHomeCardClass, setHomeCardClass} from '../../slices/ComponentSlice'
 import {useDispatch} from 'react-redux'
@@ -9,10 +9,12 @@ import {useAppSelector} from '../../app/hooks'
 
 
 const Container = styled.div`
-  display: flex;
-  width: 80%;
+  position: relative;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: 1fr 30%;
+  width: 80vw;
   max-width: 1000px;
-  height: 80%;
   max-height: 700px;
   margin: auto;
   padding: 5em;
@@ -25,7 +27,7 @@ const Container = styled.div`
   @keyframes scale-out {
    100% {
     transform: perspective(var(--pers, 1100px)) 
-              scale(30%)
+              scale(40%)
               rotateY(-540deg)
               rotateX(1140deg);
        }
@@ -34,22 +36,16 @@ const Container = styled.div`
   @keyframes rotate-3d {
     0%{
     transform: perspective(var(--pers, 1100px)) 
-              scale(30%)
+              scale(40%)
               rotateY(-180deg)
               rotateX(60deg);
        }
     100%{
       transform: perspective(var(--pers, 1100px)) 
-              scale(30%)
+              scale(40%)
               rotateY(180deg)
               rotateX(60deg);
     }
-  }
-  * {
-    transform: translateZ(30px);
-  }
-  &, & > *{
-  transform-style: preserve-3d;
   }
   &:hover {
     box-shadow: 0 0 5px var(--main-containers-color),
@@ -62,7 +58,7 @@ const Container = styled.div`
     cursor:unset;
     @keyframes reset {
       0% {
-        transform: scale(30%)
+        transform: scale(40%)
                 rotateY(-180deg)
                 rotateX(60deg);
       }
@@ -76,7 +72,7 @@ const Container = styled.div`
   &.page-animation {
     animation: page-transition 2s cubic-bezier(.55,.06,.68,.19)  forwards;
     * {
-      transform: unset;
+      transform: translateZ(0);
     }
     @keyframes page-transition {
       10% {
@@ -95,25 +91,26 @@ const Container = styled.div`
     h1{
       font-family: var(--secondary-font-family);
       font-size: 3rem;
-      margin: 0 0 1em;
+      margin-bottom: 1em;
     }
     h4{
       margin-bottom: 9em;
     }
   }
-  img {
-    width: 30%;
-    max-width: 300px;
-    margin: auto 2em;
-  }
-  @media(max-width:801px){
-    padding: 1em;
-    img{
-      transform: translateX(50%);
-    }
+  @media(max-width:751px){
+    margin-top: 100px;
+    margin-bottom: 3em;
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    max-height: unset;
+    padding: 75px 1em 2em;
     div {
       h1 { font-size: 2rem; }
-      h4 { font-size: .8rem; }
+      h4 { 
+        font-size: .8rem;
+        margin-bottom: 2em;
+      }
     }
   }
 `
@@ -141,20 +138,18 @@ const WelcomeScreen = () => {
       onClick={handleOpen}
     >
     <div>
-      <h1>SelfTaught SWD</h1>
-      <h4>Frontend developer interested in developing his skills, especiallly
-        in data visualization and analysis, <br />
+      <h1>Frontend dev</h1>
+      <h4>Interested in developing his skills, especiallly
+        in data analysisand visualization , <br />
         Planing going fullstack.<br />
       </h4>
-    <NavButtons />
+      <NavButtons />
     </div>
-      <img src={avatar}
-        className='avatar'
-      alt="author" />
-      <CloseBtn 
-        onClick={handleClose}
-        style={sx}
-      />
+    <Avatar />
+    <CloseBtn 
+      onClick={handleClose}
+      style={sx}
+    />
     </Container>
   </>
 }

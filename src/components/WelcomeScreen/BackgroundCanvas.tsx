@@ -17,14 +17,23 @@ const BackgroundCanvas = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const graphicsRef = useRef<FallingGraphics>(new FallingGraphics(colorStyle))
 
+  const resize = () => {
+      let canvas = canvasRef.current
+      if(!canvas) return
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+      graphicsRef.current.changeOnResize()
+  }
+
 useEffect(() => {
   let graphics = graphicsRef.current
   if(!canvasRef.current) return
   graphics.setCanvas(canvasRef.current)
   graphics.setColor(colorStyle)
   graphics.animate()
+  window.addEventListener('resize', resize)
     return  () => {
-      window.removeEventListener('resize', graphics.resizeCanvas)
+      window.removeEventListener('resize', resize)
     }
   }, [])
   useEffect(()=>{

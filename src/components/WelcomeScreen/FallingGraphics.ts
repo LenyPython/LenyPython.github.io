@@ -66,7 +66,6 @@ class FallingGraphics{
 		this.canvas.width = window.innerWidth
 		this.canvas.height = window.innerHeight
 		this.ctx = this.canvas.getContext('2d')
-		window.addEventListener('resize', this.resizeCanvas)
 	}
 	changeOnResize() {
 		this.columnsNo = window.innerWidth / 60
