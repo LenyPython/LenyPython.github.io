@@ -29,7 +29,6 @@ useEffect(() => {
   let graphics = graphicsRef.current
   if(!canvasRef.current) return
   graphics.setCanvas(canvasRef.current)
-  graphics.setColor(colorStyle)
   graphics.animate()
   window.addEventListener('resize', resize)
     return  () => {

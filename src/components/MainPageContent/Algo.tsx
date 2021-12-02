@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import {useEffect} from "react"
 import {useAppDispatch, useAppSelector} from "../../app/hooks"
 import {getData} from '../../sagas/codeWarsSaga'
-import {getLCData} from "../../sagas/leetCodeSaga"
 import {getCWProfile} from "../../slices/CodeWarsProfile"
 import { ReactComponent as CW } from '../../svg/codewars.svg'
 import { ReactComponent as LC } from '../../svg/leetcode.svg'
@@ -45,7 +44,6 @@ const Algo = () => {
   const dispatch = useAppDispatch()
   useEffect(()=> {
     dispatch(getData())
-    dispatch(getLCData())
   }, [])
   const profile = useAppSelector(getCWProfile)
   const langs = []
