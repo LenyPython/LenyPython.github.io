@@ -25,11 +25,17 @@ const Container = styled.div`
   animation: scale-out var(--duration-delay) linear,
              rotate-3d 8s infinite linear var(--duration-delay);
   @keyframes scale-out {
+    0% {
+    transform: perspective(var(--pers, 1100px)) 
+              scale(100%)
+              rotateY(0deg)
+              rotateX(0deg);
+    }
    100% {
     transform: perspective(var(--pers, 1100px)) 
               scale(40%)
               rotateY(-540deg)
-              rotateX(1140deg);
+              rotateX(780deg);
        }
    }
 
@@ -52,6 +58,10 @@ const Container = styled.div`
         0 0 10px var(--main-containers-color),
         0 0 15px var(--main-containers-color),
         0 0 60px -10px var(--main-font-color);
+  }
+  &, * {
+    transform-style: preserve-3d;
+    transform: translateZ(30px);
   }
   &.active {
     animation: reset var(--duration-delay) linear;

@@ -8,6 +8,7 @@ const StyledImg = styled.div`
     background-repeat: no-repeat;
     background-position: center center;
     background-clip: text;
+    -webkit-background-clip: text;
     border-radius: 10px;
     color: transparent;
     width: 280px;
