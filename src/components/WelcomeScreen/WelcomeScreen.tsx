@@ -66,6 +66,8 @@ const Container = styled.div`
   &.active {
     animation: reset var(--duration-delay) linear;
     cursor:unset;
+    transform-style: flat;
+    *{ transform-style: flat; }
     @keyframes reset {
       0% {
         transform: scale(40%)
