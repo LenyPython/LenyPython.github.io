@@ -5,6 +5,7 @@ import type { RootState } from '../app/store'
 
 const initialState: ComponentsClassesInterface = {
   WelcomeScreen: true,
+  ContactForm: false,
   HomeCardClass: '',
   ProjectsTab: '',
   TechTab: 'invisible',
@@ -30,6 +31,9 @@ const Components = createSlice({
     setPortfolio: state => {
       state.WelcomeScreen = false
     },
+    setContactForm: (state, action: PayloadAction<boolean>) => {
+      state.ContactForm = action.payload
+    }
   }
 })
 
@@ -39,10 +43,12 @@ export const {
   setTechTab,
   setAlgoTab,
   setPortfolio,
+  setContactForm,
 } = Components.actions
 
 export const getHomeCardClass = (state: RootState) => state.Components.HomeCardClass
 export const getWelcome = (state: RootState) => state.Components.WelcomeScreen
+export const getContactForm = (state: RootState) => state.Components.ContactForm
 export const getPageContent = (state: RootState) => {
   return {
     ProjectsTab: state.Components.ProjectsTab,

@@ -1,19 +1,23 @@
 import styled from 'styled-components'
 import ThemeButton from '../../styled/ThemeButton'
-import { ReactComponent as Email } from '../../svg/get_email.svg'
 import { ReactComponent as CloseBtn } from '../../svg/close.svg'
+import { ReactComponent as Email } from '../../svg/get_email.svg'
 import {useState} from 'react'
+import {useAppSelector} from '../../app/hooks'
+import {getContactForm} from '../../slices/ComponentSlice'
+import {setContactForm} from '../../slices/ComponentSlice'
+import {useDispatch} from 'react-redux'
 
 const Container = styled.div`
   position: fixed;
-  top: 0;
+  top: 150px;
   left: 50%;
   width: 95%;
   max-width: 600px;
   background: var(--main-containers-color);
   border-radius: 15px;
   box-shadow: var(--main-shadow);
-  transform: translate(-50%, 15%);
+  transform: translateX(-50%);
   transition: all .3s;
   padding: 50px 2em;
   & > svg {
@@ -27,9 +31,7 @@ const Container = styled.div`
     transform: translate(-50%, -150%);
   }
   @media(max-width: 600px) {
-    top: unset;
-    bottom: 0;
-    transform: translateX(-50%);
+    top: 100px;
   }
 `
 const Form = styled.form`
@@ -54,15 +56,20 @@ const Form = styled.form`
     width: 90%;
     min-height:150px;
   }
+  @media(max-width: 600px){
+    input, textarea { margin: .5em; }
+    textarea { min-height: 120px; }
+  }
 
 `
 
 const ContactForm = () => {
+  const dispatch = useDispatch()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [msg, setMsg] = useState('')
-  const [isOpen, setIsOpen] = useState(false)
   const [isCopied, setIsCopied] = useState(false)
+  const isOpen = useAppSelector(getContactForm)
 
   const sx = {
         position: 'absolute' as 'absolute',
@@ -87,16 +94,15 @@ const ContactForm = () => {
     setIsCopied(true)
     setTimeout(()=>setIsCopied(false),5000)
   }
-    
+  const closeForm = () => dispatch(setContactForm(false))
 
   return <>
-    <Email onClick={()=>setIsOpen(true)}/>
     <Container className={isOpen?'':'closed'}>
     <h2>Email: <Email onClick={copyEmail} /> {isCopied&&' COPIED!'}</h2>
     <h2>or</h2>
     <h2>contact me:</h2>
     I'll answer as soon as I can.
-    <CloseBtn onClick={()=>setIsOpen(false)} style={sx} />
+    <CloseBtn onClick={closeForm} style={sx} />
     <Form  action="https://formsubmit.co/lenartowicz.elekonpro@gmail.com" method="POST">
     <input type="hidden" name="_next" value="https://lenypython.github.io/" />
     <input type="hidden" name="_subject" value="Kontakt z portfolio" />
