@@ -24,7 +24,7 @@ const Bar = styled.div`
   }
   @media(max-width: 1100px){
     &::after {
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -60px);
     }
   }
 `

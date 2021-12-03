@@ -4,9 +4,9 @@ import styled from 'styled-components'
 
 const MainContainer = styled.div`
   position: fixed;
+  top: 100px;
+  bottom: 16px;
   left: 50%;
-  bottom: 1%;
-  height: 84%;
   width: 95%;
   max-width: 1200px;
   padding: 1em;
@@ -20,7 +20,7 @@ const MainContainer = styled.div`
     transform: translate(-50%, -125%);
   }
   @media(max-width:600px){
-    top:10%;
+    top: 75px;
     bottom: var(--nav-height);
     h1 {
       font-size: 24px;

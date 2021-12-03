@@ -5,7 +5,7 @@ import LeftSide from './LeftSide'
 
 const Container= styled.div`
   position: fixed;
-  top: 6%;
+  top: 50px;
   left: 50%;
   width: 90%;
   max-width: 1100px;
