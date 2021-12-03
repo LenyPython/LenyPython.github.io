@@ -7,7 +7,7 @@ const Arrows = styled.div`
   left: 50%;
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: min(300px, 80vw);
   height: 30px;
   & > div > svg:nth-child(even) { opacity: .4; }
   & > div > svg:nth-child(odd) { opacity: .7; }
