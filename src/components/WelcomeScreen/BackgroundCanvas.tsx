@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import FallingGraphics from './FallingGraphics'
 import { useEffect, useRef } from 'react'
-import ThemeChanger from '../ThemeChanger'
 import {useAppSelector} from '../../app/hooks'
 import {getGlobalStyle} from '../../slices/GlobalStyleSlice'
 
@@ -39,10 +38,7 @@ useEffect(() => {
   let graphics = graphicsRef.current
   graphics.setColor(colorStyle)
   },[colorStyle])
-  return <>
-    <ThemeChanger />
-    <Canvas ref={canvasRef} />
-  </>
+  return <Canvas ref={canvasRef} />
 }
 
 export default BackgroundCanvas

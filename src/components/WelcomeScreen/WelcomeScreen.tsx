@@ -2,6 +2,7 @@ import BackgroundCanvas from './BackgroundCanvas'
 import styled from 'styled-components'
 import NavButtons from './NavButtons'
 import Avatar from './Avatar'
+import ThemeChanger from '../ThemeChanger'
 import { ReactComponent as CloseBtn } from '../../svg/close.svg'
 import {getHomeCardClass, setHomeCardClass} from '../../slices/ComponentSlice'
 import {useDispatch} from 'react-redux'
@@ -144,6 +145,7 @@ const WelcomeScreen = () => {
         }
 
   return <>
+    <ThemeChanger />
     <BackgroundCanvas />
     <Container
       className={cardClass}
@@ -152,7 +154,7 @@ const WelcomeScreen = () => {
     <div>
       <h1>Frontend dev</h1>
       <h4>Interested in developing his skills, especiallly
-        in data analysisand visualization , <br />
+        in data analysis and visualization, <br />
         Planing going fullstack.<br />
       </h4>
       <NavButtons />

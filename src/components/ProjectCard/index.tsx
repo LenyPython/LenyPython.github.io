@@ -25,6 +25,9 @@ const Card = styled.div`
   @media(max-width: 900px){
     flex-direction: column;
     align-items: center;
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: .9rem; }
+    p { font-size: .8rem; }
     & > div.code{
       margin: .5em;
       text-align: justify;

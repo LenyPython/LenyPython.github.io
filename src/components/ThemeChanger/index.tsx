@@ -1,17 +1,21 @@
 import styled from 'styled-components'
 import Controls from './Controls'
-import { useState } from 'react'
 import ThemeButton from '../../styled/ThemeButton'
+import Pointer from './Pointer'
+import { useAppSelector } from '../../app/hooks'
+import { getWelcome } from '../../slices/ComponentSlice'
+import { useState } from 'react'
 
 const ThemeChanger = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  top: 5%;
+  align-items:center;
+  top: 45px;
   left: 50%;
-  min-width: 55px;
-  min-height:  35px;
+  width: 55px;
+  height:  35px;
   transform: translateX(-50%);
   background: var(--main-font-color);
   color: var(--main-background-color);
@@ -50,7 +54,7 @@ const ThemeChanger = styled.div`
     }
   }
   &.open {
-    top: 3%;
+    top: 20px;
     padding: 3em;
     width: 80%;
     max-width: 260px;
@@ -59,23 +63,29 @@ const ThemeChanger = styled.div`
     border-radius: 10px;
   }
   @media(max-width: 1100px){
-    top: 1%;
+    top: 10px;
   }
 `
 
 const ChangeTheme = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isClicked, setIsClicked] = useState(false)
+  const welcome = useAppSelector(getWelcome)
 
-  const handleOpen = () => !isOpen&&setIsOpen(true)
+  const handleOpen = () => {
+    !isOpen&&setIsOpen(true)
+    setIsClicked(true)
+  }
   const handleClose = () => setIsOpen(false)
 
   return <ThemeChanger
     className={isOpen?'open':''}
     onClick={handleOpen}
     >
-    {isOpen&&<><Controls />
+    {isOpen&&<>
+    <Controls />
     <ThemeButton 
-    onClick={handleClose}
+      onClick={handleClose}
       style={{
         color: 'var(--main-font-color)',
         margin: '0 auto'
@@ -84,6 +94,7 @@ const ChangeTheme = () => {
     close
     </ThemeButton>
     </>}
+    { welcome && !isClicked && <Pointer /> }
     </ThemeChanger>
 }
 
