@@ -20,6 +20,7 @@ const Container = styled.div`
   transform: translateX(-50%);
   transition: all .3s;
   padding: 50px 2em;
+  overflow-y: auto;
   & > svg {
     width: 24px;
     height: 24px;
@@ -31,13 +32,20 @@ const Container = styled.div`
     transform: translate(-50%, -150%);
   }
   @media(max-width: 600px) {
-    top: 100px;
+    text-align: center;
+    top: 75px;
+    h2 { font-size: 1.2rem; }
+    p { font-size: .8rem; }
+    button {
+      transform: scale(70%);
+    }
   }
 `
 const Form = styled.form`
   input, textarea {
     resize: none;
     margin: 1em;
+    width: 90%;
     border: none;
     font-size: 1rem;
     background: var(--main-background-color);
@@ -53,12 +61,17 @@ const Form = styled.form`
     }
   }
   textarea {
-    width: 90%;
     min-height:150px;
   }
   @media(max-width: 600px){
-    input, textarea { margin: .5em; }
-    textarea { min-height: 120px; }
+    input, textarea {
+      font-size: .8rem;
+      margin: .5em;
+    }
+    textarea { 
+      min-height: 120px;
+      height: auto;
+    }
   }
 
 `
@@ -98,10 +111,12 @@ const ContactForm = () => {
 
   return <>
     <Container className={isOpen?'':'closed'}>
-    <h2>Email: <Email onClick={copyEmail} /> {isCopied&&' COPIED!'}</h2>
+    <h2>Get Email: <Email onClick={copyEmail} /> {isCopied&&' COPIED!'}</h2>
     <h2>or</h2>
     <h2>contact me:</h2>
+      <p>
     I'll answer as soon as I can.
+      </p>
     <CloseBtn onClick={closeForm} style={sx} />
     <Form  action="https://formsubmit.co/lenartowicz.elekonpro@gmail.com" method="POST">
     <input type="hidden" name="_next" value="https://lenypython.github.io/" />

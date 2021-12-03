@@ -43,27 +43,27 @@ const MainPageContent = () => {
 
   const cards = projData.map( project => <ProjectCard key={project.title} {...project}/>)
   return <>
-    <MainContainer className={ProjectsTab}>
+   <MainContainer className={ProjectsTab}>
       <h1>Projects:</h1>
       <Container>
         {cards}
       </Container>
       <CloseBtn onClick={()=>dispatch(setProjectsTab('invisible'))} style={sx} />
-  </MainContainer>
-    <MainContainer className={TechTab}>
+   </MainContainer>
+   <MainContainer className={TechTab}>
       <h1>Techs:</h1>
       <Container>
         <Techs />
       </Container>
       <CloseBtn onClick={()=>dispatch(setTechTab('invisible'))} style={sx} />
-  </MainContainer>
+    </MainContainer>
     <MainContainer className={AlgoTab}>
       <h1>Algorithms and data structures:</h1>
       <Container>
         <Algo />
       </Container>
       <CloseBtn onClick={()=>dispatch(setAlgoTab('invisible'))} style={sx} />
-  </MainContainer>
+    </MainContainer>
   </>
 }
 

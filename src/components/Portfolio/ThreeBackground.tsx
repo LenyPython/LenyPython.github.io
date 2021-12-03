@@ -1,7 +1,6 @@
 import { Globe, Sun, Metal } from '../ThreeModels'
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
 import {useAppSelector} from '../../app/hooks'
 import {getGlobalStyle} from '../../slices/GlobalStyleSlice'
 
@@ -12,7 +11,6 @@ const ThreeBackground = () => {
 
   return <Canvas>
     <Suspense fallback={null}>
-      <OrbitControls enablePan={false} />
       <ambientLight color={color} />
       <pointLight position={[0,0,0]} />
       <Globe />
