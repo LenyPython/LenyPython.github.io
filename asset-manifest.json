@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.f1096f0a.chunk.js",
-    "main.js.map": "/static/js/main.f1096f0a.chunk.js.map",
+    "main.js": "/static/js/main.febee5bd.chunk.js",
+    "main.js.map": "/static/js/main.febee5bd.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f027f2bf.js",
     "runtime-main.js.map": "/static/js/runtime-main.f027f2bf.js.map",
-    "static/js/2.13a7c434.chunk.js": "/static/js/2.13a7c434.chunk.js",
-    "static/js/2.13a7c434.chunk.js.map": "/static/js/2.13a7c434.chunk.js.map",
+    "static/js/2.915b9ec8.chunk.js": "/static/js/2.915b9ec8.chunk.js",
+    "static/js/2.915b9ec8.chunk.js.map": "/static/js/2.915b9ec8.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.13a7c434.chunk.js.LICENSE.txt": "/static/js/2.13a7c434.chunk.js.LICENSE.txt",
+    "static/js/2.915b9ec8.chunk.js.LICENSE.txt": "/static/js/2.915b9ec8.chunk.js.LICENSE.txt",
     "static/media/2k_venus_surface.4b03f2d6.jpg": "/static/media/2k_venus_surface.4b03f2d6.jpg",
     "static/media/author-mini.733c3668.png": "/static/media/author-mini.733c3668.png",
     "static/media/author.df4a1e14.png": "/static/media/author.df4a1e14.png",
@@ -24,6 +24,7 @@
     "static/media/js.1b6984df.svg": "/static/media/js.1b6984df.svg",
     "static/media/kivy.911bef1c.svg": "/static/media/kivy.911bef1c.svg",
     "static/media/leetcode.7f8cba9c.svg": "/static/media/leetcode.7f8cba9c.svg",
+    "static/media/leftArrow.286aad0a.svg": "/static/media/leftArrow.286aad0a.svg",
     "static/media/linedin.245ae1a7.svg": "/static/media/linedin.245ae1a7.svg",
     "static/media/pandas.b98bf8e0.svg": "/static/media/pandas.b98bf8e0.svg",
     "static/media/plates.ca2c5aeb.jpg": "/static/media/plates.ca2c5aeb.jpg",
@@ -32,12 +33,13 @@
     "static/media/react.4deb18ab.svg": "/static/media/react.4deb18ab.svg",
     "static/media/redux-saga.9234d7a3.svg": "/static/media/redux-saga.9234d7a3.svg",
     "static/media/redux.9e516154.svg": "/static/media/redux.9e516154.svg",
+    "static/media/rightArrow.d9f62d18.svg": "/static/media/rightArrow.d9f62d18.svg",
     "static/media/transparent.5452badc.png": "/static/media/transparent.5452badc.png",
     "static/media/ts.83eaaabe.svg": "/static/media/ts.83eaaabe.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f027f2bf.js",
-    "static/js/2.13a7c434.chunk.js",
-    "static/js/main.f1096f0a.chunk.js"
+    "static/js/2.915b9ec8.chunk.js",
+    "static/js/main.febee5bd.chunk.js"
   ]
 }
