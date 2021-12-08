@@ -35,6 +35,22 @@ const projData: ProjectDataInterface[] = [
 		`
 	},
 	{
+		title: 'REST Countries API',
+		images: {
+			path: 'img/countries/',
+			no:  5
+		},
+		tech: new Set(
+		[CSS, STYLED, TS, REACT, REDUX, SAGA, RWD, API]
+		),
+		code: 'https://github.com/LenyPython/REST-countries-api-frontendmentor',
+		live: 'https://lenypython.github.io/REST-countries-api-frontendmentor/',
+		description: `
+		Frontend Mentor REST Coutries API project. Festches data from coutries api and
+		displays it as in the design pattern provided from Frontend Mentor.
+		`
+	},
+	{
 		title: 'URL shortening API landing page',
 		images: {
 			path: 'img/shorten/',
