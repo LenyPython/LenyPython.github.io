@@ -97,9 +97,9 @@ const Algo = () => {
     </div>
     <div>
       Progress: <br />
-      150 problems <br />
-      91 easy<br />
-      56 medium <br />
+      157 problems <br />
+      94 easy<br />
+      60 medium <br />
       3 Hard <br/>
     </div>
     <div className="flex-col">
@@ -121,7 +121,7 @@ const Algo = () => {
       </a>
     </div>
     <div>
-      Score: 150pts 
+      Score: 190pts 
     </div>
   </Container>
   </>
