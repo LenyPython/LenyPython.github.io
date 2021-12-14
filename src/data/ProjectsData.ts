@@ -1,6 +1,7 @@
 import { ProjectDataInterface } from '../types/Interfaces'
 
 const REACT = 'react'
+const ANGULAR = 'angular'
 const ROUTER = 'react-router'
 const REDUX = 'redux'
 const SAGA = 'redux-saga'
@@ -82,6 +83,22 @@ const projData: ProjectDataInterface[] = [
 		create a board and solve solve it. You can visualize creation and solution.
 		I learned recursive backtracking, Object Oriented Programing. Created reusable 'custom components'
 		like buttons and board classes.
+		`
+	},
+	{
+		title: 'Basic Angular App, create random teams',
+		images: {
+			path: 'img/randteam/',
+			no:  3
+		},
+		tech: new Set(
+		[ANGULAR, CSS]
+		),
+		code: 'https://github.com/LenyPython/Team-Generator-angular',
+		live: 'https://lenypython.github.io/Team-Generator-angular/',
+		description: `
+		Basic app in Angular. You can add a Person to list afterf populating the list,
+		you cand click 'Create Teams' and it will randomly generate teams from given group of people
 		`
 	},
 	{
