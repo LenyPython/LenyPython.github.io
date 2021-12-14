@@ -97,9 +97,9 @@ const Algo = () => {
     </div>
     <div>
       Progress: <br />
-      157 problems <br />
-      94 easy<br />
-      60 medium <br />
+      160 problems <br />
+      96 easy<br />
+      61 medium <br />
       3 Hard <br/>
     </div>
     <div className="flex-col">
@@ -108,6 +108,13 @@ const Algo = () => {
         alt="Algorithm I" /><br />
       <b>Algorithm I</b><br />
       <span>2021-10-24</span>
+    </div>
+    <div className="flex-col">
+    <img src="https://assets.leetcode.com/static_assets/others/DS_I.png" 
+      width="75px" height="75px"
+        alt="Algorithm I" /><br />
+      <b>Data Structure I</b><br />
+      <span>2021-12-14</span>
     </div>
   </Container>
   <Container>
