@@ -6,6 +6,8 @@ import {getCWProfile} from "../../slices/CodeWarsProfile"
 import { ReactComponent as CW } from '../../svg/codewars.svg'
 import { ReactComponent as LC } from '../../svg/leetcode.svg'
 import { ReactComponent as FEM } from '../../svg/frontend.svg'
+import { ReactComponent as CP } from '../../svg/Codepen.svg'
+import { ReactComponent as REPL } from '../../svg/Replit.svg'
 
 
 const Container = styled.div`
@@ -97,9 +99,9 @@ const Algo = () => {
     </div>
     <div>
       Progress: <br />
-      160 problems <br />
-      96 easy<br />
-      61 medium <br />
+      178 problems <br />
+      105 easy<br />
+      70 medium <br />
       3 Hard <br/>
     </div>
     <div className="flex-col">
@@ -129,6 +131,26 @@ const Algo = () => {
     </div>
     <div>
       Score: 190pts 
+    </div>
+  </Container>
+  <Container>
+    <div>
+    <h2>Replit</h2>
+      <a href="https://replit.com/@PiotrLenartowic" target="_blank" rel="noreferrer">
+      <REPL />
+      </a>
+      <a href="https://replit.com/@PiotrLenartowic" target="_blank" rel="noreferrer">
+        visit profile
+      </a>
+    </div>
+    <div>
+    <h2>Codepen</h2>
+      <a href="https://codepen.io/lenypython" target="_blank" rel="noreferrer">
+      <CP />
+      </a>
+      <a href="https://codepen.io/lenypython" target="_blank" rel="noreferrer">
+        visit profile
+      </a>
     </div>
   </Container>
   </>
