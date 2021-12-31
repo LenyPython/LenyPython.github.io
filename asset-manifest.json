@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/static/js/main.14029858.chunk.js",
-    "main.js.map": "/static/js/main.14029858.chunk.js.map",
+    "main.js": "/static/js/main.6d2d3bb8.chunk.js",
+    "main.js.map": "/static/js/main.6d2d3bb8.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f027f2bf.js",
     "runtime-main.js.map": "/static/js/runtime-main.f027f2bf.js.map",
     "static/js/2.915b9ec8.chunk.js": "/static/js/2.915b9ec8.chunk.js",
@@ -9,6 +9,8 @@
     "index.html": "/index.html",
     "static/js/2.915b9ec8.chunk.js.LICENSE.txt": "/static/js/2.915b9ec8.chunk.js.LICENSE.txt",
     "static/media/2k_venus_surface.4b03f2d6.jpg": "/static/media/2k_venus_surface.4b03f2d6.jpg",
+    "static/media/Codepen.7fb10c61.svg": "/static/media/Codepen.7fb10c61.svg",
+    "static/media/Replit.b0713123.svg": "/static/media/Replit.b0713123.svg",
     "static/media/author-mini.733c3668.png": "/static/media/author-mini.733c3668.png",
     "static/media/author.df4a1e14.png": "/static/media/author.df4a1e14.png",
     "static/media/close.dd2ec9dc.svg": "/static/media/close.dd2ec9dc.svg",
@@ -40,6 +42,6 @@
   "entrypoints": [
     "static/js/runtime-main.f027f2bf.js",
     "static/js/2.915b9ec8.chunk.js",
-    "static/js/main.14029858.chunk.js"
+    "static/js/main.6d2d3bb8.chunk.js"
   ]
 }
