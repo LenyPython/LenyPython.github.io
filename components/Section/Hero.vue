@@ -1,8 +1,8 @@
 <template>
     <section id="hero">
         <div class="container">
-            <div></div>
-            <div></div>
+            <h3>Hero</h3>
+            <img src="" alt="" />
         </div>
     </section>
 </template>

@@ -1,5 +1,8 @@
 <template>
   <AppNavbar />
-  <slot />
+  <SectionHero />
+  <SectionProjects />
+  <SectionExperience />
+  <SectionTechnology />
   <AppFooter />
 </template>
