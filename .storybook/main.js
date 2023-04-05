@@ -3,7 +3,16 @@ import { loadConfigFromFile, mergeConfig } from 'vite';
 
 /** @type { import('@storybook/vue3-vite').StorybookConfig } */
 const config = {
-  stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: [
+    '../pages/**/*.mdx',
+    '../pages/**/*.stories.@(js|jsx|ts|tsx)',
+    '../layouts/**/*.mdx',
+    '../layouts/**/*.stories.@(js|jsx|ts|tsx)',
+    '../stories/**/*.mdx',
+    '../stories/**/*.stories.@(js|jsx|ts|tsx)',
+    '../components/**/*.mdx',
+    '../components/**/*.stories.@(js|jsx|ts|tsx)'
+  ],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',

@@ -13,7 +13,9 @@ export default defineConfig({
     }),
     Components({
       dirs: [
-        './components/'
+        './components/',
+        './pages/',
+        './layouts'
         // Component folders that should be auto-imported
       ],
       dts: true,
