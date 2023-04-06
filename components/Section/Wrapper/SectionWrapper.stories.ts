@@ -18,6 +18,7 @@ export const Primary: Story = {
     template: '<Wrapper v-bind="args" />'
   }),
   args: {
+    sectionId: 'Primary',
     Title: 'Primary Label',
     dark: false
   }
