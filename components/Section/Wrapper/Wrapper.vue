@@ -1,7 +1,8 @@
 <template>
     <section :id="sectionId">
-        <div>
-            <h2>{{ Title || "Default" }}</h2>
+        <div style="margin:50px">
+            <h2 class="text-5xl font-bold underline">{{ Title || "Default" }}</h2>
+            other
         </div>
     </section>
 </template>
