@@ -1,16 +1,20 @@
 <template>
     <section :id="sectionId">
-        <div style="margin:50px">
-            <h2 class="text-5xl font-bold underline">{{ Title || "Default" }}</h2>
+        <div :class="styles.div_container">
+            <h2 :class="styles.h2">{{ Title || "Default" }}</h2>
             other
         </div>
     </section>
 </template>
 
 <script lang="ts" setup>
+import THEMES from '~/constants/Themes';
+import { createTheme } from './themeCreator'
+
 const props = defineProps({
     sectionId: String,
     dark: Boolean,
     Title: String,
 })
+const styles = computed(() => createTheme(THEMES.Classic))
 </script>
