@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     AppFooterFooter: typeof import('./components/App/Footer/Footer.vue')['default']
     AppNavbarNavbar: typeof import('./components/App/Navbar/Navbar.vue')['default']
     'Blog-[id]': typeof import('./pages/blog/[id].vue')['default']
+    Default: typeof import('./layouts/default.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SectionExperience: typeof import('./components/Section/Experience.vue')['default']

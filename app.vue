@@ -1,8 +1,5 @@
 <template>
-    <h1>component</h1>
-    <div>
-        <AppNavbar />
+    <NuxtLayout>
         <SectionWrapper />
-        <AppFooter />
-    </div>
+    </NuxtLayout>
 </template>

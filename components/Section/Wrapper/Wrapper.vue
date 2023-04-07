@@ -2,7 +2,9 @@
     <section :id="sectionId">
         <div :class="styles.div_container">
             <h2 :class="styles.h2">{{ Title || "Default" }}</h2>
-            other
+            <div>
+                children container
+            </div>
         </div>
     </section>
 </template>
