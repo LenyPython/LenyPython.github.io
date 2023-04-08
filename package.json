@@ -7,8 +7,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "concurrently 'yarn:watch:*'",
+    "watch:storybook": "storybook dev -p 6006",
+    "watch:tailwind": "tailwindcss -i ./assets/css/main.css -o ./dist/tailwind.css --watch",
+    "build:tailwind": "tailwindcss -i ./assets/css/main.css -o ./dist/tailwind.css --watch",
+    "build-storybook": "yarn build:tailwind && storybook build"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.1.0-alpha.0",
@@ -19,6 +22,7 @@
     "@storybook/vue3": "^7.1.0-alpha.0",
     "@storybook/vue3-vite": "^7.1.0-alpha.0",
     "autoprefixer": "^10.4.14",
+    "concurrently": "^8.0.1",
     "nuxt": "^3.3.2",
     "postcss": "^8.4.21",
     "react": "^18.2.0",

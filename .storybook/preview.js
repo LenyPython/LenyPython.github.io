@@ -1,4 +1,4 @@
-import '../assets/css/main.css';
+import '../dist/tailwind.css';
 
 /** @type { import('@storybook/vue3').Preview } */
 const preview = {

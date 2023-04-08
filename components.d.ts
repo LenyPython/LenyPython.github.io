@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    App: typeof import('./pages/index.vue')['default']
     AppFooterFooter: typeof import('./components/App/Footer/Footer.vue')['default']
     AppNavbarNavbar: typeof import('./components/App/Navbar/Navbar.vue')['default']
     'Blog-[id]': typeof import('./pages/blog/[id].vue')['default']
