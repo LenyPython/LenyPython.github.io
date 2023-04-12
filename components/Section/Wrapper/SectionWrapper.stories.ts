@@ -18,8 +18,11 @@ export const Primary: Story = {
     template: '<Wrapper v-bind="args" />'
   }),
   args: {
-    sectionId: 'Primary',
-    Title: 'Primary Label',
+    sectionId: 'Hero',
+    component: 'Hero',
+    Title: 'Test Hero',
+    text: 'Lorem ipsum lolol',
+    img: '',
     dark: false
   }
 };

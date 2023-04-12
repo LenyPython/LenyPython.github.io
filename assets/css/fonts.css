@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Classic';
+  src: local('Oxygen'),
+    url(~assets/classic/Sofia-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Classic-secondary';
+  src: local('Oxygen'),
+    url(~assets/classic/Niconne-Regular.ttf) format('truetype');
+}

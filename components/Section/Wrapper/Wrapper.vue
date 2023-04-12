@@ -2,21 +2,22 @@
     <section :id="sectionId">
         <div :class="styles.div_container">
             <h2 :class="styles.h2">{{ Title || "Default" }}</h2>
-            <div>
-                children container
-            </div>
+            <component :is="props.component" :heroImg="props.img" :text="props.text" />
         </div>
     </section>
 </template>
 
 <script lang="ts" setup>
 import THEMES from '~/constants/Themes';
-import { createTheme } from './themeCreator'
+import { useGetThemeStyles } from './themeCreator'
 
 const props = defineProps({
     sectionId: String,
-    dark: Boolean,
+    component: String,
     Title: String,
+    text: String,
+    img: String,
+    dark: Boolean,
 })
-const styles = computed(() => createTheme(THEMES.Classic))
+const styles = useGetThemeStyles(THEMES.Classic)
 </script>
