@@ -1,8 +1,5 @@
 <template>
-  <AppNavbar />
-  <SectionHero />
-  <SectionProjects />
-  <SectionExperience />
-  <SectionTechnology />
-  <AppFooter />
+    <NuxtLayout>
+        <SectionWrapper />
+    </NuxtLayout>
 </template>
