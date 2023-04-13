@@ -32,5 +32,8 @@
     "unplugin-auto-import": "^0.15.2",
     "unplugin-vue-components": "^0.24.1"
   },
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "dependencies": {
+    "sass": "^1.62.0"
+  }
 }

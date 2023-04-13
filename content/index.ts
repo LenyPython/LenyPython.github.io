@@ -2,28 +2,28 @@ export const content = {
   sections: [
     {
       sectionId: 'Hero',
-      component: 'Hero',
+      component: 'SectionHero',
       Title: '',
       paragraph: 'salkdfjasdklfjals',
       img: ''
     },
     {
       sectionId: 'Projects',
-      component: '',
+      component: 'SectionProjects',
       Title: '',
       paragraph: 'salkdfjasdklfjals',
       img: ''
     },
     {
       sectionId: 'Experience',
-      component: '',
+      component: 'SectionExperience',
       Title: '',
       paragraph: 'salkdfjasdklfjals',
       img: ''
     },
     {
       sectionId: 'Technology',
-      component: '',
+      component: 'SectionTechnology',
       Title: '',
       paragraph: 'salkdfjasdklfjals',
       img: ''
