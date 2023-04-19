@@ -27,11 +27,12 @@ const config = {
     autodocs: 'tag'
   },
   async viteFinal(baseConfig) {
-    const { config: userConfig } = await loadConfigFromFile(
-      path.resolve(__dirname, '../vite.config.ts')
+    const config = await loadConfigFromFile(
+      path.resolve(__dirname, '../nuxt.config.ts')
     );
+    console.log(config);
 
-    return mergeConfig(baseConfig, userConfig);
+    return mergeConfig(baseConfig, config);
   }
 };
 export default config;
