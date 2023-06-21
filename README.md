@@ -1,62 +1,66 @@
-# code
+# The Storyblok Next Ultimate Tutorial
 
-This template should help get you started developing with Vue 3 in Vite.
+In this tutorial series, you will learn how to build a headless website using Storyblok and Next.js. Starting with the fundamental integration of Storyblok in Next.js, more advanced functionalities are explained in bite-sized content pieces, such as dynamic page rendering, dynamic menus, custom components, multilingual content and more.
 
-## Recommended IDE Setup
+You can switch between the different branches of this repository; there is one branch for each tutorial part. Alternatively, you may want to check out the live demos on StackBlitz. You can even replicate the corresponding Storyblok space for each of the tutorial parts in order to explore its exact configuration. 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Tutorial Parts
 
-## Type Support for `.vue` Imports in TS
+### Part 1
+ - Tutorial: [Add a headless CMS to Next.js 3 in 5 minutes](https://www.storyblok.com/tp/add-a-headless-cms-to-next-js-in-5-minutes)
+ - Live demo: [Open in StackBlitz](https://stackblitz.com/edit/nextjs-5-minutes)
+ - Branch: [part-1](https://github.com/storyblok/next.js-ultimate-tutorial/tree/part-1)
+ - Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/166651)
+ 
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Requirements
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+To use this project you have to have a Storyblok account. If you don't have one yet you can register at [Storyblok](https://www.storyblok.com), it's free.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## How to get started?
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+### 1. Clone the repo
 
 ```sh
-npm install
+  $ git clone https://github.com/storyblok/next.js-ultimate-tutorial.git
 ```
 
-### Compile and Hot-Reload for Development
+### 2. Install all dependecies 
+```sh
+$  yarn # or npm install
+```
+
+### 3. Adding the Access token
+Create a new empty Space and exchange the preview token with your own in ```pages/_app.js```.
+
+```js
+// in pages/_app.js
+storyblokInit({
+  accessToken: "your-preview-token",
+  use: [apiPlugin],
+  components,
+});
+```
+
+### 4. Run your project
+Set the preview domain in <strong>Storyblok</strong> to `http://localhost:3000/`
 
 ```sh
-npm run dev
+# to run in developer mode
+$ yarn dev # or npm run dev
 ```
-
-### Type-Check, Compile and Minify for Production
 
 ```sh
-npm run build
+# to build your project
+$ yarn build # or npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
 
-```sh
-npm run test:unit
-```
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+## Resources
 
-```sh
-npm run test:e2e:dev
-```
+- [Next.js docs](https://nextjs.org/docs/#setup)
+- [Storyblok Next.js Ultimate Tutorial](https://www.storyblok.com/tp/nextjs-headless-cms-ultimate-tutorial)
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
+  
