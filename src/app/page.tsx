@@ -7,9 +7,9 @@ export default async function Home() {
   const { data } = await fetchData()
 
   return (
-    <div>
+    <main>
       <StoryblokStory story={data.story} />
-    </div>
+    </main>
   )
 }
 

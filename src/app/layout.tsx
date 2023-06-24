@@ -1,4 +1,5 @@
 import './globals.css'
+import Head from 'next/head'
 //@ts-ignore next-line
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import StoryblokProvider from '@/storyblok/StoryblokProvider/StoryblokProvider'
@@ -18,6 +19,10 @@ export default function RootLayout({
   return (
     <StoryblokProvider>
       <html lang='en'>
+        <Head>
+          <title>Portfolio</title>
+          <link rel='icon' href='/favicon.ico' />
+        </Head>
         <body>
           <Navigation />
           {children}
