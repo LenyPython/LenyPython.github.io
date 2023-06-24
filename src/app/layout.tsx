@@ -2,6 +2,8 @@ import './globals.css'
 //@ts-ignore next-line
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import StoryblokProvider from '@/storyblok/StoryblokProvider/StoryblokProvider'
+import Navigation from '@/components/Navigation/Navigation'
+import Footer from '@/components/Footer/Footer'
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_API_TOKEN,
@@ -16,7 +18,11 @@ export default function RootLayout({
   return (
     <StoryblokProvider>
       <html lang='en'>
-        <body>{children}</body>
+        <body>
+          <Navigation />
+          {children}
+          <Footer />
+        </body>
       </html>
     </StoryblokProvider>
   )
