@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -9,9 +8,9 @@ type Props = {
 const Navigation: React.FC<Props> = ({ config }) => {
   console.log(config)
   return (
-    <div className='flex justify-center items-center w-full h-16 bg-gray-600 '>
+    <div className='flex justify-center items-center w-full h-16 bg-black shadow-2xl shadow-green-300'>
       <div className='flex justify-between max-w-5xl w-4/5'>
-        <Image src='/next.svg' width={100} height={100} alt='logo' />
+        <h2 className='text-green-500 text-3xl'>LOGO</h2>
         <div>
           {config.map((item: any) => (
             <Link

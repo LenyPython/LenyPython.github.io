@@ -16,7 +16,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
   const { headline, Image, rich_text, cta_link, call_to_action } = blok
   return (
     <div className='flex '>
-      <div className='flex flex-col'>
+      <div className='flex flex-col text-green-500'>
         <h2>{headline}</h2>
         <RichText html={renderRichText(rich_text)} />
         <Link href={cta_link}>{call_to_action}</Link>

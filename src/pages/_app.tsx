@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import { storyblokInit, apiPlugin } from '@storyblok/react'
 
-import '@/styles/global.css'
+import '@/styles/global.scss'
 import Section from '@/blocks/PortfolioModule/Section/Section'
 import Hero from '@/blocks/PortfolioModule/Hero/Hero'
 import PortfolioContentLayout from '@/blocks/PortfolioModule/PortfolioContentLayout/PortfolioContentLayout'
