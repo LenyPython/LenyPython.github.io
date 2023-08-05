@@ -10,7 +10,6 @@ type storyblokProps = {
 const Home: React.FC<
   InferGetStaticPropsType<typeof getStaticProps>
 > = props => {
-  console.log(props)
   const name = props.story ? props.story.name : 'My Site'
   return (
     <div>

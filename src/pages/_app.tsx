@@ -2,8 +2,15 @@ import { AppProps } from 'next/app'
 import { storyblokInit, apiPlugin } from '@storyblok/react'
 
 import '@/styles/global.css'
+import Section from '@/blocks/PortfolioModule/Section/Section'
+import Hero from '@/blocks/PortfolioModule/Hero/Hero'
+import PortfolioContentLayout from '@/blocks/PortfolioModule/PortfolioContentLayout/PortfolioContentLayout'
 
-const components = {}
+const components = {
+  Section,
+  Hero,
+  PortfolioContentLayout
+}
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_API_TOKEN,
