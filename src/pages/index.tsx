@@ -10,7 +10,7 @@ type storyblokProps = {
 const Home: React.FC<
   InferGetStaticPropsType<typeof getStaticProps>
 > = props => {
-  console.log(props.story)
+  console.log(props)
   const name = props.story ? props.story.name : 'My Site'
   return (
     <div>
@@ -25,8 +25,9 @@ const Home: React.FC<
 export default Home
 
 export const getStaticProps: GetStaticProps<storyblokProps> = async context => {
+  let slug = 'home'
   const storyblokApi = getStoryblokApi()
-  let { data } = await storyblokApi.get(`cdn/stories/home`, {
+  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
     version: 'draft'
   })
 
