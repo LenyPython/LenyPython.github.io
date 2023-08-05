@@ -24,9 +24,16 @@ const Home: React.FC<
 
 export default Home
 
-export const getStaticProps: GetStaticProps<storyblokProps> = async context => {
+export const getStaticProps: GetStaticProps<storyblokProps> = async ({
+  params
+}) => {
+  let slug = params?.slug
+    ? typeof params.slug === 'string'
+      ? params?.slug
+      : params.slug.join('/')
+    : 'home'
   const storyblokApi = getStoryblokApi()
-  let { data } = await storyblokApi.get(`cdn/stories/home`, {
+  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
     version: 'draft'
   })
 
@@ -36,5 +43,28 @@ export const getStaticProps: GetStaticProps<storyblokProps> = async context => {
       key: data ? data.story.id : null
     },
     revalidate: 3600 // revalidate every hour
+  }
+}
+
+export async function getStaticPaths() {
+  const storyblokApi = getStoryblokApi()
+  let { data } = await storyblokApi.get('cdn/links/', {
+    version: 'draft'
+  })
+
+  let paths: any[] = []
+  Object.keys(data.links).forEach(linkKey => {
+    if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'home')
+      return
+
+    const slug = data.links[linkKey].slug
+    let splittedSlug = slug.split('/')
+
+    paths.push({ params: { slug: splittedSlug } })
+  })
+
+  return {
+    paths: paths,
+    fallback: false
   }
 }

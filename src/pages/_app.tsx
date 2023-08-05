@@ -1,5 +1,8 @@
 import { AppProps } from 'next/app'
 import { storyblokInit, apiPlugin } from '@storyblok/react'
+
+import '@/styles/global.css'
+
 import Feature from '@/bloks/Feature/Feature'
 import Grid from '@/bloks/Grid/Grid'
 import Page from '@/bloks/Page/Page'
