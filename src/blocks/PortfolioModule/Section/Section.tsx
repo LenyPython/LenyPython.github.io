@@ -7,8 +7,8 @@ const Section: React.FC<{ blok: any }> = ({ blok }) => {
       className='flex justify-center items-center min-h-[80vh]'
       {...storyblokEditable(blok)}
     >
-      {blok.Blocks.map((blok: any) => (
-        <StoryblokComponent blok={blok} key={blok._id} />
+      {blok.Blocks.map((component: any) => (
+        <StoryblokComponent blok={component} key={component._uid} />
       ))}
     </section>
   )
