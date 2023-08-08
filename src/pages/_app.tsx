@@ -2,14 +2,20 @@ import { AppProps } from 'next/app'
 import { storyblokInit, apiPlugin } from '@storyblok/react'
 
 import '@/styles/global.scss'
-import Section from '@/blocks/PortfolioModule/Section/Section'
-import Hero from '@/blocks/PortfolioModule/Hero/Hero'
-import PortfolioContentLayout from '@/blocks/PortfolioModule/PortfolioContentLayout/PortfolioContentLayout'
+import Section from '@/Global/blocks/Section/Section'
+import Hero from '@/PortfolioModule/blocks/Hero/Hero'
+import PortfolioContentLayout from '@/PortfolioModule/blocks/PortfolioContentLayout/PortfolioContentLayout'
+import Technology from '@/PortfolioModule/blocks/Technology/Technology'
+import TechGroup from '@/PortfolioModule/blocks/TechGroup/TechGroup'
+import Tech from '@/PortfolioModule/blocks/Tech/Tech'
 
 const components = {
   Section,
   Hero,
-  PortfolioContentLayout
+  PortfolioContentLayout,
+  Technology,
+  TechGroup,
+  Tech
 }
 
 storyblokInit({

@@ -6,7 +6,6 @@ type Props = {
 }
 
 const Navigation: React.FC<Props> = ({ config }) => {
-  console.log(config)
   return (
     <div className='flex justify-center items-center w-full h-16 bg-black'>
       <div className='flex justify-between max-w-5xl w-4/5'>

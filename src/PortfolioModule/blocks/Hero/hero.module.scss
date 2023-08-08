@@ -2,6 +2,14 @@
   border-radius: 50%;
 }
 
+.glass {
+  --bg-color: hsla(120, 100%, 5%, 0.35);
+  background-color: var(--bg-color);
+  // box-shadow: 0 4px 30px var(--main-font-color);
+  backdrop-filter: blur(18.6px);
+  -webkit-backdrop-filter: blur(18.6px);
+  // border: 1px solid var(--main-font-color);
+}
 .ctaLink {
   --width: 10em;
   --height: 2.2em;

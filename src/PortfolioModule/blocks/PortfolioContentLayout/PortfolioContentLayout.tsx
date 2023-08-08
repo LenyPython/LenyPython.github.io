@@ -1,6 +1,6 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
-import Navigation from '@/components/Navigation/Navigation'
-import MatrixBg from '@/components/MatrixBg/MatrixBg'
+import Navigation from '@/PortfolioModule/components/Navigation/Navigation'
+import MatrixBg from '@/PortfolioModule/components/MatrixBg/MatrixBg'
 
 const PortfolioContentLayout: React.FC<{ blok: any }> = ({ blok }) => {
   return (
