@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"npm:[dev]-*\"",
     "build": "next build",
-    "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
+    "[dev]-dev": "next dev",
+    "[dev]-proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
     "start": "next start",
     "lint": "next lint"
   },
@@ -23,6 +24,7 @@
     "typescript": "5.1.3"
   },
   "devDependencies": {
+    "concurrently": "^8.2.0",
     "sass": "^1.64.2"
   }
 }

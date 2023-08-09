@@ -28,7 +28,9 @@ const Hero: React.FC<Props> = ({ blok }) => {
   }
 
   return (
-    <div className={`${styles.glass} h-full flex p-10 rounded-lg`}>
+    <div
+      className={`${styles.glass} backdrop-blur-lg h-full flex p-10 rounded-lg`}
+    >
       <div className='flex flex-col justify-around '>
         <div>
           <h2 className='text-6xl font-bold mb-10'>{headline}</h2>
