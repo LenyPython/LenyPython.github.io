@@ -1,27 +1,21 @@
-import { log } from 'console'
-import Image from 'next/image'
+import SvgProvider, { SvgType } from '@/utils/SvgProvider'
 
 type Props = {
   blok: {
-    svg: {
-      id: number
-      _uid: string
-      alt: string
-      title: string
-      filename: string
-    }
+    svg_type: SvgType
   }
 }
 const Tech: React.FC<Props> = ({ blok }) => {
-  const { svg } = blok
-  console.log(svg)
+  console.log(blok)
   return (
-    <Image
-      src={svg.filename}
-      width={30}
-      height={30}
-      title={svg.title}
-      alt={svg.alt}
+    <SvgProvider
+      type={blok.svg_type}
+      width={50}
+      height={50}
+      h={220}
+      s={50}
+      l={60}
+      a={1}
     />
   )
 }

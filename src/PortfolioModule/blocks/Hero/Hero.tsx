@@ -29,7 +29,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 
   return (
     <div
-      className={`${styles.glass} backdrop-blur-lg h-full flex p-10 rounded-lg`}
+      className={`${styles.glass} w-3/4 max-w-4xl h-full flex p-10 backdrop-blur-lg rounded-lg`}
     >
       <div className='flex flex-col justify-around '>
         <div>

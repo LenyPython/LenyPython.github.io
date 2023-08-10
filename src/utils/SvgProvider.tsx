@@ -1,32 +1,23 @@
-import JSlogo from '@assets/images/svg/js.svg'
-import TSlogo from '@assets/images/svg/ts.svg'
-import HTMLlogo from '@assets/images/svg/html.svg'
-import CSSlogo from '@assets/images/svg/css.svg'
-import Reactlogo from '@assets/images/svg/react.svg'
-import Reduxlogo from '@assets/images/svg/redux.svg'
-import ReduxSagalogo from '@assets/images/svg/redux-saga.svg'
-import Pythonlogo from '@assets/images/svg/python.svg'
-import Kivylogo from '@assets/images/svg/kivy.svg'
-import D3logo from '@assets/images/svg/d3.svg'
-import Firebaselogo from '@assets/images/svg/firebase.svg'
-import FrontendMentorlogo from '@assets/images/svg/frontend-mentor.svg'
-import Githublogo from '@assets/images/svg/github.svg'
-import Linkedinlogo from '@assets/images/svg/linkedin.svg'
-import Leetcodelogo from '@assets/images/svg/leetcode.svg'
-import Replitlogo from '@assets/images/svg/replit.svg'
-import Codepenlogo from '@assets/images/svg/codepen.svg'
-import Codewarslogo from '@assets/images/svg/codewars.svg'
-import { isReturnStatement } from 'typescript'
+import JSlogo from '@/assets/images/svg/tech/js.svg'
+import TSlogo from '@/assets/images/svg/tech/ts.svg'
+import HTMLlogo from '@/assets/images/svg/tech/html.svg'
+import CSSlogo from '@/assets/images/svg/tech/css.svg'
+import Reactlogo from '@/assets/images/svg/tech/react.svg'
+import Reduxlogo from '@/assets/images/svg/tech/redux.svg'
+import ReduxSagalogo from '@/assets/images/svg/tech/redux-saga.svg'
+import Pythonlogo from '@/assets/images/svg/tech/python.svg'
+import Kivylogo from '@/assets/images/svg/tech/kivy.svg'
+import D3logo from '@/assets/images/svg/tech/d3.svg'
+import Firebaselogo from '@/assets/images/svg/tech/firebase.svg'
+import FrontendMentorlogo from '@/assets/images/svg/tech/frontendMentor.svg'
+import Githublogo from '@/assets/images/svg/tech/github.svg'
+import Linkedinlogo from '@/assets/images/svg/tech/linkedin.svg'
+import Leetcodelogo from '@/assets/images/svg/tech/leetcode.svg'
+import Replitlogo from '@/assets/images/svg/tech/replit.svg'
+import Codepenlogo from '@/assets/images/svg/tech/codepen.svg'
+import Codewarslogo from '@/assets/images/svg/tech/codewars.svg'
 
-type Props = {
-  type: SvgType
-  h: number
-  s: number
-  l: number
-  a: number
-}
-
-enum SvgType {
+export enum SvgType {
   codepen = 'codepen',
   codewars = 'codewars',
   css = 'css',
@@ -35,7 +26,7 @@ enum SvgType {
   frontendMentor = 'frontend mentor',
   github = 'github',
   html = 'html',
-  js = 'js',
+  js = 'java script',
   linkedin = 'linkedin',
   kivy = 'kivy',
   leetcode = 'leetcode',
@@ -44,47 +35,58 @@ enum SvgType {
   redux = 'redux',
   reduxSaga = 'redux saga',
   replit = 'replit',
-  ts = 'ts'
+  ts = 'type script'
 }
-const SvgProvider: React.FC<Props> = ({ type, h, s, l, a }) => {
-  const color = `hsl(${h},${s}%,${l}%,${a})`
+
+type Props = {
+  type: SvgType
+  width: number
+  height: number
+  h: number
+  s: number
+  l: number
+  a: number
+}
+const SvgProvider: React.FC<Props> = ({ type, width, height, h, s, l, a }) => {
+  const fill = `hsla(${h},${s}%,${l}%,${a})`
+  const style = { width, height }
   switch (type) {
     case SvgType.codepen:
-      return <Codepenlogo fill={color} />
+      return <Codepenlogo className={`fill-[${fill}]`} style={style} />
     case SvgType.codewars:
-      return <Codewarslogo fill={color} />
+      return <Codewarslogo className={`fill-[${fill}]`} style={style} />
     case SvgType.js:
-      return <JSlogo fill={color} />
+      return <JSlogo class={`fill-[${fill}]`} style={style} />
     case SvgType.ts:
-      return <TSlogo fill={color} />
+      return <TSlogo className={`fill-[${fill}]`} style={style} />
     case SvgType.html:
-      return <HTMLlogo fill={color} />
+      return <HTMLlogo className={`fill-[${fill}]`} style={style} />
     case SvgType.css:
-      return <CSSlogo fill={color} />
+      return <CSSlogo className={`fill-[${fill}]`} style={style} />
     case SvgType.react:
-      return <Reactlogo fill={color} />
+      return <Reactlogo className={`fill-[${fill}]`} style={style} />
     case SvgType.redux:
-      return <Reduxlogo fill={color} />
+      return <Reduxlogo className={`fill-[${fill}]`} style={style} />
     case SvgType.reduxSaga:
-      return <ReduxSagalogo fill={color} />
+      return <ReduxSagalogo className={`fill-[${fill}]`} style={style} />
     case SvgType.python:
-      return <Pythonlogo fill={color} />
+      return <Pythonlogo className={`fill-[${fill}]`} style={style} />
     case SvgType.kivy:
-      return <Kivylogo fill={color} />
+      return <Kivylogo className={`fill-[${fill}]`} style={style} />
     case SvgType.d3:
-      return <D3logo fill={color} />
+      return <D3logo className={`fill-[${fill}]`} style={style} />
     case SvgType.firebase:
-      return <Firebaselogo fill={color} />
+      return <Firebaselogo className={`fill-[${fill}]`} style={style} />
     case SvgType.frontendMentor:
-      return <FrontendMentorlogo fill={color} />
+      return <FrontendMentorlogo className={`fill-[${fill}]`} style={style} />
     case SvgType.github:
-      return <Githublogo fill={color} />
+      return <Githublogo className={`fill-[${fill}]`} style={style} />
     case SvgType.linkedin:
-      return <Linkedinlogo fill={color} />
+      return <Linkedinlogo className={`fill-[${fill}]`} style={style} />
     case SvgType.leetcode:
-      return <Leetcodelogo fill={color} />
+      return <Leetcodelogo className={`fill-[${fill}]`} style={style} />
     case SvgType.replit:
-      return <Replitlogo fill={color} />
+      return <Replitlogo className={`fill-[${fill}]`} style={style} />
   }
   return <></>
 }

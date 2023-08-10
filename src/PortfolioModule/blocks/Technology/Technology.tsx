@@ -9,7 +9,7 @@ type Props = {
 
 const Technology: React.FC<Props> = ({ blok }) => {
   return (
-    <div className='relative p-10 rounded-xl bg-black backdrop-blur-lg w-80'>
+    <div className='relative w-3/4 max-w-4xl p-10 rounded-xl bg-black backdrop-blur-lg '>
       <h2 className='absolute top-0 left-8 -translate-y-1/2 text-3xl'>
         {blok.headline}
       </h2>
