@@ -7,15 +7,13 @@ import Hero from '@/PortfolioModule/blocks/Hero/Hero'
 import PortfolioContentLayout from '@/PortfolioModule/blocks/PortfolioContentLayout/PortfolioContentLayout'
 import Technology from '@/PortfolioModule/blocks/Technology/Technology'
 import TechGroup from '@/PortfolioModule/blocks/TechGroup/TechGroup'
-import Tech from '@/PortfolioModule/blocks/Tech/Tech'
 
 const components = {
   Section,
   Hero,
   PortfolioContentLayout,
   Technology,
-  TechGroup,
-  Tech
+  TechGroup
 }
 
 storyblokInit({

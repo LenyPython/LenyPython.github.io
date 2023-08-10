@@ -1,23 +1,21 @@
 import SvgProvider, { SvgType } from '@/utils/SvgProvider'
 
 type Props = {
-  blok: {
-    svg_type: SvgType
-  }
+  svgType: SvgType
+  basic?: boolean
 }
-const Tech: React.FC<Props> = ({ blok }) => {
-  console.log(blok)
+const TechSvg: React.FC<Props> = ({ svgType, basic }) => {
   return (
     <SvgProvider
-      type={blok.svg_type}
+      type={svgType}
       width={50}
       height={50}
       h={220}
       s={50}
       l={60}
-      a={1}
+      a={basic ? 0.5 : 1}
     />
   )
 }
 
-export default Tech
+export default TechSvg

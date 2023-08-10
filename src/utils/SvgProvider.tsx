@@ -48,45 +48,45 @@ type Props = {
   a: number
 }
 const SvgProvider: React.FC<Props> = ({ type, width, height, h, s, l, a }) => {
-  const fill = `hsla(${h},${s}%,${l}%,${a})`
-  const style = { width, height }
+  const color = `hsla(${h},${s}%,${l}%,${a})`
+  const style = { color, width, height }
   switch (type) {
     case SvgType.codepen:
-      return <Codepenlogo className={`fill-[${fill}]`} style={style} />
+      return <Codepenlogo style={style} />
     case SvgType.codewars:
-      return <Codewarslogo className={`fill-[${fill}]`} style={style} />
+      return <Codewarslogo style={style} />
     case SvgType.js:
-      return <JSlogo class={`fill-[${fill}]`} style={style} />
+      return <JSlogo style={style} />
     case SvgType.ts:
-      return <TSlogo className={`fill-[${fill}]`} style={style} />
+      return <TSlogo style={style} />
     case SvgType.html:
-      return <HTMLlogo className={`fill-[${fill}]`} style={style} />
+      return <HTMLlogo style={style} />
     case SvgType.css:
-      return <CSSlogo className={`fill-[${fill}]`} style={style} />
+      return <CSSlogo style={style} />
     case SvgType.react:
-      return <Reactlogo className={`fill-[${fill}]`} style={style} />
+      return <Reactlogo style={style} />
     case SvgType.redux:
-      return <Reduxlogo className={`fill-[${fill}]`} style={style} />
+      return <Reduxlogo style={style} />
     case SvgType.reduxSaga:
-      return <ReduxSagalogo className={`fill-[${fill}]`} style={style} />
+      return <ReduxSagalogo style={style} />
     case SvgType.python:
-      return <Pythonlogo className={`fill-[${fill}]`} style={style} />
+      return <Pythonlogo style={style} />
     case SvgType.kivy:
-      return <Kivylogo className={`fill-[${fill}]`} style={style} />
+      return <Kivylogo style={style} />
     case SvgType.d3:
-      return <D3logo className={`fill-[${fill}]`} style={style} />
+      return <D3logo style={style} />
     case SvgType.firebase:
-      return <Firebaselogo className={`fill-[${fill}]`} style={style} />
+      return <Firebaselogo style={style} />
     case SvgType.frontendMentor:
-      return <FrontendMentorlogo className={`fill-[${fill}]`} style={style} />
+      return <FrontendMentorlogo style={style} />
     case SvgType.github:
-      return <Githublogo className={`fill-[${fill}]`} style={style} />
+      return <Githublogo style={style} />
     case SvgType.linkedin:
-      return <Linkedinlogo className={`fill-[${fill}]`} style={style} />
+      return <Linkedinlogo style={style} />
     case SvgType.leetcode:
-      return <Leetcodelogo className={`fill-[${fill}]`} style={style} />
+      return <Leetcodelogo style={style} />
     case SvgType.replit:
-      return <Replitlogo className={`fill-[${fill}]`} style={style} />
+      return <Replitlogo style={style} />
   }
   return <></>
 }
