@@ -88,7 +88,7 @@ const SvgProvider: React.FC<Props> = ({ type, width, height, h, s, l, a }) => {
     case SvgType.replit:
       return <Replitlogo style={style} />
   }
-  return <></>
+  return <p>{type}</p>
 }
 
 export default SvgProvider
