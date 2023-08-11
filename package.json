@@ -7,6 +7,7 @@
     "build": "next build",
     "[dev]-dev": "next dev",
     "[dev]-proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
+    "sb-types": "storyblok-generate-ts source=./components.245345.json target=./src/types/component-types-sb",
     "start": "next start",
     "lint": "next lint"
   },
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@svgr/webpack": "8.0.1",
     "concurrently": "8.2.0",
-    "sass": "1.64.2"
+    "sass": "1.64.2",
+    "storyblok-generate-ts": "1.15.0"
   }
 }

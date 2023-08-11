@@ -3,11 +3,10 @@ import { ISbRichtext, renderRichText } from '@storyblok/react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { ImageType } from '@/types/global'
-
 import RichText from '@/Global/components/RIchText/RichText'
 
 import styles from './hero.module.scss'
+import { AssetStoryblok } from '@/types/component-types-sb'
 
 type Props = {
   blok: {
@@ -15,7 +14,7 @@ type Props = {
     rich_text: ISbRichtext
     cta_link: string
     headline: string
-    Image: ImageType
+    Image: AssetStoryblok
   }
 }
 const Hero: React.FC<Props> = ({ blok }) => {
@@ -51,7 +50,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
         className={styles.heroImg}
         width={250}
         height={250}
-        alt={img.alt}
+        alt={img?.alt ?? 'image'}
       />
     </div>
   )

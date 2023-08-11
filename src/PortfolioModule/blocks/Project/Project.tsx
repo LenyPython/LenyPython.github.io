@@ -1,21 +1,11 @@
 import RichText from '@/Global/components/RIchText/RichText'
-import { SvgType } from '@/utils/SvgProvider'
-import { ISbRichtext, renderRichText } from '@storyblok/react'
-
-type roles = 'dev' | 'main' | 'sup'
+import { ProjectStoryblok } from '@/types/component-types-sb'
+import { renderRichText } from '@storyblok/react'
 
 type Props = {
-  blok: {
-    project_name: string
-    role: roles[]
-    tech: { svg_type: SvgType }[]
-    description: ISbRichtext
-    live_page: {
-      cached_url: string
-      target: string
-    }
-  }
+  blok: ProjectStoryblok
 }
+
 const Project: React.FC<Props> = ({ blok }) => {
   const { project_name, role, tech, description, live_page } = blok
   return (
@@ -23,6 +13,11 @@ const Project: React.FC<Props> = ({ blok }) => {
       <h2>{project_name}</h2>
       <h3>{role.join(', ')}</h3>
       <RichText html={renderRichText(description)} />
+      {live_page && (
+        <p>
+          <a href={live_page.url}>Live page</a>
+        </p>
+      )}
     </div>
   )
 }

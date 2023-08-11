@@ -1,10 +1,8 @@
 import { StoryblokComponent } from '@storyblok/react'
+import { TechnologyStoryblok } from '@/types/component-types-sb'
 
 type Props = {
-  blok: {
-    headline: string
-    tech_groups: any[]
-  }
+  blok: TechnologyStoryblok
 }
 
 const Technology: React.FC<Props> = ({ blok }) => {

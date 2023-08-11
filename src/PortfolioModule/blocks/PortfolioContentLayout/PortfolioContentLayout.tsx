@@ -1,8 +1,13 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import Navigation from '@/PortfolioModule/components/Navigation/Navigation'
 import MatrixBg from '@/PortfolioModule/components/MatrixBg/MatrixBg'
+import { PortfolioContentLayoutStoryblok } from '@/types/component-types-sb'
 
-const PortfolioContentLayout: React.FC<{ blok: any }> = ({ blok }) => {
+type Props = {
+  blok: PortfolioContentLayoutStoryblok
+}
+
+const PortfolioContentLayout: React.FC<Props> = ({ blok }) => {
   return (
     <>
       <MatrixBg />

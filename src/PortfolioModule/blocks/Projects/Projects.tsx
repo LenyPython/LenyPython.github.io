@@ -1,10 +1,8 @@
+import { ProjectsStoryblok } from '@/types/component-types-sb'
 import { StoryblokComponent } from '@storyblok/react'
 
 type Props = {
-  blok: {
-    headline: string
-    projects: any[]
-  }
+  blok: ProjectsStoryblok
 }
 
 const Projects: React.FC<Props> = ({ blok }) => {

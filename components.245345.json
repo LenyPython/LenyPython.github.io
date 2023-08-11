@@ -1,0 +1,312 @@
+{
+  "components": [
+    {
+      "name": "Hero",
+      "display_name": null,
+      "created_at": "2023-08-05T18:05:41.146Z",
+      "updated_at": "2023-08-05T19:19:54.223Z",
+      "id": 4384111,
+      "schema": {
+        "Image": {
+          "type": "asset",
+          "pos": 0,
+          "key": "Image"
+        },
+        "headline": {
+          "type": "text",
+          "pos": 1,
+          "display_name": "headline",
+          "key": "headline"
+        },
+        "rich_text": {
+          "type": "richtext",
+          "pos": 2,
+          "key": "rich_text"
+        },
+        "call_to_action": {
+          "type": "text",
+          "pos": 3,
+          "key": "call_to_action"
+        },
+        "cta_link": {
+          "type": "multilink",
+          "pos": 4,
+          "required": true,
+          "show_anchor": true,
+          "key": "Cta_link"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Hero",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "PortfolioContentLayout",
+      "display_name": null,
+      "created_at": "2023-08-05T17:28:20.045Z",
+      "updated_at": "2023-08-11T20:58:49.294Z",
+      "id": 4384073,
+      "schema": {
+        "Sections": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Section"
+          ],
+          "minimum": 1,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "PortfolioContentLayout",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Project",
+      "display_name": null,
+      "created_at": "2023-08-10T20:16:00.843Z",
+      "updated_at": "2023-08-10T20:25:51.090Z",
+      "id": 4407537,
+      "schema": {
+        "project_name": {
+          "type": "text",
+          "required": true
+        },
+        "role": {
+          "type": "options",
+          "options": [
+            {
+              "_uid": "e747526a-5213-4751-8821-e83787357f11",
+              "name": "developer",
+              "value": "dev"
+            },
+            {
+              "_uid": "49d6e879-a323-4fa5-8653-2b6ee69f6e28",
+              "value": "main",
+              "name": "maintenance"
+            },
+            {
+              "_uid": "819d8c97-34b1-4860-852c-0ed3a0298177",
+              "value": "sup",
+              "name": "support"
+            }
+          ],
+          "required": true
+        },
+        "description": {
+          "type": "richtext"
+        },
+        "tech": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Tech"
+          ]
+        },
+        "live_page": {
+          "type": "multilink",
+          "allow_target_blank": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Project",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Projects",
+      "display_name": null,
+      "created_at": "2023-08-10T20:11:50.596Z",
+      "updated_at": "2023-08-11T21:03:23.525Z",
+      "id": 4407535,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0
+        },
+        "projects": {
+          "type": "bloks",
+          "pos": 1,
+          "required": true,
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Projects",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Section",
+      "display_name": null,
+      "created_at": "2023-08-05T17:52:54.252Z",
+      "updated_at": "2023-08-11T20:54:51.298Z",
+      "id": 4384106,
+      "schema": {
+        "ID": {
+          "type": "text"
+        },
+        "Blocks": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Section",
+      "component_group_uuid": "0b78bd98-88ac-4899-a0a4-bf6d61cf7c10",
+      "color": null,
+      "icon": null,
+      "component_group_name": "General"
+    },
+    {
+      "name": "Tech",
+      "display_name": null,
+      "created_at": "2023-08-08T21:27:48.719Z",
+      "updated_at": "2023-08-10T19:27:27.208Z",
+      "id": 4396113,
+      "schema": {
+        "svg_type": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Tech",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "TechGroup",
+      "display_name": null,
+      "created_at": "2023-08-08T21:30:16.807Z",
+      "updated_at": "2023-08-09T20:46:16.935Z",
+      "id": 4396137,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "key": "headline",
+          "pos": 0
+        },
+        "advanced_tech": {
+          "type": "bloks",
+          "required": false,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Tech"
+          ],
+          "key": "techs",
+          "pos": 1
+        },
+        "basic_tech": {
+          "type": "bloks",
+          "required": false,
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "TechGroup",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Technology",
+      "display_name": null,
+      "created_at": "2023-08-08T21:26:00.382Z",
+      "updated_at": "2023-08-08T21:43:48.089Z",
+      "id": 4396112,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "required": true,
+          "default_value": "Technologies",
+          "key": "headline",
+          "pos": 0
+        },
+        "tech_groups": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "TechGroup"
+          ],
+          "display_name": "tech_groups",
+          "key": "techs",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Technology",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    }
+  ]
+}
