@@ -1,21 +1,15 @@
 import { useState } from 'react'
-import { ISbRichtext, renderRichText } from '@storyblok/react'
-import Link from 'next/link'
+import { renderRichText } from '@storyblok/react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import RichText from '@/Global/components/RIchText/RichText'
 
 import styles from './hero.module.scss'
-import { AssetStoryblok } from '@/types/component-types-sb'
+import { HeroStoryblok } from '@/types/component-types-sb'
 
 type Props = {
-  blok: {
-    call_to_action: string
-    rich_text: ISbRichtext
-    cta_link: string
-    headline: string
-    Image: AssetStoryblok
-  }
+  blok: HeroStoryblok
 }
 const Hero: React.FC<Props> = ({ blok }) => {
   const { headline, Image: img, rich_text, cta_link, call_to_action } = blok
@@ -25,7 +19,6 @@ const Hero: React.FC<Props> = ({ blok }) => {
     setIsActive(true)
     setTimeout(() => setIsActive(false), 5000)
   }
-
   return (
     <div
       className={`${styles.glass} w-3/4 max-w-4xl h-full flex p-10 backdrop-blur-lg rounded-lg`}
@@ -36,7 +29,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
           <RichText html={renderRichText(rich_text)} />
         </div>
         <div className='flex items-center mt-20'>
-          <Link href={cta_link} className={styles.ctaLink}>
+          <Link href={`#${cta_link.anchor}`} className={styles.ctaLink}>
             <span></span>
             {call_to_action}
           </Link>
@@ -46,7 +39,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
         </div>
       </div>
       <Image
-        src={img.filename}
+        src={img?.filename ?? ''}
         className={styles.heroImg}
         width={250}
         height={250}

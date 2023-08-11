@@ -11,7 +11,7 @@ const PortfolioContentLayout: React.FC<Props> = ({ blok }) => {
   return (
     <>
       <MatrixBg />
-      <nav className='fixed bottom-0 left-0 right-0'>
+      <nav>
         <Navigation config={blok.Sections} />
       </nav>
       <main>

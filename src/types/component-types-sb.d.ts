@@ -95,9 +95,9 @@ export interface PortfolioContentLayoutStoryblok {
 
 export interface ProjectStoryblok {
   project_name: string;
-  role: ("" | "dev" | "main" | "sup")[];
+  role: ("" | "developer" | "maintenance" | "support")[];
   description?: RichtextStoryblok;
-  tech?: TechStoryblok[];
+  tech: TechStoryblok[];
   live_page?: MultilinkStoryblok;
   _uid: string;
   component: "Project";
@@ -121,7 +121,7 @@ export interface SectionStoryblok {
 }
 
 export interface TechStoryblok {
-  svg_type?: string;
+  svg_type: string;
   _uid: string;
   component: "Tech";
   [k: string]: any;
@@ -130,7 +130,7 @@ export interface TechStoryblok {
 export interface TechGroupStoryblok {
   headline?: string;
   advanced_tech?: TechStoryblok[];
-  basic_tech?: any[];
+  basic_tech?: TechStoryblok[];
   _uid: string;
   component: "TechGroup";
   [k: string]: any;

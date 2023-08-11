@@ -1,7 +1,11 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import { SectionStoryblok } from '@/types/component-types-sb'
 
-const Section: React.FC<{ blok: SectionStoryblok }> = ({ blok }) => {
+type Props = {
+  blok: SectionStoryblok
+}
+
+const Section: React.FC<Props> = ({ blok }) => {
   return (
     <section
       id={blok.ID}
