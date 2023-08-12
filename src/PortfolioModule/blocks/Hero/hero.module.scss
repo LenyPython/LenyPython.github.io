@@ -9,12 +9,10 @@
 }
 
 .ctaLink {
-  --width: 10em;
-  --height: 2.2em;
   display: inline-block;
   position: relative;
-  width: var(--width);
-  height: var(--height);
+  padding: 5px 35px;
+  max-width: 150px;
   background: hsl(var(--main-background-color));
   text-transform: uppercase;
   text-align: center;
@@ -67,7 +65,7 @@
   &:hover:after,
   &:hover span:before,
   &:hover span:after {
-    width: calc(var(--width) / 2);
-    height: calc(var(--height) / 2);
+    width: 50%;
+    height: 50%;
   }
 }
