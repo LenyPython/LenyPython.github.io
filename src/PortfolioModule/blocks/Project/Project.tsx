@@ -16,7 +16,7 @@ const Project: React.FC<Props> = ({ blok }) => {
       <h3 className='text-xl font-bold'>{role.join(', ')}</h3>
       <RichText html={renderRichText(description)} />
       <h3 className='text-xl font-bold'>Tech</h3>
-      <div className='flex'>
+      <div className='flex items-center'>
         {tech?.map((tech: TechStoryblok) => (
           <SvgProvider
             key={tech._uid}

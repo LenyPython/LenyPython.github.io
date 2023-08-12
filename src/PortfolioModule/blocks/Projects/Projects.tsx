@@ -15,16 +15,20 @@ enum role {
 
 const Projects: React.FC<Props> = ({ blok }) => {
   let { projects } = blok
+  const [isTechInputOpen, setTechInputOpen] = useState(false)
   const technologies: SvgType[] = Object.values(SvgType)
   const [roleFilter, setRoleFilter] = useState(role.any)
+  const [techFilter, setTechFilter] = useState(new Set<SvgType>())
+  const toggleTechInput = () => setTechInputOpen(prev => !prev)
   const onRoleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setRoleFilter(e.target.value as role)
   }
-  const [techFilter, setTechFilter] = useState([] as SvgType[])
-  const onTechChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setTechFilter(e.target.value)
-    console.log(e.target.value)
-    console.log(techFilter)
+  const onTechChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTechFilter(set => {
+      if (e.target.checked) set.add(e.target.value as SvgType)
+      else set.delete(e.target.value as SvgType)
+      return new Set(set)
+    })
   }
   if (roleFilter !== role.any)
     projects = projects.filter((proj: ProjectStoryblok) =>
@@ -36,7 +40,10 @@ const Projects: React.FC<Props> = ({ blok }) => {
         {blok.headline}
       </h2>
       <div className='w-full flex mb-5'>
-        <label htmlFor='role' className='border-2 pl-1 mr-1 bg-background'>
+        <label
+          htmlFor='role'
+          className='border-2 pl-1 mr-1 w-1/3 bg-background text-center'
+        >
           Role:
           <select
             className='border-0 outline-0 mx-1 px-2 bg-background'
@@ -45,32 +52,48 @@ const Projects: React.FC<Props> = ({ blok }) => {
             name='role'
             id='role'
           >
-            <option selected value={role.any}>
-              {role.any}
-            </option>
+            <option value={role.any}>{role.any}</option>
             <option value={role.dev}>{role.dev}</option>
             <option value={role.main}>{role.main}</option>
             <option value={role.sup}>{role.sup}</option>
           </select>
         </label>
-        <label htmlFor='technology' className='border-2 pl-1 bg-background'>
-          technology:
-          <select
-            className='border-0 outline-0 mx-1 px-2 bg-background'
-            name='technology'
-            onChange={onTechChange}
-            id='technology'
-          >
-            <option selected value={role.any}>
-              {role.any}
-            </option>
-            {technologies.map((tech: SvgType) => (
-              <option key={tech} value={tech}>
-                {tech}
-              </option>
-            ))}
-          </select>
-        </label>
+        <div className='relative border-2 px-1 bg-background w-1/3 text-center'>
+          <button onClick={toggleTechInput}>
+            {isTechInputOpen ? (
+              'Search'
+            ) : (
+              <p>
+                technology:{' '}
+                {techFilter.size > 0
+                  ? techFilter.size === 1
+                    ? techFilter.values().next().value
+                    : techFilter.size
+                  : 'all'}
+              </p>
+            )}
+          </button>
+          {isTechInputOpen && (
+            <fieldset className='absolute top-full left-0 max-h-64 p-2 flex flex-col items-start flex-wrap'>
+              {technologies.map((tech: SvgType) => {
+                return (
+                  <label key={`tech-${tech}`} htmlFor={tech} className='m-1'>
+                    <input
+                      className='mr-2'
+                      type='checkbox'
+                      name='technology'
+                      value={tech}
+                      id={tech}
+                      checked={techFilter.has(tech)}
+                      onChange={onTechChange}
+                    />
+                    {tech}
+                  </label>
+                )
+              })}
+            </fieldset>
+          )}
+        </div>
       </div>
       {projects.map((project: any) => (
         <StoryblokComponent blok={project} key={project._uid} />

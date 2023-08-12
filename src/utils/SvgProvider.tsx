@@ -49,7 +49,7 @@ type Props = {
 }
 const SvgProvider: React.FC<Props> = ({ type, width, height, h, s, l, a }) => {
   const color = `hsla(${h},${s}%,${l}%,${a})`
-  const style = { color, width, height }
+  const style = { color, width, height, margin: '5px' }
   switch (type) {
     case SvgType.codepen:
       return <Codepenlogo style={style} />
@@ -88,7 +88,7 @@ const SvgProvider: React.FC<Props> = ({ type, width, height, h, s, l, a }) => {
     case SvgType.replit:
       return <Replitlogo style={style} />
   }
-  return <p>{type}</p>
+  return <p className='m-1'>{type}</p>
 }
 
 export default SvgProvider
