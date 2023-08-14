@@ -1,11 +1,11 @@
+import { StoryblokComponent } from '@storyblok/react'
+import { useState } from 'react'
+import { TechEnum } from '@/utils/SvgProvider'
 import {
   ProjectStoryblok,
   ProjectsStoryblok,
-  TechStoryblok
+  TechnologiesStoryblok
 } from '@/types/component-types-sb'
-import { SvgType, TechEnum } from '@/utils/SvgProvider'
-import { StoryblokComponent } from '@storyblok/react'
-import { useState } from 'react'
 
 type Props = {
   blok: ProjectsStoryblok
@@ -41,7 +41,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
   }
   if (techFilter.size > 0) {
     projects = projects.filter((proj: ProjectStoryblok) =>
-      proj.tech.some((tech: TechStoryblok) =>
+      proj.tech.some((tech: TechnologiesStoryblok) =>
         techFilter.has(tech.svg_type as TechEnum)
       )
     )

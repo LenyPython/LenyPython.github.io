@@ -1,5 +1,5 @@
 import RichText from '@/Global/components/RIchText/RichText'
-import { ProjectStoryblok, TechStoryblok } from '@/types/component-types-sb'
+import { ProjectStoryblok } from '@/types/component-types-sb'
 import SvgProvider, { SvgType } from '@/utils/SvgProvider'
 import { renderRichText } from '@storyblok/react'
 import Link from 'next/link'
@@ -10,6 +10,7 @@ type Props = {
 
 const Project: React.FC<Props> = ({ blok }) => {
   const { project_name, role, tech, description, live_page } = blok
+  const { techs } = tech[0]
   return (
     <div>
       <h2 className='text-4xl font-bold'>{project_name}</h2>
@@ -17,10 +18,10 @@ const Project: React.FC<Props> = ({ blok }) => {
       <RichText html={renderRichText(description)} />
       <h3 className='text-xl font-bold'>Tech</h3>
       <div className='flex items-center'>
-        {tech?.map((tech: TechStoryblok) => (
+        {techs.map((svg: SvgType) => (
           <SvgProvider
-            key={tech._uid}
-            type={tech.svg_type as SvgType}
+            key={`${tech[0]._uid}-${tech}`}
+            type={svg}
             width={25}
             height={25}
             h={120}
