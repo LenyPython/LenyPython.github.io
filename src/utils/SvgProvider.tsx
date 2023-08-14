@@ -1,41 +1,59 @@
-import JSlogo from '@/assets/images/svg/tech/js.svg'
-import TSlogo from '@/assets/images/svg/tech/ts.svg'
-import HTMLlogo from '@/assets/images/svg/tech/html.svg'
-import CSSlogo from '@/assets/images/svg/tech/css.svg'
+// Development
+import Githublogo from '@/assets/images/svg/development/github.svg'
+
+// Languages
+import HTMLlogo from '@/assets/images/svg/language/html.svg'
+import CSSlogo from '@/assets/images/svg/language/css.svg'
+import JSlogo from '@/assets/images/svg/language/js.svg'
+import TSlogo from '@/assets/images/svg/language/ts.svg'
+import Pythonlogo from '@/assets/images/svg/language/python.svg'
+
+// Frameworkst
 import Reactlogo from '@/assets/images/svg/tech/react.svg'
 import Reduxlogo from '@/assets/images/svg/tech/redux.svg'
 import ReduxSagalogo from '@/assets/images/svg/tech/redux-saga.svg'
-import Pythonlogo from '@/assets/images/svg/tech/python.svg'
 import Kivylogo from '@/assets/images/svg/tech/kivy.svg'
 import D3logo from '@/assets/images/svg/tech/d3.svg'
 import Firebaselogo from '@/assets/images/svg/tech/firebase.svg'
-import FrontendMentorlogo from '@/assets/images/svg/tech/frontendMentor.svg'
-import Githublogo from '@/assets/images/svg/tech/github.svg'
-import Linkedinlogo from '@/assets/images/svg/tech/linkedin.svg'
-import Leetcodelogo from '@/assets/images/svg/tech/leetcode.svg'
-import Replitlogo from '@/assets/images/svg/tech/replit.svg'
-import Codepenlogo from '@/assets/images/svg/tech/codepen.svg'
-import Codewarslogo from '@/assets/images/svg/tech/codewars.svg'
 
-export enum SvgType {
+// Social
+import FrontendMentorlogo from '@/assets/images/svg/social/frontendMentor.svg'
+import Linkedinlogo from '@/assets/images/svg/social/linkedin.svg'
+import Leetcodelogo from '@/assets/images/svg/social/leetcode.svg'
+import Replitlogo from '@/assets/images/svg/social/replit.svg'
+import Codepenlogo from '@/assets/images/svg/social/codepen.svg'
+import Codewarslogo from '@/assets/images/svg/social/codewars.svg'
+
+export type SvgType = LangEnum | TechEnum | DevEnum | SocialEnum
+
+export enum SocialEnum {
   codepen = 'codepen',
   codewars = 'codewars',
-  css = 'css',
-  d3 = 'd3',
-  firebase = 'firebase',
-  frontendMentor = 'frontend mentor',
-  github = 'github',
-  html = 'html',
-  js = 'java script',
+  frontendMentor = 'frontend-mentor',
   linkedin = 'linkedin',
-  kivy = 'kivy',
   leetcode = 'leetcode',
-  python = 'python',
+  replit = 'replit'
+}
+
+export enum TechEnum {
   react = 'react',
   redux = 'redux',
-  reduxSaga = 'redux saga',
-  replit = 'replit',
-  ts = 'type script'
+  reduxSaga = 'redux-saga',
+  d3 = 'd3',
+  firebase = 'firebase',
+  kivy = 'kivy'
+}
+
+export enum DevEnum {
+  github = 'github'
+}
+
+export enum LangEnum {
+  html = 'html',
+  css = 'css',
+  js = 'java-script',
+  python = 'python',
+  ts = 'typescript'
 }
 
 type Props = {
@@ -47,46 +65,47 @@ type Props = {
   l: number
   a: number
 }
+
 const SvgProvider: React.FC<Props> = ({ type, width, height, h, s, l, a }) => {
   const color = `hsla(${h},${s}%,${l}%,${a})`
   const style = { color, width, height, margin: '5px' }
   switch (type) {
-    case SvgType.codepen:
-      return <Codepenlogo style={style} />
-    case SvgType.codewars:
-      return <Codewarslogo style={style} />
-    case SvgType.js:
-      return <JSlogo style={style} />
-    case SvgType.ts:
-      return <TSlogo style={style} />
-    case SvgType.html:
+    case LangEnum.html:
       return <HTMLlogo style={style} />
-    case SvgType.css:
+    case LangEnum.css:
       return <CSSlogo style={style} />
-    case SvgType.react:
-      return <Reactlogo style={style} />
-    case SvgType.redux:
-      return <Reduxlogo style={style} />
-    case SvgType.reduxSaga:
-      return <ReduxSagalogo style={style} />
-    case SvgType.python:
+    case LangEnum.js:
+      return <JSlogo style={style} />
+    case LangEnum.ts:
+      return <TSlogo style={style} />
+    case LangEnum.python:
       return <Pythonlogo style={style} />
-    case SvgType.kivy:
+    case TechEnum.react:
+      return <Reactlogo style={style} />
+    case TechEnum.redux:
+      return <Reduxlogo style={style} />
+    case TechEnum.reduxSaga:
+      return <ReduxSagalogo style={style} />
+    case TechEnum.kivy:
       return <Kivylogo style={style} />
-    case SvgType.d3:
+    case TechEnum.d3:
       return <D3logo style={style} />
-    case SvgType.firebase:
+    case TechEnum.firebase:
       return <Firebaselogo style={style} />
-    case SvgType.frontendMentor:
-      return <FrontendMentorlogo style={style} />
-    case SvgType.github:
+    case DevEnum.github:
       return <Githublogo style={style} />
-    case SvgType.linkedin:
+    case SocialEnum.linkedin:
       return <Linkedinlogo style={style} />
-    case SvgType.leetcode:
+    case SocialEnum.leetcode:
       return <Leetcodelogo style={style} />
-    case SvgType.replit:
+    case SocialEnum.replit:
       return <Replitlogo style={style} />
+    case SocialEnum.codepen:
+      return <Codepenlogo style={style} />
+    case SocialEnum.codewars:
+      return <Codewarslogo style={style} />
+    case SocialEnum.frontendMentor:
+      return <FrontendMentorlogo style={style} />
   }
   return <p className='m-1'>{type}</p>
 }

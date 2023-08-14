@@ -84,7 +84,7 @@
       "name": "Project",
       "display_name": null,
       "created_at": "2023-08-10T20:16:00.843Z",
-      "updated_at": "2023-08-11T21:17:16.986Z",
+      "updated_at": "2023-08-14T22:10:50.828Z",
       "id": 4407537,
       "schema": {
         "project_name": {
@@ -110,7 +110,9 @@
               "name": "support"
             }
           ],
-          "required": true
+          "required": true,
+          "default_value": "developer",
+          "min_options": "1"
         },
         "description": {
           "type": "richtext"
@@ -120,7 +122,7 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
-            "Tech"
+            "technologies"
           ],
           "required": true,
           "minimum": 1
@@ -147,7 +149,7 @@
       "name": "Projects",
       "display_name": null,
       "created_at": "2023-08-10T20:11:50.596Z",
-      "updated_at": "2023-08-11T21:03:23.525Z",
+      "updated_at": "2023-08-12T18:22:47.281Z",
       "id": 4407535,
       "schema": {
         "headline": {
@@ -158,7 +160,12 @@
           "type": "bloks",
           "pos": 1,
           "required": true,
-          "minimum": 1
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Project"
+          ]
         }
       },
       "image": null,
@@ -232,7 +239,7 @@
       "name": "TechGroup",
       "display_name": null,
       "created_at": "2023-08-08T21:30:16.807Z",
-      "updated_at": "2023-08-11T21:34:45.949Z",
+      "updated_at": "2023-08-14T22:18:08.787Z",
       "id": 4396137,
       "schema": {
         "headline": {
@@ -242,24 +249,27 @@
         },
         "advanced_tech": {
           "type": "bloks",
-          "required": false,
+          "required": true,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
-            "Tech"
+            "technologies"
           ],
           "key": "techs",
-          "pos": 1
+          "pos": 1,
+          "maximum": 1,
+          "minimum": 1
         },
         "basic_tech": {
           "type": "bloks",
-          "required": false,
+          "required": true,
           "minimum": 1,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
-            "Tech"
-          ]
+            "technologies"
+          ],
+          "maximum": 1
         }
       },
       "image": null,
@@ -270,6 +280,150 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "TechGroup",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "technologies",
+      "display_name": null,
+      "created_at": "2023-08-14T22:02:48.515Z",
+      "updated_at": "2023-08-14T22:19:41.272Z",
+      "id": 4422579,
+      "schema": {
+        "techs": {
+          "type": "options",
+          "required": false,
+          "options": [
+            {
+              "_uid": "9a922515-f682-4236-b374-2f769f9dccf9",
+              "value": "git",
+              "name": "Git"
+            },
+            {
+              "_uid": "7eac8fdf-2144-4074-8164-f743762f2c79",
+              "name": "Github",
+              "value": "github"
+            },
+            {
+              "_uid": "09fe14a5-cc81-4bbf-8b55-6395b1500893",
+              "value": "jira",
+              "name": "Jira"
+            },
+            {
+              "_uid": "fdf9775a-2247-4f23-85ff-f20ebde1ad32",
+              "value": "html",
+              "name": "Html"
+            },
+            {
+              "_uid": "0db9e52d-9d49-47a3-85c0-a3fa1a6a94b2",
+              "value": "css",
+              "name": "Css"
+            },
+            {
+              "_uid": "7f8d3033-7fa2-443a-92fe-95f3bb5bdf40",
+              "value": "sass",
+              "name": "Sass"
+            },
+            {
+              "_uid": "74d80f0b-b597-4b07-bfd5-0a27dbdfb253",
+              "value": "java-script",
+              "name": "JavaScript"
+            },
+            {
+              "_uid": "6006aa64-f308-4782-ad34-6d86273c28d8",
+              "value": "typescript",
+              "name": "TypeScript"
+            },
+            {
+              "_uid": "70986552-00a9-4a15-97b8-95302fb11c5a",
+              "value": "python",
+              "name": "Python"
+            },
+            {
+              "_uid": "37490a16-d514-4534-9497-7ae755ab46df",
+              "value": "java",
+              "name": "Java"
+            },
+            {
+              "_uid": "de3f4a5c-4f00-4e1b-b178-091012bd9a0b",
+              "value": "react",
+              "name": "React"
+            },
+            {
+              "_uid": "6af56986-17fe-453c-83e9-f1919e809b6b",
+              "value": "redux",
+              "name": "Redux"
+            },
+            {
+              "_uid": "14d59951-c331-449b-9a6e-06214059018e",
+              "value": "redux-saga",
+              "name": "Redux Saga"
+            },
+            {
+              "_uid": "5e0aa410-1020-4595-919a-7dc3951ec694",
+              "value": "d3",
+              "name": "d3"
+            },
+            {
+              "_uid": "990bca81-3327-4df7-99c7-42ae497b4e6d",
+              "value": "firebase",
+              "name": "Firebase"
+            },
+            {
+              "_uid": "bc881ae1-bca3-43c6-bc9f-7963c0c9a233",
+              "value": "kivy",
+              "name": "Kivy"
+            },
+            {
+              "_uid": "e2672bf8-ab20-4912-a1ed-aad82f2e7efc",
+              "value": "codepen",
+              "name": "Codepen"
+            },
+            {
+              "_uid": "d5f21aba-67a0-4c9d-813c-6907ae918d63",
+              "value": "codewars",
+              "name": "Codewars"
+            },
+            {
+              "_uid": "f9fac5a0-0f00-4f43-b39d-adbde8165f9f",
+              "value": "frontend-mentor",
+              "name": "Frontend Mentor"
+            },
+            {
+              "_uid": "b38b853c-0241-4a15-9cb5-e99d156b554e",
+              "value": "linkedin",
+              "name": "Linkedin"
+            },
+            {
+              "_uid": "0579cbed-e5a7-4702-9296-b2f32077bdef",
+              "value": "leetcode",
+              "name": "Leetcode"
+            },
+            {
+              "_uid": "715e5e5e-fc71-46f1-b53b-93ebd72128e9",
+              "value": "replit",
+              "name": "Replit"
+            },
+            {
+              "_uid": "37d5b25a-78c4-4bc0-a80b-c19f371d45f1",
+              "value": "aem",
+              "name": "Aem"
+            }
+          ],
+          "description": "The values must match enums from src/utils/SvgProvider.tsx",
+          "min_options": ""
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "technologies",
       "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
       "color": null,
       "icon": null,

@@ -1,7 +1,6 @@
-import { SectionStoryblok } from '@/types/component-types-sb'
-import SvgProvider, { SvgType } from '@/utils/SvgProvider'
 import Link from 'next/link'
-import React from 'react'
+import SvgProvider, { DevEnum, SocialEnum } from '@/utils/SvgProvider'
+import { SectionStoryblok } from '@/types/component-types-sb'
 
 type Props = {
   config: SectionStoryblok[]
@@ -29,8 +28,8 @@ const TopPanel = () => {
       <div className='flex justify-between max-w-5xl w-4/5'>
         <h2 className='text-3xl'>LOGO</h2>
         <div className='flex'>
-          <SvgProvider type={SvgType.github} {...svgConfig} />
-          <SvgProvider type={SvgType.linkedin} {...svgConfig} />
+          <SvgProvider type={DevEnum.github} {...svgConfig} />
+          <SvgProvider type={SocialEnum.linkedin} {...svgConfig} />
         </div>
       </div>
     </div>
