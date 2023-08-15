@@ -1,11 +1,11 @@
 import { StoryblokComponent } from '@storyblok/react'
 import { useState } from 'react'
-import { TechEnum } from '@/utils/SvgProvider'
 import {
   ProjectStoryblok,
   ProjectsStoryblok,
   TechnologiesStoryblok
 } from '@/types/component-types-sb'
+import { TechEnum } from '@/Global/components/SvgProvieder/SvgProvider'
 
 type Props = {
   blok: ProjectsStoryblok

@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import RichText from '@/Global/components/RIchText/RichText'
 import { ProjectStoryblok } from '@/types/component-types-sb'
-import SvgProvider, { SvgType } from '@/utils/SvgProvider'
 import { renderRichText } from '@storyblok/react'
+import SvgProvider, {
+  SvgType
+} from '@/Global/components/SvgProvieder/SvgProvider'
 
 type Props = {
   blok: ProjectStoryblok

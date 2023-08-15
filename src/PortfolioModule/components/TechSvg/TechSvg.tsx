@@ -1,4 +1,6 @@
-import SvgProvider, { SvgType } from '@/utils/SvgProvider'
+import SvgProvider, {
+  SvgType
+} from '@/Global/components/SvgProvieder/SvgProvider'
 
 type Props = {
   svgType: SvgType

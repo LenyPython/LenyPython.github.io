@@ -1,6 +1,9 @@
 import Link from 'next/link'
-import SvgProvider, { DevEnum, SocialEnum } from '@/utils/SvgProvider'
 import { SectionStoryblok } from '@/types/component-types-sb'
+import SvgProvider, {
+  DevEnum,
+  SocialEnum
+} from '@/Global/components/SvgProvieder/SvgProvider'
 
 type Props = {
   config: SectionStoryblok[]
