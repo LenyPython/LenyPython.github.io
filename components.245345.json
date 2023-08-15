@@ -1,6 +1,76 @@
 {
   "components": [
     {
+      "name": "Credential",
+      "display_name": null,
+      "created_at": "2023-08-15T20:04:40.443Z",
+      "updated_at": "2023-08-15T20:05:24.099Z",
+      "id": 4426685,
+      "schema": {
+        "cred": {
+          "type": "richtext",
+          "required": true
+        },
+        "person": {
+          "type": "text",
+          "required": true
+        },
+        "linkedin_profile": {
+          "type": "multilink",
+          "allow_target_blank": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Credential",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Credentials",
+      "display_name": null,
+      "created_at": "2023-08-15T20:01:58.163Z",
+      "updated_at": "2023-08-15T20:09:38.124Z",
+      "id": 4426637,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "creds": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Credential"
+          ],
+          "required": true,
+          "minimum": 1,
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Credentials",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
       "name": "Hero",
       "display_name": null,
       "created_at": "2023-08-05T18:05:41.146Z",
@@ -84,7 +154,7 @@
       "name": "Project",
       "display_name": null,
       "created_at": "2023-08-10T20:16:00.843Z",
-      "updated_at": "2023-08-14T22:10:50.828Z",
+      "updated_at": "2023-08-14T22:56:39.290Z",
       "id": 4407537,
       "schema": {
         "project_name": {
@@ -130,6 +200,9 @@
         "live_page": {
           "type": "multilink",
           "allow_target_blank": true
+        },
+        "proj_img": {
+          "type": "asset"
         }
       },
       "image": null,
@@ -211,31 +284,6 @@
       "component_group_name": "General"
     },
     {
-      "name": "Tech",
-      "display_name": null,
-      "created_at": "2023-08-08T21:27:48.719Z",
-      "updated_at": "2023-08-11T21:25:04.657Z",
-      "id": 4396113,
-      "schema": {
-        "svg_type": {
-          "type": "text",
-          "required": true
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "Tech",
-      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
-      "color": null,
-      "icon": null,
-      "component_group_name": "PortfolioModule"
-    },
-    {
       "name": "TechGroup",
       "display_name": null,
       "created_at": "2023-08-08T21:30:16.807Z",
@@ -289,7 +337,7 @@
       "name": "technologies",
       "display_name": null,
       "created_at": "2023-08-14T22:02:48.515Z",
-      "updated_at": "2023-08-14T22:19:41.272Z",
+      "updated_at": "2023-08-14T22:46:12.309Z",
       "id": 4422579,
       "schema": {
         "techs": {
@@ -362,6 +410,16 @@
               "name": "Redux Saga"
             },
             {
+              "_uid": "7e6b809a-879b-4c66-9eb4-6fd2c3f08758",
+              "value": "docker",
+              "name": "Docker"
+            },
+            {
+              "_uid": "fcd48de9-dfd3-4e46-80aa-f296ca82e3e5",
+              "value": "jenkins",
+              "name": "Jenkins"
+            },
+            {
               "_uid": "5e0aa410-1020-4595-919a-7dc3951ec694",
               "value": "d3",
               "name": "d3"
@@ -375,6 +433,21 @@
               "_uid": "bc881ae1-bca3-43c6-bc9f-7963c0c9a233",
               "value": "kivy",
               "name": "Kivy"
+            },
+            {
+              "_uid": "dc43040c-9dc0-4154-aec8-bd2d13b44b6e",
+              "value": "cypress",
+              "name": "Cypress"
+            },
+            {
+              "_uid": "37d5b25a-78c4-4bc0-a80b-c19f371d45f1",
+              "value": "aem",
+              "name": "Aem"
+            },
+            {
+              "_uid": "19de611d-e068-49bf-b33d-e0e553d3cc70",
+              "value": "aws",
+              "name": "AWS"
             },
             {
               "_uid": "e2672bf8-ab20-4912-a1ed-aad82f2e7efc",
@@ -407,9 +480,9 @@
               "name": "Replit"
             },
             {
-              "_uid": "37d5b25a-78c4-4bc0-a80b-c19f371d45f1",
-              "value": "aem",
-              "name": "Aem"
+              "_uid": "a4edcab6-4957-4250-8e1b-fc362c50ccff",
+              "value": "groovy",
+              "name": "Groovy"
             }
           ],
           "description": "The values must match enums from src/utils/SvgProvider.tsx",

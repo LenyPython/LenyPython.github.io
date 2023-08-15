@@ -9,6 +9,8 @@ import Technology from '@/PortfolioModule/blocks/Technology/Technology'
 import TechGroup from '@/PortfolioModule/blocks/TechGroup/TechGroup'
 import Projects from '@/PortfolioModule/blocks/Projects/Projects'
 import Project from '@/PortfolioModule/blocks/Project/Project'
+import Credentials from '@/PortfolioModule/blocks/Credentials/Credentials'
+import WorkHistory from '@/PortfolioModule/blocks/WorkHistory/WorkHistory'
 
 const components = {
   Section,
@@ -17,7 +19,9 @@ const components = {
   Technology,
   TechGroup,
   Projects,
-  Project
+  Project,
+  Credentials,
+  WorkHistory
 }
 
 storyblokInit({

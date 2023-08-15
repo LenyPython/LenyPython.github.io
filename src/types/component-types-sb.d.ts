@@ -1,17 +1,6 @@
 import { SvgType } from '@/utils/SvgProvider'
 import { StoryblokStory } from 'storyblok-generate-ts'
 
-export interface AssetStoryblok {
-  alt?: string
-  copyright?: string
-  id: number
-  filename: string
-  name: string
-  title?: string
-  focus?: string
-  [k: string]: any
-}
-
 export interface RichtextStoryblok {
   type: string
   content?: RichtextStoryblok[]
@@ -76,6 +65,34 @@ export type MultilinkStoryblok =
       [k: string]: any
     }
 
+export interface CredentialStoryblok {
+  cred: RichtextStoryblok
+  person: string
+  linkedin_profile?: MultilinkStoryblok
+  _uid: string
+  component: 'Credential'
+  [k: string]: any
+}
+
+export interface CredentialsStoryblok {
+  headline: string
+  creds: CredentialStoryblok[]
+  _uid: string
+  component: 'Credentials'
+  [k: string]: any
+}
+
+export interface AssetStoryblok {
+  alt?: string
+  copyright?: string
+  id: number
+  filename: string
+  name: string
+  title?: string
+  focus?: string
+  [k: string]: any
+}
+
 export interface HeroStoryblok {
   Image?: AssetStoryblok
   headline?: string
@@ -100,6 +117,7 @@ export interface ProjectStoryblok {
   description?: RichtextStoryblok
   tech: TechnologiesStoryblok[]
   live_page?: MultilinkStoryblok
+  proj_img?: AssetStoryblok
   _uid: string
   component: 'Project'
   [k: string]: any
@@ -118,13 +136,6 @@ export interface SectionStoryblok {
   Blocks: any[]
   _uid: string
   component: 'Section'
-  [k: string]: any
-}
-
-export interface TechStoryblok {
-  svg_type: string
-  _uid: string
-  component: 'Tech'
   [k: string]: any
 }
 

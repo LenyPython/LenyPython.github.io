@@ -1,6 +1,6 @@
 import TechSvg from '@/PortfolioModule/components/TechSvg/TechSvg'
-import { TechGroupStoryblok } from '@/types/component-types-sb'
 import { SvgType } from '@/utils/SvgProvider'
+import { TechGroupStoryblok } from '@/types/component-types-sb'
 
 type Props = {
   blok: TechGroupStoryblok
