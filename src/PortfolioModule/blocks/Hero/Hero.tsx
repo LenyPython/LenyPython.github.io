@@ -20,9 +20,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
     setTimeout(() => setIsActive(false), 5000)
   }
   return (
-    <div
-      className={`${styles.glass} w-3/4 max-w-4xl h-full flex p-10 backdrop-blur-lg rounded-lg`}
-    >
+    <div className='w-3/4 max-w-4xl h-full bg-secondarybg/30 border border-solid flex p-10 backdrop-blur-lg rounded-lg'>
       <div className='flex flex-col justify-around '>
         <div>
           <h2 className='text-6xl font-bold mb-10'>{headline}</h2>
