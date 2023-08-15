@@ -10,6 +10,7 @@ import TechGroup from '@/PortfolioModule/blocks/TechGroup/TechGroup'
 import Projects from '@/PortfolioModule/blocks/Projects/Projects'
 import Project from '@/PortfolioModule/blocks/Project/Project'
 import Credentials from '@/PortfolioModule/blocks/Credentials/Credentials'
+import Credential from '@/PortfolioModule/blocks/Credential/Credential'
 import WorkHistory from '@/PortfolioModule/blocks/WorkHistory/WorkHistory'
 
 const components = {
@@ -21,6 +22,7 @@ const components = {
   Projects,
   Project,
   Credentials,
+  Credential,
   WorkHistory
 }
 
