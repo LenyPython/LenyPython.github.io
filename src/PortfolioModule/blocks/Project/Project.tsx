@@ -16,10 +16,7 @@ const Project: React.FC<Props> = ({ blok }) => {
 	const SvgOptions = {
 		width: 25,
 		height: 25,
-		h: 120,
-		s: 50,
-		l: 50,
-		a: 1
+		color: 'hsl(120, 100%, 50%)'
 	}
 	return (
 		<div>
@@ -32,7 +29,7 @@ const Project: React.FC<Props> = ({ blok }) => {
 					<SvgProvider
 						key={`${project_name}-${tech[0]._uid}-${svg}`}
 						type={svg}
-						{...SvgOptions}
+						options={SvgOptions}
 					/>
 				))}
 			</div>

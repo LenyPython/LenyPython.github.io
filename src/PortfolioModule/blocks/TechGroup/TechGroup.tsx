@@ -1,33 +1,52 @@
-import TechSvg from '@/PortfolioModule/components/TechSvg/TechSvg'
-import { SvgType } from '@/utils/SvgProvider'
 import { TechGroupStoryblok } from '@/types/component-types-sb'
+import SvgProvider, {
+	SvgType
+} from '@/Global/components/SvgProvider/SvgProvider'
 
 type Props = {
-  blok: TechGroupStoryblok
+	blok: TechGroupStoryblok
 }
 
 const TechGroup: React.FC<Props> = ({ blok }) => {
-  const { advanced_tech, basic_tech } = blok
-  const advTech = advanced_tech[0].techs
-  const basicTech = basic_tech[0].techs
-  return (
-    <div className='w-full p-2 border-y border-y-font mb-3'>
-      <h2>{blok.headline}</h2>
-      <div className='w-full flex'>
-        {advTech.length > 0 &&
-          advTech.map((svg: SvgType) => (
-            <TechSvg svgType={svg} key={`${advanced_tech[0]._uid}-${svg}`} />
-          ))}
-      </div>
-      <hr className='m-3' />
-      <div className='w-full flex'>
-        {basicTech.length > 0 &&
-          basicTech.map((svg: SvgType) => (
-            <TechSvg svgType={svg} key={`${basic_tech[0]._uid}-${svg}`} basic />
-          ))}
-      </div>
-    </div>
-  )
+	const { advanced_tech, basic_tech } = blok
+	const advTech = advanced_tech[0].techs
+	const basicTech = basic_tech[0].techs
+	const mainSVG = {
+		width: 50,
+		height: 50,
+		color: 'hsl(120, 100%, 50%)'
+	}
+	const secSVG = {
+		width: 35,
+		height: 35,
+		color: 'hsla(120, 100%, 50%, .3)'
+	}
+	return (
+		<div className='w-full p-2 border-y border-y-font mb-3'>
+			<h2>{blok.headline}</h2>
+			<div className='w-full flex'>
+				{advTech.length > 0 &&
+					advTech.map((svg: SvgType) => (
+						<SvgProvider
+							type={svg}
+							options={mainSVG}
+							key={`${advanced_tech[0]._uid}-${svg}`}
+						/>
+					))}
+			</div>
+			<hr className='m-3' />
+			<div className='w-full flex'>
+				{basicTech.length > 0 &&
+					basicTech.map((svg: SvgType) => (
+						<SvgProvider
+							type={svg}
+							options={secSVG}
+							key={`${basic_tech[0]._uid}-${svg}`}
+						/>
+					))}
+			</div>
+		</div>
+	)
 }
 
 export default TechGroup

@@ -20,10 +20,7 @@ const TopPanel: React.FC<Props> = ({ config }) => {
 	const svgConfig = {
 		width: 35,
 		height: 35,
-		h: 120,
-		s: 100,
-		l: 50,
-		a: 1
+		color: 'hsla(120,100%,50%, .8)'
 	}
 	return (
 		<div className='fixed top-0 left-0 right-0 z-10 flex justify-center items-center p-3 bg-background'>
@@ -39,8 +36,8 @@ const TopPanel: React.FC<Props> = ({ config }) => {
 							{item.ID}
 						</Link>
 					))}
-					<SvgProvider type={DevEnum.github} {...svgConfig} />
-					<SvgProvider type={SocialEnum.linkedin} {...svgConfig} />
+					<SvgProvider type={DevEnum.github} options={svgConfig} />
+					<SvgProvider type={SocialEnum.linkedin} options={svgConfig} />
 				</div>
 			</div>
 		</div>
