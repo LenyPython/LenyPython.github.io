@@ -26,31 +26,31 @@ const Credentials: React.FC<Props> = ({ blok }) => {
 		})
 	}
 	return (
-		<div className='relative w-3/4 max-w-4xl h-full p-10 rounded-xl bg-black backdrop-blur-lg '>
-			<h2 className='absolute top-0 left-8 -translate-y-1/2 text-3xl'>
+		<div className='relative flex justify-evenly items-start h-8 w-3/4 max-w-4xl p-5 shadow-main shadow-font rounded-xl backdrop-blur-lg'>
+			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl'>
 				{blok.headline}
 			</h2>
 			<button onClick={prevIdx}>prev</button>
 			<button onClick={nextIdx}>next</button>
-			<div className='w-full relative'>
-				{creds.map((component: CredentialStoryblok, i: number) => {
-					let styles = {
-						main: false,
-						next: false
-					}
-					if (i === idx) styles.main = true
-					else if (i === idx + 1 || (idx === creds.length - 1 && i === 0))
-						styles.next = true
-					console.log(i, idx, styles)
-					return (
-						<StoryblokComponent
-							blok={component}
-							key={component._uid}
-							{...styles}
-						/>
-					)
-				})}
-			</div>
+			{creds.map((component: CredentialStoryblok, i: number) => {
+				let styles = {
+					center: false,
+					right: false,
+					left: false
+				}
+				if (i === idx) styles.center = true
+				else if (i === idx + 1 || (idx === creds.length - 1 && i === 0))
+					styles.right = true
+				else if (i === idx - 1 || (idx === 0 && i === creds.length - 1))
+					styles.left = true
+				return (
+					<StoryblokComponent
+						blok={component}
+						key={component._uid}
+						{...styles}
+					/>
+				)
+			})}
 		</div>
 	)
 }

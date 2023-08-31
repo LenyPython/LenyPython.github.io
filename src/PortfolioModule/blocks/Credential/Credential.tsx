@@ -4,15 +4,21 @@ import { renderRichText } from '@storyblok/react'
 
 type Props = {
 	blok: CredentialStoryblok
-	main: boolean
-	next: boolean
+	center: boolean
+	left: boolean
+	right: boolean
 }
-const Credential: React.FC<Props> = ({ blok, next, main }) => {
+const general =
+	'ease-linear duration-1000 absolute top-[150%] flex flex-col rounded-lg p-4 h-[450%] shadow-main shadow-font backdrop-blur-lg'
+const prev = ' w-1/6 left-0 opacity-50 -z-10'
+const main = ' w-1/2 delay-300 left-1/2 -translate-x-1/2'
+const next = ' w-1/6 left-full -translate-x-full opacity-50 -z-10'
+const Credential: React.FC<Props> = ({ blok, left, center, right }) => {
 	const { cred, person, linkedin_profile } = blok
-	let styles =
-		'transition duration-1000 absolute bottom-0 translate-y-full flex flex-col border rounded-lg p-4 w-1/2 h-56 bg-secondarybg'
-	if (next) styles += ' scale-50 translate-x-3/4 opacity-50'
-	if (!main && !next) styles = 'hidden'
+	let styles = 'ease-linear duration-1000 absolute left-1/2 top-0 scale-0'
+	if (center) styles = general + main
+	else if (left) styles = general + prev
+	else if (right) styles = general + next
 
 	return (
 		<div className={styles}>
