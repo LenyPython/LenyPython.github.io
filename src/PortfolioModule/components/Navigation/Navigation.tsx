@@ -12,12 +12,11 @@ type Props = {
 const Navigation: React.FC<Props> = ({ config }) => {
 	return (
 		<>
-			<TopPanel />
-			<BottomPanel config={config} />
+			<TopPanel config={config} />
 		</>
 	)
 }
-const TopPanel = () => {
+const TopPanel: React.FC<Props> = ({ config }) => {
 	const svgConfig = {
 		width: 35,
 		height: 35,
@@ -31,18 +30,6 @@ const TopPanel = () => {
 			<div className='flex justify-between max-w-5xl w-4/5'>
 				<h2 className='text-3xl'>LOGO</h2>
 				<div className='flex'>
-					<SvgProvider type={DevEnum.github} {...svgConfig} />
-					<SvgProvider type={SocialEnum.linkedin} {...svgConfig} />
-				</div>
-			</div>
-		</div>
-	)
-}
-const BottomPanel: React.FC<Props> = ({ config }) => {
-	return (
-		<div className='fixed bottom-0 left-0 right-0 z-10 flex justify-center items-center h-40 bg-background'>
-			<div className='flex justify-between max-w-5xl w-4/5'>
-				<div>
 					{config.map((item: any) => (
 						<Link
 							key={`link:${item._uid}`}
@@ -52,6 +39,8 @@ const BottomPanel: React.FC<Props> = ({ config }) => {
 							{item.ID}
 						</Link>
 					))}
+					<SvgProvider type={DevEnum.github} {...svgConfig} />
+					<SvgProvider type={SocialEnum.linkedin} {...svgConfig} />
 				</div>
 			</div>
 		</div>
