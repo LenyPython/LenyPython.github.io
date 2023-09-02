@@ -12,26 +12,28 @@ import Project from '@/PortfolioModule/blocks/Project/Project'
 import Credentials from '@/PortfolioModule/blocks/Credentials/Credentials'
 import Credential from '@/PortfolioModule/blocks/Credential/Credential'
 import WorkHistory from '@/PortfolioModule/blocks/WorkHistory/WorkHistory'
+import Socials from '@/PortfolioModule/blocks/Socials'
 
 const components = {
-  Section,
-  Hero,
-  PortfolioContentLayout,
-  Technology,
-  TechGroup,
-  Projects,
-  Project,
-  Credentials,
-  Credential,
-  WorkHistory
+	Section,
+	Hero,
+	PortfolioContentLayout,
+	Technology,
+	TechGroup,
+	Projects,
+	Project,
+	Credentials,
+	Credential,
+	WorkHistory,
+	Socials
 }
 
 storyblokInit({
-  accessToken: process.env.STORYBLOK_API_TOKEN,
-  use: [apiPlugin],
-  components
+	accessToken: process.env.STORYBLOK_API_TOKEN,
+	use: [apiPlugin],
+	components
 })
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+	return <Component {...pageProps} />
 }

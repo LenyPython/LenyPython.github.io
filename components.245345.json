@@ -284,6 +284,30 @@
       "component_group_name": "General"
     },
     {
+      "name": "Socials",
+      "display_name": null,
+      "created_at": "2023-09-02T20:36:38.704Z",
+      "updated_at": "2023-09-02T20:41:43.847Z",
+      "id": 4515418,
+      "schema": {
+        "headline": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Socials",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
       "name": "TechGroup",
       "display_name": null,
       "created_at": "2023-08-08T21:30:16.807Z",

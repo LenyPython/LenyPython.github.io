@@ -41,6 +41,7 @@ const Credentials: React.FC<Props> = ({ blok }) => {
 			<button onClick={prevIdx}>
 				<SvgProvider type={UtilSvgEnum.rightArrow} options={svgOptions} />
 			</button>
+			{`${idx + 1} / ${creds.length}`}
 			<button onClick={nextIdx}>
 				<SvgProvider type={UtilSvgEnum.leftArrow} options={svgOptions} />
 			</button>
