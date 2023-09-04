@@ -9,7 +9,7 @@ type Props = {
 	right: boolean
 }
 const general =
-	'ease-linear duration-1000 absolute top-[150%] flex flex-col rounded-lg p-4 h-[450%] shadow-main shadow-font backdrop-blur-lg'
+	'ease-linear duration-1000 absolute top-[150%] flex flex-col rounded-lg p-5 h-[450%] shadow-main shadow-font bg-background/90'
 const prev = ' w-1/6 left-0 opacity-50 -z-10'
 const main = ' w-1/2 delay-300 left-1/2 -translate-x-1/2'
 const next = ' w-1/6 left-full -translate-x-full opacity-50 -z-10'

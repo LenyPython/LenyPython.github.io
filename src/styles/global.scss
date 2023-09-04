@@ -3,20 +3,22 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --main-font-color: 120deg 100% 60%;
-    --main-background-color: 0 0% 0%;
-    --secondary-background-color: 120 100% 10%;
-  }
+	:root {
+		--main-font-color: 120deg 100% 60%;
+		--main-background-color: 0 0% 0%;
+		--secondary-background-color: 120 100% 10%;
+	}
 }
 
-* {
-  box-sizing: content-box;
-  margin: 0;
-  padding: 0;
+*,
+::before,
+::after {
+	box-sizing: content-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  color: hsl(var(--main-font-color));
-  padding-top: 125px;
+	color: hsl(var(--main-font-color));
+	padding-top: 75px;
 }
