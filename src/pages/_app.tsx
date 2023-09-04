@@ -11,7 +11,8 @@ import Projects from '@/PortfolioModule/blocks/Projects/Projects'
 import Project from '@/PortfolioModule/blocks/Project/Project'
 import Credentials from '@/PortfolioModule/blocks/Credentials/Credentials'
 import Credential from '@/PortfolioModule/blocks/Credential/Credential'
-import WorkHistory from '@/PortfolioModule/blocks/WorkHistory/WorkHistory'
+import WorkHistory from '@/PortfolioModule/blocks/WorkHistory'
+import WorkExperience from '@/PortfolioModule/blocks/WorkExperience'
 import Socials from '@/PortfolioModule/blocks/Socials'
 
 const components = {
@@ -25,6 +26,7 @@ const components = {
 	Credentials,
 	Credential,
 	WorkHistory,
+	WorkExperience,
 	Socials
 }
 
