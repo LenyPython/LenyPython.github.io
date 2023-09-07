@@ -1968,11 +1968,6 @@ find-replace@^3.0.0:
   dependencies:
     array-back "^3.0.1"
 
-flatten-tailwindcss-theme@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/flatten-tailwindcss-theme/-/flatten-tailwindcss-theme-1.0.0.tgz"
-  integrity sha512-7B795m0qzLF0yQYGkfGanO3NOisEI4EaVObnr3DBq7Qc8Ygq4yWGa0Gpx2rtb10NSgIcimUqu4Xaqh+0bkC87w==
-
 follow-redirects@^1.0.0:
   version "1.15.2"
   resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz"
@@ -2964,14 +2959,7 @@ table-layout@^1.0.2:
     typical "^5.2.0"
     wordwrapjs "^4.0.0"
 
-tailwindcss-text-fill@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/tailwindcss-text-fill/-/tailwindcss-text-fill-0.2.0.tgz"
-  integrity sha512-3lo6a/9jXSx4+24onFv7xnHO/1DZCk6qM+LoCsEUxn79sAeoc/ts74LSH0vRhLvWe4Yn+YglFfT+lxDv6wn2sQ==
-  dependencies:
-    flatten-tailwindcss-theme "^1.0.0"
-
-tailwindcss@>=2.0.0, tailwindcss@3.3.2:
+tailwindcss@3.3.2:
   version "3.3.2"
   resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.3.2.tgz"
   integrity sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==

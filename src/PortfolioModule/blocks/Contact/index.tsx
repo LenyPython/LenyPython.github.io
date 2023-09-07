@@ -25,7 +25,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 	}
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
-		fetch('https://formsubmit.co/ajax/piotr.lenartowicz@yahoo.com', {
+		fetch('https://formsubmit.co/ajax/lenartowicz.elekonpro@gmail.com', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 			})
 	}
 	const styles =
-		'm-5 p-2 bg-background text-font placeholder:text-font border-b outline-0 focus:border-b-4 autofill:bg-clip-text autofill: fill-font'
+		'm-5 p-2 bg-background text-font placeholder:text-font border-b outline-0 focus:border-b-4'
 	return (
 		<>
 			<div className='relative flex flex-col items-center w-3/4 max-w-4xl p-5 shadow-main shadow-font rounded-xl backdrop-blur-lg'>
