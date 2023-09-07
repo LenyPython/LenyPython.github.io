@@ -14,6 +14,7 @@ import Credential from '@/PortfolioModule/blocks/Credential/Credential'
 import WorkHistory from '@/PortfolioModule/blocks/WorkHistory'
 import WorkExperience from '@/PortfolioModule/blocks/WorkExperience'
 import Socials from '@/PortfolioModule/blocks/Socials'
+import Contact from '@/PortfolioModule/blocks/Contact'
 
 const components = {
 	Section,
@@ -27,7 +28,8 @@ const components = {
 	Credential,
 	WorkHistory,
 	WorkExperience,
-	Socials
+	Socials,
+	Contact
 }
 
 storyblokInit({
