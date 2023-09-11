@@ -9,7 +9,7 @@ const Section: React.FC<Props> = ({ blok }) => {
 	return (
 		<section
 			id={blok.ID}
-			className='flex justify-center mb-16 min-h-[80vh]'
+			className='flex justify-center mb-16 min-h-[90vh]'
 			{...storyblokEditable(blok)}
 		>
 			{blok.Blocks.map((component: any) => (
