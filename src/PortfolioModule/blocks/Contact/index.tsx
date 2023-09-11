@@ -36,14 +36,15 @@ const Contact: React.FC<Props> = ({ blok }) => {
 				email,
 				msg,
 				_subject: `Pytanie od: ${name}`,
-				_template: 'table'
+				_template: 'table',
+				_next: 'https://lenypython.github.io/'
 			})
 		})
 			.then(response => response.json())
 			.then(data => {
 				if (data?.success === 'true') {
 					setFormStatusMsg(
-						'Dziękuję otrzymałem Twoją wiadmość. Odpowiem najszybciej jak to możliwe.'
+						"Thank you! Your message has been sent I'll answer as soon as I can."
 					)
 					setFormStatus('success')
 					setTimeout(() => {
@@ -116,18 +117,6 @@ const Contact: React.FC<Props> = ({ blok }) => {
 					placeholder='Messsage...'
 					required
 				/>
-				<input
-					type='hidden'
-					name='_autoresponse'
-					value="Thank You for your email! I'll answer as soon as I can! Have a great day!"
-				/>
-				<input type='hidden' name='_template' value='table' />
-				<input
-					type='hidden'
-					name='_next'
-					value='https://lenypython.github.io/'
-				/>
-				<input type='hidden' name='_subject' value='Kontakt z portfolio' />
 				<button type='submit'>Send</button>
 			</form>
 		</div>

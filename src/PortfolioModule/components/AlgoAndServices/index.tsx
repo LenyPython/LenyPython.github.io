@@ -1,39 +1,50 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import SvgProvider, {
 	SocialEnum
 } from '@/Global/components/SvgProvider/SvgProvider'
+import Gallery from './gallery'
 
-const profile = {
-	username: 'leny',
-	totalCompleted: 'all',
-	languages: {
-		js: {
-			name: 'js',
-			score: '100%'
-		}
-	},
-	overall: {
-		name: 'pio',
-		score: 'great'
-	},
-	position: 'top 1%'
+type RankType = {
+	rank: number
+	name: string
+	color: string
+	score: number
 }
-const Algo = () => {
-	useEffect(() => {
-		//   dispatch(getData());
-	}, [])
-	//profile from CW
-	const langs = []
-	for (let key in profile.languages) {
-		langs.push(
-			<li key={key}>
-				{`
-        ${key}: \n
-        ${profile.languages[key].name}, score: ${profile.languages[key].score}
-        `}
-			</li>
-		)
+
+type CwDataType = {
+	username: string
+	name: string
+	clan: string
+	codeChallenges: {
+		totalAuthored: number
+		totalCompleted: number
 	}
+	honor: number
+	leaderboardPosition: number
+	ranks: {
+		languages: {
+			[key: string]: RankType
+		}
+		overall: RankType
+	}
+}
+
+const Algo = () => {
+	const [cwData, setCwData] = useState<CwDataType | null>(null)
+	useEffect(() => {
+		const getData = async () => {
+			try {
+				const response = await fetch(
+					'https://www.codewars.com/api/v1/users/LenyPython'
+				)
+				const data = await response.json()
+				setCwData(data)
+			} catch (e) {
+				setTimeout(getData, 5000)
+			}
+		}
+		getData()
+	}, [])
 	const SVGOptions = {
 		width: 75,
 		height: 75,
@@ -62,29 +73,47 @@ const Algo = () => {
 						visit profile
 					</a>
 				</div>
-				<ul>
-					<li>
-						Username: <br />
-						{profile.username}
-					</li>
-					<li>
-						Completed katas:
-						<br /> {profile.totalCompleted}
-					</li>
-					<li>
-						Ranking position:
-						<br /> {profile.position}
-					</li>
-					<li>
-						Overall skills:
-						<br /> {profile.overall?.name ?? 'Piotr'}, score
-						<br /> {profile.overall?.score ?? '0'}
-					</li>
-				</ul>
-				<div>
-					Languages trained:
-					<ul>{langs}</ul>
-				</div>
+				{cwData ? (
+					<>
+						<ul>
+							<li>
+								Username: <br />
+								{cwData.username}
+							</li>
+							<li>
+								Completed katas:
+								<br /> {cwData.codeChallenges.totalCompleted}
+							</li>
+							<li>
+								Ranking position:
+								<br /> {cwData.leaderboardPosition}
+							</li>
+							<li>
+								Overall skills:
+								<br /> {cwData.ranks.overall.score} score,
+								<br /> {cwData.ranks.overall.rank} rank
+							</li>
+						</ul>
+						<div>
+							Languages trained:
+							<ul>
+								{Object.keys(cwData.ranks.languages).map((key: string) => {
+									return (
+										<li key={key}>
+											{`
+										${key}: 
+										${cwData.ranks.languages[key].name},
+										score: ${cwData.ranks.languages[key].score}
+										`}
+										</li>
+									)
+								})}
+							</ul>
+						</div>
+					</>
+				) : (
+					<h3>Loadding Codewars data...</h3>
+				)}
 			</div>
 			<div className={container}>
 				<div className={justify}>
@@ -112,54 +141,7 @@ const Algo = () => {
 					251 medium <br />
 					12 Hard <br />
 				</div>
-				<div className={justify}>
-					<img
-						src='https://assets.leetcode.com/static_assets/others/algorithm_I.png'
-						width='75px'
-						height='75px'
-						alt='Algorithm I'
-					/>
-					<br />
-					<b>Algorithm I</b>
-					<br />
-					<span>2021-10-24</span>
-				</div>
-				<div className={justify}>
-					<img
-						src='https://assets.leetcode.com/static_assets/others/DS_I.png'
-						width='75px'
-						height='75px'
-						alt='Algorithm I'
-					/>
-					<br />
-					<b>Data Structure I</b>
-					<br />
-					<span>2021-12-14</span>
-				</div>
-				<div className={justify}>
-					<img
-						src='https://assets.leetcode.com/static_assets/others/%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B_%E5%85%A5%E9%97%A8.png'
-						width='75px'
-						height='75px'
-						alt='Programming badge I'
-					/>
-					<br />
-					<b>Programming Skills I</b>
-					<br />
-					<span>2022-03-11</span>
-				</div>
-				<div className={justify}>
-					<img
-						src='https://leetcode.com/static/images/badges/2022/lg/2022-annual-100.png'
-						width='75px'
-						height='75px'
-						alt='100 Days badge 2022'
-					/>
-					<br />
-					<b>100 Days Badge 2022</b>
-					<br />
-					<span>2023-01-01</span>
-				</div>
+				<Gallery />
 			</div>
 			<div className={container}>
 				<div className={justify}>
