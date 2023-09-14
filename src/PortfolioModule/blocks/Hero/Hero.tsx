@@ -1,15 +1,20 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { renderRichText } from '@storyblok/react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
+import Globe from '@/PortfolioModule/components/3D/Globe'
 import RichText from '@/Global/components/RIchText/RichText'
 
 import styles from './hero.module.scss'
 import { HeroStoryblok } from '@/types/component-types-sb'
 // find a way to import glb files nextjs
-// import { Avatar } from '@/PortfolioModule/components/Avatar'
+const Avatar = dynamic(
+	() => import('@/PortfolioModule/components/Avatar').then(mod => mod.Avatar),
+	{ ssr: false }
+)
 
 type Props = {
 	blok: HeroStoryblok
@@ -43,8 +48,10 @@ const Hero: React.FC<Props> = ({ blok }) => {
 			<Canvas>
 				<OrbitControls />
 				<ambientLight intensity={0.1} />
-				<directionalLight color='red' position={[1, 2, 5]} />
-				{/* <Avatar /> */}
+				<directionalLight color='green' position={[1, 2, 5]} />
+				<Suspense fallback={null}>
+					<Globe />
+				</Suspense>
 			</Canvas>
 		</div>
 	)
