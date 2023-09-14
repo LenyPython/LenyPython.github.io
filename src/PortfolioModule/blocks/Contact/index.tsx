@@ -1,5 +1,3 @@
-'use client'
-import { log } from 'console'
 import { useState } from 'react'
 
 // add propert storyblok types
@@ -35,7 +33,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 				name,
 				email,
 				msg,
-				_subject: `Pytanie od: ${name}`,
+				_subject: `Portfolio form question from: ${name}`,
 				_template: 'table',
 				_next: 'https://lenypython.github.io/'
 			})

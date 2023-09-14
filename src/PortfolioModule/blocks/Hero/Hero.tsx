@@ -1,16 +1,20 @@
 import { useState } from 'react'
 import { renderRichText } from '@storyblok/react'
-import Image from 'next/image'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
 import Link from 'next/link'
 
 import RichText from '@/Global/components/RIchText/RichText'
 
 import styles from './hero.module.scss'
 import { HeroStoryblok } from '@/types/component-types-sb'
+// find a way to import glb files nextjs
+// import { Avatar } from '@/PortfolioModule/components/Avatar'
 
 type Props = {
 	blok: HeroStoryblok
 }
+
 const Hero: React.FC<Props> = ({ blok }) => {
 	const { headline, Image: img, rich_text, cta_link, call_to_action } = blok
 	const [isActive, setIsActive] = useState<boolean>(false)
@@ -36,13 +40,12 @@ const Hero: React.FC<Props> = ({ blok }) => {
 					</button>
 				</div>
 			</div>
-			<Image
-				src={img?.filename ?? ''}
-				className='self-end'
-				width={350}
-				height={350}
-				alt={img?.alt ?? 'image'}
-			/>
+			<Canvas>
+				<OrbitControls />
+				<ambientLight intensity={0.1} />
+				<directionalLight color='red' position={[1, 2, 5]} />
+				{/* <Avatar /> */}
+			</Canvas>
 		</div>
 	)
 }
