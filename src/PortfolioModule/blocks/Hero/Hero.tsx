@@ -46,7 +46,6 @@ const Hero: React.FC<Props> = ({ blok }) => {
 				</div>
 			</div>
 			<Canvas>
-				<OrbitControls />
 				<ambientLight intensity={0.1} />
 				<directionalLight color='green' position={[1, 2, 5]} />
 				<Suspense fallback={null}>
