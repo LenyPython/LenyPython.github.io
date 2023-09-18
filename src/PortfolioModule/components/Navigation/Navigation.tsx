@@ -10,13 +10,7 @@ type Props = {
 }
 
 const Navigation: React.FC<Props> = ({ config }) => {
-	return (
-		<>
-			<TopPanel config={config} />
-		</>
-	)
-}
-const TopPanel: React.FC<Props> = ({ config }) => {
+	const links = config.filter((item: SectionStoryblok) => item.in_navigation)
 	const svgConfig = {
 		width: 35,
 		height: 35,
@@ -25,13 +19,15 @@ const TopPanel: React.FC<Props> = ({ config }) => {
 	return (
 		<div className='fixed top-0 left-0 right-0 z-10 flex justify-center items-center p-3 bg-background'>
 			<div className='flex justify-between max-w-5xl w-4/5'>
-				<h2 className='text-3xl'>LOGO</h2>
-				<div className='flex'>
-					{config.map((item: any) => (
+				<Link href='/'>
+					<h2 className='text-3xl pr-3'>LOGO</h2>
+				</Link>
+				<div className='flex items-center'>
+					{links.map((item: SectionStoryblok) => (
 						<Link
 							key={`link:${item._uid}`}
 							href={`/#${item.ID}`}
-							className='px-4'
+							className='pr-3 uppercase'
 						>
 							{item.ID}
 						</Link>
