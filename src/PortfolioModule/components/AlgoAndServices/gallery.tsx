@@ -12,7 +12,7 @@ const badges = [
 			alt='Algorithm I'
 		/>
 		<br />
-		<b>Algorithm I</b>
+		<b className='text-center'>Algorithm I</b>
 		<br />
 		<span>2021-10-24</span>
 	</div>,
@@ -30,25 +30,25 @@ const badges = [
 	</div>,
 	<div className='flex flex-col items-center'>
 		<img
-			src='https://assets.leetcode.com/static_assets/others/%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B_%E5%85%A5%E9%97%A8.png'
+			src='https://assets.leetcode.com/static_assets/others/%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B_%E5%85%A5%E9%97%A8.gif'
 			width='75px'
 			height='75px'
 			alt='Programming badge I'
 		/>
 		<br />
-		<b>Programming Skills I</b>
+		<b className='text-center'>Programming Skills I</b>
 		<br />
 		<span>2022-03-11</span>
 	</div>,
 	<div className='flex flex-col items-center'>
 		<img
-			src='https://leetcode.com/static/images/badges/2022/lg/2022-annual-100.png'
+			src='https://leetcode.com/static/images/badges/2022/gif/2022-annual-100.gif'
 			width='75px'
 			height='75px'
 			alt='100 Days badge 2022'
 		/>
 		<br />
-		<b>100 Days Badge 2022</b>
+		<b className='text-center'>100 Days Badge 2022</b>
 		<br />
 		<span>2023-01-01</span>
 	</div>
