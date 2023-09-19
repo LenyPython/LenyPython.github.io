@@ -24,7 +24,7 @@ const Project: React.FC<Props> = ({ blok }) => {
 			<h3 className='text-xl font-bold'>{role.join(', ')}</h3>
 			<RichText html={renderRichText(description)} />
 			<h3 className='text-xl font-bold'>Tech</h3>
-			<div className='flex items-center'>
+			<div className='flex flex-wrap items-center'>
 				{techs.map((svg: SvgType) => (
 					<SvgProvider
 						key={`${project_name}-${tech[0]._uid}-${svg}`}
