@@ -26,18 +26,19 @@ const Hero: React.FC<Props> = ({ blok }) => {
 		setTimeout(() => setIsActive(false), 5000)
 	}
 	return (
-		<div className='w-3/4 max-w-5xl justify-self-start mt-5'>
-			<div className='flex flex-col relative px-14 py-12 justify-center rounded-lg backdrop-blur-lg'>
+		<div className='max-w-5xl m-5 md:justify-self-start md:w-3/4 '>
+			<div className='flex flex-col relative p-7 pb-20 md:px-14 md:pt-10 justify-center rounded-lg backdrop-blur-lg'>
 				<div>
-					<h2 className='text-6xl font-bold mb-10'>{headline}</h2>
-					<RichText html={renderRichText(rich_text)} />
+					<h2 className='text-xl lg:text-5xl font-bold mb-10 max-w-2xl'>
+						{headline}
+					</h2>
+					<RichText className='text-justify' html={renderRichText(rich_text)} />
 				</div>
-				<div className='flex items-center justify-end border absolute bottom-0 right-0 bg-secondarybg px-6 py-3 rounded-lg translate-x-1/3 -rotate-45'>
+				<div className='flex items-center justify-end border bg-secondarybg px-6 py-3 rounded-lg absolute -bottom-8 right-1/2 scale-75 translate-x-1/2 -rotate-12 md:-bottom-5 md:right-1/4 md:scale-95'>
 					<Link
 						href={`#${cta_link.anchor}`}
 						className='inline-block relative py-1 px-9 bg-background uppercase text-center no-underline text-xl leading-9 font-bold tracking-wide shadow-btnBlack hover:shadow-btnGreen duration-700 hover:rotate-45 hover:scale-125'
 					>
-						<span></span>
 						{call_to_action}
 					</Link>
 					<button onClick={copyEmailToClipboard} className='ml-10'>
