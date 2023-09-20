@@ -51,14 +51,14 @@ const Projects: React.FC<Props> = ({ blok }) => {
 			)
 		)
 	}
-	const labelStyles = 'flex justify-between p-1 m-0.5 text-center'
+	const labelStyles = 'flex justify-between p-1 m-0.5 text-center md:w-2/5'
 	const selectStyles = 'border outline-0 w-1/2 mx-1 px-2 bg-background'
 	return (
 		<div className='relative w-3/4 max-w-4xl p-5 shadow-main shadow-font rounded-xl backdrop-blur-lg md:p-10'>
 			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl'>
 				{blok.headline}
 			</h2>
-			<div className='w-full flex flex-col mb-5 md:flex-row'>
+			<div className='w-full flex flex-col mb-5 md:flex-row md:justify-around'>
 				<label htmlFor='work' className={labelStyles}>
 					Type:
 					<select
