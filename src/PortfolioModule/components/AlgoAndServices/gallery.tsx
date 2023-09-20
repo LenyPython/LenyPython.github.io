@@ -24,7 +24,7 @@ const badges = [
 			alt='Algorithm I'
 		/>
 		<br />
-		<b>Data Structure I</b>
+		<b className='text-center'>Data Structure I</b>
 		<br />
 		<span>2021-12-14</span>
 	</div>,
@@ -73,11 +73,11 @@ const Gallery = () => {
 		color: 'hsla(120,100%,50%,1)'
 	}
 	return (
-		<div className='flex justify-between items-center'>
+		<div className='flex justify-between items-center w-52 h-56'>
 			<button onClick={decrement}>
 				<SvgProvider type={UtilSvgEnum.rightArrow} options={SVGOptions} />
 			</button>
-			{badges[badge]}
+			{badges[badge]}{' '}
 			<button onClick={increment}>
 				<SvgProvider type={UtilSvgEnum.leftArrow} options={SVGOptions} />
 			</button>

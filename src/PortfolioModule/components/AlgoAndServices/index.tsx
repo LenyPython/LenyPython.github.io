@@ -51,11 +51,11 @@ const Algo = () => {
 		color: 'hsla(120,100%,50%,1)'
 	}
 	const container =
-		'flex flex-wrap justify-around gap-8 p-5 my-5 shadow-main shadow-font rounded-xl backdrop-blur-lg sm:p-10'
+		'flex flex-wrap justify-around gap-8 p-5 my-7 shadow-main shadow-font rounded-xl backdrop-blur-lg sm:p-10'
 	const justify = 'flex flex-col items-center'
 	return (
 		<>
-			<div className={container}>
+			<div className={`${container} -rotate-3`}>
 				<div className={justify}>
 					<h2 className='mb-5'>CodeWars Profile:</h2>
 					<a
@@ -113,7 +113,7 @@ const Algo = () => {
 					</ul>
 				</div>
 			</div>
-			<div className={container}>
+			<div className={`${container} self-start rotate-2`}>
 				<div className={justify}>
 					<h2 className='mb-5'>LeetCode Profile:</h2>
 					<a
@@ -141,7 +141,7 @@ const Algo = () => {
 				</div>
 				<Gallery />
 			</div>
-			<div className={container}>
+			<div className={`${container} self-end -rotate-6`}>
 				<div className={justify}>
 					<h2>Frontend Mentor</h2>
 					<a
