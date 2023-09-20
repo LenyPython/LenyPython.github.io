@@ -83,7 +83,9 @@ const Projects: React.FC<Props> = ({ blok }) => {
 						id='role'
 					>
 						{Object.values(role).map((role: string) => (
-							<option value={role}>{role}</option>
+							<option value={role} key={`role-${role}`}>
+								{role}
+							</option>
 						))}
 					</select>
 				</label>

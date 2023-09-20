@@ -51,7 +51,7 @@ const Algo = () => {
 		color: 'hsla(120,100%,50%,1)'
 	}
 	const container =
-		'flex justify-between p-10 w-full mb-5 shadow-main shadow-font rounded-xl backdrop-blur-lg'
+		'flex flex-wrap justify-around gap-8 p-5 my-5 shadow-main shadow-font rounded-xl backdrop-blur-lg sm:p-10'
 	const justify = 'flex flex-col items-center'
 	return (
 		<>
@@ -73,47 +73,45 @@ const Algo = () => {
 						visit profile
 					</a>
 				</div>
-				{cwData ? (
-					<>
-						<ul>
-							<li>
-								Username: <br />
-								{cwData.username}
-							</li>
-							<li>
-								Completed katas:
-								<br /> {cwData.codeChallenges.totalCompleted}
-							</li>
-							<li>
-								Ranking position:
-								<br /> {cwData.leaderboardPosition}
-							</li>
-							<li>
-								Overall skills:
-								<br /> {cwData.ranks.overall.score} score,
-								<br /> {cwData.ranks.overall.rank} rank
-							</li>
-						</ul>
-						<div>
-							Languages trained:
-							<ul>
-								{Object.keys(cwData.ranks.languages).map((key: string) => {
-									return (
-										<li key={key}>
-											{`
+				<ul>
+					<li>
+						Username: <br />
+						{cwData?.username ?? 'LenyPyton'}
+					</li>
+					<li>
+						Completed katas:
+						<br /> {cwData?.codeChallenges?.totalCompleted ?? 'completed'}
+					</li>
+					<li>
+						Ranking position:
+						<br /> {cwData?.leaderboardPosition ?? 'position'}
+					</li>
+					<li>
+						Overall skills:
+						<br /> {cwData?.ranks?.overall?.score ?? ''} score,
+						<br /> {cwData?.ranks?.overall?.rank ?? ''} rank
+					</li>
+				</ul>
+				<div>
+					Languages trained:
+					<ul>
+						{cwData ? (
+							Object.keys(cwData.ranks.languages).map((key: string) => {
+								return (
+									<li key={key}>
+										{`
 										${key}: 
 										${cwData.ranks.languages[key].name},
 										score: ${cwData.ranks.languages[key].score}
 										`}
-										</li>
-									)
-								})}
-							</ul>
-						</div>
-					</>
-				) : (
-					<h3>Loadding Codewars data...</h3>
-				)}
+									</li>
+								)
+							})
+						) : (
+							<>loading data</>
+						)}
+					</ul>
+				</div>
 			</div>
 			<div className={container}>
 				<div className={justify}>

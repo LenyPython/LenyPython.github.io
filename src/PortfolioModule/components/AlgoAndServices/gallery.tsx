@@ -73,7 +73,7 @@ const Gallery = () => {
 		color: 'hsla(120,100%,50%,1)'
 	}
 	return (
-		<div className='flex justify-between items-center w-2/5'>
+		<div className='flex justify-between items-center'>
 			<button onClick={decrement}>
 				<SvgProvider type={UtilSvgEnum.rightArrow} options={SVGOptions} />
 			</button>
