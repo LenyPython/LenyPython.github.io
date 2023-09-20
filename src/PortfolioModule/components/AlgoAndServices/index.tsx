@@ -55,7 +55,7 @@ const Algo = () => {
 	const justify = 'flex flex-col items-center'
 	return (
 		<>
-			<div className={`${container} -rotate-3`}>
+			<div className={`${container} -rotate-3 lg:-rotate-6`}>
 				<div className={justify}>
 					<h2 className='mb-5'>CodeWars Profile:</h2>
 					<a
@@ -113,7 +113,7 @@ const Algo = () => {
 					</ul>
 				</div>
 			</div>
-			<div className={`${container} self-start rotate-2`}>
+			<div className={`${container} self-start rotate-2 lg:rotate-6`}>
 				<div className={justify}>
 					<h2 className='mb-5'>LeetCode Profile:</h2>
 					<a
@@ -141,7 +141,7 @@ const Algo = () => {
 				</div>
 				<Gallery />
 			</div>
-			<div className={`${container} self-end -rotate-6`}>
+			<div className={`${container} self-end -rotate-6 lg:-rotate-12`}>
 				<div className={justify}>
 					<h2>Frontend Mentor</h2>
 					<a
