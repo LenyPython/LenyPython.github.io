@@ -1,3 +1,7 @@
+import SvgProvider, {
+	DevEnum,
+	SocialEnum
+} from '@/Global/components/SvgProvider/SvgProvider'
 import { useState } from 'react'
 
 // add propert storyblok types
@@ -75,6 +79,11 @@ const Contact: React.FC<Props> = ({ blok }) => {
 				console.error(error)
 			})
 	}
+	const svgConfig = {
+		width: 35,
+		height: 35,
+		color: 'hsla(120,100%,50%, .8)'
+	}
 	const styles =
 		'm-5 p-2 bg-background text-font placeholder:text-font border-b outline-0 focus:border-b-4'
 	return (
@@ -89,6 +98,8 @@ const Contact: React.FC<Props> = ({ blok }) => {
 			>
 				{formStatusMsg}
 			</div>
+			<SvgProvider type={DevEnum.github} options={svgConfig} />
+			<SvgProvider type={SocialEnum.linkedin} options={svgConfig} />
 			<form className='flex flex-col min-w-250 w-1/2' onSubmit={handleSubmit}>
 				<input
 					className={styles}

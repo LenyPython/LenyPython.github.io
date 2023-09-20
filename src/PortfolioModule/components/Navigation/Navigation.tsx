@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { SectionStoryblok } from '@/types/component-types-sb'
+import { useState } from 'react'
 import SvgProvider, {
-	DevEnum,
-	SocialEnum
+	UtilSvgEnum
 } from '@/Global/components/SvgProvider/SvgProvider'
 
 type Props = {
@@ -10,33 +10,56 @@ type Props = {
 }
 
 const Navigation: React.FC<Props> = ({ config }) => {
+	const [isMobileOpen, setIsMobileOpen] = useState(false)
 	const links = config.filter((item: SectionStoryblok) => item.in_navigation)
+	let navContainer =
+		'fixed flex justify-center z-10 p-3 backdrop-blur-lg duration-700 md:top-0'
+	if (isMobileOpen) navContainer += ' top-0 bottom-0 left-0 right-0'
+	else navContainer += ' top-full left-0 right-0'
+	const toggleNavigation = () => {
+		setIsMobileOpen(prev => window.innerWidth < 768 && !prev)
+	}
+
 	const svgConfig = {
+		margin: '-.2rem .1rem',
 		width: 35,
 		height: 35,
-		color: 'hsla(120,100%,50%, .8)'
+		color: isMobileOpen ? 'hsla(120,100%,50%, .8)' : 'black',
+		transition: 'all .7s',
+		transform: isMobileOpen ? 'rotate(90deg)' : 'rotate(-90deg)'
 	}
 	return (
-		<div className='fixed top-0 left-0 right-0 z-10 flex justify-center items-center p-3 bg-background'>
-			<div className='flex justify-between max-w-5xl w-4/5'>
-				<Link href='/'>
-					<h2 className='text-3xl pr-3'>LOGO</h2>
-				</Link>
-				<div className='flex items-center'>
-					{links.map((item: SectionStoryblok) => (
-						<Link
-							key={`link:${item._uid}`}
-							href={`/#${item.ID}`}
-							className='pr-3 uppercase'
-						>
-							{item.ID}
-						</Link>
-					))}
-					<SvgProvider type={DevEnum.github} options={svgConfig} />
-					<SvgProvider type={SocialEnum.linkedin} options={svgConfig} />
+		<>
+			<div className={navContainer}>
+				<div className='h-full rounded-full md:flex md:justify-between lg:w-4/5 lg:max-w-5xl'>
+					<Link onClick={toggleNavigation} href='/'>
+						<h2 className='text-3xl text-center'>LOGO</h2>
+					</Link>
+					<div className='flex flex-col items-center mt-5 md:flex-row md:mt-auto'>
+						{links.map((item: SectionStoryblok) => (
+							<Link
+								key={`link:${item._uid}`}
+								href={`/#${item.ID}`}
+								className='p-3 uppercase border-b md:border-0'
+								onClick={toggleNavigation}
+							>
+								{item.ID}
+							</Link>
+						))}
+					</div>
 				</div>
 			</div>
-		</div>
+			<button
+				className={`fixed bottom-6 right-3 p-1 ${
+					isMobileOpen ? 'bg-background border-2' : 'bg-font'
+				} z-10 rounded-full md:hidden`}
+				onClick={toggleNavigation}
+			>
+				<SvgProvider type={UtilSvgEnum.leftArrow} options={svgConfig} />
+				<SvgProvider type={UtilSvgEnum.leftArrow} options={svgConfig} />
+				<SvgProvider type={UtilSvgEnum.leftArrow} options={svgConfig} />
+			</button>
+		</>
 	)
 }
 

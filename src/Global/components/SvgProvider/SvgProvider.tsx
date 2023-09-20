@@ -75,7 +75,7 @@ type Props = {
 }
 
 const SvgProvider: React.FC<Props> = ({ type, options }) => {
-	const style = { ...options, margin: '5px' }
+	const style = { margin: '.2rem', ...options }
 	switch (type) {
 		case LangEnum.html:
 			return <HTMLlogo style={style} />

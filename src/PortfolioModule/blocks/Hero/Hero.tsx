@@ -18,7 +18,7 @@ type Props = {
 }
 
 const Hero: React.FC<Props> = ({ blok }) => {
-	const { headline, Image: img, rich_text, cta_link, call_to_action } = blok
+	const { headline, rich_text, cta_link, call_to_action } = blok
 	const [isActive, setIsActive] = useState<boolean>(false)
 	const copyEmailToClipboard = () => {
 		navigator.clipboard.writeText('piotr.lenartowicz@yahoo.com')
@@ -26,7 +26,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 		setTimeout(() => setIsActive(false), 5000)
 	}
 	return (
-		<div className='max-w-5xl m-5 md:justify-self-start md:w-3/4 '>
+		<div className='max-w-5xl mx-5 md:justify-self-start md:w-3/4 '>
 			<div className='flex flex-col relative p-7 pb-20 md:px-14 md:pt-10 justify-center rounded-lg backdrop-blur-lg'>
 				<div>
 					<h2 className='text-xl lg:text-5xl font-bold mb-10 max-w-2xl'>
