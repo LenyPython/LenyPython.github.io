@@ -3,6 +3,8 @@ import GITHUBlogo from '@/assets/images/svg/development/github.svg'
 import GITlogo from '@/assets/images/svg/development/git.svg'
 import DOCKERlogo from '@/assets/images/svg/development/docker.svg'
 import JENKINSlogo from '@/assets/images/svg/development/jenkins.svg'
+import JIRAlogo from '@/assets/images/svg/development/jira.svg'
+import AWSlogo from '@/assets/images/svg/development/aws.svg'
 
 // Languages
 import HTMLlogo from '@/assets/images/svg/language/html.svg'
@@ -13,11 +15,15 @@ import GROOVYlogo from '@/assets/images/svg/language/groovy.svg'
 import JSlogo from '@/assets/images/svg/language/js.svg'
 import TSlogo from '@/assets/images/svg/language/ts.svg'
 import PYTHONlogo from '@/assets/images/svg/language/python.svg'
+import GOlogo from '@/assets/images/svg/language/go.svg'
 
 // Frameworkst
 import Reactlogo from '@/assets/images/svg/tech/react.svg'
 import Reduxlogo from '@/assets/images/svg/tech/redux.svg'
 import ReduxSagalogo from '@/assets/images/svg/tech/redux-saga.svg'
+import NEXTlogo from '@/assets/images/svg/tech/nextjs.svg'
+import VUElogo from '@/assets/images/svg/tech/vue.svg'
+import NUXTlogo from '@/assets/images/svg/tech/nuxt.svg'
 import Kivylogo from '@/assets/images/svg/tech/kivy.svg'
 import D3logo from '@/assets/images/svg/tech/d3.svg'
 import Firebaselogo from '@/assets/images/svg/tech/firebase.svg'
@@ -51,16 +57,19 @@ export enum LangEnum {
 	html = 'html',
 	css = 'css',
 	sass = 'sass',
+	javaScript = 'java-script',
+	typescript = 'typescript',
 	java = 'java',
 	groovy = 'groovy',
-	javaScript = 'java-script',
 	python = 'python',
-	typescript = 'typescript'
+	go = 'golang'
 }
 
 export enum DevEnum {
 	git = 'git',
 	github = 'github',
+	jira = 'jira',
+	aws = 'aws',
 	docker = 'docker',
 	jenkins = 'jenkins'
 }
@@ -69,6 +78,9 @@ export enum TechEnum {
 	react = 'react',
 	redux = 'redux',
 	reduxSaga = 'redux-saga',
+	nextjs = 'nextjs',
+	vue = 'vue',
+	nuxt = 'nuxt',
 	d3 = 'd3',
 	firebase = 'firebase',
 	kivy = 'kivy',
@@ -110,6 +122,8 @@ const SvgProvider: React.FC<Props> = ({ type, options }) => {
 			return <TSlogo style={style} />
 		case LangEnum.python:
 			return <PYTHONlogo style={style} />
+		case LangEnum.go:
+			return <GOlogo style={style} />
 		// frameworks
 		case TechEnum.aem:
 			return <AEMlogo style={style} />
@@ -123,6 +137,12 @@ const SvgProvider: React.FC<Props> = ({ type, options }) => {
 			return <Reduxlogo style={style} />
 		case TechEnum.reduxSaga:
 			return <ReduxSagalogo style={style} />
+		case TechEnum.nextjs:
+			return <NEXTlogo style={style} />
+		case TechEnum.vue:
+			return <VUElogo style={style} />
+		case TechEnum.nuxt:
+			return <NUXTlogo style={style} />
 		case TechEnum.kivy:
 			return <Kivylogo style={style} />
 		case TechEnum.d3:
@@ -134,6 +154,10 @@ const SvgProvider: React.FC<Props> = ({ type, options }) => {
 			return <GITlogo style={style} />
 		case DevEnum.github:
 			return <GITHUBlogo style={style} />
+		case DevEnum.jira:
+			return <JIRAlogo style={style} />
+		case DevEnum.aws:
+			return <AWSlogo style={style} />
 		case DevEnum.docker:
 			return <DOCKERlogo style={style} />
 		case DevEnum.jenkins:

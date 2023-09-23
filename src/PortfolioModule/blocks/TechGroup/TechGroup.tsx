@@ -22,8 +22,10 @@ const TechGroup: React.FC<Props> = ({ blok }) => {
 		color: 'hsla(120, 100%, 50%, .4)'
 	}
 	return (
-		<div className='w-full p-2 border-y border-y-font mb-3'>
-			<h2>{blok.headline}</h2>
+		<div className='relative w-full p-2 border-y border-font mb-8'>
+			<h2 className='absolute left-1 bottom-full underline text-xl'>
+				{blok.headline}
+			</h2>
 			<div className='w-full flex'>
 				{advTech.length > 0 &&
 					advTech.map((svg: SvgType) => (
@@ -34,7 +36,7 @@ const TechGroup: React.FC<Props> = ({ blok }) => {
 						/>
 					))}
 			</div>
-			<hr className='m-3 border-font' />
+			<hr className='m-4 border-font' />
 			<div className='w-full flex'>
 				{basicTech.length > 0 &&
 					basicTech.map((svg: SvgType) => (
