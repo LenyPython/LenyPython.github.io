@@ -1,12 +1,18 @@
 // Development
-import Githublogo from '@/assets/images/svg/development/github.svg'
+import GITHUBlogo from '@/assets/images/svg/development/github.svg'
+import GITlogo from '@/assets/images/svg/development/git.svg'
+import DOCKERlogo from '@/assets/images/svg/development/docker.svg'
+import JENKINSlogo from '@/assets/images/svg/development/jenkins.svg'
 
 // Languages
 import HTMLlogo from '@/assets/images/svg/language/html.svg'
 import CSSlogo from '@/assets/images/svg/language/css.svg'
+import SASSlogo from '@/assets/images/svg/language/sass.svg'
+import JAVAlogo from '@/assets/images/svg/language/java.svg'
+import GROOVYlogo from '@/assets/images/svg/language/groovy.svg'
 import JSlogo from '@/assets/images/svg/language/js.svg'
 import TSlogo from '@/assets/images/svg/language/ts.svg'
-import Pythonlogo from '@/assets/images/svg/language/python.svg'
+import PYTHONlogo from '@/assets/images/svg/language/python.svg'
 
 // Frameworkst
 import Reactlogo from '@/assets/images/svg/tech/react.svg'
@@ -15,6 +21,8 @@ import ReduxSagalogo from '@/assets/images/svg/tech/redux-saga.svg'
 import Kivylogo from '@/assets/images/svg/tech/kivy.svg'
 import D3logo from '@/assets/images/svg/tech/d3.svg'
 import Firebaselogo from '@/assets/images/svg/tech/firebase.svg'
+import AEMlogo from '@/assets/images/svg/tech/aem.svg'
+import CYPRESSlogo from '@/assets/images/svg/tech/cypress.svg'
 
 // Social
 import FrontendMentorlogo from '@/assets/images/svg/social/frontendMentor.svg'
@@ -43,13 +51,18 @@ export enum LangEnum {
 	html = 'html',
 	css = 'css',
 	sass = 'sass',
+	java = 'java',
+	groovy = 'groovy',
 	javaScript = 'java-script',
 	python = 'python',
 	typescript = 'typescript'
 }
 
 export enum DevEnum {
-	github = 'github'
+	git = 'git',
+	github = 'github',
+	docker = 'docker',
+	jenkins = 'jenkins'
 }
 
 export enum TechEnum {
@@ -58,7 +71,9 @@ export enum TechEnum {
 	reduxSaga = 'redux-saga',
 	d3 = 'd3',
 	firebase = 'firebase',
-	kivy = 'kivy'
+	kivy = 'kivy',
+	aem = 'aem',
+	cypress = 'cypress'
 }
 
 export enum UtilSvgEnum {
@@ -78,16 +93,30 @@ type Props = {
 const SvgProvider: React.FC<Props> = ({ type, options }) => {
 	const style = { margin: '.2rem', ...options }
 	switch (type) {
+		// languages
 		case LangEnum.html:
 			return <HTMLlogo style={style} />
 		case LangEnum.css:
 			return <CSSlogo style={style} />
-		case LangEnum.js:
+		case LangEnum.sass:
+			return <SASSlogo style={style} />
+		case LangEnum.java:
+			return <JAVAlogo style={style} />
+		case LangEnum.groovy:
+			return <GROOVYlogo style={style} />
+		case LangEnum.javaScript:
 			return <JSlogo style={style} />
-		case LangEnum.ts:
+		case LangEnum.typescript:
 			return <TSlogo style={style} />
 		case LangEnum.python:
-			return <Pythonlogo style={style} />
+			return <PYTHONlogo style={style} />
+		// frameworks
+		case TechEnum.aem:
+			return <AEMlogo style={style} />
+		case TechEnum.cypress:
+			return <CYPRESSlogo style={style} />
+		case TechEnum.react:
+			return <Reactlogo style={style} />
 		case TechEnum.react:
 			return <Reactlogo style={style} />
 		case TechEnum.redux:
@@ -100,8 +129,16 @@ const SvgProvider: React.FC<Props> = ({ type, options }) => {
 			return <D3logo style={style} />
 		case TechEnum.firebase:
 			return <Firebaselogo style={style} />
+		// development
+		case DevEnum.git:
+			return <GITlogo style={style} />
 		case DevEnum.github:
-			return <Githublogo style={style} />
+			return <GITHUBlogo style={style} />
+		case DevEnum.docker:
+			return <DOCKERlogo style={style} />
+		case DevEnum.jenkins:
+			return <JENKINSlogo style={style} />
+		// social
 		case SocialEnum.linkedin:
 			return <Linkedinlogo style={style} />
 		case SocialEnum.leetcode:

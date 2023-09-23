@@ -2,6 +2,7 @@ import SvgProvider, {
 	DevEnum,
 	SocialEnum
 } from '@/Global/components/SvgProvider/SvgProvider'
+import Link from 'next/link'
 import { useState } from 'react'
 
 // add propert storyblok types
@@ -14,7 +15,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 	const [email, setEmail] = useState('')
 	const [msg, setMsg] = useState('')
 	const [formStatus, setFormStatus] = useState('')
-	const [formStatusMsg, setFormStatusMsg] = useState('default msg')
+	const [formStatusMsg, setFormStatusMsg] = useState('')
 
 	const updateName = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setName(e.target.value)
@@ -80,27 +81,54 @@ const Contact: React.FC<Props> = ({ blok }) => {
 			})
 	}
 	const svgConfig = {
-		width: 35,
-		height: 35,
+		width: 55,
+		height: 55,
 		color: 'hsla(120,100%,50%, .8)'
 	}
 	const styles =
-		'm-5 p-2 bg-background text-font placeholder:text-font border-b outline-0 focus:border-b-4'
+		'm-5 p-2 bg-background text-font placeholder:text-font border-b border-font outline-0 focus:border-b-4'
+	let statusMsgClasses = ''
+	if (formStatus === 'success') statusMsgClasses = 'bg-font p-2'
+	else if (formStatus === 'error')
+		statusMsgClasses = 'p-2 bg-red-600 text-white'
 	return (
 		<div className='relative flex flex-col items-center w-3/4 max-w-4xl p-5 shadow-main shadow-font rounded-xl backdrop-blur-lg'>
 			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl'>
 				{blok.headline}
 			</h2>
-			<div
-				className={`text-center w-full p-2 ${
-					formStatus === 'success' ? 'bg-font' : 'bg-red'
-				} text-background z-10 rounded-lg`}
-			>
-				{formStatusMsg}
+			<div className='flex items-center justify-between w-full max-w-md'>
+				<Link
+					href='https://github.com/LenyPython'
+					target='_blank'
+					rel='noreferrer'
+				>
+					See my github:
+				</Link>
+				<Link
+					href='https://github.com/LenyPython'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<SvgProvider type={DevEnum.github} options={svgConfig} />
+				</Link>
 			</div>
-			<SvgProvider type={DevEnum.github} options={svgConfig} />
-			<SvgProvider type={SocialEnum.linkedin} options={svgConfig} />
-			<form className='flex flex-col min-w-250 w-1/2' onSubmit={handleSubmit}>
+			<div className='flex items-center justify-between w-full max-w-md'>
+				<Link
+					href='https://github.com/LenyPython'
+					target='_blank'
+					rel='noreferrer'
+				>
+					Connect with me on Linkedin:{' '}
+				</Link>
+				<Link
+					href='https://github.com/LenyPython'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<SvgProvider type={SocialEnum.linkedin} options={svgConfig} />
+				</Link>
+			</div>
+			<form className='flex flex-col w-full' onSubmit={handleSubmit}>
 				<input
 					className={styles}
 					type='text'
@@ -127,6 +155,11 @@ const Contact: React.FC<Props> = ({ blok }) => {
 					required
 				/>
 				<button type='submit'>Send</button>
+				<div
+					className={`text-center text-sm w-full ${statusMsgClasses} text-background z-10 rounded-lg md:text-base`}
+				>
+					{formStatusMsg}
+				</div>
 			</form>
 		</div>
 	)
