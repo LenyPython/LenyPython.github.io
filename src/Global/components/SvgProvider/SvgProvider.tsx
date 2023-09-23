@@ -39,6 +39,19 @@ export enum SocialEnum {
 	replit = 'replit'
 }
 
+export enum LangEnum {
+	html = 'html',
+	css = 'css',
+	sass = 'sass',
+	javaScript = 'java-script',
+	python = 'python',
+	typescript = 'typescript'
+}
+
+export enum DevEnum {
+	github = 'github'
+}
+
 export enum TechEnum {
 	react = 'react',
 	redux = 'redux',
@@ -46,18 +59,6 @@ export enum TechEnum {
 	d3 = 'd3',
 	firebase = 'firebase',
 	kivy = 'kivy'
-}
-
-export enum DevEnum {
-	github = 'github'
-}
-
-export enum LangEnum {
-	html = 'html',
-	css = 'css',
-	js = 'java-script',
-	python = 'python',
-	ts = 'typescript'
 }
 
 export enum UtilSvgEnum {

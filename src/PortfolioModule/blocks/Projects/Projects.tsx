@@ -1,22 +1,25 @@
 import { StoryblokComponent } from '@storyblok/react'
 import { useState } from 'react'
+import { ProjectStoryblok, ProjectsStoryblok } from '@/types/component-types-sb'
 import {
-	ProjectStoryblok,
-	ProjectsStoryblok,
-	TechnologiesStoryblok
-} from '@/types/component-types-sb'
-import { TechEnum } from '@/Global/components/SvgProvider/SvgProvider'
+	DevEnum,
+	LangEnum,
+	TechEnum
+} from '@/Global/components/SvgProvider/SvgProvider'
 
 type Props = {
 	blok: ProjectsStoryblok
 }
+
+type technologiesEnum = LangEnum & DevEnum & TechEnum
+
 enum role {
 	any = 'any',
 	dev = 'developer',
 	main = 'maintenance',
 	sup = 'support'
 }
-enum work {
+enum projType {
 	any = 'any',
 	commercial = 'commercial',
 	side = 'side'
@@ -25,9 +28,14 @@ enum work {
 const Projects: React.FC<Props> = ({ blok }) => {
 	let { projects } = blok
 	const [isTechInputOpen, setTechInputOpen] = useState(false)
-	const technologies: TechEnum[] = Object.values(TechEnum)
+	const technologies: technologiesEnum[] = [
+		...Object.values(LangEnum),
+		...Object.values(DevEnum),
+		...Object.values(TechEnum)
+	]
 	const [roleFilter, setRoleFilter] = useState(role.any)
 	const [techFilter, setTechFilter] = useState(new Set<TechEnum>())
+	const [typeFilter, setTypeFilter] = useState(projType.any)
 	const toggleTechInput = () => setTechInputOpen(prev => !prev)
 	const onRoleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setRoleFilter(e.target.value as role)
@@ -39,16 +47,25 @@ const Projects: React.FC<Props> = ({ blok }) => {
 			return new Set(set)
 		})
 	}
+	const onTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		setTypeFilter(e.target.value as projType)
+	}
 	if (roleFilter !== role.any) {
 		projects = projects.filter((proj: ProjectStoryblok) =>
 			proj.role.includes(roleFilter)
 		)
 	}
+
+	if (typeFilter !== projType.any) {
+		projects = projects.filter(
+			(proj: ProjectStoryblok) => proj.type === typeFilter
+		)
+	}
 	if (techFilter.size > 0) {
 		projects = projects.filter((proj: ProjectStoryblok) =>
-			proj.tech.some((tech: TechnologiesStoryblok) =>
-				techFilter.has(tech.svg_type as TechEnum)
-			)
+			proj.tech[0]?.techs?.some((tech: technologiesEnum) => {
+				return techFilter.has(tech as technologiesEnum)
+			})
 		)
 	}
 	const labelStyles = 'flex justify-between p-1 m-0.5 text-center md:w-2/5'
@@ -63,14 +80,14 @@ const Projects: React.FC<Props> = ({ blok }) => {
 					Type:
 					<select
 						className={selectStyles}
-						onChange={onRoleChange}
-						value={roleFilter}
+						onChange={onTypeChange}
+						value={typeFilter}
 						name='work'
 						id='work'
 					>
-						<option value={work.any}>{work.any}</option>
-						<option value={work.commercial}>{work.commercial}</option>
-						<option value={work.side}>{work.side}</option>
+						<option value={projType.any}>{projType.any}</option>
+						<option value={projType.commercial}>{projType.commercial}</option>
+						<option value={projType.side}>{projType.side}</option>
 					</select>
 				</label>
 				<label htmlFor='role' className={labelStyles}>
@@ -93,7 +110,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 			<div className='relative border-2 p-1 m-0.5 bg-background text-center'>
 				<button className='w-full' onClick={toggleTechInput}>
 					{isTechInputOpen ? (
-						'Close'
+						'Search'
 					) : (
 						<p>
 							Tech Stack:{' '}
@@ -107,7 +124,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 				</button>
 				{isTechInputOpen && (
 					<fieldset className='absolute top-[105%] left-0 right-0 bg-background text-center p-3 grid grid-cols-1 sm:text-left sm:gap-2 sm:grid-cols-3 lg:grid-cols-5'>
-						{technologies.map((tech: TechEnum) => {
+						{technologies.map((tech: technologiesEnum) => {
 							return (
 								<label key={`tech-${tech}`} htmlFor={tech} className='m-1'>
 									<input
@@ -116,7 +133,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 										name='technology'
 										value={tech}
 										id={tech}
-										checked={techFilter.has(tech)}
+										checked={techFilter.has(tech as technologiesEnum)}
 										onChange={onTechChange}
 									/>
 									{tech}
