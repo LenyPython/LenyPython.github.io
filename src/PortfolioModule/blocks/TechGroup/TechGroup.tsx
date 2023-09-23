@@ -12,14 +12,14 @@ const TechGroup: React.FC<Props> = ({ blok }) => {
 	const advTech = advanced_tech[0].techs
 	const basicTech = basic_tech[0].techs
 	const mainSVG = {
-		width: 50,
-		height: 50,
+		width: 55,
+		height: 55,
 		color: 'hsl(120, 100%, 50%)'
 	}
 	const secSVG = {
-		width: 35,
-		height: 35,
-		color: 'hsla(120, 100%, 50%, .3)'
+		width: 50,
+		height: 50,
+		color: 'hsla(120, 100%, 50%, .4)'
 	}
 	return (
 		<div className='w-full p-2 border-y border-y-font mb-3'>
@@ -34,7 +34,7 @@ const TechGroup: React.FC<Props> = ({ blok }) => {
 						/>
 					))}
 			</div>
-			<hr className='m-3' />
+			<hr className='m-3 border-font' />
 			<div className='w-full flex'>
 				{basicTech.length > 0 &&
 					basicTech.map((svg: SvgType) => (

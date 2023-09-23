@@ -28,7 +28,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 	}
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
-		fetch('https://formsubmit.co/ajax/piotr.lenartowicz@yahoo.com', {
+		fetch('https://formsubmit.co/ajax/b5310cdf113b0f1a870bde0bc5c5553d', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

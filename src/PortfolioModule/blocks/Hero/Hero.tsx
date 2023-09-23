@@ -34,7 +34,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 					</h2>
 					<RichText className='text-justify' html={renderRichText(rich_text)} />
 				</div>
-				<div className='flex items-center justify-end border bg-secondarybg px-6 py-3 rounded-lg absolute -bottom-8 right-1/2 scale-75 translate-x-1/2 -rotate-12 md:-bottom-5 md:right-1/4 md:scale-95'>
+				<div className='flex items-center justify-end border-2 border-font bg-secondarybg px-6 py-3 rounded-lg absolute -bottom-8 right-1/2 scale-75 translate-x-1/2 -rotate-12 md:-bottom-5 md:right-1/4 md:scale-95'>
 					<Link
 						href={`#${cta_link.anchor}`}
 						className='inline-block relative py-1 px-9 bg-background uppercase text-center no-underline text-xl leading-9 font-bold tracking-wide shadow-btnBlack hover:shadow-btnGreen duration-700 hover:rotate-45 hover:scale-125'

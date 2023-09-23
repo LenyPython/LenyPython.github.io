@@ -69,7 +69,8 @@ const Projects: React.FC<Props> = ({ blok }) => {
 		)
 	}
 	const labelStyles = 'flex justify-between p-1 m-0.5 text-center md:w-2/5'
-	const selectStyles = 'border outline-0 w-1/2 mx-1 px-2 bg-background'
+	const selectStyles =
+		'border border-font outline-0 w-1/2 mx-1 px-2 bg-background'
 	return (
 		<div className='relative w-3/4 max-w-4xl p-5 shadow-main shadow-font rounded-xl backdrop-blur-lg md:p-10'>
 			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl'>
@@ -107,7 +108,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 					</select>
 				</label>
 			</div>
-			<div className='relative border-2 p-1 m-0.5 bg-background text-center'>
+			<div className='relative border-font border-2 p-1 m-0.5 bg-background text-center'>
 				<button className='w-full' onClick={toggleTechInput}>
 					{isTechInputOpen ? (
 						'Search'
