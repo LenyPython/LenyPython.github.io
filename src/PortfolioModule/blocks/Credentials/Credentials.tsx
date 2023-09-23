@@ -3,7 +3,7 @@ import {
 	CredentialStoryblok,
 	CredentialsStoryblok
 } from '@/types/component-types-sb'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import SvgProvider, {
 	UtilSvgEnum
 } from '@/Global/components/SvgProvider/SvgProvider'
@@ -15,6 +15,7 @@ type Props = {
 const Credentials: React.FC<Props> = ({ blok }) => {
 	const { creds } = blok
 	const [idx, setIdx] = useState(0)
+	const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
 	const prevIdx = () => {
 		setIdx(prev => {
@@ -28,6 +29,18 @@ const Credentials: React.FC<Props> = ({ blok }) => {
 			return prev + 1
 		})
 	}
+	useEffect(() => {
+		const scrollCreds = () => {
+			intervalRef.current = setTimeout(() => {
+				nextIdx()
+				scrollCreds()
+			}, 11000)
+		}
+		scrollCreds()
+		return () => {
+			intervalRef.current && clearTimeout(intervalRef.current)
+		}
+	})
 	const svgOptions = {
 		width: 50,
 		height: 50,
