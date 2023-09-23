@@ -40,7 +40,7 @@ const Navigation: React.FC<Props> = ({ config }) => {
 							<Link
 								key={`link:${item._uid}`}
 								href={`/#${item.ID}`}
-								className='p-3 uppercase border-b md:border-0'
+								className='p-3 uppercase border-b border-font md:border-0'
 								onClick={toggleNavigation}
 							>
 								{item.ID}
@@ -51,7 +51,7 @@ const Navigation: React.FC<Props> = ({ config }) => {
 			</div>
 			<button
 				className={`fixed bottom-6 right-3 p-1 ${
-					isMobileOpen ? 'bg-background border-2' : 'bg-font'
+					isMobileOpen ? 'bg-background border-font border-2' : 'bg-font'
 				} z-10 rounded-full md:hidden`}
 				onClick={toggleNavigation}
 			>
