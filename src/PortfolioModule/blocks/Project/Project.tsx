@@ -19,26 +19,36 @@ const Project: React.FC<Props> = ({ blok }) => {
 		color: 'hsl(120, 100%, 50%)'
 	}
 	return (
-		<div>
-			<h2 className='text-4xl font-bold'>{project_name}</h2>
-			<h3 className='text-xl font-bold'>{role.join(', ')}</h3>
-			<RichText html={renderRichText(description)} />
-			<h3 className='text-xl font-bold'>Tech</h3>
-			<div className='flex flex-wrap items-center'>
-				{techs.map((svg: SvgType) => (
-					<SvgProvider
-						key={`${project_name}-${tech[0]._uid}-${svg}`}
-						type={svg}
-						options={SvgOptions}
-					/>
-				))}
+		<div className='my-4 flex flex-col gap-5'>
+			<div>
+				<h2 className='text-4xl font-bold tracking-wider underline'>
+					{project_name}
+				</h2>
+				<h3 className='text-md font-bold'>{role.join(', ')}</h3>
 			</div>
+			<RichText html={renderRichText(description)} />
+			{techs.length > 0 && (
+				<div>
+					<h3 className='text-xl font-bold'>Tech</h3>
+					<div className='flex flex-wrap items-center'>
+						{techs.map((svg: SvgType) => (
+							<SvgProvider
+								key={`${project_name}-${tech[0]._uid}-${svg}`}
+								type={svg}
+								options={SvgOptions}
+							/>
+						))}
+					</div>
+				</div>
+			)}
 			{live_page && (
-				<p>
-					<Link href={live_page.url} target={live_page.target}>
-						Live page
-					</Link>
-				</p>
+				<Link
+					href={live_page.url}
+					className='inline-block text-xl text-center p-2 font-bold border border-font duration-500 hover:shadow-main hover:shadow-font'
+					target={live_page.target}
+				>
+					Live page
+				</Link>
 			)}
 		</div>
 	)

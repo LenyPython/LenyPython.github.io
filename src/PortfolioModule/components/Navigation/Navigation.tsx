@@ -13,7 +13,7 @@ const Navigation: React.FC<Props> = ({ config }) => {
 	const [isMobileOpen, setIsMobileOpen] = useState(false)
 	const links = config.filter((item: SectionStoryblok) => item.in_navigation)
 	let navContainer =
-		'fixed flex justify-center z-10 p-3 backdrop-blur-lg duration-700 md:top-0'
+		'fixed flex justify-center z-30 p-3 backdrop-blur-lg duration-700 md:top-0'
 	if (isMobileOpen) navContainer += ' top-0 bottom-0 left-0 right-0'
 	else navContainer += ' top-full left-0 right-0'
 	const toggleNavigation = () => {
@@ -52,7 +52,7 @@ const Navigation: React.FC<Props> = ({ config }) => {
 			<button
 				className={`fixed bottom-6 right-3 p-1 ${
 					isMobileOpen ? 'bg-background border-font border-2' : 'bg-font'
-				} z-10 rounded-full md:hidden`}
+				} z-30 rounded-full md:hidden`}
 				onClick={toggleNavigation}
 			>
 				<SvgProvider type={UtilSvgEnum.leftArrow} options={svgConfig} />
