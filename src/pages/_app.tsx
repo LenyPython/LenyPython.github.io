@@ -15,6 +15,11 @@ import WorkHistory from '@/PortfolioModule/blocks/WorkHistory'
 import WorkExperience from '@/PortfolioModule/blocks/WorkExperience'
 import Socials from '@/PortfolioModule/blocks/Socials'
 import Contact from '@/PortfolioModule/blocks/Contact'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const components = {
 	Section,

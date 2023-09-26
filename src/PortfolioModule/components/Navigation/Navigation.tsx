@@ -1,9 +1,14 @@
 import Link from 'next/link'
 import { SectionStoryblok } from '@/types/component-types-sb'
 import { useState } from 'react'
+import gsap from 'gsap'
 import SvgProvider, {
 	UtilSvgEnum
 } from '@/Global/components/SvgProvider/SvgProvider'
+
+export const scrollToID = (id: string) => {
+	gsap.to(window, { duration: 1, scrollTo: id })
+}
 
 type Props = {
 	config: SectionStoryblok[]
@@ -20,6 +25,15 @@ const Navigation: React.FC<Props> = ({ config }) => {
 		setIsMobileOpen(prev => window.innerWidth < 768 && !prev)
 	}
 
+	const handleClick = (
+		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+		id: string
+	) => {
+		e.preventDefault()
+		scrollToID(id)
+		toggleNavigation()
+	}
+
 	const svgConfig = {
 		margin: '-.2rem .1rem',
 		width: 35,
@@ -32,7 +46,7 @@ const Navigation: React.FC<Props> = ({ config }) => {
 		<>
 			<div className={navContainer}>
 				<div className='h-full rounded-full md:flex md:justify-between lg:w-4/5 lg:max-w-5xl'>
-					<Link onClick={toggleNavigation} href='/'>
+					<Link onClick={e => handleClick(e, '#hero')} href='/'>
 						<h2 className='text-3xl text-center'>LOGO</h2>
 					</Link>
 					<div className='flex flex-col items-center mt-5 md:flex-row md:mt-auto'>
@@ -41,7 +55,7 @@ const Navigation: React.FC<Props> = ({ config }) => {
 								key={`link:${item._uid}`}
 								href={`/#${item.ID}`}
 								className='p-3 uppercase border-b border-font md:border-0'
-								onClick={toggleNavigation}
+								onClick={e => handleClick(e, `#${item.ID}`)}
 							>
 								{item.ID}
 							</Link>
