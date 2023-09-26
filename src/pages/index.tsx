@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { StoryblokComponent, getStoryblokApi } from '@storyblok/react'
+
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
 import Globe from '@/PortfolioModule/components/3D/Globe'

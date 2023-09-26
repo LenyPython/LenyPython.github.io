@@ -45,7 +45,7 @@ const ProjectFilters: React.FC<Props> = ({ handlers, states }) => {
 	const selectStyles =
 		'border border-font outline-0 w-1/2 mx-1 px-2 bg-background'
 	return (
-		<div className='sticky top-0 flex flex-col mb-5 px-5 py-2 w-full shadow-main shadow-font rounded-xl backdrop-blur-lg md:top-16 md:px-10 z-10'>
+		<div className='sticky top-0 flex flex-col mb-5 px-5 py-2 w-full shadow-main shadow-font rounded-xl backdrop-blur-lg md:top-20 md:px-10 z-10'>
 			<div className='flex flex-col w-full md:flex-row md:items-center md:justify-around'>
 				<label htmlFor='work' className={labelStyles}>
 					Type:

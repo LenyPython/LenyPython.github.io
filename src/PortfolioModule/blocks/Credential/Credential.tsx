@@ -17,7 +17,7 @@ const general =
 const secondary = ' top-[105%] w-1/3 opacity-50 -z-10 md:w-1/5'
 const prev = ' left-0'
 const main =
-	' top-[230%] w-5/6 h-[450%] delay-300 left-1/2 -translate-x-1/2 md:w-1/2 md:top-[150%] xl:w-3/5'
+	' top-[230%] w-5/6 min-h-[400%] delay-300 left-1/2 -translate-x-1/2 md:w-1/2 md:top-[150%] xl:w-3/5'
 const next = ' text-right left-full -translate-x-full'
 
 const Credential: React.FC<Props> = ({ blok, left, center, right }) => {
