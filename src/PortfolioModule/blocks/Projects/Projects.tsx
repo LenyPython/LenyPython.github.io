@@ -11,6 +11,7 @@ import ProjectFilters, {
 	role,
 	technologiesEnum
 } from '@/PortfolioModule/components/ProjectsFilters'
+import { scrollToID } from '@/PortfolioModule/components/Navigation/Navigation'
 
 type Props = {
 	blok: ProjectsStoryblok
@@ -23,6 +24,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 	const [typeFilter, setTypeFilter] = useState(projType.any)
 	const onRoleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setRoleFilter(e.target.value as role)
+		scrollToID('#projects')
 	}
 	const onTechChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setTechFilter(set => {
@@ -30,9 +32,11 @@ const Projects: React.FC<Props> = ({ blok }) => {
 			else set.delete(e.target.value as TechEnum)
 			return new Set(set)
 		})
+		scrollToID('#projects')
 	}
 	const onTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setTypeFilter(e.target.value as projType)
+		scrollToID('#projects')
 	}
 	if (roleFilter !== role.any) {
 		projects = projects.filter((proj: ProjectStoryblok) =>
@@ -48,7 +52,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 	if (techFilter.size > 0) {
 		projects = projects.filter((proj: ProjectStoryblok) =>
 			proj.tech[0]?.techs?.some((tech: technologiesEnum) => {
-				return techFilter.has(tech as technologiesEnum)
+				return techFilter.has(tech)
 			})
 		)
 	}

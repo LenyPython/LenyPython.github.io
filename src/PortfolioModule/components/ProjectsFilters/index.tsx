@@ -3,9 +3,10 @@ import {
 	DevEnum,
 	TechEnum
 } from '@/Global/components/SvgProvider/SvgProvider'
-import { Dispatch, SetStateAction, useState } from 'react'
+import { useState } from 'react'
+import StyledCheckbox from '../StyledCheckbox'
 
-export type technologiesEnum = LangEnum & DevEnum & TechEnum
+export type technologiesEnum = LangEnum | DevEnum | TechEnum
 
 export enum role {
 	any = 'any',
@@ -23,19 +24,18 @@ export enum projType {
 type Props = {
 	handlers: {
 		onRoleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
-		onTechChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 		onTypeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
+		onTechChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 	}
 	states: {
 		roleFilter: role
 		typeFilter: projType
-		techFilter: Set<TechEnum>
+		techFilter: Set<technologiesEnum>
 	}
 }
 const ProjectFilters: React.FC<Props> = ({ handlers, states }) => {
 	const [isTechInputOpen, setTechInputOpen] = useState(false)
 	const toggleTechInput = () => setTechInputOpen(prev => !prev)
-	// @ts-ignore next line
 	const technologies: technologiesEnum[] = [
 		...Object.values(LangEnum),
 		...Object.values(DevEnum),
@@ -97,21 +97,15 @@ const ProjectFilters: React.FC<Props> = ({ handlers, states }) => {
 					)}
 				</button>
 				{isTechInputOpen && (
-					<fieldset className='absolute top-[105%] left-0 right-0 bg-background text-center p-3 grid grid-cols-1 sm:text-left sm:gap-2 sm:grid-cols-3 lg:grid-cols-5'>
+					<fieldset className='absolute top-[105%] left-0 right-0 max-h-[70vh] overflow-scroll bg-background p-3 grid grid-cols-1 sm:text-left sm:gap-2 sm:grid-cols-3 lg:grid-cols-5'>
 						{technologies.map((tech: technologiesEnum) => {
 							return (
-								<label key={`tech-${tech}`} htmlFor={tech} className='m-1'>
-									<input
-										className='mr-2'
-										type='checkbox'
-										name='technology'
-										value={tech}
-										id={tech}
-										checked={states.techFilter.has(tech as technologiesEnum)}
-										onChange={handlers.onTechChange}
-									/>
-									{tech}
-								</label>
+								<StyledCheckbox
+									key={`tech-${tech}`}
+									tech={tech}
+									checked={states.techFilter.has(tech)}
+									onChange={handlers.onTechChange}
+								/>
 							)
 						})}
 					</fieldset>
