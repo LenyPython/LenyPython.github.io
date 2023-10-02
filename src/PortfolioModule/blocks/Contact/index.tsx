@@ -128,6 +128,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 					<SvgProvider type={SocialEnum.linkedin} options={svgConfig} />
 				</Link>
 			</div>
+			<h3 className='text-2xl my-3'>Write a message:</h3>
 			<form className='flex flex-col w-full' onSubmit={handleSubmit}>
 				<input
 					className={styles}

@@ -26,6 +26,7 @@ type Props = {
 		onRoleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
 		onTypeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
 		onTechChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+		clearTechFilters: () => void
 	}
 	states: {
 		roleFilter: role
@@ -41,6 +42,10 @@ const ProjectFilters: React.FC<Props> = ({ handlers, states }) => {
 		...Object.values(DevEnum),
 		...Object.values(TechEnum)
 	]
+	const handleClearTechFilter = () => {
+		handlers.clearTechFilters()
+		if (states.techFilter.size === 0) setTechInputOpen(false)
+	}
 	const labelStyles = 'flex justify-between p-1 m-0.5 text-center md:w-2/5'
 	const selectStyles =
 		'border border-font outline-0 w-1/2 mx-1 px-2 bg-background'
@@ -97,18 +102,26 @@ const ProjectFilters: React.FC<Props> = ({ handlers, states }) => {
 					)}
 				</button>
 				{isTechInputOpen && (
-					<fieldset className='absolute top-[105%] left-0 right-0 max-h-[70vh] overflow-scroll bg-background p-3 grid grid-cols-1 sm:text-left sm:gap-2 sm:grid-cols-3 lg:grid-cols-5'>
-						{technologies.map((tech: technologiesEnum) => {
-							return (
-								<StyledCheckbox
-									key={`tech-${tech}`}
-									tech={tech}
-									checked={states.techFilter.has(tech)}
-									onChange={handlers.onTechChange}
-								/>
-							)
-						})}
-					</fieldset>
+					<>
+						<button
+							className='w-full border-font border-2 py-1 mt-2 bg-background text-center'
+							onClick={handleClearTechFilter}
+						>
+							{states.techFilter.size === 0 ? 'Close' : 'Clear'}
+						</button>
+						<fieldset className='absolute top-[105%] left-0 right-0 max-h-[70vh] overflow-scroll bg-background p-3 grid grid-cols-1 sm:text-left sm:gap-2 sm:grid-cols-3 lg:grid-cols-5'>
+							{technologies.map((tech: technologiesEnum) => {
+								return (
+									<StyledCheckbox
+										key={`tech-${tech}`}
+										tech={tech}
+										checked={states.techFilter.has(tech)}
+										onChange={handlers.onTechChange}
+									/>
+								)
+							})}
+						</fieldset>
+					</>
 				)}
 			</div>
 		</div>

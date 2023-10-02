@@ -35,7 +35,7 @@ const Credential: React.FC<Props> = ({ blok, left, center, right }) => {
 	return (
 		<div className={styles}>
 			{center && (
-				<div className='overflow-y-auto overflow-x-clip'>
+				<div className='max-h-[475px] overflow-y-auto overflow-x-clip'>
 					<RichText className='mb-6' html={renderRichText(cred)} />
 				</div>
 			)}

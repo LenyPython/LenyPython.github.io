@@ -1,11 +1,7 @@
 import { StoryblokComponent } from '@storyblok/react'
 import { useState } from 'react'
 import { ProjectStoryblok, ProjectsStoryblok } from '@/types/component-types-sb'
-import {
-	DevEnum,
-	LangEnum,
-	TechEnum
-} from '@/Global/components/SvgProvider/SvgProvider'
+import { TechEnum } from '@/Global/components/SvgProvider/SvgProvider'
 import ProjectFilters, {
 	projType,
 	role,
@@ -34,6 +30,9 @@ const Projects: React.FC<Props> = ({ blok }) => {
 		})
 		scrollToID('#projects')
 	}
+	const clearTechFilters = () => {
+		setTechFilter(new Set<TechEnum>())
+	}
 	const onTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setTypeFilter(e.target.value as projType)
 		scrollToID('#projects')
@@ -57,12 +56,17 @@ const Projects: React.FC<Props> = ({ blok }) => {
 		)
 	}
 	return (
-		<div className='relative flex flex-col items-center  w-3/4 max-w-4xl'>
+		<div className='relative flex flex-col items-center w-3/4 max-w-4xl'>
 			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl z-10'>
 				{blok.headline}
 			</h2>
 			<ProjectFilters
-				handlers={{ onRoleChange, onTechChange, onTypeChange }}
+				handlers={{
+					onRoleChange,
+					onTechChange,
+					onTypeChange,
+					clearTechFilters
+				}}
 				states={{ techFilter, roleFilter, typeFilter }}
 			/>
 			<div className='w-full px-5 shadow-main shadow-font rounded-xl backdrop-blur-lg md:p-10'>
