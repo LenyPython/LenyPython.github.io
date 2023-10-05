@@ -109,7 +109,7 @@ const ProjectFilters: React.FC<Props> = ({ handlers, states }) => {
 						>
 							{states.techFilter.size === 0 ? 'Close' : 'Clear'}
 						</button>
-						<fieldset className='absolute top-[105%] left-0 right-0 max-h-[70vh] overflow-scroll bg-background p-3 grid grid-cols-1 sm:text-left sm:gap-2 sm:grid-cols-3 lg:grid-cols-5'>
+						<fieldset className='absolute top-[105%] left-0 right-0 max-h-[70vh] overflow-y-auto bg-background p-3 grid grid-cols-1 sm:text-left sm:gap-2 sm:grid-cols-3 lg:grid-cols-5'>
 							{technologies.map((tech: technologiesEnum) => {
 								return (
 									<StyledCheckbox

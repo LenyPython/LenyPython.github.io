@@ -148,7 +148,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 					required
 				/>
 				<textarea
-					className={`${styles} h-80 resize-none`}
+					className={`${styles} h-40 resize-none`}
 					value={msg}
 					name='message'
 					onChange={updateMsg}

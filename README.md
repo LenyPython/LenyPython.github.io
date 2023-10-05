@@ -1,6 +1,6 @@
 ### My personal portfolio
 
-Those are components which I use in Storyblok CMS to create a whole portfolio page. Althou, the code/components/bloks are available here you are required to have access to CMS to download content to see the page in whole.
+Those are components which I use in Storyblok CMS to create a whole portfolio page. The code/components/bloks are available here, but to get content you are required to have access to CMS to download content to see the page in whole.
 
 ## Getting Started
 
