@@ -20,19 +20,36 @@ type Props = {
 
 const Hero: React.FC<Props> = ({ blok }) => {
 	const { headline, rich_text, cta_link, call_to_action } = blok
+	const getRandomString = (length?: number): string => {
+		if (!length) return ''
+		const space = headline?.indexOf(' ')
+		let result = ''
+		for (let i = 1; i < length; i++) {
+			result += Math.random() > 0.45 ? '1' : '0'
+			if (i === space) result += ' '
+		}
+		return result
+	}
 	const headlineRef = useRef(null)
 	const ctaRef = useRef(null)
 	useEffect(() => {
+		const strings = [
+			getRandomString(headline?.length),
+			getRandomString(headline?.length),
+			getRandomString(headline?.length),
+			headline
+		]
 		if (!headlineRef.current) return
 		const tl = gsap.timeline()
-		tl.to(headlineRef.current, {
-			delay: 1,
-			duration: 2,
-			text: headline
+		strings.forEach(str => {
+			tl.to(headlineRef.current, {
+				duration: 0.5,
+				text: str
+			})
 		})
 		if (!ctaRef.current) return
 		tl.from(ctaRef.current, {
-			duration: 2,
+			duration: 4,
 			y: 100,
 			opacity: 0
 		})
@@ -45,12 +62,12 @@ const Hero: React.FC<Props> = ({ blok }) => {
 		scrollToID(id)
 	}
 	return (
-		<div className='max-w-2xl mx-5 md:w-3/4 '>
+		<div className='max-w-3xl mx-5 md:w-3/4 '>
 			<div className='flex flex-col relative p-7 pb-20 md:px-14 md:pt-10 justify-center rounded-lg backdrop-blur-lg'>
 				<div>
 					<h2
 						ref={headlineRef}
-						className='text-2xl font-bold mb-10 max-w-2xl sm:text-5xl'
+						className='text-2xl font-bold tracking-wider mb-10 max-w-2xl sm:text-5xl'
 					>
 						11010001 10101101
 					</h2>

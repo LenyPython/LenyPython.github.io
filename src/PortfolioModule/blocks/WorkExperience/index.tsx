@@ -14,17 +14,17 @@ const WorkExperience: React.FC<Props> = ({ blok, odd }) => {
 	const roleRef = useRef(null)
 	const dateRef = useRef(null)
 	useGsapFrom(companyRef, {
-		x: 200,
+		x: 50,
 		opacity: 0,
 		scrollTrigger: companyRef.current
 	})
 	useGsapFrom(roleRef, {
-		x: -200,
+		x: 50,
 		opacity: 0,
 		scrollTrigger: roleRef.current
 	})
 	useGsapFrom(dateRef, {
-		x: 200,
+		x: 50,
 		opacity: 0,
 		scrollTrigger: dateRef.current
 	})

@@ -17,12 +17,11 @@ const Project: React.FC<Props> = ({ blok }) => {
 	const { techs } = tech[0]
 	const nameRef = useRef(null)
 	const roleRef = useRef(null)
-	useGsapFrom(nameRef, { x: 200, opacity: 0, scrollTrigger: nameRef.current })
+	useGsapFrom(nameRef, { x: 50, opacity: 0 })
 	useGsapFrom(roleRef, {
-		x: 250,
+		x: 50,
 		opacity: 0,
-		delay: 0.5,
-		scrollTrigger: roleRef.current
+		delay: 0.5
 	})
 	const SvgOptions = {
 		width: 25,

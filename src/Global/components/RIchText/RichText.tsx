@@ -11,8 +11,7 @@ const RichText: React.FC<Props> = ({ delay, className, html }) => {
 	useGsapFrom(textRef, {
 		y: 50,
 		opacity: 0,
-		delay,
-		scrollTrigger: textRef.current
+		delay
 	})
 	return (
 		<div
