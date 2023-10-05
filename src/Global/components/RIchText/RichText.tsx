@@ -1,4 +1,4 @@
-import useFadeIn from '@/Global/hooks/useFadeIn'
+import useGsapFrom from '@/Global/hooks/useGsapFrom'
 import { useRef } from 'react'
 
 type Props = {
@@ -8,7 +8,12 @@ type Props = {
 }
 const RichText: React.FC<Props> = ({ delay, className, html }) => {
 	const textRef = useRef(null)
-	useFadeIn(textRef, { y: 50, opacity: 0, delay })
+	useGsapFrom(textRef, {
+		y: 50,
+		opacity: 0,
+		delay,
+		scrollTrigger: textRef.current
+	})
 	return (
 		<div
 			ref={textRef}

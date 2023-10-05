@@ -1,5 +1,5 @@
 import RichText from '@/Global/components/RIchText/RichText'
-import useFadeIn from '@/Global/hooks/useFadeIn'
+import useGsapFrom from '@/Global/hooks/useGsapFrom'
 import { renderRichText } from '@storyblok/react'
 import { useRef } from 'react'
 
@@ -13,9 +13,21 @@ const WorkExperience: React.FC<Props> = ({ blok, odd }) => {
 	const companyRef = useRef(null)
 	const roleRef = useRef(null)
 	const dateRef = useRef(null)
-	useFadeIn(companyRef, { x: 200, opacity: 0 })
-	useFadeIn(roleRef, { x: -200, opacity: 0 })
-	useFadeIn(dateRef, { x: 200, opacity: 0 })
+	useGsapFrom(companyRef, {
+		x: 200,
+		opacity: 0,
+		scrollTrigger: companyRef.current
+	})
+	useGsapFrom(roleRef, {
+		x: -200,
+		opacity: 0,
+		scrollTrigger: roleRef.current
+	})
+	useGsapFrom(dateRef, {
+		x: 200,
+		opacity: 0,
+		scrollTrigger: dateRef.current
+	})
 	let experienceStyle =
 		'relative w-full border-font border-l-2 border-t-2 p-6 backdrop-blur-lg lg:w-1/2'
 	if (odd) experienceStyle += ' lg:-translate-x-1/2'

@@ -5,6 +5,8 @@ import { renderRichText } from '@storyblok/react'
 import SvgProvider, {
 	SvgType
 } from '@/Global/components/SvgProvider/SvgProvider'
+import { useRef } from 'react'
+import useGsapFrom from '@/Global/hooks/useGsapFrom'
 
 type Props = {
 	blok: ProjectStoryblok
@@ -13,6 +15,15 @@ type Props = {
 const Project: React.FC<Props> = ({ blok }) => {
 	const { project_name, role, tech, description, live_page } = blok
 	const { techs } = tech[0]
+	const nameRef = useRef(null)
+	const roleRef = useRef(null)
+	useGsapFrom(nameRef, { x: 200, opacity: 0, scrollTrigger: nameRef.current })
+	useGsapFrom(roleRef, {
+		x: 250,
+		opacity: 0,
+		delay: 0.5,
+		scrollTrigger: roleRef.current
+	})
 	const SvgOptions = {
 		width: 25,
 		height: 25,
@@ -21,12 +32,17 @@ const Project: React.FC<Props> = ({ blok }) => {
 	return (
 		<div className='my-4 flex flex-col gap-5'>
 			<div>
-				<h2 className='text-4xl font-bold tracking-wider underline'>
+				<h2
+					ref={nameRef}
+					className='text-4xl font-bold tracking-wider underline'
+				>
 					{project_name}
 				</h2>
-				<h3 className='text-md font-bold'>{role.join(', ')}</h3>
+				<h3 ref={roleRef} className='text-md font-bold'>
+					{role.join(', ')}
+				</h3>
 			</div>
-			<RichText html={renderRichText(description)} />
+			<RichText delay={1} html={renderRichText(description)} />
 			{techs.length > 0 && (
 				<div>
 					<h3 className='text-xl font-bold'>Tech</h3>

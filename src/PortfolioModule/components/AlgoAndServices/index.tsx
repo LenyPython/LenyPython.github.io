@@ -3,7 +3,6 @@ import SvgProvider, {
 	SocialEnum
 } from '@/Global/components/SvgProvider/SvgProvider'
 import Gallery from './gallery'
-import useFadeIn from '@/Global/hooks/useFadeIn'
 
 type RankType = {
 	rank: number
