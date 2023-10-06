@@ -70,7 +70,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 				states={{ techFilter, roleFilter, typeFilter }}
 			/>
 			<div className='w-full px-5 shadow-main shadow-font rounded-xl backdrop-blur-lg md:p-10'>
-				{projects.map((project: any) => (
+				{projects.map((project: ProjectStoryblok) => (
 					<StoryblokComponent blok={project} key={project._uid} />
 				))}
 			</div>

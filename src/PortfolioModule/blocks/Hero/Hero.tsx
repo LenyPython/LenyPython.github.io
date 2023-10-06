@@ -39,10 +39,11 @@ const Hero: React.FC<Props> = ({ blok }) => {
 	const headlineRef = useRef(null)
 	const richTextRef = useRef(null)
 	const ctaRef = useRef(null)
+	const tlRef = useRef(gsap.timeline())
 	useLayoutEffect(() => {
 		if (!headlineRef.current || !ctaRef.current || !richTextRef.current) return
 		let ctx = gsap.context(() => {
-			const tl = gsap.timeline()
+			const tl = tlRef.current
 			strings.forEach(str => {
 				tl.to(headlineRef.current, {
 					duration: 0.5,
@@ -62,7 +63,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 				)
 			})
 			tl.from(ctaRef.current, {
-				delay: 2,
+				delay: 0.2,
 				duration: 2,
 				x: -300,
 				y: 100,

@@ -1,12 +1,10 @@
 import Link from 'next/link'
-import RichText from '@/Global/components/RIchText/RichText'
 import { ProjectStoryblok } from '@/types/component-types-sb'
 import { renderRichText } from '@storyblok/react'
+import RichText from '@/Global/components/RIchText/RichText'
 import SvgProvider, {
 	SvgType
 } from '@/Global/components/SvgProvider/SvgProvider'
-import { useRef } from 'react'
-import useGsapFrom from '@/Global/hooks/useGsapFrom'
 
 type Props = {
 	blok: ProjectStoryblok

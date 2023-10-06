@@ -1,7 +1,7 @@
 import RichText from '@/Global/components/RIchText/RichText'
-import useGsapFrom from '@/Global/hooks/useGsapFrom'
 import { renderRichText } from '@storyblok/react'
-import { useRef } from 'react'
+import gsap from 'gsap'
+import { useLayoutEffect, useRef } from 'react'
 
 type Props = {
 	blok: any
@@ -10,31 +10,55 @@ type Props = {
 
 const WorkExperience: React.FC<Props> = ({ blok, odd }) => {
 	const { company, description, start, end, role } = blok
-	const companyRef = useRef(null)
-	const roleRef = useRef(null)
-	const dateRef = useRef(null)
-	useGsapFrom(companyRef, {
-		x: 50,
-		opacity: 0,
-		scrollTrigger: companyRef.current
-	})
-	useGsapFrom(roleRef, {
-		x: 50,
-		opacity: 0,
-		scrollTrigger: roleRef.current
-	})
-	useGsapFrom(dateRef, {
-		x: 50,
-		opacity: 0,
-		scrollTrigger: dateRef.current
-	})
+	const parentRef = useRef(null)
+	const tlRef = useRef<GSAPTimeline>()
+	useLayoutEffect(() => {
+		if (!parentRef.current) return
+		let ctx = gsap.context(() => {
+			tlRef.current = gsap.timeline({
+				scrollTrigger: {
+					trigger: '.richText',
+					start: 'top 70%'
+				}
+			})
+			gsap.from('.company', {
+				x: 100,
+				opacity: 0,
+				scrollTrigger: {
+					start: 'top 80%',
+					trigger: '.company'
+				}
+			})
+			gsap.from('.role', {
+				x: 100,
+				opacity: 0,
+				scrollTrigger: {
+					start: 'top 80%',
+					trigger: '.role'
+				}
+			})
+			gsap.from('.date', {
+				x: 100,
+				opacity: 0,
+				scrollTrigger: {
+					start: 'top 80%',
+					trigger: '.date'
+				}
+			})
+			gsap.utils.toArray('.richText > p').forEach((para: any) => {
+				tlRef.current!.from(para, { x: 100, opacity: 0 })
+			})
+		}, parentRef.current)
+		return () => ctx.revert()
+	}, [])
+
 	let experienceStyle =
 		'relative w-full border-font border-l-2 border-t-2 p-6 backdrop-blur-lg lg:w-1/2'
 	if (odd) experienceStyle += ' lg:-translate-x-1/2'
 	else experienceStyle += ' lg:translate-x-1/2'
 
 	return (
-		<div className={experienceStyle}>
+		<div ref={parentRef} className={experienceStyle}>
 			{odd ? (
 				<>
 					<span className='absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-background border-font border-2 rounded-full lg:left-full'></span>
@@ -43,19 +67,14 @@ const WorkExperience: React.FC<Props> = ({ blok, odd }) => {
 			) : (
 				<span className='absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-font rounded-full'></span>
 			)}
-			<h3 ref={companyRef} className='text-xl font-bold md:text-3xl'>
-				{company}
-			</h3>
-			<h4
-				ref={roleRef}
-				className='text-md font-medium underline my-2 md:text-xl'
-			>
+			<h3 className='company text-xl font-bold md:text-3xl'>{company}</h3>
+			<h4 className='role text-md font-medium underline my-2 md:text-xl'>
 				{role}
 			</h4>
-			<p ref={dateRef} className='mb-2 font-bold'>
+			<p className='date mb-2 font-bold'>
 				{start} - {end}
 			</p>
-			<RichText html={renderRichText(description)} />
+			<RichText className='richText' html={renderRichText(description)} />
 		</div>
 	)
 }
