@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import { renderRichText } from '@storyblok/react'
 import Link from 'next/link'
 import gsap from 'gsap'
@@ -20,40 +20,57 @@ type Props = {
 
 const Hero: React.FC<Props> = ({ blok }) => {
 	const { headline, rich_text, cta_link, call_to_action } = blok
-	const getRandomString = (length?: number): string => {
-		if (!length) return ''
-		const space = headline?.indexOf(' ')
+	const getRandomString = (str?: string): string => {
+		if (!str) return ''
 		let result = ''
-		for (let i = 1; i < length; i++) {
-			result += Math.random() > 0.45 ? '1' : '0'
-			if (i === space) result += ' '
+		for (let letter of str) {
+			if (letter === ' ') result += ' '
+			else result += Math.random() > 0.45 ? '1' : '0'
 		}
 		return result
 	}
+	const strings = [
+		getRandomString(headline),
+		getRandomString(headline),
+		getRandomString(headline),
+		getRandomString(headline),
+		headline
+	]
 	const headlineRef = useRef(null)
+	const richTextRef = useRef(null)
 	const ctaRef = useRef(null)
-	useEffect(() => {
-		const strings = [
-			getRandomString(headline?.length),
-			getRandomString(headline?.length),
-			getRandomString(headline?.length),
-			headline
-		]
-		if (!headlineRef.current) return
-		const tl = gsap.timeline()
-		strings.forEach(str => {
-			tl.to(headlineRef.current, {
-				duration: 0.5,
-				text: str
+	useLayoutEffect(() => {
+		if (!headlineRef.current || !ctaRef.current || !richTextRef.current) return
+		let ctx = gsap.context(() => {
+			const tl = gsap.timeline()
+			strings.forEach(str => {
+				tl.to(headlineRef.current, {
+					duration: 0.5,
+					text: str
+				})
 			})
-		})
-		if (!ctaRef.current) return
-		tl.from(ctaRef.current, {
-			duration: 4,
-			y: 100,
-			opacity: 0
-		})
-	})
+			gsap.utils.toArray('p').forEach((para: any) => {
+				tl.fromTo(
+					para,
+					{
+						text: getRandomString(para.innerText)
+					},
+					{
+						duration: 1.5,
+						text: para.innerText
+					}
+				)
+			})
+			tl.from(ctaRef.current, {
+				delay: 2,
+				duration: 2,
+				x: -300,
+				y: 100,
+				opacity: 0
+			})
+		}, richTextRef.current)
+		return () => ctx.revert()
+	}, [])
 	const handleLinkClick = (
 		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 		id: string
@@ -71,11 +88,12 @@ const Hero: React.FC<Props> = ({ blok }) => {
 					>
 						11010001 10101101
 					</h2>
-					<RichText
-						delay={2}
-						className='text-justify'
-						html={renderRichText(rich_text)}
-					/>
+					<div ref={richTextRef}>
+						<RichText
+							className='text-justify'
+							html={renderRichText(rich_text)}
+						/>
+					</div>
 				</div>
 				<div
 					ref={ctaRef}
