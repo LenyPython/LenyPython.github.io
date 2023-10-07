@@ -41,6 +41,7 @@ import Codewarslogo from '@/assets/images/svg/social/codewars.svg'
 // Util svgs
 import LeftArrow from '@/assets/images/svg/utils/leftArrow.svg'
 import RightArrow from '@/assets/images/svg/utils/rightArrow.svg'
+import PageLogo from '@/assets/images/svg/logo.svg'
 
 export type SvgType = LangEnum | TechEnum | DevEnum | SocialEnum | UtilSvgEnum
 
@@ -90,7 +91,8 @@ export enum TechEnum {
 
 export enum UtilSvgEnum {
 	leftArrow = 'left-arrow',
-	rightArrow = 'right-arrow'
+	rightArrow = 'right-arrow',
+	pageLogo = 'page-logo'
 }
 
 type Props = {
@@ -179,6 +181,8 @@ const SvgProvider: React.FC<Props> = ({ type, options }) => {
 			return <LeftArrow style={style} />
 		case UtilSvgEnum.rightArrow:
 			return <RightArrow style={style} />
+		case UtilSvgEnum.pageLogo:
+			return <PageLogo style={style} />
 	}
 	return <p className='m-1'>{type}</p>
 }

@@ -42,13 +42,28 @@ const Navigation: React.FC<Props> = ({ config }) => {
 		transition: 'all .7s',
 		transform: isMobileOpen ? 'rotate(90deg)' : 'rotate(-90deg)'
 	}
+	const logoConfig = {
+		width: 45,
+		height: 45,
+		color: 'hsla(120,100%,50%, 1)'
+	}
 	return (
 		<>
 			<div className={navContainer}>
 				<div className='h-full flex flex-col-reverse justify-evenly mx-5 md:flex-row md:justify-between md:w-full lg:w-4/5 md:max-w-5xl'>
-					<Link onClick={e => handleClick(e, '#hero')} href='/'>
-						<h2 className='text-3xl text-center'>LOGO</h2>
-					</Link>
+					<div className='flex items-center'>
+						<Link onClick={e => handleClick(e, '#hero')} href='/'>
+							<SvgProvider options={logoConfig} type={UtilSvgEnum.pageLogo} />
+						</Link>
+						<Link onClick={e => handleClick(e, '#hero')} href='/'>
+							<div className='flex flex-col items-start'>
+								<h2 className='text-sm text-center font-medium'>
+									Piotr Lenartowicz
+								</h2>
+								<h2 className='text-xs text-center'>Frontend engineer</h2>
+							</div>
+						</Link>
+					</div>
 					<div className='flex flex-col items-center md:flex-row'>
 						{links.map((item: SectionStoryblok) => (
 							<Link
