@@ -52,7 +52,7 @@ const Algo = () => {
 		color: 'hsla(120,100%,50%,1)'
 	}
 	const container =
-		'flex flex-wrap justify-around gap-8 p-5 my-7 shadow-main shadow-font rounded-xl backdrop-blur-lg sm:p-10'
+		'flex flex-wrap justify-around gap-10 p-5 my-7 shadow-main shadow-font rounded-xl backdrop-blur-lg sm:p-10'
 	const justify = 'flex flex-col items-center'
 	return (
 		<>
@@ -115,7 +115,7 @@ const Algo = () => {
 				</div>
 			</div>
 			<div
-				className={`lcContainer ${container} self-start rotate-2 lg:rotate-6`}
+				className={`lcContainer ${container} self-start rotate-2 md:ml-5 lg:rotate-6`}
 			>
 				<div className={justify}>
 					<h2 className='mb-5'>LeetCode Profile:</h2>
@@ -145,7 +145,7 @@ const Algo = () => {
 				<Gallery />
 			</div>
 			<div
-				className={`otherContainer ${container} self-end -rotate-6 lg:-rotate-12`}
+				className={`otherContainer ${container} self-end -rotate-6 md:mr-5 lg:-rotate-12`}
 			>
 				<div className={justify}>
 					<h2>Frontend Mentor</h2>

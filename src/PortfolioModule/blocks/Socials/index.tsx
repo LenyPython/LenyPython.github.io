@@ -43,14 +43,11 @@ const Socials: React.FC<Props> = ({ blok }) => {
 		return () => ctx.revert()
 	}, [])
 	return (
-		<div
-			ref={parentRef}
-			className='relative flex flex-col justify-evenly items-center w-full max-w-5xl py-5'
-		>
+		<div ref={parentRef} className='relative w-full max-w-5xl py-5'>
 			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl'>
 				{blok.headline}
 			</h2>
-			<div className='overflow-hidden'>
+			<div className='w-full flex flex-col justify-evenly items-center pb-5 overflow-hidden'>
 				<AlgoAndServices />
 			</div>
 		</div>
