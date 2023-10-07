@@ -51,11 +51,17 @@ const Navigation: React.FC<Props> = ({ config }) => {
 		<>
 			<div className={navContainer}>
 				<div className='h-full flex flex-col-reverse justify-evenly mx-5 md:flex-row md:justify-between md:w-full lg:w-4/5 md:max-w-5xl'>
-					<div className='flex items-center'>
+					<div
+						className={`${isMobileOpen ? 'scale-125 ' : ''}flex items-center`}
+					>
 						<Link onClick={e => handleClick(e, '#hero')} href='/'>
 							<SvgProvider options={logoConfig} type={UtilSvgEnum.pageLogo} />
 						</Link>
-						<Link onClick={e => handleClick(e, '#hero')} href='/'>
+						<Link
+							className={`${isMobileOpen ? '' : 'hidden '}lg:block`}
+							onClick={e => handleClick(e, '#hero')}
+							href='/'
+						>
 							<div className='flex flex-col items-start'>
 								<h2 className='text-sm text-center font-medium'>
 									Piotr Lenartowicz
@@ -79,8 +85,8 @@ const Navigation: React.FC<Props> = ({ config }) => {
 				</div>
 			</div>
 			<button
-				className={`fixed bottom-6 right-3 p-1 ${
-					isMobileOpen ? 'bg-background border-font border-2' : 'bg-font'
+				className={`fixed right-3 border-font border-2 p-0.5 duration-700 ${
+					isMobileOpen ? 'bg-background bottom-1/3' : 'bottom-6 bg-font'
 				} z-30 rounded-full md:hidden`}
 				onClick={toggleNavigation}
 			>
