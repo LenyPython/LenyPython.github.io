@@ -7,7 +7,7 @@ type Props = {
 const WorkHistory: React.FC<Props> = ({ blok }) => {
 	return (
 		<div className='relative flex flex-col items-center pt-4 w-3/4 max-w-4xl'>
-			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl lg:text-4xl lg:translate-y-3/4 lg:rotate-45'>
+			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl md:text-5xl lg:translate-y-3/4 lg:rotate-45'>
 				{blok.headline}
 			</h2>
 			{

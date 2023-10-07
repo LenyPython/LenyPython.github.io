@@ -48,7 +48,7 @@ const Credentials: React.FC<Props> = ({ blok }) => {
 	}
 	return (
 		<div className='relative flex justify-evenly items-center h-8 w-3/4 max-w-4xl p-5 shadow-main shadow-font rounded-xl backdrop-blur-lg'>
-			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl'>
+			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl md:text-5xl'>
 				{blok.headline}
 			</h2>
 			<button onClick={prevIdx}>

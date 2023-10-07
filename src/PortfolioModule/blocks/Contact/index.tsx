@@ -93,7 +93,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 		statusMsgClasses = 'p-2 bg-red-600 text-white'
 	return (
 		<div className='relative flex flex-col items-center w-3/4 max-w-4xl p-5 shadow-main shadow-font rounded-xl backdrop-blur-lg'>
-			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl'>
+			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl md:text-5xl'>
 				{blok.headline}
 			</h2>
 			<div className='flex items-center justify-between w-full max-w-md'>

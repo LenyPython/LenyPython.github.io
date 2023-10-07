@@ -8,7 +8,7 @@ type Props = {
 const Technology: React.FC<Props> = ({ blok }) => {
 	return (
 		<div className='relative w-3/4 max-w-4xl p-10 shadow-main shadow-font rounded-xl bg-black backdrop-blur-lg '>
-			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl'>
+			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl md:text-5xl'>
 				{blok.headline}
 			</h2>
 			{blok.tech_groups.map((component: any) => (

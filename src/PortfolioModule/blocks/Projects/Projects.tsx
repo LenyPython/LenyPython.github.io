@@ -61,7 +61,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 	}
 	return (
 		<div className='relative flex flex-col items-center w-3/4 max-w-4xl'>
-			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl z-10'>
+			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl z-20 md:text-5xl'>
 				{blok.headline}
 			</h2>
 			<ProjectFilters

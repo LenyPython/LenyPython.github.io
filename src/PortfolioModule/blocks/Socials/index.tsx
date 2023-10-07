@@ -17,7 +17,7 @@ const Socials: React.FC<Props> = ({ blok }) => {
 				opacity: 0,
 				scrollTrigger: {
 					trigger: '.cwContainer',
-					start: '35% 75%',
+					start: 'start 85%',
 					toggleActions: 'restart none none reverse'
 				}
 			})
@@ -35,7 +35,7 @@ const Socials: React.FC<Props> = ({ blok }) => {
 				opacity: 0,
 				scrollTrigger: {
 					trigger: '.otherContainer',
-					start: '35% 75%',
+					start: 'start 85%',
 					toggleActions: 'restart none none reverse'
 				}
 			})
@@ -44,7 +44,7 @@ const Socials: React.FC<Props> = ({ blok }) => {
 	}, [])
 	return (
 		<div ref={parentRef} className='relative w-full max-w-5xl py-5'>
-			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl'>
+			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl md:text-5xl'>
 				{blok.headline}
 			</h2>
 			<div className='w-full flex flex-col justify-evenly items-center pb-5 overflow-hidden'>
