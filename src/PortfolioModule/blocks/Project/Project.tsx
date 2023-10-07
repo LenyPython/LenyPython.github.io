@@ -58,7 +58,7 @@ const Project: React.FC<Props> = ({ blok }) => {
 				opacity: 0,
 				scrollTrigger: {
 					trigger: 'a',
-					start: 'top 85%',
+					start: 'top 95%',
 					toggleActions: 'restart pause resume reverse'
 				}
 			})

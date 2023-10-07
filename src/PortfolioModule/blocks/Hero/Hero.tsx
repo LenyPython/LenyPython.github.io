@@ -54,7 +54,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 				tl.fromTo(
 					para,
 					{
-						text: getRandomString(para.innerText)
+						text: ''
 					},
 					{
 						duration: 1.5,

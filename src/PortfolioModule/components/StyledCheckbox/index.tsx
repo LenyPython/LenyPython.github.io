@@ -13,11 +13,13 @@ const StyledCheckbox: React.FC<Props> = ({ tech, onChange, checked }) => {
 		color: checked ? 'hsl(120, 100%, 50%)' : 'hsla(120, 100%, 50%,.6)'
 	}
 	return (
-		<div className='flex justify-center items-center hover:border-x border-font'>
+		<div className='flex justify-center items-center cursor-pointer hover:border-x border-font'>
 			<SvgProvider type={tech} options={SvgOptions} />
 			<label
 				htmlFor={tech}
-				className={`text-center uppercase m-1${checked ? '' : ' opacity-60'}`}
+				className={`text-center uppercase cursor-pointer m-1${
+					checked ? '' : ' opacity-60'
+				}`}
 			>
 				<input
 					className='hidden'
