@@ -73,7 +73,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 				}}
 				states={{ techFilter, roleFilter, typeFilter }}
 			/>
-			<div className='w-full h-full px-5 shadow-main shadow-font rounded-xl backdrop-blur-lg md:p-10'>
+			<div className='w-full h-full px-5 shadow-main shadow-font rounded-xl backdrop-blur-lg overflow-hidden md:p-10'>
 				{projects.length === 0 ? (
 					<p className='text-center m-4'>No results</p>
 				) : (

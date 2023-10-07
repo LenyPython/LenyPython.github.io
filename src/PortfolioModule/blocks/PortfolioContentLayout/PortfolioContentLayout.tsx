@@ -15,7 +15,7 @@ const PortfolioContentLayout: React.FC<Props> = ({ blok }) => {
 				<Navigation config={blok.Sections} />
 			</nav>
 			<main>
-				<div className='w-full overflow-hidden' {...storyblokEditable(blok)}>
+				<div className='w-full' {...storyblokEditable(blok)}>
 					{blok.Sections.map((component: any) => (
 						<StoryblokComponent blok={component} key={component._uid} />
 					))}

@@ -50,7 +50,9 @@ const Socials: React.FC<Props> = ({ blok }) => {
 			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl'>
 				{blok.headline}
 			</h2>
-			<AlgoAndServices />
+			<div className='overflow-hidden'>
+				<AlgoAndServices />
+			</div>
 		</div>
 	)
 }
