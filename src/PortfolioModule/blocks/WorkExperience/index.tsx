@@ -18,7 +18,8 @@ const WorkExperience: React.FC<Props> = ({ blok, odd }) => {
 			tlRef.current = gsap.timeline({
 				scrollTrigger: {
 					trigger: '.richText',
-					start: 'top 70%'
+					start: 'top 85%',
+					toggleActions: 'restart pause resume reverse'
 				}
 			})
 			gsap.from('.company', {
@@ -26,7 +27,8 @@ const WorkExperience: React.FC<Props> = ({ blok, odd }) => {
 				opacity: 0,
 				scrollTrigger: {
 					start: 'top 80%',
-					trigger: '.company'
+					trigger: '.company',
+					toggleActions: 'restart pause resume reverse'
 				}
 			})
 			gsap.from('.role', {
@@ -34,7 +36,8 @@ const WorkExperience: React.FC<Props> = ({ blok, odd }) => {
 				opacity: 0,
 				scrollTrigger: {
 					start: 'top 80%',
-					trigger: '.role'
+					trigger: '.role',
+					toggleActions: 'restart pause resume reverse'
 				}
 			})
 			gsap.from('.date', {
@@ -42,7 +45,8 @@ const WorkExperience: React.FC<Props> = ({ blok, odd }) => {
 				opacity: 0,
 				scrollTrigger: {
 					start: 'top 80%',
-					trigger: '.date'
+					trigger: '.date',
+					toggleActions: 'restart pause resume reverse'
 				}
 			})
 			gsap.utils.toArray('.richText > p').forEach((para: any) => {

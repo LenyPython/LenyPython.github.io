@@ -5,6 +5,8 @@ import RichText from '@/Global/components/RIchText/RichText'
 import SvgProvider, {
 	SvgType
 } from '@/Global/components/SvgProvider/SvgProvider'
+import { useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 type Props = {
 	blok: ProjectStoryblok
@@ -13,20 +15,65 @@ type Props = {
 const Project: React.FC<Props> = ({ blok }) => {
 	const { project_name, role, tech, description, live_page } = blok
 	const { techs } = tech[0]
+	const parentRef = useRef(null)
+	const tlRef = useRef<GSAPTimeline>()
 	const SvgOptions = {
 		width: 25,
 		height: 25,
 		color: 'hsl(120, 100%, 50%)'
 	}
+	useLayoutEffect(() => {
+		if (!parentRef.current) return
+		let ctx = gsap.context(() => {
+			tlRef.current = gsap.timeline({
+				scrollTrigger: {
+					trigger: '.richText',
+					start: 'top 85%',
+					toggleActions: 'restart pause resume reverse'
+				}
+			})
+			gsap.utils.toArray('.richText > p').forEach((para: any) => {
+				tlRef.current!.from(para, { x: 100, opacity: 0 })
+			})
+			gsap.from('h2', {
+				x: 100,
+				opacity: 0,
+				scrollTrigger: {
+					trigger: 'h2',
+					start: 'top 85%',
+					toggleActions: 'restart pause resume reverse'
+				}
+			})
+			gsap.from('h3', {
+				x: 100,
+				opacity: 0,
+				scrollTrigger: {
+					trigger: 'h3',
+					start: 'top 85%',
+					toggleActions: 'restart pause resume reverse'
+				}
+			})
+			gsap.from('a', {
+				y: 100,
+				opacity: 0,
+				scrollTrigger: {
+					trigger: 'a',
+					start: 'top 85%',
+					toggleActions: 'restart pause resume reverse'
+				}
+			})
+		}, parentRef.current)
+		return () => ctx.revert()
+	}, [])
 	return (
-		<div className='my-4 flex flex-col gap-5'>
+		<div ref={parentRef} className='my-4 flex flex-col gap-5'>
 			<div>
 				<h2 className='text-4xl font-bold tracking-wider underline'>
 					{project_name}
 				</h2>
 				<h3 className='text-md font-bold'>{role.join(', ')}</h3>
 			</div>
-			<RichText html={renderRichText(description)} />
+			<RichText className='richText' html={renderRichText(description)} />
 			{techs.length > 0 && (
 				<div>
 					<h3 className='text-xl font-bold'>Tech</h3>

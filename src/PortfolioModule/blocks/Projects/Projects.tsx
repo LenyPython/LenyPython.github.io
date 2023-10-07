@@ -21,6 +21,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 	const onRoleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setRoleFilter(e.target.value as role)
 		scrollToID('#projects')
+		window.dispatchEvent(new Event('resize'))
 	}
 	const onTechChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setTechFilter(set => {
@@ -29,13 +30,16 @@ const Projects: React.FC<Props> = ({ blok }) => {
 			return new Set(set)
 		})
 		scrollToID('#projects')
+		window.dispatchEvent(new Event('resize'))
 	}
 	const clearTechFilters = () => {
 		setTechFilter(new Set<TechEnum>())
+		window.dispatchEvent(new Event('resize'))
 	}
 	const onTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setTypeFilter(e.target.value as projType)
 		scrollToID('#projects')
+		window.dispatchEvent(new Event('resize'))
 	}
 	if (roleFilter !== role.any) {
 		projects = projects.filter((proj: ProjectStoryblok) =>
@@ -69,10 +73,14 @@ const Projects: React.FC<Props> = ({ blok }) => {
 				}}
 				states={{ techFilter, roleFilter, typeFilter }}
 			/>
-			<div className='w-full px-5 shadow-main shadow-font rounded-xl backdrop-blur-lg md:p-10'>
-				{projects.map((project: ProjectStoryblok) => (
-					<StoryblokComponent blok={project} key={project._uid} />
-				))}
+			<div className='w-full h-full px-5 shadow-main shadow-font rounded-xl backdrop-blur-lg md:p-10'>
+				{projects.length === 0 ? (
+					<p className='text-center m-4'>No results</p>
+				) : (
+					projects.map((project: ProjectStoryblok) => (
+						<StoryblokComponent blok={project} key={project._uid} />
+					))
+				)}
 			</div>
 		</div>
 	)
