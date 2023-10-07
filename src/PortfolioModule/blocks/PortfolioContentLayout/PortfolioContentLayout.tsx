@@ -11,7 +11,6 @@ type Props = {
 const PortfolioContentLayout: React.FC<Props> = ({ blok }) => {
 	return (
 		<>
-			<MatrixBg />
 			<nav>
 				<Navigation config={blok.Sections} />
 			</nav>
@@ -22,6 +21,7 @@ const PortfolioContentLayout: React.FC<Props> = ({ blok }) => {
 					))}
 				</div>
 			</main>
+			<MatrixBg />
 			<Footer />
 		</>
 	)

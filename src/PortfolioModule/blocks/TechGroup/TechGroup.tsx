@@ -20,7 +20,6 @@ const TechGroup: React.FC<Props> = ({ blok }) => {
 		tlRef.current = gsap.timeline({
 			scrollTrigger: {
 				start: 'start-=65px 85%',
-				markers: true,
 				trigger: parentRef.current,
 				toggleActions: 'restart none none reset'
 			}
@@ -58,7 +57,7 @@ const TechGroup: React.FC<Props> = ({ blok }) => {
 			<h2 className='absolute left-1 bottom-full underline text-xl'>
 				{blok.headline}
 			</h2>
-			<div className='advanced w-full flex'>
+			<div className='advanced w-full flex flex-wrap'>
 				{advTech.length > 0 &&
 					advTech.map((svg: SvgType) => (
 						<SvgProvider
@@ -69,7 +68,7 @@ const TechGroup: React.FC<Props> = ({ blok }) => {
 					))}
 			</div>
 			<hr className='m-4 border-font' />
-			<div className='basic w-full flex'>
+			<div className='basic w-full flex flex-wrap'>
 				{basicTech.length > 0 &&
 					basicTech.map((svg: SvgType) => (
 						<SvgProvider
