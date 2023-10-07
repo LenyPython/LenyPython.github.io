@@ -78,7 +78,10 @@ const WorkExperience: React.FC<Props> = ({ blok, odd }) => {
 			<p className='date mb-2 font-bold'>
 				{start} - {end}
 			</p>
-			<RichText className='richText' html={renderRichText(description)} />
+			<RichText
+				className='richText text-sm sm:text-base'
+				html={renderRichText(description)}
+			/>
 		</div>
 	)
 }

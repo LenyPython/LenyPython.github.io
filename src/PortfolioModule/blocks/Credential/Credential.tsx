@@ -36,7 +36,10 @@ const Credential: React.FC<Props> = ({ blok, left, center, right }) => {
 		<div className={styles}>
 			{center && (
 				<div className='max-h-[350px] overflow-y-auto overflow-x-clip'>
-					<RichText className='mb-6' html={renderRichText(cred)} />
+					<RichText
+						className='mb-6 text-sm sm:text-base'
+						html={renderRichText(cred)}
+					/>
 				</div>
 			)}
 			<div className='flex justify-between items-center w-full'>

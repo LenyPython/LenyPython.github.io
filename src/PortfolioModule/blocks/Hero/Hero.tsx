@@ -85,13 +85,13 @@ const Hero: React.FC<Props> = ({ blok }) => {
 				<div>
 					<h2
 						ref={headlineRef}
-						className='text-2xl font-bold tracking-wider mb-10 max-w-2xl sm:text-5xl'
+						className='text-xl font-bold tracking-wider mb-5 max-w-2xl sm:text-5xl'
 					>
 						11010001 10101101
 					</h2>
 					<div ref={richTextRef}>
 						<RichText
-							className='text-justify'
+							className='text-sm text-justify sm:text-base'
 							html={renderRichText(rich_text)}
 						/>
 					</div>

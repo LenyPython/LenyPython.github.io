@@ -73,7 +73,10 @@ const Project: React.FC<Props> = ({ blok }) => {
 				</h2>
 				<h3 className='text-md font-bold'>{role.join(', ')}</h3>
 			</div>
-			<RichText className='richText' html={renderRichText(description)} />
+			<RichText
+				className='richText text-sm sm:text-base'
+				html={renderRichText(description)}
+			/>
 			{techs.length > 0 && (
 				<div>
 					<h3 className='text-xl font-bold'>Tech</h3>
