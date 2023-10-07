@@ -18,9 +18,9 @@ const Navigation: React.FC<Props> = ({ config }) => {
 	const [isMobileOpen, setIsMobileOpen] = useState(false)
 	const links = config.filter((item: SectionStoryblok) => item.in_navigation)
 	let navContainer =
-		'fixed flex justify-center z-30 pt-10 backdrop-blur-lg duration-700 md:top-0'
+		'fixed flex justify-center z-30 backdrop-blur-lg duration-700 md:top-0'
 	if (isMobileOpen) navContainer += ' top-0 bottom-0 left-0 right-0'
-	else navContainer += ' top-full left-0 right-0'
+	else navContainer += ' top-full py-3 left-0 right-0'
 	const toggleNavigation = () => {
 		setIsMobileOpen(prev => window.innerWidth < 768 && !prev)
 	}
@@ -45,11 +45,11 @@ const Navigation: React.FC<Props> = ({ config }) => {
 	return (
 		<>
 			<div className={navContainer}>
-				<div className='h-full rounded-full md:flex md:justify-between lg:w-4/5 lg:max-w-5xl'>
+				<div className='h-full flex flex-col-reverse justify-evenly mx-5 md:flex-row md:justify-between md:w-full lg:w-4/5 md:max-w-5xl'>
 					<Link onClick={e => handleClick(e, '#hero')} href='/'>
 						<h2 className='text-3xl text-center'>LOGO</h2>
 					</Link>
-					<div className='flex flex-col items-center mt-5 md:flex-row md:mt-auto'>
+					<div className='flex flex-col items-center md:flex-row'>
 						{links.map((item: SectionStoryblok) => (
 							<Link
 								key={`link:${item._uid}`}

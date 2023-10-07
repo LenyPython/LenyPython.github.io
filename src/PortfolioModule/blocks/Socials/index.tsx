@@ -45,7 +45,7 @@ const Socials: React.FC<Props> = ({ blok }) => {
 	return (
 		<div
 			ref={parentRef}
-			className='relative flex flex-col justify-evenly items-center w-full max-w-5xl p-5'
+			className='relative flex flex-col justify-evenly items-center w-full max-w-5xl py-5'
 		>
 			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl'>
 				{blok.headline}
