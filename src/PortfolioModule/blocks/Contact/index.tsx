@@ -14,6 +14,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [msg, setMsg] = useState('')
+	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [formStatus, setFormStatus] = useState('')
 	const [formStatusMsg, setFormStatusMsg] = useState('')
 
@@ -28,47 +29,41 @@ const Contact: React.FC<Props> = ({ blok }) => {
 	}
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
-		fetch('https://formsubmit.co/ajax/b5310cdf113b0f1a870bde0bc5c5553d', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				Accept: 'application/json'
-			},
-			body: JSON.stringify({
-				name,
-				email,
-				msg,
-				_subject: `Portfolio form question from: ${name}`,
-				_template: 'table',
-				_next: 'https://lenypython.github.io/'
-			})
-		})
-			.then(response => response.json())
-			.then(data => {
-				if (data?.success === 'true') {
-					setFormStatusMsg(
-						"Thank you! Your message has been sent I'll answer as soon as I can."
-					)
-					setFormStatus('success')
-					setTimeout(() => {
-						setFormStatusMsg('')
-						setFormStatus('')
-					}, 7000)
-					setEmail('')
-					setName('')
-					setMsg('')
-				} else {
-					setFormStatusMsg(
-						'Something went wrong, please try again later or write a direct email to piotr.lenartowicz@yahoo.com'
-					)
-					setFormStatus('error')
-					setTimeout(() => {
-						setFormStatusMsg('')
-						setFormStatus('')
-					}, 7000)
+		setIsSubmitting(true)
+		try {
+			const responsePromise = await fetch(
+				'https://formsubmit.co/ajax/b5310cdf113b0f1a870bde0bc5c5553d',
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						Accept: 'application/json'
+					},
+					body: JSON.stringify({
+						name,
+						email,
+						msg,
+						_subject: `Portfolio form question from: ${name}`,
+						_template: 'table',
+						_next: 'https://lenypython.github.io/'
+					})
 				}
-			})
-			.catch(error => {
+			)
+			const response = await responsePromise.json()
+			if (response?.success === 'true') {
+				setFormStatusMsg(
+					"Thank you! Your message has been sent I'll answer as soon as I can."
+				)
+				setFormStatus('success')
+				setTimeout(() => {
+					setFormStatusMsg('')
+					setFormStatus('')
+				}, 7000)
+				setEmail('')
+				setName('')
+				setMsg('')
+				setIsSubmitting(false)
+			} else {
 				setFormStatusMsg(
 					'Something went wrong, please try again later or write a direct email to piotr.lenartowicz@yahoo.com'
 				)
@@ -77,8 +72,20 @@ const Contact: React.FC<Props> = ({ blok }) => {
 					setFormStatusMsg('')
 					setFormStatus('')
 				}, 7000)
-				console.error(error)
-			})
+				setIsSubmitting(false)
+			}
+		} catch (error) {
+			setFormStatusMsg(
+				'Something went wrong, please try again later or write a direct email to piotr.lenartowicz@yahoo.com'
+			)
+			setFormStatus('error')
+			setTimeout(() => {
+				setFormStatusMsg('')
+				setFormStatus('')
+			}, 7000)
+			console.error(error)
+			setIsSubmitting(false)
+		}
 	}
 	const svgConfig = {
 		width: 55,
@@ -86,7 +93,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 		color: 'hsla(120,100%,50%, .8)'
 	}
 	const styles =
-		'm-5 p-2 bg-background text-font placeholder:text-font border-b border-font outline-0 focus:border-b-4'
+		'w-4/5 m-5 p-2 bg-background text-font placeholder:text-font border-b border-font outline-0 focus:border-b-4'
 	let statusMsgClasses = ''
 	if (formStatus === 'success') statusMsgClasses = 'bg-font p-2'
 	else if (formStatus === 'error')
@@ -129,7 +136,10 @@ const Contact: React.FC<Props> = ({ blok }) => {
 				</Link>
 			</div>
 			<h3 className='text-2xl my-3'>Write a message:</h3>
-			<form className='flex flex-col w-full' onSubmit={handleSubmit}>
+			<form
+				className='flex flex-col w-full items-center'
+				onSubmit={handleSubmit}
+			>
 				<input
 					className={styles}
 					type='text'
@@ -155,7 +165,13 @@ const Contact: React.FC<Props> = ({ blok }) => {
 					placeholder='Messsage...'
 					required
 				/>
-				<button type='submit'>Send</button>
+				<button
+					className='text-xl py-1 px-8 mb-3 shadow-main shadow-font duration-700 hover:bg-font hover:text-background disabled:opacity-50 disabled:animate-spin'
+					type='submit'
+					disabled={isSubmitting}
+				>
+					{isSubmitting ? 'Post' : 'Send'}
+				</button>
 				<div
 					className={`text-center text-sm w-full ${statusMsgClasses} text-background z-10 rounded-lg md:text-base`}
 				>
