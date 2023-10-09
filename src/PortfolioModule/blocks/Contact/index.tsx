@@ -4,10 +4,11 @@ import SvgProvider, {
 } from '@/Global/components/SvgProvider/SvgProvider'
 import Link from 'next/link'
 import { useState } from 'react'
+import { ContactStoryblok } from '@/types/component-types-sb'
 
 // add propert storyblok types
 type Props = {
-	blok: any
+	blok: ContactStoryblok
 }
 
 const Contact: React.FC<Props> = ({ blok }) => {

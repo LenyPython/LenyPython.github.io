@@ -77,7 +77,7 @@ const Project: React.FC<Props> = ({ blok }) => {
 				className='richText text-sm sm:text-base'
 				html={renderRichText(description)}
 			/>
-			{techs.length > 0 && (
+			{techs && techs.length > 0 && (
 				<div>
 					<h3 className='text-xl font-bold'>Tech</h3>
 					<div className='flex flex-wrap items-center'>

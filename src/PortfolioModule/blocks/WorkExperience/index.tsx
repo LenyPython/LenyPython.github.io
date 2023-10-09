@@ -1,10 +1,11 @@
-import RichText from '@/Global/components/RIchText/RichText'
-import { renderRichText } from '@storyblok/react'
 import gsap from 'gsap'
 import { useLayoutEffect, useRef } from 'react'
+import { renderRichText } from '@storyblok/react'
+import RichText from '@/Global/components/RIchText/RichText'
+import { CredentialStoryblok } from '@/types/component-types-sb'
 
 type Props = {
-	blok: any
+	blok: CredentialStoryblok
 	odd: boolean
 }
 

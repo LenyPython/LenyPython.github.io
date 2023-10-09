@@ -58,7 +58,8 @@ const TechGroup: React.FC<Props> = ({ blok }) => {
 				{blok.headline}
 			</h2>
 			<div className='advanced w-full flex flex-wrap'>
-				{advTech.length > 0 &&
+				{advTech &&
+					advTech.length > 0 &&
 					advTech.map((svg: SvgType) => (
 						<SvgProvider
 							type={svg}

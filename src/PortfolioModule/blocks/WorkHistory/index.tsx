@@ -1,8 +1,8 @@
 import { StoryblokComponent } from '@storyblok/react'
-import React from 'react'
+import { WorkHistoryStoryblok } from '@/types/component-types-sb'
 
 type Props = {
-	blok: any
+	blok: WorkHistoryStoryblok
 }
 const WorkHistory: React.FC<Props> = ({ blok }) => {
 	return (
@@ -10,10 +10,7 @@ const WorkHistory: React.FC<Props> = ({ blok }) => {
 			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl md:text-5xl lg:translate-y-3/4 lg:rotate-45'>
 				{blok.headline}
 			</h2>
-			{
-				// define type later
-			}
-			{blok.experience.map((component: any, i: number) => (
+			{blok.experience?.map((component: any, i: number) => (
 				<StoryblokComponent key={component._uid} blok={component} odd={i % 2} />
 			))}
 		</div>

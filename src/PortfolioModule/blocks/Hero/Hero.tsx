@@ -46,7 +46,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 			const tl = tlRef.current
 			strings.forEach(str => {
 				tl.to(headlineRef.current, {
-					duration: 0.5,
+					duration: 0.2,
 					text: str
 				})
 			})
@@ -57,7 +57,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 						text: ''
 					},
 					{
-						duration: 1.5,
+						duration: 1,
 						text: para.innerText
 					}
 				)
