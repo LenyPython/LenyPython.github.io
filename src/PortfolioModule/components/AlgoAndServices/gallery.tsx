@@ -1,14 +1,16 @@
 import { useState } from 'react'
+import Image from 'next/image'
 import SvgProvider, {
 	UtilSvgEnum
 } from '@/Global/components/SvgProvider/SvgProvider'
 
 const badges = [
 	<div className='flex flex-col items-center'>
-		<img
+		<Image
 			src='https://assets.leetcode.com/static_assets/others/algorithm_I.png'
-			width='75px'
-			height='75px'
+			width={75}
+			height={75}
+			loading='lazy'
 			alt='Algorithm I'
 		/>
 		<br />
@@ -17,10 +19,11 @@ const badges = [
 		<span>2021-10-24</span>
 	</div>,
 	<div className='flex flex-col items-center'>
-		<img
+		<Image
 			src='https://assets.leetcode.com/static_assets/others/DS_I.png'
-			width='75px'
-			height='75px'
+			width={75}
+			height={75}
+			loading='lazy'
 			alt='Algorithm I'
 		/>
 		<br />
@@ -29,10 +32,11 @@ const badges = [
 		<span>2021-12-14</span>
 	</div>,
 	<div className='flex flex-col items-center'>
-		<img
+		<Image
 			src='https://assets.leetcode.com/static_assets/others/%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B_%E5%85%A5%E9%97%A8.gif'
-			width='75px'
-			height='75px'
+			width={75}
+			height={75}
+			loading='lazy'
 			alt='Programming badge I'
 		/>
 		<br />
@@ -41,10 +45,11 @@ const badges = [
 		<span>2022-03-11</span>
 	</div>,
 	<div className='flex flex-col items-center'>
-		<img
+		<Image
 			src='https://leetcode.com/static/images/badges/2022/gif/2022-annual-100.gif'
-			width='75px'
-			height='75px'
+			width={75}
+			height={75}
+			loading='lazy'
 			alt='100 Days badge 2022'
 		/>
 		<br />

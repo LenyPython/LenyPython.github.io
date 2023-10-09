@@ -9,11 +9,27 @@ const nextConfig = {
 
 		return config
 	},
+	i18n: {
+		locales: ['en'],
+		defaultLocale: 'en'
+	},
 	images: {
 		remotePatterns: [
 			{
 				protocol: 'https',
 				hostname: 'a.storyblok.com',
+				port: '',
+				pathname: '/*/**'
+			},
+			{
+				protocol: 'https',
+				hostname: 'leetcode.com',
+				port: '',
+				pathname: '/*/**'
+			},
+			{
+				protocol: 'https',
+				hostname: 'assets.leetcode.com',
 				port: '',
 				pathname: '/*/**'
 			}
