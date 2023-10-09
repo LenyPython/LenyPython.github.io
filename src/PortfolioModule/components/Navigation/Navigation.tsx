@@ -75,7 +75,7 @@ const Navigation: React.FC<Props> = ({ config }) => {
 							<Link
 								key={`link:${item._uid}`}
 								href={`/#${item.ID}`}
-								className='p-3 uppercase border-b border-font md:border-0'
+								className='p-3 uppercase font-bold border-b-2 border-font md:border-0'
 								onClick={e => handleClick(e, `#${item.ID}`)}
 							>
 								{item.ID}
