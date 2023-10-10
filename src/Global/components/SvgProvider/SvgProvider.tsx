@@ -5,6 +5,7 @@ import DOCKERlogo from '@/assets/images/svg/development/docker.svg'
 import JENKINSlogo from '@/assets/images/svg/development/jenkins.svg'
 import JIRAlogo from '@/assets/images/svg/development/jira.svg'
 import AWSlogo from '@/assets/images/svg/development/aws.svg'
+import WEBPACKlogo from '@/assets/images/svg/development/webpack.svg'
 
 // Languages
 import HTMLlogo from '@/assets/images/svg/language/html.svg'
@@ -29,6 +30,7 @@ import D3logo from '@/assets/images/svg/tech/d3.svg'
 import Firebaselogo from '@/assets/images/svg/tech/firebase.svg'
 import AEMlogo from '@/assets/images/svg/tech/aem.svg'
 import CYPRESSlogo from '@/assets/images/svg/tech/cypress.svg'
+import STORYBLOKlogo from '@/assets/images/svg/tech/storyblok.svg'
 
 // Social
 import FrontendMentorlogo from '@/assets/images/svg/social/frontendMentor.svg'
@@ -72,7 +74,8 @@ export enum DevEnum {
 	jira = 'jira',
 	aws = 'aws',
 	docker = 'docker',
-	jenkins = 'jenkins'
+	jenkins = 'jenkins',
+	webpack = 'webpack'
 }
 
 export enum TechEnum {
@@ -86,7 +89,8 @@ export enum TechEnum {
 	firebase = 'firebase',
 	kivy = 'kivy',
 	aem = 'aem',
-	cypress = 'cypress'
+	cypress = 'cypress',
+	storyblok = 'storyblok'
 }
 
 export enum UtilSvgEnum {
@@ -151,6 +155,8 @@ const SvgProvider: React.FC<Props> = ({ type, options }) => {
 			return <D3logo style={style} />
 		case TechEnum.firebase:
 			return <Firebaselogo style={style} />
+		case TechEnum.storyblok:
+			return <STORYBLOKlogo style={style} />
 		// development
 		case DevEnum.git:
 			return <GITlogo style={style} />
@@ -164,6 +170,8 @@ const SvgProvider: React.FC<Props> = ({ type, options }) => {
 			return <DOCKERlogo style={style} />
 		case DevEnum.jenkins:
 			return <JENKINSlogo style={style} />
+		case DevEnum.webpack:
+			return <WEBPACKlogo style={style} />
 		// social
 		case SocialEnum.linkedin:
 			return <Linkedinlogo style={style} />
