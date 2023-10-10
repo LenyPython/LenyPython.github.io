@@ -3,7 +3,7 @@ import { useTexture } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 
-import trans from './transparent.png'
+import trans from './transparent.webp'
 
 const Globe = (props: JSX.IntrinsicElements['mesh']) => {
 	const textures = useTexture({

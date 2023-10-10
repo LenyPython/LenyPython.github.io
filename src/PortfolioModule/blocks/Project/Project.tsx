@@ -13,7 +13,6 @@ type Props = {
 }
 
 const Project: React.FC<Props> = ({ blok }) => {
-	console.log(blok)
 	const { project_name, role, tech, description, live_page, repo, proj_img } =
 		blok
 	const { techs } = tech[0]

@@ -70,7 +70,8 @@ const TechGroup: React.FC<Props> = ({ blok }) => {
 			</div>
 			<hr className='m-4 border-font' />
 			<div className='basic w-full flex flex-wrap'>
-				{basicTech.length > 0 &&
+				{basicTech &&
+					basicTech.length > 0 &&
 					basicTech.map((svg: SvgType) => (
 						<SvgProvider
 							type={svg}

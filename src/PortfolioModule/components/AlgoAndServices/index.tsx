@@ -28,10 +28,17 @@ type CwDataType = {
 		overall: RankType
 	}
 }
+type Props = {
+	progress: {
+		easy: number
+		medium: number
+		hard: number
+	}
+}
 
-const Algo = () => {
+const Algo: React.FC<Props> = ({ progress }) => {
+	const { easy, medium, hard } = progress
 	const [cwData, setCwData] = useState<CwDataType | null>(null)
-
 	useEffect(() => {
 		const getData = async () => {
 			try {
@@ -136,11 +143,11 @@ const Algo = () => {
 				</div>
 				<div>
 					Progress: <br />
-					488 problems <br />
-					225 easy
+					{easy + medium + hard} problems <br />
+					{easy} easy
 					<br />
-					251 medium <br />
-					12 Hard <br />
+					{medium} medium <br />
+					{hard} Hard <br />
 				</div>
 				<Gallery />
 			</div>

@@ -1,4 +1,5 @@
 import { SvgType } from '@/Global/components/SvgProvider/SvgProvider'
+import { projType, role } from '@/PortfolioModule/components/ProjectsFilters'
 import { StoryblokStory } from 'storyblok-generate-ts'
 
 export interface ContactStoryblok {
@@ -120,8 +121,8 @@ export interface AssetStoryblok {
 
 export interface ProjectStoryblok {
 	project_name: string
-	type: '' | 'side' | 'commercial'
-	role: ('' | 'developer' | 'maintenance' | 'support')[]
+	type: projType
+	role: role[]
 	description?: RichtextStoryblok
 	tech: TechnologiesStoryblok[]
 	live_page?: MultilinkStoryblok
@@ -151,6 +152,9 @@ export interface SectionStoryblok {
 
 export interface SocialsStoryblok {
 	headline?: string
+	lc_hard: string
+	lc_medium: string
+	lc_easy: string
 	_uid: string
 	component: 'Socials'
 	[k: string]: any

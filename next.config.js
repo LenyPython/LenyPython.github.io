@@ -14,6 +14,7 @@ const nextConfig = {
 		defaultLocale: 'en'
 	},
 	images: {
+		formats: ['image/webp'],
 		remotePatterns: [
 			{
 				protocol: 'https',

@@ -8,6 +8,7 @@ type Props = {
 }
 
 const Socials: React.FC<Props> = ({ blok }) => {
+	const { lc_easy, lc_medium, lc_hard } = blok
 	const parentRef = useRef(null)
 	useLayoutEffect(() => {
 		if (!parentRef.current) return
@@ -48,7 +49,9 @@ const Socials: React.FC<Props> = ({ blok }) => {
 				{blok.headline}
 			</h2>
 			<div className='w-full flex flex-col justify-evenly items-center pb-5 overflow-hidden'>
-				<AlgoAndServices />
+				<AlgoAndServices
+					progress={{ easy: +lc_easy, medium: +lc_medium, hard: +lc_hard }}
+				/>
 			</div>
 		</div>
 	)
