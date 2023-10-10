@@ -109,7 +109,7 @@ const Project: React.FC<Props> = ({ blok }) => {
 			{live_page && (
 				<Link
 					href={live_page.url}
-					className='inline-block text-center p-2 font-bold border border-font duration-500 hover:shadow-main hover:shadow-font sm:text-xl'
+					className='text-center p-2 font-bold border border-font duration-500 hover:shadow-main hover:shadow-font sm:text-xl'
 					target={live_page.target}
 				>
 					Live page
@@ -118,7 +118,7 @@ const Project: React.FC<Props> = ({ blok }) => {
 			{repo && (
 				<Link
 					href={repo.url}
-					className='inline-block text-center p-2 font-bold border border-font duration-500 hover:shadow-main hover:shadow-font sm:text-xl'
+					className='text-center p-2 font-bold border border-font duration-500 hover:shadow-main hover:shadow-font sm:text-xl'
 					target={repo.target}
 				>
 					Code base
