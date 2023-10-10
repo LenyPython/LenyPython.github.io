@@ -13,7 +13,9 @@ type Props = {
 }
 
 const Project: React.FC<Props> = ({ blok }) => {
-	const { project_name, role, tech, description, live_page } = blok
+	console.log(blok)
+	const { project_name, role, tech, description, live_page, repo, proj_img } =
+		blok
 	const { techs } = tech[0]
 	const parentRef = useRef(null)
 	const tlRef = useRef<GSAPTimeline>()
@@ -44,6 +46,15 @@ const Project: React.FC<Props> = ({ blok }) => {
 					toggleActions: 'restart pause resume reverse'
 				}
 			})
+			gsap.from('.tech-container', {
+				x: 100,
+				opacity: 0,
+				scrollTrigger: {
+					trigger: '.tech-container',
+					start: 'top 85%',
+					toggleActions: 'restart pause resume reverse'
+				}
+			})
 			gsap.from('h3', {
 				x: 100,
 				opacity: 0,
@@ -53,14 +64,16 @@ const Project: React.FC<Props> = ({ blok }) => {
 					toggleActions: 'restart pause resume reverse'
 				}
 			})
-			gsap.from('a', {
-				y: 100,
-				opacity: 0,
-				scrollTrigger: {
-					trigger: 'a',
-					start: 'top 95%',
-					toggleActions: 'restart pause resume reverse'
-				}
+			gsap.utils.toArray('a').forEach((link: any) => {
+				gsap.from(link, {
+					y: 100,
+					opacity: 0,
+					scrollTrigger: {
+						trigger: link,
+						start: 'top 90%',
+						toggleActions: 'restart pause resume reverse'
+					}
+				})
 			})
 		}, parentRef.current)
 		return () => ctx.revert()
@@ -77,27 +90,38 @@ const Project: React.FC<Props> = ({ blok }) => {
 				className='richText text-sm sm:text-base'
 				html={renderRichText(description)}
 			/>
-			{techs && techs.length > 0 && (
-				<div>
-					<h3 className='text-xl font-bold'>Tech</h3>
-					<div className='flex flex-wrap items-center'>
-						{techs.map((svg: SvgType) => (
-							<SvgProvider
-								key={`${project_name}-${tech[0]._uid}-${svg}`}
-								type={svg}
-								options={SvgOptions}
-							/>
-						))}
-					</div>
-				</div>
-			)}
+			<div className='tech-container'>
+				{techs && techs.length > 0 && (
+					<>
+						<h3 className='text-xl font-bold'>Tech</h3>
+						<div className='flex flex-wrap items-center'>
+							{techs.map((svg: SvgType) => (
+								<SvgProvider
+									key={`${project_name}-${tech[0]._uid}-${svg}`}
+									type={svg}
+									options={SvgOptions}
+								/>
+							))}
+						</div>
+					</>
+				)}
+			</div>
 			{live_page && (
 				<Link
 					href={live_page.url}
-					className='inline-block text-xl text-center p-2 font-bold border border-font duration-500 hover:shadow-main hover:shadow-font'
+					className='inline-block text-center p-2 font-bold border border-font duration-500 hover:shadow-main hover:shadow-font sm:text-xl'
 					target={live_page.target}
 				>
 					Live page
+				</Link>
+			)}
+			{repo && (
+				<Link
+					href={repo.url}
+					className='inline-block text-center p-2 font-bold border border-font duration-500 hover:shadow-main hover:shadow-font sm:text-xl'
+					target={repo.target}
+				>
+					Code base
 				</Link>
 			)}
 		</div>
