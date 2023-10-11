@@ -49,7 +49,8 @@ const Hero: React.FC<Props> = ({ blok }) => {
 	const parentRef = useRef(null)
 	const tlRef = useRef(gsap.timeline())
 	const checkWindowSize = () => {
-		if (window.innerWidth <= 640) setIsMobile(true)
+		if (window.matchMedia('only screen and (max-width: 640px)').matches)
+			setIsMobile(true)
 		else setIsMobile(false)
 	}
 	useLayoutEffect(() => {
@@ -64,21 +65,52 @@ const Hero: React.FC<Props> = ({ blok }) => {
 					text: str
 				})
 			})
-			gsap.utils.toArray('p').forEach((para: any) => {
+			gsap.utils.toArray('.window-3 > p').forEach((para: any) => {
 				tl.fromTo(
 					para,
 					{
 						text: ''
 					},
 					{
-						duration: 1,
+						duration: 0.6,
 						text: para.innerText
 					}
 				)
 			})
+			if (!window.matchMedia('only screen and (max-width: 640px)').matches) {
+				tl.from('.nonmobile-container', { height: 0 }).from('.window-1', {
+					opacity: 0
+				})
+				gsap.utils.toArray('.window-1 p').forEach((para: any) => {
+					tl.fromTo(
+						para,
+						{
+							text: ''
+						},
+						{
+							duration: 0.3,
+							text: para.innerText
+						}
+					)
+				})
+				tl.from('.window-2', {
+					opacity: 0
+				})
+				gsap.utils.toArray('.window-2 p').forEach((para: any) => {
+					tl.fromTo(
+						para,
+						{
+							text: ''
+						},
+						{
+							duration: 0.3,
+							text: para.innerText
+						}
+					)
+				})
+			}
 			tl.from('.call-to-action', {
-				delay: 0.2,
-				duration: 2,
+				duration: 1,
 				x: -300,
 				y: 100,
 				opacity: 0
@@ -99,30 +131,26 @@ const Hero: React.FC<Props> = ({ blok }) => {
 	return (
 		<div ref={parentRef} className='max-w-3xl mx-5 md:w-3/4 sm:self-center'>
 			<div className='flex flex-col gap-3 relative pb-20 justify-center sm:pb-28'>
-				<div>
-					<h2 className='headline text-xl font-bold tracking-wider p-3 rounded-lg backdrop-blur-lg max-w-2xl sm:px-7 sm:text-3xl'>
-						11010001 10101101
-					</h2>
-				</div>
 				{!isMobile && (
-					<div className='flex justify-end gap-3 h-40 text-sm text-justify sm:text-base'>
-						<div className='grow w-full'>
-							<span className='inline-block bg-font border-font rounded-full w-2 h-1/4 animate-pulse'></span>
+					<div className='nonmobile-container flex justify-end gap-3 h-40 text-sm text-justify sm:text-base'>
+						<div className='grow w-full flex justify-center items-center'>
+							<span className='inline-block border-y-8 border-font rounded-full w-4 h-8 animate-spin'></span>
 						</div>
-						<div className='grow-[2.5]  p-3 rounded-lg backdrop-blur-lg'>
-							<RichText
-								className='window-1'
-								html={renderRichText(techskills)}
-							/>
+						<div className='window-1 grow-[2.5] w-full p-3 rounded-lg backdrop-blur-lg sm:p-5'>
+							<RichText html={renderRichText(techskills)} />
+							<span className='inline-block bg-font rounded-full w-2 h-0.5 animate-pulse'></span>
 						</div>
-						<div className='grow-[1.5]  p-3 rounded-lg backdrop-blur-lg'>
-							<RichText
-								className='window-2'
-								html={renderRichText(softskills)}
-							/>
+						<div className='window-2 grow-[1.5] w-full p-3 rounded-lg backdrop-blur-lg sm:p-5'>
+							<RichText html={renderRichText(softskills)} />
+							<span className='inline-block bg-font rounded-full w-2 h-0.5 animate-pulse'></span>
 						</div>
 					</div>
 				)}
+				<div>
+					<h2 className='headline text-xl font-bold tracking-wider p-3 rounded-lg backdrop-blur-lg max-w-lg sm:px-7 sm:text-3xl'>
+						11010001 10101101
+					</h2>
+				</div>
 				<RichText
 					className='window-3 text-sm text-justify p-3 rounded-lg backdrop-blur-lg sm:p-7 sm:text-base'
 					html={renderRichText(rich_text)}
