@@ -92,9 +92,12 @@ export interface CredentialsStoryblok {
 }
 
 export interface HeroStoryblok {
-	headline?: string
-	rich_text?: RichtextStoryblok
-	call_to_action?: string
+	headline: string
+	techskills: RichtextStoryblok
+	softskills: RichtextStoryblok
+	rich_text: RichtextStoryblok
+	call_to_action: string
+	secondary_cta: string
 	cta_link: MultilinkStoryblok
 	_uid: string
 	component: 'Hero'

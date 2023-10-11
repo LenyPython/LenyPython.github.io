@@ -105,28 +105,46 @@
       "name": "Hero",
       "display_name": null,
       "created_at": "2023-08-05T18:05:41.146Z",
-      "updated_at": "2023-09-18T20:44:56.383Z",
+      "updated_at": "2023-10-11T20:41:04.637Z",
       "id": 4384111,
       "schema": {
         "headline": {
           "type": "text",
-          "pos": 1,
+          "pos": 0,
           "display_name": "headline",
-          "key": "headline"
+          "key": "headline",
+          "required": true
+        },
+        "techskills": {
+          "type": "richtext",
+          "pos": 1,
+          "required": true
+        },
+        "softskills": {
+          "type": "richtext",
+          "pos": 2,
+          "required": true
         },
         "rich_text": {
           "type": "richtext",
-          "pos": 2,
-          "key": "rich_text"
+          "pos": 3,
+          "key": "rich_text",
+          "required": true
         },
         "call_to_action": {
           "type": "text",
-          "pos": 3,
-          "key": "call_to_action"
+          "pos": 4,
+          "key": "call_to_action",
+          "required": true
+        },
+        "secondary_cta": {
+          "type": "text",
+          "pos": 5,
+          "required": true
         },
         "cta_link": {
           "type": "multilink",
-          "pos": 4,
+          "pos": 6,
           "required": true,
           "show_anchor": true,
           "key": "Cta_link"
@@ -441,7 +459,7 @@
       "name": "technologies",
       "display_name": null,
       "created_at": "2023-08-14T22:02:48.515Z",
-      "updated_at": "2023-10-09T21:35:37.463Z",
+      "updated_at": "2023-10-10T20:15:21.801Z",
       "id": 4422579,
       "schema": {
         "techs": {
@@ -537,6 +555,11 @@
               "_uid": "5819c08b-66ba-4f34-ad80-967f048d4546",
               "value": "nuxt",
               "name": "Nuxt"
+            },
+            {
+              "_uid": "3e6ad181-d9e4-41bc-916a-15fa1f2a6bb9",
+              "value": "storyblok",
+              "name": "Storyblok"
             },
             {
               "_uid": "7e6b809a-879b-4c66-9eb4-6fd2c3f08758",
