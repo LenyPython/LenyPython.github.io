@@ -4,8 +4,7 @@ import { ProjectStoryblok, ProjectsStoryblok } from '@/types/component-types-sb'
 import { TechEnum } from '@/Global/components/SvgProvider/SvgProvider'
 import ProjectFilters, {
 	projType,
-	role,
-	technologiesEnum
+	role
 } from '@/PortfolioModule/components/ProjectsFilters'
 import { scrollToID } from '@/PortfolioModule/components/Navigation/Navigation'
 
@@ -54,7 +53,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 	}
 	if (techFilter.size > 0) {
 		projects = projects.filter((proj: ProjectStoryblok) =>
-			proj.tech[0]?.techs?.some((tech: technologiesEnum) => {
+			proj.tech[0]?.techs?.some((tech: any) => {
 				return techFilter.has(tech)
 			})
 		)

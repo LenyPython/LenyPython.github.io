@@ -9,10 +9,7 @@ const nextConfig = {
 
 		return config
 	},
-	i18n: {
-		locales: ['en'],
-		defaultLocale: 'en'
-	},
+	output: 'export',
 	images: {
 		formats: ['image/webp'],
 		remotePatterns: [

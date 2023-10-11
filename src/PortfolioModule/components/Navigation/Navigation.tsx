@@ -54,13 +54,18 @@ const Navigation: React.FC<Props> = ({ config }) => {
 					<div
 						className={`${isMobileOpen ? 'scale-125 ' : ''}flex items-center`}
 					>
-						<Link onClick={e => handleClick(e, '#hero')} href='/'>
+						<Link
+							onClick={e => handleClick(e, '#hero')}
+							href='/'
+							aria-label='home'
+						>
 							<SvgProvider options={logoConfig} type={UtilSvgEnum.pageLogo} />
 						</Link>
 						<Link
 							className={`${isMobileOpen ? '' : 'hidden '}lg:block`}
 							onClick={e => handleClick(e, '#hero')}
 							href='/'
+							aria-label='home'
 						>
 							<div className='flex flex-col items-start'>
 								<h2 className='text-sm text-center font-medium'>

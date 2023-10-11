@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { ContactStoryblok } from '@/types/component-types-sb'
 
-// add propert storyblok types
 type Props = {
 	blok: ContactStoryblok
 }

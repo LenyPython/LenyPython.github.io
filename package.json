@@ -5,7 +5,6 @@
 	"scripts": {
 		"dev": "concurrently \"bun:[dev]-*\"",
 		"build": "next build",
-		"export": "next export",
 		"[dev]-dev": "next dev",
 		"[dev]-proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
 		"sb-types": "storyblok-generate-ts source=./components.245345.json target=./src/types/component-types-sb",
@@ -22,6 +21,7 @@
 		"postcss": "8.4.24",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
+		"sharp": "0.32.6",
 		"tailwindcss": "3.3.2",
 		"three": "0.156.1"
 	},
