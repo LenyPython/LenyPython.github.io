@@ -152,7 +152,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 					</h2>
 				</div>
 				<RichText
-					className='window-3 text-sm text-justify p-3 rounded-lg backdrop-blur-lg sm:p-7 sm:text-base'
+					className='window-3 text-sm text-justify p-3 rounded-lg backdrop-blur-lg max-w-lg sm:p-7 sm:text-base'
 					html={renderRichText(rich_text)}
 				/>
 				<div className='call-to-action z-10 flex items-center justify-end border-2 border-font bg-secondarybg px-8 py-4 rounded-lg absolute -bottom-8 right-1/2 scale-75 translate-x-1/2 -rotate-12 sm:bottom-5 sm:right-1/4 md:scale-95'>
