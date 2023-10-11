@@ -35,7 +35,7 @@ const Navigation: React.FC<Props> = ({ config }) => {
 	}
 
 	const svgConfig = {
-		margin: '-.2rem .1rem',
+		margin: '-.3rem .1rem',
 		width: 35,
 		height: 35,
 		color: isMobileOpen ? 'hsla(120,100%,50%, .8)' : 'black',
@@ -86,7 +86,9 @@ const Navigation: React.FC<Props> = ({ config }) => {
 			</div>
 			<button
 				className={`fixed right-3 border-font border-2 p-0.5 duration-700 ${
-					isMobileOpen ? 'bg-background bottom-1/3' : 'bottom-6 bg-font'
+					isMobileOpen
+						? 'bg-background bottom-1/3'
+						: 'bottom-6 bg-font scale-90'
 				} z-30 rounded-full md:hidden`}
 				onClick={toggleNavigation}
 			>

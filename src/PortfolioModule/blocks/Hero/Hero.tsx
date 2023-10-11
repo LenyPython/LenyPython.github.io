@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import { renderRichText } from '@storyblok/react'
 import Link from 'next/link'
 import gsap from 'gsap'
@@ -19,7 +19,17 @@ type Props = {
 }
 
 const Hero: React.FC<Props> = ({ blok }) => {
-	const { headline, rich_text, cta_link, call_to_action } = blok
+	const {
+		headline,
+		rich_text,
+		cta_link,
+		call_to_action,
+		secondary_cta,
+		techskills,
+		softskills
+	} = blok
+
+	const [isMobile, setIsMobile] = useState(false)
 	const getRandomString = (str?: string): string => {
 		if (!str) return ''
 		let result = ''
@@ -36,16 +46,20 @@ const Hero: React.FC<Props> = ({ blok }) => {
 		getRandomString(headline),
 		headline
 	]
-	const headlineRef = useRef(null)
-	const richTextRef = useRef(null)
-	const ctaRef = useRef(null)
+	const parentRef = useRef(null)
 	const tlRef = useRef(gsap.timeline())
+	const checkWindowSize = () => {
+		if (window.innerWidth <= 640) setIsMobile(true)
+		else setIsMobile(false)
+	}
 	useLayoutEffect(() => {
-		if (!headlineRef.current || !ctaRef.current || !richTextRef.current) return
+		window.addEventListener('resize', checkWindowSize)
+		checkWindowSize()
+		if (!parentRef.current) return
 		let ctx = gsap.context(() => {
 			const tl = tlRef.current
 			strings.forEach(str => {
-				tl.to(headlineRef.current, {
+				tl.to('.headline', {
 					duration: 0.2,
 					text: str
 				})
@@ -62,15 +76,18 @@ const Hero: React.FC<Props> = ({ blok }) => {
 					}
 				)
 			})
-			tl.from(ctaRef.current, {
+			tl.from('.call-to-action', {
 				delay: 0.2,
 				duration: 2,
 				x: -300,
 				y: 100,
 				opacity: 0
 			})
-		}, richTextRef.current)
-		return () => ctx.revert()
+		}, parentRef.current)
+		return () => {
+			ctx.revert()
+			window.removeEventListener('resize', checkWindowSize)
+		}
 	}, [])
 	const handleLinkClick = (
 		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -80,26 +97,37 @@ const Hero: React.FC<Props> = ({ blok }) => {
 		scrollToID(id)
 	}
 	return (
-		<div className='max-w-3xl mx-5 md:w-3/4 '>
-			<div className='flex flex-col relative p-7 pb-20 md:px-14 md:pt-10 justify-center rounded-lg backdrop-blur-lg'>
+		<div ref={parentRef} className='max-w-3xl mx-5 md:w-3/4 sm:self-center'>
+			<div className='flex flex-col gap-3 relative pb-20 justify-center sm:pb-28'>
 				<div>
-					<h2
-						ref={headlineRef}
-						className='text-xl font-bold tracking-wider mb-5 max-w-2xl sm:text-5xl'
-					>
+					<h2 className='headline text-xl font-bold tracking-wider p-3 rounded-lg backdrop-blur-lg max-w-2xl sm:px-7 sm:text-3xl'>
 						11010001 10101101
 					</h2>
-					<div ref={richTextRef}>
-						<RichText
-							className='text-sm text-justify sm:text-base'
-							html={renderRichText(rich_text)}
-						/>
-					</div>
 				</div>
-				<div
-					ref={ctaRef}
-					className='flex items-center justify-end border-2 border-font bg-secondarybg px-8 py-4 rounded-lg absolute -bottom-8 right-1/2 scale-75 translate-x-1/2 -rotate-12 md:-bottom-5 md:right-1/4 md:scale-95'
-				>
+				{!isMobile && (
+					<div className='flex justify-end gap-3 h-40 text-sm text-justify sm:text-base'>
+						<div className='grow w-full'>
+							<span className='inline-block bg-font border-font rounded-full w-2 h-1/4 animate-pulse'></span>
+						</div>
+						<div className='grow-[2.5]  p-3 rounded-lg backdrop-blur-lg'>
+							<RichText
+								className='window-1'
+								html={renderRichText(techskills)}
+							/>
+						</div>
+						<div className='grow-[1.5]  p-3 rounded-lg backdrop-blur-lg'>
+							<RichText
+								className='window-2'
+								html={renderRichText(softskills)}
+							/>
+						</div>
+					</div>
+				)}
+				<RichText
+					className='window-3 text-sm text-justify p-3 rounded-lg backdrop-blur-lg sm:p-7 sm:text-base'
+					html={renderRichText(rich_text)}
+				/>
+				<div className='call-to-action z-10 flex items-center justify-end border-2 border-font bg-secondarybg px-8 py-4 rounded-lg absolute -bottom-8 right-1/2 scale-75 translate-x-1/2 -rotate-12 sm:bottom-5 sm:right-1/4 md:scale-95'>
 					<Link
 						onClick={e => handleLinkClick(e, '#contact')}
 						href={`#${cta_link.anchor}`}
@@ -112,7 +140,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 						href={`#projects`}
 						className='ml-14 text-xl'
 					>
-						See work
+						{secondary_cta}
 					</Link>
 				</div>
 			</div>
