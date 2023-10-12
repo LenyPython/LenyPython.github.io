@@ -1,3 +1,4 @@
+'use client'
 import { useLayoutEffect, useRef, useState } from 'react'
 import { renderRichText } from '@storyblok/react'
 import Link from 'next/link'

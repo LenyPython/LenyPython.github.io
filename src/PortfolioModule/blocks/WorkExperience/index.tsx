@@ -1,3 +1,4 @@
+'use client'
 import gsap from 'gsap'
 import { useLayoutEffect, useRef } from 'react'
 import { renderRichText } from '@storyblok/react'

@@ -1,9 +1,10 @@
+'use client'
+import Link from 'next/link'
+import { useState } from 'react'
 import SvgProvider, {
 	DevEnum,
 	SocialEnum
 } from '@/Global/components/SvgProvider/SvgProvider'
-import Link from 'next/link'
-import { useState } from 'react'
 import { ContactStoryblok } from '@/types/component-types-sb'
 
 type Props = {

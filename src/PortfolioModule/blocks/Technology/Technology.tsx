@@ -1,3 +1,4 @@
+'use client'
 import { StoryblokComponent } from '@storyblok/react'
 import { TechnologyStoryblok } from '@/types/component-types-sb'
 

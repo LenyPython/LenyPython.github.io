@@ -1,10 +1,11 @@
+'use client'
+import Link from 'next/link'
 import RichText from '@/Global/components/RIchText/RichText'
 import SvgProvider, {
 	SocialEnum
 } from '@/Global/components/SvgProvider/SvgProvider'
-import { CredentialStoryblok } from '@/types/component-types-sb'
 import { renderRichText } from '@storyblok/react'
-import Link from 'next/link'
+import { CredentialStoryblok } from '@/types/component-types-sb'
 
 type Props = {
 	blok: CredentialStoryblok

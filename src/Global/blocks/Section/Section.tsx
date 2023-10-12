@@ -1,3 +1,4 @@
+'use client'
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import { SectionStoryblok } from '@/types/component-types-sb'
 

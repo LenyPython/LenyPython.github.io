@@ -1,12 +1,13 @@
+'use client'
+import { useEffect, useRef, useState } from 'react'
 import { StoryblokComponent } from '@storyblok/react'
+import SvgProvider, {
+	UtilSvgEnum
+} from '@/Global/components/SvgProvider/SvgProvider'
 import {
 	CredentialStoryblok,
 	CredentialsStoryblok
 } from '@/types/component-types-sb'
-import { useEffect, useRef, useState } from 'react'
-import SvgProvider, {
-	UtilSvgEnum
-} from '@/Global/components/SvgProvider/SvgProvider'
 
 type Props = {
 	blok: CredentialsStoryblok

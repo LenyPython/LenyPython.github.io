@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import { ProjectStoryblok } from '@/types/component-types-sb'
 import { renderRichText } from '@storyblok/react'

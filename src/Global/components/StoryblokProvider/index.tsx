@@ -1,7 +1,8 @@
-import { AppProps } from 'next/app'
+'use client'
+// @ts-ignore
 import { storyblokInit, apiPlugin } from '@storyblok/react'
+import { PropsWithChildren } from 'react'
 
-import '@/styles/global.scss'
 import Section from '@/Global/blocks/Section/Section'
 import Hero from '@/PortfolioModule/blocks/Hero/Hero'
 import PortfolioContentLayout from '@/PortfolioModule/blocks/PortfolioContentLayout/PortfolioContentLayout'
@@ -15,12 +16,6 @@ import WorkHistory from '@/PortfolioModule/blocks/WorkHistory'
 import WorkExperience from '@/PortfolioModule/blocks/WorkExperience'
 import Socials from '@/PortfolioModule/blocks/Socials'
 import Contact from '@/PortfolioModule/blocks/Contact'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
-import { TextPlugin } from 'gsap/dist/TextPlugin'
-
-gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollToPlugin)
 
 const components = {
 	Section,
@@ -43,7 +38,7 @@ storyblokInit({
 	use: [apiPlugin],
 	components
 })
-
-export default function MyApp({ Component, pageProps }: AppProps) {
-	return <Component {...pageProps} />
+const StoryblokProvider: React.FC<PropsWithChildren> = ({ children }) => {
+	return children
 }
+export default StoryblokProvider

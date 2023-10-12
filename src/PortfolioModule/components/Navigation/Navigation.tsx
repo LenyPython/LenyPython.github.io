@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import { SectionStoryblok } from '@/types/component-types-sb'
 import { useState } from 'react'

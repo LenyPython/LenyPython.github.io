@@ -1,11 +1,18 @@
-import { Suspense } from 'react'
+'use client'
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import Navigation from '@/PortfolioModule/components/Navigation/Navigation'
-import MatrixBg from '@/PortfolioModule/components/MatrixBg/MatrixBg'
 import { PortfolioContentLayoutStoryblok } from '@/types/component-types-sb'
-import Footer from '@/PortfolioModule/components/Footer'
+
 import { Canvas } from '@react-three/fiber'
+import MatrixBg from '@/PortfolioModule/components/MatrixBg/MatrixBg'
 import Globe from '@/PortfolioModule/components/3D/Globe'
+// animation lib
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
+import { TextPlugin } from 'gsap/dist/TextPlugin'
+
+gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollToPlugin)
 
 type Props = {
 	blok: PortfolioContentLayoutStoryblok
@@ -29,12 +36,9 @@ const PortfolioContentLayout: React.FC<Props> = ({ blok }) => {
 				<Canvas camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 5] }}>
 					<ambientLight intensity={0.1} />
 					<directionalLight color='hsla(120,100%,50%,1)' position={[0, 0, 5]} />
-					<Suspense fallback={null}>
-						<Globe position={[2, 0, 1]} />
-					</Suspense>
+					<Globe position={[2, 0, 1]} />
 				</Canvas>
 			</div>
-			<Footer />
 		</>
 	)
 }

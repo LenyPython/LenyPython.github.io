@@ -1,3 +1,4 @@
+'use client'
 import { StoryblokComponent } from '@storyblok/react'
 import { useState } from 'react'
 import { ProjectStoryblok, ProjectsStoryblok } from '@/types/component-types-sb'

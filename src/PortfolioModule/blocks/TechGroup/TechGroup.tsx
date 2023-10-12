@@ -1,3 +1,4 @@
+'use client'
 import gsap from 'gsap'
 import { useLayoutEffect, useRef } from 'react'
 import { TechGroupStoryblok } from '@/types/component-types-sb'
