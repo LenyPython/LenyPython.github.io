@@ -135,7 +135,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 				{!isMobile && (
 					<div className='nonmobile-container flex justify-end gap-3 h-40 text-sm text-justify sm:text-base'>
 						<div className='grow w-full flex justify-center items-center'>
-							<span className='inline-block border-y-8 border-font rounded-full w-4 h-8 animate-spin'></span>
+							<span className='inline-block border-y-8 border-font rounded-full w-8 h-8  animate-spin'></span>
 						</div>
 						<div className='window-1 grow-[2.5] w-full p-3 rounded-lg backdrop-blur-lg sm:p-5'>
 							<RichText html={renderRichText(techskills)} />
