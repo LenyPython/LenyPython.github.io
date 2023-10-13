@@ -1,0 +1,773 @@
+{
+  "components": [
+    {
+      "name": "Contact",
+      "display_name": null,
+      "created_at": "2023-09-07T19:18:43.077Z",
+      "updated_at": "2023-09-07T19:18:58.531Z",
+      "id": 4543014,
+      "schema": {
+        "headline": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Contact",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Credential",
+      "display_name": null,
+      "created_at": "2023-08-15T20:04:40.443Z",
+      "updated_at": "2023-09-23T17:09:17.103Z",
+      "id": 4426685,
+      "schema": {
+        "cred": {
+          "type": "richtext",
+          "required": true,
+          "pos": 0
+        },
+        "person": {
+          "type": "text",
+          "required": true,
+          "pos": 1
+        },
+        "position": {
+          "type": "text",
+          "pos": 2
+        },
+        "linkedin_profile": {
+          "type": "multilink",
+          "allow_target_blank": true,
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Credential",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Credentials",
+      "display_name": null,
+      "created_at": "2023-08-15T20:01:58.163Z",
+      "updated_at": "2023-08-15T20:09:38.124Z",
+      "id": 4426637,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "creds": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Credential"
+          ],
+          "required": true,
+          "minimum": 1,
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Credentials",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Hero",
+      "display_name": null,
+      "created_at": "2023-08-05T18:05:41.146Z",
+      "updated_at": "2023-10-11T20:41:04.637Z",
+      "id": 4384111,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0,
+          "display_name": "headline",
+          "key": "headline",
+          "required": true
+        },
+        "techskills": {
+          "type": "richtext",
+          "pos": 1,
+          "required": true
+        },
+        "softskills": {
+          "type": "richtext",
+          "pos": 2,
+          "required": true
+        },
+        "rich_text": {
+          "type": "richtext",
+          "pos": 3,
+          "key": "rich_text",
+          "required": true
+        },
+        "call_to_action": {
+          "type": "text",
+          "pos": 4,
+          "key": "call_to_action",
+          "required": true
+        },
+        "secondary_cta": {
+          "type": "text",
+          "pos": 5,
+          "required": true
+        },
+        "cta_link": {
+          "type": "multilink",
+          "pos": 6,
+          "required": true,
+          "show_anchor": true,
+          "key": "Cta_link"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Hero",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "PortfolioContentLayout",
+      "display_name": null,
+      "created_at": "2023-08-05T17:28:20.045Z",
+      "updated_at": "2023-08-11T20:58:49.294Z",
+      "id": 4384073,
+      "schema": {
+        "Sections": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Section"
+          ],
+          "minimum": 1,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "PortfolioContentLayout",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Project",
+      "display_name": null,
+      "created_at": "2023-08-10T20:16:00.843Z",
+      "updated_at": "2023-09-23T18:03:35.450Z",
+      "id": 4407537,
+      "schema": {
+        "project_name": {
+          "type": "text",
+          "required": true,
+          "pos": 0
+        },
+        "type": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 1,
+          "options": [
+            {
+              "_uid": "08d64c1a-dd54-4345-aedb-2c8738e7758e",
+              "name": "side",
+              "value": "side"
+            },
+            {
+              "_uid": "ba010b57-fd25-41e3-aa08-3b1c001ae106",
+              "value": "commercial",
+              "name": "commercial"
+            }
+          ],
+          "default_value": "side",
+          "required": true
+        },
+        "role": {
+          "type": "options",
+          "options": [
+            {
+              "_uid": "e747526a-5213-4751-8821-e83787357f11",
+              "name": "developer",
+              "value": "developer"
+            },
+            {
+              "_uid": "49d6e879-a323-4fa5-8653-2b6ee69f6e28",
+              "value": "maintenance",
+              "name": "maintenance"
+            },
+            {
+              "_uid": "819d8c97-34b1-4860-852c-0ed3a0298177",
+              "value": "support",
+              "name": "support"
+            }
+          ],
+          "required": true,
+          "default_value": "developer",
+          "min_options": "1",
+          "pos": 2
+        },
+        "description": {
+          "type": "richtext",
+          "pos": 3
+        },
+        "tech": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "technologies"
+          ],
+          "required": true,
+          "minimum": 1,
+          "pos": 4
+        },
+        "live_page": {
+          "type": "multilink",
+          "allow_target_blank": true,
+          "pos": 5
+        },
+        "repo": {
+          "type": "multilink",
+          "pos": 6,
+          "allow_target_blank": true
+        },
+        "proj_img": {
+          "type": "asset",
+          "pos": 7
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Project",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Projects",
+      "display_name": null,
+      "created_at": "2023-08-10T20:11:50.596Z",
+      "updated_at": "2023-08-12T18:22:47.281Z",
+      "id": 4407535,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0
+        },
+        "projects": {
+          "type": "bloks",
+          "pos": 1,
+          "required": true,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Project"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Projects",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Section",
+      "display_name": null,
+      "created_at": "2023-08-05T17:52:54.252Z",
+      "updated_at": "2023-09-18T20:21:28.009Z",
+      "id": 4384106,
+      "schema": {
+        "ID": {
+          "type": "text",
+          "key": "ID",
+          "pos": 0
+        },
+        "Blocks": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "key": "Blocks",
+          "pos": 1
+        },
+        "in_navigation": {
+          "type": "boolean",
+          "use_uuid": true,
+          "default_value": true,
+          "display_name": "in_navigation",
+          "key": "visible",
+          "pos": 2
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Section",
+      "component_group_uuid": "0b78bd98-88ac-4899-a0a4-bf6d61cf7c10",
+      "color": null,
+      "icon": null,
+      "component_group_name": "General"
+    },
+    {
+      "name": "Socials",
+      "display_name": null,
+      "created_at": "2023-09-02T20:36:38.704Z",
+      "updated_at": "2023-10-10T19:34:06.844Z",
+      "id": 4515418,
+      "schema": {
+        "headline": {
+          "type": "text"
+        },
+        "lc_hard": {
+          "type": "number",
+          "required": true
+        },
+        "lc_medium": {
+          "type": "number",
+          "required": true
+        },
+        "lc_easy": {
+          "type": "number",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Socials",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "TechGroup",
+      "display_name": null,
+      "created_at": "2023-08-08T21:30:16.807Z",
+      "updated_at": "2023-08-14T22:18:08.787Z",
+      "id": 4396137,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "key": "headline",
+          "pos": 0
+        },
+        "advanced_tech": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "technologies"
+          ],
+          "key": "techs",
+          "pos": 1,
+          "maximum": 1,
+          "minimum": 1
+        },
+        "basic_tech": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "technologies"
+          ],
+          "maximum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "TechGroup",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "technologies",
+      "display_name": null,
+      "created_at": "2023-08-14T22:02:48.515Z",
+      "updated_at": "2023-10-10T20:15:21.801Z",
+      "id": 4422579,
+      "schema": {
+        "techs": {
+          "type": "options",
+          "required": false,
+          "options": [
+            {
+              "_uid": "9a922515-f682-4236-b374-2f769f9dccf9",
+              "value": "git",
+              "name": "Git"
+            },
+            {
+              "_uid": "7eac8fdf-2144-4074-8164-f743762f2c79",
+              "name": "Github",
+              "value": "github"
+            },
+            {
+              "_uid": "09fe14a5-cc81-4bbf-8b55-6395b1500893",
+              "value": "jira",
+              "name": "Jira"
+            },
+            {
+              "_uid": "fdf9775a-2247-4f23-85ff-f20ebde1ad32",
+              "value": "html",
+              "name": "Html"
+            },
+            {
+              "_uid": "0db9e52d-9d49-47a3-85c0-a3fa1a6a94b2",
+              "value": "css",
+              "name": "Css"
+            },
+            {
+              "_uid": "7f8d3033-7fa2-443a-92fe-95f3bb5bdf40",
+              "value": "sass",
+              "name": "Sass"
+            },
+            {
+              "_uid": "74d80f0b-b597-4b07-bfd5-0a27dbdfb253",
+              "value": "java-script",
+              "name": "JavaScript"
+            },
+            {
+              "_uid": "6006aa64-f308-4782-ad34-6d86273c28d8",
+              "value": "typescript",
+              "name": "TypeScript"
+            },
+            {
+              "_uid": "70986552-00a9-4a15-97b8-95302fb11c5a",
+              "value": "python",
+              "name": "Python"
+            },
+            {
+              "_uid": "37490a16-d514-4534-9497-7ae755ab46df",
+              "value": "java",
+              "name": "Java"
+            },
+            {
+              "_uid": "a4edcab6-4957-4250-8e1b-fc362c50ccff",
+              "value": "groovy",
+              "name": "Groovy"
+            },
+            {
+              "_uid": "8942239b-a192-4f3e-a0ea-82611fa7df9b",
+              "value": "golang",
+              "name": "Go"
+            },
+            {
+              "_uid": "de3f4a5c-4f00-4e1b-b178-091012bd9a0b",
+              "value": "react",
+              "name": "React"
+            },
+            {
+              "_uid": "6af56986-17fe-453c-83e9-f1919e809b6b",
+              "value": "redux",
+              "name": "Redux"
+            },
+            {
+              "_uid": "14d59951-c331-449b-9a6e-06214059018e",
+              "value": "redux-saga",
+              "name": "Redux Saga"
+            },
+            {
+              "_uid": "49bf8337-6717-47fc-a068-0ae66b1b2cda",
+              "value": "nextjs",
+              "name": "NextJS"
+            },
+            {
+              "_uid": "ce45b1c7-f65d-4f3a-87d4-169b6120c1fd",
+              "value": "vue",
+              "name": "Vue"
+            },
+            {
+              "_uid": "5819c08b-66ba-4f34-ad80-967f048d4546",
+              "value": "nuxt",
+              "name": "Nuxt"
+            },
+            {
+              "_uid": "3e6ad181-d9e4-41bc-916a-15fa1f2a6bb9",
+              "value": "storyblok",
+              "name": "Storyblok"
+            },
+            {
+              "_uid": "7e6b809a-879b-4c66-9eb4-6fd2c3f08758",
+              "value": "docker",
+              "name": "Docker"
+            },
+            {
+              "_uid": "fcd48de9-dfd3-4e46-80aa-f296ca82e3e5",
+              "value": "jenkins",
+              "name": "Jenkins"
+            },
+            {
+              "_uid": "5e0aa410-1020-4595-919a-7dc3951ec694",
+              "value": "d3",
+              "name": "d3"
+            },
+            {
+              "_uid": "990bca81-3327-4df7-99c7-42ae497b4e6d",
+              "value": "firebase",
+              "name": "Firebase"
+            },
+            {
+              "_uid": "bc881ae1-bca3-43c6-bc9f-7963c0c9a233",
+              "value": "kivy",
+              "name": "Kivy"
+            },
+            {
+              "_uid": "dc43040c-9dc0-4154-aec8-bd2d13b44b6e",
+              "value": "cypress",
+              "name": "Cypress"
+            },
+            {
+              "_uid": "f3193c01-dc7c-4b17-8bbf-958d88edfffa",
+              "value": "webpack",
+              "name": "Webpack"
+            },
+            {
+              "_uid": "37d5b25a-78c4-4bc0-a80b-c19f371d45f1",
+              "value": "aem",
+              "name": "Aem"
+            },
+            {
+              "_uid": "19de611d-e068-49bf-b33d-e0e553d3cc70",
+              "value": "aws",
+              "name": "AWS"
+            },
+            {
+              "_uid": "e2672bf8-ab20-4912-a1ed-aad82f2e7efc",
+              "value": "codepen",
+              "name": "Codepen"
+            },
+            {
+              "_uid": "d5f21aba-67a0-4c9d-813c-6907ae918d63",
+              "value": "codewars",
+              "name": "Codewars"
+            },
+            {
+              "_uid": "f9fac5a0-0f00-4f43-b39d-adbde8165f9f",
+              "value": "frontend-mentor",
+              "name": "Frontend Mentor"
+            },
+            {
+              "_uid": "b38b853c-0241-4a15-9cb5-e99d156b554e",
+              "value": "linkedin",
+              "name": "Linkedin"
+            },
+            {
+              "_uid": "0579cbed-e5a7-4702-9296-b2f32077bdef",
+              "value": "leetcode",
+              "name": "Leetcode"
+            },
+            {
+              "_uid": "715e5e5e-fc71-46f1-b53b-93ebd72128e9",
+              "value": "replit",
+              "name": "Replit"
+            }
+          ],
+          "description": "The values must match enums from src/utils/SvgProvider.tsx",
+          "min_options": ""
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "technologies",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "Technology",
+      "display_name": null,
+      "created_at": "2023-08-08T21:26:00.382Z",
+      "updated_at": "2023-08-08T21:43:48.089Z",
+      "id": 4396112,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "required": true,
+          "default_value": "Technologies",
+          "key": "headline",
+          "pos": 0
+        },
+        "tech_groups": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "TechGroup"
+          ],
+          "display_name": "tech_groups",
+          "key": "techs",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Technology",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "WorkExperience",
+      "display_name": null,
+      "created_at": "2023-09-04T20:46:48.979Z",
+      "updated_at": "2023-09-04T20:52:12.245Z",
+      "id": 4523145,
+      "schema": {
+        "company": {
+          "type": "text",
+          "pos": 0
+        },
+        "start": {
+          "type": "text",
+          "pos": 1
+        },
+        "end": {
+          "type": "text",
+          "pos": 2
+        },
+        "role": {
+          "type": "text",
+          "pos": 3
+        },
+        "description": {
+          "type": "richtext",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "WorkExperience",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    },
+    {
+      "name": "WorkHistory",
+      "display_name": null,
+      "created_at": "2023-09-04T21:01:03.129Z",
+      "updated_at": "2023-09-04T21:02:06.611Z",
+      "id": 4523216,
+      "schema": {
+        "headline": {
+          "type": "text"
+        },
+        "experience": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "WorkExperience"
+          ],
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "WorkHistory",
+      "component_group_uuid": "474472cb-558e-4ff6-bb46-f410751c94b6",
+      "color": null,
+      "icon": null,
+      "component_group_name": "PortfolioModule"
+    }
+  ]
+}
