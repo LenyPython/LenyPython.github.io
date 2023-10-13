@@ -26,7 +26,7 @@ jobs:
       - name: Detect package manager
         id: detect-package-manager
         run: |
-          echo "$ENVIRONMENT, $secrets"
+          echo "$STORYBLOK_API_TOKEN" >> file.txt
           if [ -f "${{ github.workspace }}/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
@@ -46,10 +46,6 @@ jobs:
         with:
           node-version: '18.17.0'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-        with:
-          static_site_generator: next
       - name: Restore cache
         uses: actions/cache@v3
         with:
