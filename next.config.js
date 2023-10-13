@@ -12,7 +12,7 @@ const nextConfig = {
 		})
 		return config
 	},
-	//output: 'export',
+	output: 'export',
 	images: {
 		formats: ['image/webp'],
 		remotePatterns: [
