@@ -2,7 +2,6 @@
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import StoryblokProvider from '@/Global/components/StoryblokProvider'
 
-import Footer from '@/PortfolioModule/components/Footer'
 // storyblok component
 import Section from '@/Global/blocks/Section/Section'
 import Hero from '@/PortfolioModule/blocks/Hero/Hero'
@@ -46,10 +45,7 @@ const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<StoryblokProvider>
 			<html lang='en'>
-				<body>
-					{children}
-					<Footer />
-				</body>
+				<body>{children}</body>
 			</html>
 		</StoryblokProvider>
 	)

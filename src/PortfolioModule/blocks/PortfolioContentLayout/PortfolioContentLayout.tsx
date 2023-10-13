@@ -2,6 +2,7 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import Navigation from '@/PortfolioModule/components/Navigation/Navigation'
 import { PortfolioContentLayoutStoryblok } from '@/types/component-types-sb'
+import Footer from '@/PortfolioModule/components/Footer'
 
 import { Canvas } from '@react-three/fiber'
 import MatrixBg from '@/PortfolioModule/components/MatrixBg/MatrixBg'
@@ -39,6 +40,7 @@ const PortfolioContentLayout: React.FC<Props> = ({ blok }) => {
 					<Globe position={[2, 0, 1]} />
 				</Canvas>
 			</div>
+			<Footer />
 		</>
 	)
 }

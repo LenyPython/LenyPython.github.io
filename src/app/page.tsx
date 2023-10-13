@@ -14,8 +14,9 @@ const Home: React.FC = async () => {
 export default Home
 
 async function fetchData() {
-	let sbParams = { version: 'draft' as 'draft' }
-
+	let sbParams = {
+		version: process.env.NODE_ENV === 'production' ? 'publish' : 'draft'
+	}
 	const storyblokApi = getStoryblokApi()
 	return storyblokApi.get(`cdn/stories/home`, sbParams)
 }
