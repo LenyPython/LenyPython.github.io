@@ -15,7 +15,7 @@ export default Home
 
 async function fetchData() {
 	let sbParams = {
-		version: process.env.ENVIRONMENT === 'production' ? 'publish' : 'draft'
+		version: process.env.NODE_ENV === 'production' ? 'publish' : 'draft'
 	}
 	const storyblokApi = getStoryblokApi()
 	return storyblokApi.get(`cdn/stories/home`, sbParams)
