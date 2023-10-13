@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: false
 env:
   ENVIRONMENT: production
-  STORYBLOK_API_TOKEN: ${{ secrets.STORYBLOK_TOKEN }}
+  STORYBLOK_API_TOKEN: ${{ secrets.STORYBLOK }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,7 +26,12 @@ jobs:
       - name: Detect package manager
         id: detect-package-manager
         run: |
-          echo "$STORYBLOK_API_TOKEN" >> file.txt
+          echo "$STORYBLOK_API_TOKEN"
+          if [ "$STORYBLOK_API_TOKEN" == "asdf" ]; then
+            echo "asdf"
+          elif [ "$STORYBLOK_API_TOKEN" == "repo" ]; then
+            echo "repo"
+          fi
           if [ -f "${{ github.workspace }}/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
