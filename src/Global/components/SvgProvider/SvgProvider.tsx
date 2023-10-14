@@ -30,6 +30,8 @@ import Kivylogo from '@/assets/images/svg/tech/kivy.svg'
 import D3logo from '@/assets/images/svg/tech/d3.svg'
 import Firebaselogo from '@/assets/images/svg/tech/firebase.svg'
 import AEMlogo from '@/assets/images/svg/tech/aem.svg'
+import MONGODBlogo from '@/assets/images/svg/tech/mongodb.svg'
+import NESTJSlogo from '@/assets/images/svg/tech/nestjs.svg'
 import CYPRESSlogo from '@/assets/images/svg/tech/cypress.svg'
 import STORYBLOKlogo from '@/assets/images/svg/tech/storyblok.svg'
 
@@ -92,7 +94,9 @@ export enum TechEnum {
 	kivy = 'kivy',
 	aem = 'aem',
 	cypress = 'cypress',
-	storyblok = 'storyblok'
+	storyblok = 'storyblok',
+	mongodb = 'mongodb',
+	nestjs = 'nestjs'
 }
 
 export enum UtilSvgEnum {
@@ -159,6 +163,10 @@ const SvgProvider: React.FC<Props> = ({ type, options }) => {
 			return <Firebaselogo style={style} />
 		case TechEnum.storyblok:
 			return <STORYBLOKlogo style={style} />
+		case TechEnum.mongodb:
+			return <MONGODBlogo style={style} />
+		case TechEnum.nestjs:
+			return <NESTJSlogo style={style} />
 		// development
 		case DevEnum.git:
 			return <GITlogo style={style} />
