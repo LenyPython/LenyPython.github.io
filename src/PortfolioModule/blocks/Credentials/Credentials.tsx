@@ -35,7 +35,7 @@ const Credentials: React.FC<Props> = ({ blok }) => {
 			intervalRef.current = setTimeout(() => {
 				nextIdx()
 				scrollCreds()
-			}, 11000)
+			}, 15000)
 		}
 		scrollCreds()
 		return () => {
@@ -52,11 +52,11 @@ const Credentials: React.FC<Props> = ({ blok }) => {
 			<h2 className='absolute top-0 left-8 -translate-y-3/4 text-3xl md:text-5xl'>
 				{blok.headline}
 			</h2>
-			<button onClick={prevIdx}>
+			<button onClick={prevIdx} aria-label='Previous credential'>
 				<SvgProvider type={UtilSvgEnum.rightArrow} options={svgOptions} />
 			</button>
 			{`${idx + 1} / ${creds.length}`}
-			<button onClick={nextIdx}>
+			<button onClick={nextIdx} aria-label='Next credential'>
 				<SvgProvider type={UtilSvgEnum.leftArrow} options={svgOptions} />
 			</button>
 			{creds.map((component: CredentialStoryblok, i: number) => {

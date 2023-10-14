@@ -62,7 +62,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 			const tl = tlRef.current
 			strings.forEach(str => {
 				tl.to('.headline', {
-					duration: 0.2,
+					duration: 0.4,
 					text: str
 				})
 			})
@@ -77,6 +77,12 @@ const Hero: React.FC<Props> = ({ blok }) => {
 						text: para.innerText
 					}
 				)
+			})
+			tl.from('.call-to-action', {
+				duration: 1,
+				x: -300,
+				y: 100,
+				opacity: 0
 			})
 			if (!window.matchMedia('only screen and (max-width: 640px)').matches) {
 				tl.from('.nonmobile-container', { height: 0 }).from('.window-1', {
@@ -110,12 +116,6 @@ const Hero: React.FC<Props> = ({ blok }) => {
 					)
 				})
 			}
-			tl.from('.call-to-action', {
-				duration: 1,
-				x: -300,
-				y: 100,
-				opacity: 0
-			})
 		}, parentRef.current)
 		return () => {
 			ctx.revert()
@@ -149,7 +149,7 @@ const Hero: React.FC<Props> = ({ blok }) => {
 				)}
 				<div>
 					<h2 className='headline text-xl font-bold tracking-wider p-3 rounded-lg backdrop-blur-lg max-w-lg sm:px-7 sm:text-3xl'>
-						11010001 10101101
+						11010 001 10101101
 					</h2>
 				</div>
 				<RichText

@@ -71,6 +71,7 @@ const Algo: React.FC<Props> = ({ progress }) => {
 						href='https://www.codewars.com/users/LenyPython/'
 						target='_blank'
 						rel='noreferrer'
+						aria-label='Codewars logo, link to profile'
 					>
 						<SvgProvider type={SocialEnum.codewars} options={SVGOptions} />
 					</a>
@@ -78,6 +79,7 @@ const Algo: React.FC<Props> = ({ progress }) => {
 						href='https://www.codewars.com/users/LenyPython/'
 						target='_blank'
 						rel='noreferrer'
+						aria-label='link to Codewars profile'
 					>
 						visit profile
 					</a>
@@ -131,6 +133,7 @@ const Algo: React.FC<Props> = ({ progress }) => {
 						href='https://leetcode.com/LenyPython/'
 						target='_blank'
 						rel='noreferrer'
+						aria-label='LeetCode logo, link to profile'
 					>
 						<SvgProvider type={SocialEnum.leetcode} options={SVGOptions} />
 					</a>
@@ -138,6 +141,7 @@ const Algo: React.FC<Props> = ({ progress }) => {
 						href='https://leetcode.com/LenyPython/'
 						target='_blank'
 						rel='noreferrer'
+						aria-label='link to LeetCode profile'
 					>
 						visit profile
 					</a>
@@ -161,6 +165,7 @@ const Algo: React.FC<Props> = ({ progress }) => {
 						href='https://www.frontendmentor.io/profile/LenyPython'
 						target='_blank'
 						rel='noreferrer'
+						aria-label='Fronend Mentor logo, link to profile'
 					>
 						<SvgProvider
 							type={SocialEnum.frontendMentor}
@@ -171,6 +176,7 @@ const Algo: React.FC<Props> = ({ progress }) => {
 						href='https://www.frontendmentor.io/profile/LenyPython'
 						target='_blank'
 						rel='noreferrer'
+						aria-label='visit Frontend Mentor profile'
 					>
 						visit profile
 					</a>
@@ -181,6 +187,7 @@ const Algo: React.FC<Props> = ({ progress }) => {
 						href='https://replit.com/@PiotrLenartowic'
 						target='_blank'
 						rel='noreferrer'
+						aria-label='Replit logo, link to profice'
 					>
 						<SvgProvider type={SocialEnum.replit} options={SVGOptions} />
 					</a>
@@ -188,6 +195,7 @@ const Algo: React.FC<Props> = ({ progress }) => {
 						href='https://replit.com/@PiotrLenartowic'
 						target='_blank'
 						rel='noreferrer'
+						aria-label='visit Replit profile'
 					>
 						visit profile
 					</a>
@@ -198,6 +206,7 @@ const Algo: React.FC<Props> = ({ progress }) => {
 						href='https://codepen.io/lenypython'
 						target='_blank'
 						rel='noreferrer'
+						aria-label='Codepen logo, link to profile'
 					>
 						<SvgProvider type={SocialEnum.codepen} options={SVGOptions} />
 					</a>
@@ -205,6 +214,7 @@ const Algo: React.FC<Props> = ({ progress }) => {
 						href='https://codepen.io/lenypython'
 						target='_blank'
 						rel='noreferrer'
+						aria-label='visit Codepen profile'
 					>
 						visit profile
 					</a>
