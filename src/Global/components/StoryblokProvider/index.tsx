@@ -32,12 +32,13 @@ const components = {
 	Socials,
 	Contact
 }
-
-storyblokInit({
-	accessToken: process.env.STORYBLOK_API_TOKEN,
-	use: [apiPlugin],
-	components
-})
+if (process.env.NODE_ENV === 'development') {
+	storyblokInit({
+		accessToken: process.env.STORYBLOK_API_TOKEN,
+		use: [apiPlugin],
+		components
+	})
+}
 const StoryblokProvider: React.FC<PropsWithChildren> = ({ children }) => {
 	return children
 }

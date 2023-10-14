@@ -80,11 +80,11 @@ const Gallery = () => {
 	}
 	return (
 		<div className='flex justify-between items-center w-52 h-56'>
-			<button onClick={decrement}>
+			<button onClick={decrement} aria-label='Previous LeetCode badge'>
 				<SvgProvider type={UtilSvgEnum.rightArrow} options={SVGOptions} />
 			</button>
 			{badges[badge]}{' '}
-			<button onClick={increment}>
+			<button onClick={increment} aria-label='Next LeetCode badge'>
 				<SvgProvider type={UtilSvgEnum.leftArrow} options={SVGOptions} />
 			</button>
 		</div>

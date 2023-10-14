@@ -54,6 +54,7 @@ const Credential: React.FC<Props> = ({ blok, left, center, right }) => {
 						className='font-bold text-xl'
 						target='_blank'
 						rel='noreferrer'
+						aria-label={`link to ${person} linkedin profile`}
 					>
 						<SvgProvider type={SocialEnum.linkedin} options={svgConfig} />
 					</Link>
