@@ -6,6 +6,7 @@ import JENKINSlogo from '@/assets/images/svg/development/jenkins.svg'
 import JIRAlogo from '@/assets/images/svg/development/jira.svg'
 import AWSlogo from '@/assets/images/svg/development/aws.svg'
 import WEBPACKlogo from '@/assets/images/svg/development/webpack.svg'
+import NETLIFYlogo from '@/assets/images/svg/development/netlify.svg'
 
 // Languages
 import HTMLlogo from '@/assets/images/svg/language/html.svg'
@@ -75,7 +76,8 @@ export enum DevEnum {
 	aws = 'aws',
 	docker = 'docker',
 	jenkins = 'jenkins',
-	webpack = 'webpack'
+	webpack = 'webpack',
+	netlify = 'netlify'
 }
 
 export enum TechEnum {
@@ -172,6 +174,8 @@ const SvgProvider: React.FC<Props> = ({ type, options }) => {
 			return <JENKINSlogo style={style} />
 		case DevEnum.webpack:
 			return <WEBPACKlogo style={style} />
+		case DevEnum.netlify:
+			return <NETLIFYlogo style={style} />
 		// social
 		case SocialEnum.linkedin:
 			return <Linkedinlogo style={style} />
