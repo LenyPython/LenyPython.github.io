@@ -14,8 +14,7 @@ type Props = {
 }
 
 const Project: React.FC<Props> = ({ blok }) => {
-	const { project_name, role, tech, description, live_page, repo, proj_img } =
-		blok
+	const { project_name, role, tech, description, live_page, repo } = blok
 	const { techs } = tech[0]
 	const parentRef = useRef(null)
 	const tlRef = useRef<GSAPTimeline>()
@@ -106,7 +105,7 @@ const Project: React.FC<Props> = ({ blok }) => {
 					</>
 				)}
 			</div>
-			{live_page && (
+			{live_page?.cached_url && (
 				<Link
 					href={live_page.url}
 					className='text-center p-2 font-bold border border-font duration-500 hover:shadow-main hover:shadow-font sm:text-xl'
@@ -115,7 +114,7 @@ const Project: React.FC<Props> = ({ blok }) => {
 					Live page
 				</Link>
 			)}
-			{repo && (
+			{repo?.cached_url && (
 				<Link
 					href={repo.url}
 					className='text-center p-2 font-bold border border-font duration-500 hover:shadow-main hover:shadow-font sm:text-xl'
