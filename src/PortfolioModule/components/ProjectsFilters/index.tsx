@@ -23,6 +23,7 @@ export enum projType {
 }
 
 type Props = {
+	techs: Set<technologiesEnum>
 	handlers: {
 		onRoleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
 		onTypeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
@@ -35,7 +36,7 @@ type Props = {
 		techFilter: Set<technologiesEnum>
 	}
 }
-const ProjectFilters: React.FC<Props> = ({ handlers, states }) => {
+const ProjectFilters: React.FC<Props> = ({ techs, handlers, states }) => {
 	const [isTechInputOpen, setTechInputOpen] = useState(false)
 	const toggleTechInput = () => setTechInputOpen(prev => !prev)
 	const technologies: technologiesEnum[] = [
@@ -111,7 +112,7 @@ const ProjectFilters: React.FC<Props> = ({ handlers, states }) => {
 							{states.techFilter.size === 0 ? 'Close' : 'Clear'}
 						</button>
 						<fieldset className='absolute top-[105%] left-0 right-0 max-h-[70vh] overflow-y-auto bg-background p-3 grid grid-cols-1 sm:text-left sm:gap-2 sm:grid-cols-3 lg:grid-cols-5'>
-							{technologies.map((tech: technologiesEnum) => {
+							{Array.from(techs).map((tech: technologiesEnum) => {
 								return (
 									<StyledCheckbox
 										key={`tech-${tech}`}

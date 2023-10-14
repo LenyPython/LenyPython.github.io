@@ -1,11 +1,16 @@
 'use client'
 import { StoryblokComponent } from '@storyblok/react'
 import { useState } from 'react'
-import { ProjectStoryblok, ProjectsStoryblok } from '@/types/component-types-sb'
-import { TechEnum } from '@/Global/components/SvgProvider/SvgProvider'
+import {
+	ProjectStoryblok,
+	ProjectsStoryblok,
+	TechnologiesStoryblok
+} from '@/types/component-types-sb'
+import { SvgType, TechEnum } from '@/Global/components/SvgProvider/SvgProvider'
 import ProjectFilters, {
 	projType,
-	role
+	role,
+	technologiesEnum
 } from '@/PortfolioModule/components/ProjectsFilters'
 import { scrollToID } from '@/PortfolioModule/components/Navigation/Navigation'
 
@@ -18,6 +23,14 @@ const Projects: React.FC<Props> = ({ blok }) => {
 	const [roleFilter, setRoleFilter] = useState(role.any)
 	const [techFilter, setTechFilter] = useState(new Set<TechEnum>())
 	const [typeFilter, setTypeFilter] = useState(projType.any)
+	const technologies = new Set<technologiesEnum>()
+	projects.forEach((project: ProjectStoryblok) =>
+		project.tech.forEach((tech: TechnologiesStoryblok) =>
+			tech.techs?.forEach((tech: SvgType) =>
+				technologies.add(tech as technologiesEnum)
+			)
+		)
+	)
 	const onRoleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setRoleFilter(e.target.value as role)
 		scrollToID('#projects')
@@ -65,6 +78,7 @@ const Projects: React.FC<Props> = ({ blok }) => {
 				{blok.headline}
 			</h2>
 			<ProjectFilters
+				techs={technologies}
 				handlers={{
 					onRoleChange,
 					onTechChange,
