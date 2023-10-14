@@ -116,6 +116,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 					href='https://github.com/LenyPython'
 					target='_blank'
 					rel='noreferrer'
+					aria-label='Github logo, link to github'
 				>
 					<SvgProvider type={DevEnum.github} options={svgConfig} />
 				</Link>
@@ -125,6 +126,7 @@ const Contact: React.FC<Props> = ({ blok }) => {
 					href='https://github.com/LenyPython'
 					target='_blank'
 					rel='noreferrer'
+					aria-label='Linkedin logo, link to linkedin'
 				>
 					Connect with me on Linkedin:{' '}
 				</Link>

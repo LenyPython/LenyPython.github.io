@@ -42,13 +42,6 @@ storyblokInit({
 })
 
 const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
-	if (process.env.NODE_ENV === 'production')
-		return (
-			<html lang='en'>
-				<body>{children}</body>
-			</html>
-		)
-
 	return (
 		<StoryblokProvider>
 			<html lang='en'>
