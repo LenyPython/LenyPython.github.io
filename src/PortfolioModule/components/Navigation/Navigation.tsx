@@ -58,7 +58,7 @@ const Navigation: React.FC<Props> = ({ config }) => {
 						<Link
 							onClick={e => handleClick(e, '#hero')}
 							href='/'
-							aria-label='home'
+							aria-label='Logo, scroll to top'
 						>
 							<SvgProvider options={logoConfig} type={UtilSvgEnum.pageLogo} />
 						</Link>
@@ -66,7 +66,6 @@ const Navigation: React.FC<Props> = ({ config }) => {
 							className={`${isMobileOpen ? '' : 'hidden '}lg:block`}
 							onClick={e => handleClick(e, '#hero')}
 							href='/'
-							aria-label='home'
 						>
 							<div className='flex flex-col items-start'>
 								<h2 className='text-sm text-center font-medium'>
@@ -97,6 +96,7 @@ const Navigation: React.FC<Props> = ({ config }) => {
 						: 'bottom-6 bg-font scale-90'
 				} z-30 rounded-full md:hidden`}
 				onClick={toggleNavigation}
+				aria-label='toggle navigation menu'
 			>
 				<SvgProvider type={UtilSvgEnum.leftArrow} options={svgConfig} />
 				<SvgProvider type={UtilSvgEnum.leftArrow} options={svgConfig} />

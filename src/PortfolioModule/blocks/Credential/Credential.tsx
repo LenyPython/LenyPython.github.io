@@ -45,7 +45,7 @@ const Credential: React.FC<Props> = ({ blok, left, center, right }) => {
 			)}
 			<div className='flex justify-between items-center w-full'>
 				<div className='mt-1'>
-					<h4 className='font-bold'>{person}</h4>
+					<p className='font-bold'>{person}</p>
 					{center && <p className='text-sm md:text-base mb-2'>{position}</p>}
 				</div>
 				{center && linkedin_profile?.url && (
