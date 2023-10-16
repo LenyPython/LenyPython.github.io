@@ -106,35 +106,24 @@ const Contact: React.FC<Props> = ({ blok }) => {
 			</h2>
 			<div className='flex items-center justify-between w-full max-w-md'>
 				<Link
+					className='w-full flex justify-between items-center'
 					href='https://github.com/LenyPython'
 					target='_blank'
 					rel='noreferrer'
 				>
 					See my github:
-				</Link>
-				<Link
-					href='https://github.com/LenyPython'
-					target='_blank'
-					rel='noreferrer'
-					aria-label='Github logo, link to github'
-				>
 					<SvgProvider type={DevEnum.github} options={svgConfig} />
 				</Link>
 			</div>
 			<div className='flex items-center justify-between w-full max-w-md'>
 				<Link
+					className='w-full flex justify-between items-center'
 					href='https://github.com/LenyPython'
 					target='_blank'
 					rel='noreferrer'
 					aria-label='Linkedin logo, link to linkedin'
 				>
 					Connect with me on Linkedin:{' '}
-				</Link>
-				<Link
-					href='https://github.com/LenyPython'
-					target='_blank'
-					rel='noreferrer'
-				>
 					<SvgProvider type={SocialEnum.linkedin} options={svgConfig} />
 				</Link>
 			</div>

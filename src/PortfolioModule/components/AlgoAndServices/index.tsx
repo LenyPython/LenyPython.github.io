@@ -68,19 +68,13 @@ const Algo: React.FC<Props> = ({ progress }) => {
 				<div className={justify}>
 					<h2 className='mb-5'>CodeWars Profile:</h2>
 					<a
+						className='flex flex-col gap-5 items-center'
 						href='https://www.codewars.com/users/LenyPython/'
 						target='_blank'
 						rel='noreferrer'
 						aria-label='Codewars logo, link to profile'
 					>
 						<SvgProvider type={SocialEnum.codewars} options={SVGOptions} />
-					</a>
-					<a
-						href='https://www.codewars.com/users/LenyPython/'
-						target='_blank'
-						rel='noreferrer'
-						aria-label='link to Codewars profile'
-					>
 						visit profile
 					</a>
 				</div>
@@ -130,19 +124,13 @@ const Algo: React.FC<Props> = ({ progress }) => {
 				<div className={justify}>
 					<h2 className='mb-5'>LeetCode Profile:</h2>
 					<a
+						className='flex flex-col gap-5 items-center'
 						href='https://leetcode.com/LenyPython/'
 						target='_blank'
 						rel='noreferrer'
 						aria-label='LeetCode logo, link to profile'
 					>
 						<SvgProvider type={SocialEnum.leetcode} options={SVGOptions} />
-					</a>
-					<a
-						href='https://leetcode.com/LenyPython/'
-						target='_blank'
-						rel='noreferrer'
-						aria-label='link to LeetCode profile'
-					>
 						visit profile
 					</a>
 				</div>
@@ -162,60 +150,41 @@ const Algo: React.FC<Props> = ({ progress }) => {
 				<div className={justify}>
 					<h2>Frontend Mentor</h2>
 					<a
+						className='flex flex-col items-center'
 						href='https://www.frontendmentor.io/profile/LenyPython'
 						target='_blank'
 						rel='noreferrer'
-						aria-label='Fronend Mentor logo, link to profile'
 					>
 						<SvgProvider
 							type={SocialEnum.frontendMentor}
 							options={SVGOptions}
 						/>
-					</a>
-					<a
-						href='https://www.frontendmentor.io/profile/LenyPython'
-						target='_blank'
-						rel='noreferrer'
-						aria-label='visit Frontend Mentor profile'
-					>
 						visit profile
 					</a>
 				</div>
 				<div className={justify}>
 					<h2>Replit</h2>
 					<a
+						className='flex flex-col items-center'
 						href='https://replit.com/@PiotrLenartowic'
 						target='_blank'
 						rel='noreferrer'
 						aria-label='Replit logo, link to profice'
 					>
 						<SvgProvider type={SocialEnum.replit} options={SVGOptions} />
-					</a>
-					<a
-						href='https://replit.com/@PiotrLenartowic'
-						target='_blank'
-						rel='noreferrer'
-						aria-label='visit Replit profile'
-					>
 						visit profile
 					</a>
 				</div>
 				<div className={justify}>
 					<h2>Codepen</h2>
 					<a
+						className='flex flex-col items-center'
 						href='https://codepen.io/lenypython'
 						target='_blank'
 						rel='noreferrer'
 						aria-label='Codepen logo, link to profile'
 					>
 						<SvgProvider type={SocialEnum.codepen} options={SVGOptions} />
-					</a>
-					<a
-						href='https://codepen.io/lenypython'
-						target='_blank'
-						rel='noreferrer'
-						aria-label='visit Codepen profile'
-					>
 						visit profile
 					</a>
 				</div>
