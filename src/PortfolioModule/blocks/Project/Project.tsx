@@ -80,7 +80,7 @@ const Project: React.FC<Props> = ({ blok }) => {
 	return (
 		<div ref={parentRef} className='my-4 flex flex-col gap-5'>
 			<div>
-				<h2 className='text-4xl font-bold tracking-wider underline'>
+				<h2 className='text-2xl font-bold tracking-wider underline sm:text-3xl'>
 					{project_name}
 				</h2>
 				<h3 className='text-md font-bold'>{role.join(', ')}</h3>
