@@ -20,6 +20,23 @@ import Contact from '@/PortfolioModule/blocks/Contact'
 import '@/styles/global.scss'
 import { PropsWithChildren } from 'react'
 
+export const metadata = {
+	title: "Piotr Lenartowicz, I'm a software engineer",
+	description:
+		'Portfolio website of Piotr Lenartowicz. Check me out and feel free to contact!',
+	keywords: [
+		'frontend',
+		'engineer',
+		'software',
+		'web development',
+		'software developer',
+		'coding'
+	],
+	other: {
+		'google-site-verification': 'k9QCsodOesXnINyBXFqD5LaS32KeX6NlLep08a3ROUQ'
+	}
+}
+
 const components = {
 	Section,
 	Hero,
