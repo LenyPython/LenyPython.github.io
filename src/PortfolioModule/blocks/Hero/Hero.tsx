@@ -60,6 +60,9 @@ const Hero: React.FC<Props> = ({ blok }) => {
 		if (!parentRef.current) return
 		let ctx = gsap.context(() => {
 			const tl = tlRef.current
+			tl.to(parentRef.current, {
+				opacity: 1
+			})
 			strings.forEach(str => {
 				tl.to('.headline', {
 					duration: 0.4,
@@ -130,7 +133,10 @@ const Hero: React.FC<Props> = ({ blok }) => {
 		scrollToID(id)
 	}
 	return (
-		<div ref={parentRef} className='max-w-3xl mx-5 md:w-3/4 sm:self-center'>
+		<div
+			ref={parentRef}
+			className='max-w-3xl mx-5 md:w-3/4 opacity-0 sm:self-center'
+		>
 			<div className='flex flex-col gap-3 relative pb-20 justify-center sm:pb-28'>
 				{!isMobile && (
 					<div className='nonmobile-container flex justify-end gap-3 h-40 text-sm text-justify sm:text-base'>
