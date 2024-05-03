@@ -1,5 +1,6 @@
 # Block crawler access
 User-agent: *
+Allow: /sitemap.xml
 Allow: /$
 Allow: /blog/
 Disallow: /
