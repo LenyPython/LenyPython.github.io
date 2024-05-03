@@ -8,7 +8,7 @@ import SvgProvider, {
 const badges = [
 	<div className='flex flex-col items-center'>
 		<Image
-			src='https://assets.leetcode.com/static_assets/others/algorithm_I.png'
+			src='https://a.storyblok.com/f/245345/360x360/089d71ba8b/algorithm_i.png'
 			width={75}
 			height={75}
 			loading='lazy'
@@ -21,7 +21,7 @@ const badges = [
 	</div>,
 	<div className='flex flex-col items-center'>
 		<Image
-			src='https://assets.leetcode.com/static_assets/others/DS_I.png'
+			src='https://a.storyblok.com/f/245345/360x360/a04655c500/ds_i.png'
 			width={75}
 			height={75}
 			loading='lazy'
@@ -34,7 +34,7 @@ const badges = [
 	</div>,
 	<div className='flex flex-col items-center'>
 		<Image
-			src='https://assets.leetcode.com/static_assets/others/%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B_%E5%85%A5%E9%97%A8.gif'
+			src='https://a.storyblok.com/f/245345/360x360/92e9344d2e/ds_skill.gif'
 			width={75}
 			height={75}
 			loading='lazy'
@@ -47,7 +47,7 @@ const badges = [
 	</div>,
 	<div className='flex flex-col items-center'>
 		<Image
-			src='https://leetcode.com/static/images/badges/2022/gif/2022-annual-100.gif'
+			src='https://a.storyblok.com/f/245345/360x360/c34b0ccecb/2022-annual-100.gif'
 			width={75}
 			height={75}
 			loading='lazy'
@@ -57,6 +57,45 @@ const badges = [
 		<b className='text-center'>100 Days Badge 2022</b>
 		<br />
 		<span>2023-01-01</span>
+	</div>,
+	<div className='flex flex-col items-center'>
+		<Image
+			src='https://a.storyblok.com/f/245345/360x360/93b1d231dd/2023-50.gif'
+			width={75}
+			height={75}
+			loading='lazy'
+			alt='50 Days badge 2023'
+		/>
+		<br />
+		<b className='text-center'>50 Days Badge 2023</b>
+		<br />
+		<span>2023-12-15</span>
+	</div>,
+	<div className='flex flex-col items-center'>
+		<Image
+			src='https://a.storyblok.com/f/245345/360x360/2832c22083/2023-100.gif'
+			width={75}
+			height={75}
+			loading='lazy'
+			alt='100 Days badge 2023'
+		/>
+		<br />
+		<b className='text-center'>100 Days Badge 2023</b>
+		<br />
+		<span>2023-12-15</span>
+	</div>,
+	<div className='flex flex-col items-center'>
+		<Image
+			src='https://a.storyblok.com/f/245345/360x360/928d945600/2024-50.gif'
+			width={75}
+			height={75}
+			loading='lazy'
+			alt='50 Days badge 2024'
+		/>
+		<br />
+		<b className='text-center'>50 Days Badge 2024</b>
+		<br />
+		<span>2024-03-06</span>
 	</div>
 ]
 const Gallery = () => {
