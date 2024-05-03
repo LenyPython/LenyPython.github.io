@@ -1,0 +1,7 @@
+# Block crawler access
+User-agent: *
+Allow: /$
+Allow: /blog/
+Disallow: /
+
+Sitemap: https://lenypython.github.io/sitemap.xml

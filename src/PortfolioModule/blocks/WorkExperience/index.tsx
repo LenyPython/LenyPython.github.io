@@ -60,7 +60,7 @@ const WorkExperience: React.FC<Props> = ({ blok, odd }) => {
 
 	let experienceStyle =
 		'relative w-full border-font border-l-2 border-t-2 p-6 backdrop-blur-lg lg:w-1/2'
-	if (odd) experienceStyle += ' lg:-translate-x-1/2'
+	if (odd) experienceStyle += ' lg:border-b-2 lg:-translate-x-1/2'
 	else experienceStyle += ' lg:translate-x-1/2'
 
 	return (

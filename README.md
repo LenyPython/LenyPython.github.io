@@ -1,6 +1,14 @@
-### My personal portfolio
+# My personal portfolio
 
-Those are components which I use in Storyblok CMS to create a whole portfolio page. The code/components/bloks are available here, but to get content you are required to have access to CMS to download content to see the page in whole.
+Those are components which I use in Storyblok CMS to create a whole portfolio page.
+
+### Structure
+
+In src directory you'll find directories which hold components specific to layout or theme.
+In Global there will be General usage blocks or components.
+
+Block - is a component which retrieves content from Storyblock CMS
+Component - is a standalone component ex. button which does not need any content provided.
 
 ## Getting Started
 

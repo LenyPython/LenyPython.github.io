@@ -12,7 +12,11 @@ const WorkHistory: React.FC<Props> = ({ blok }) => {
 				{blok.headline}
 			</h2>
 			{blok.experience?.map((component: any, i: number) => (
-				<StoryblokComponent key={component._uid} blok={component} odd={i % 2} />
+				<StoryblokComponent
+					key={component._uid}
+					blok={component}
+					odd={(i & 1) === 1}
+				/>
 			))}
 		</div>
 	)
